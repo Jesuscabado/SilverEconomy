@@ -2,10 +2,10 @@ import { Routes, Route } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "./components/firebase";
-import Home from "./components/Home";
-import Signup from "./components/Signup";
-import Login from "./components/Login";
+import { auth } from "../components/firebase";
+import Home from "../components/Home";
+import Signup from "../components/Signup";
+import Login from "../components/Login";
 function App() {
   const [user, setUser] = useState(null);
   useEffect(() => {
