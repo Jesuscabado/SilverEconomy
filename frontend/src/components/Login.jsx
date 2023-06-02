@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth, provider } from "./firebase";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { auth, provider } from "../components/Firebase";
+
 import { NavLink, useNavigate } from "react-router-dom";
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -19,6 +19,7 @@ const Login = () => {
         console.log(user);
       })
       .catch((error) => {
+        alert("Invalid email or password");
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
@@ -30,23 +31,13 @@ const Login = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         // This gives you a Google Access Token. You can use it to access the Google API.
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-        // The signed-in user info.
-        const user = result.user;
-        console.log(user);
         navigate("/");
-        // ...
       })
       .catch((error) => {
         // Handle Errors here.
         const errorCode = error.code;
         const errorMessage = error.message;
-        // The email of the user's account used.
-        const email = error.email;
-        // The AuthCredential type that was used.
-        const credential = GoogleAuthProvider.credentialFromError(error);
-        // ...
+        console.log(errorCode, errorMessage);
       });
   };
 
@@ -59,37 +50,37 @@ const Login = () => {
 
             <form>
               <div>
-                <label htmlFor="email-address">Email address</label>
+                <label htmlFor='email-address'>Email address</label>
                 <input
-                  id="email-address"
-                  name="email"
-                  type="email"
+                  id='email-address'
+                  name='email'
+                  type='email'
                   required
-                  placeholder="Email address"
+                  placeholder='Email address'
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
 
               <div>
-                <label htmlFor="password">Password</label>
+                <label htmlFor='password'>Password</label>
                 <input
-                  id="password"
-                  name="password"
-                  type="password"
+                  id='password'
+                  name='password'
+                  type='password'
                   required
-                  placeholder="Password"
+                  placeholder='Password'
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
 
               <div>
                 <button onClick={onLogin}>Login</button>
-                <button onClick={onGoogleLogin}>Login with Google</button>
+                <button onClick={onGoogleLogin}>Login with google</button>
               </div>
             </form>
 
-            <p className="text-sm text-white text-center">
-              No account yet? <NavLink to="/signup">Sign up</NavLink>
+            <p className='text-sm text-white text-center'>
+              No account yet? <NavLink to='/signup'>Sign up</NavLink>
             </p>
           </div>
         </section>
