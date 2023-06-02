@@ -1,0 +1,48 @@
+version: "3"
+services:
+  mysql:
+    image: mysql:5.6
+    container_name: mysql-silvereconomy
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: mi-contraseña
+      MYSQL_DATABASE: silvereconomy
+    ports:
+      - 3050:3306
+    volumes:
+      - "./docker/mysql/mysql.cnf:/etc/mysql/conf.d/mysql.cnf"
+      - "./docker/mysql/1silvereconomy.sql:/docker-entrypoint-initdb.d/1silvereconomy.sql"
+      - "./docker/mysql/2silvereconomyInsertData.sql:/docker-entrypoint-initdb.d/2silvereconomyInsertData.sql"
+      - "./docker/mysql/3silvereconomyStockData.sql:/docker-entrypoint-initdb.d/3silvereconomyStockData.sql"
+      - ~/silvereconomyData/mysql:/var/lib/mysql
+    networks:
+      - silvereconomy
+  node:
+    build: ./back
+    container_name: node-silvereconomy
+    restart: always
+    ports:
+      - 3050:3000
+    depends_on:
+      - mysql
+    networks:
+      - silvereconomy
+    volumes:
+      - ./back:/usr/src/app
+      - exclude:/usr/src/app/node_modules/
+  react:
+    build: ./front
+    container_name: react-silvereconomy
+    restart: always
+    ports:
+      - 3050:3000
+    depends_on:
+      - node
+    networks:
+      - silvereconomy
+    volumes:
+      - ./front:/usr/src/app
+volumes:
+  exclude:
+networks:
+  silvereconomy:
