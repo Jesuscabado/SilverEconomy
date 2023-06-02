@@ -8,11 +8,12 @@ const Signup = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [selectedRol, setSelectedRol] = useState("");
 
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    await createUserWithEmailAndPassword(auth, email, password)
+    await createUserWithEmailAndPassword(auth, email, password, selectedRol)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
@@ -26,6 +27,11 @@ const Signup = () => {
         console.log(errorCode, errorMessage);
         // ..
       });
+  };
+
+  const handleRolChange = (e) => {
+    setSelectedRol(e.target.value);
+    console.log(selectedRol);
   };
 
   return (
@@ -57,6 +63,23 @@ const Signup = () => {
                   required
                   placeholder='Password'
                 />
+              </div>
+
+              <div>
+                <label htmlFor='rol'>Rol</label>
+                <select
+                  id='rol'
+                  name='rol'
+                  required
+                  value={selectedRol}
+                  onChange={handleRolChange}
+                >
+                  <option value='' disabled selected>
+                    Selecciona un rol
+                  </option>
+                  <option value='user'>User</option>
+                  <option value='admin'>Admin</option>
+                </select>
               </div>
 
               <button type='submit' onClick={onSubmit}>

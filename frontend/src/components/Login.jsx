@@ -1,22 +1,33 @@
 import React, { useState } from "react";
 import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../components/Firebase";
-
+import { getFirestore, doc, setDoc } from "firebase/firestore";
 import { NavLink, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const firestore = getFirestore();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [selectedRol, setSelectedRol] = useState("");
 
   const onLogin = (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
+    signInWithEmailAndPassword(auth, email, password, selectedRol);
+    const infoUser = signInWithEmailAndPassword(
+      auth,
+      email,
+      password,
+      selectedRol
+    )
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
         navigate("/");
         console.log(user);
+        console.log(infoUser.user.uid);
+        const docuRef = doc(firestore, `user/${infoUser.user.uid}`);
+        setDoc(docuRef, { correo: email, rol: selectedRol });
       })
       .catch((error) => {
         alert("Invalid email or password");
@@ -39,6 +50,11 @@ const Login = () => {
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
       });
+  };
+
+  const handleRolChange = (e) => {
+    setSelectedRol(e.target.value);
+    console.log(selectedRol);
   };
 
   return (
@@ -71,6 +87,19 @@ const Login = () => {
                   placeholder='Password'
                   onChange={(e) => setPassword(e.target.value)}
                 />
+              </div>
+              <div>
+                <label htmlFor='rol'>Rol</label>
+                <select
+                  id='rol'
+                  name='rol'
+                  required
+                  value={selectedRol}
+                  onChange={handleRolChange}
+                >
+                  <option value='user'>Admin</option>
+                  <option value='admin'>User</option>
+                </select>
               </div>
 
               <div>
