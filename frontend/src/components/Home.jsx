@@ -1,8 +1,8 @@
 import React from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "./Firebase";
-
 import { useNavigate } from "react-router-dom";
+import Chat from "./chat/Chat";
 
 const Home = ({ user }) => {
   const navigate = useNavigate();
@@ -32,6 +32,7 @@ const Home = ({ user }) => {
           )}
         </div>
       </nav>
+      <Chat />
     </>
   );
 };
