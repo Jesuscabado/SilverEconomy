@@ -1,64 +1,49 @@
-import React, { useState, useEffect } from "react";
-import Home from "./components/Home";
-import Signup from "./components/Signup";
-import Login from "./components/Login";
-import { BrowserRouter as Router } from "react-router-dom";
-import { Routes, Route } from "react-router-dom";
-import { onAuthStateChanged } from "firebase/auth";
+import React, { useState } from "react";
+
+import Home from "./screens/Home";
+import Login from "./screens/Login";
+
+import firebaseApp from "./firebase/credenciales";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
-import { auth } from "./components/Firebase";
+const auth = getAuth(firebaseApp);
+const firestore = getFirestore(firebaseApp);
 
 function App() {
-  const firestore = getFirestore();
   const [user, setUser] = useState(null);
 
   async function getRol(uid) {
-    const docRef = doc(firestore, `user/${uid}`);
-    const docu = await getDoc(docRef);
-    const docufinal = docu.data().rol;
-    return docufinal;
+    const docuRef = doc(firestore, `usuarios/${uid}`);
+    const docu = await getDoc(docuRef);
+    const infoFinal = docu.data().rol;
+    return infoFinal;
   }
 
-  function setUserWithFirebaseAndRol(user) {
-    getRol(user.uid).then((rol) => {
+  function setUserWithFirebaseAndRol(usuarioFirebase) {
+    getRol(usuarioFirebase.uid).then((rol) => {
       const userData = {
-        email: user.email,
-        uid: user.uid,
+        uid: usuarioFirebase.uid,
+        email: usuarioFirebase.email,
         rol: rol,
       };
       setUser(userData);
-      console.log("userdata final", userData);
+      console.log("userData fianl", userData);
     });
   }
 
-  useEffect(() => {
-    onAuthStateChanged(auth, function (user) {
-      if (user) {
-        if (!user) {
-          setUserWithFirebaseAndRol(user);
-        }
-        // User is signed in
-      } else {
-        // User is signed in
+  onAuthStateChanged(auth, (usuarioFirebase) => {
+    if (usuarioFirebase) {
+      //funcion final
 
-        setUser(null);
+      if (!user) {
+        setUserWithFirebaseAndRol(usuarioFirebase);
       }
-    });
-  }, []);
+    } else {
+      setUser(null);
+    }
+  });
 
-  return (
-    <Router>
-      <div>
-        <section>
-          <Routes>
-            <Route path='/' element={<Home user={user} />} />
-            <Route path='/signup' element={<Signup />} />
-            <Route path='/login' element={<Login />} />
-          </Routes>
-        </section>
-      </div>
-    </Router>
-  );
+  return <>{user ? <Home user={user} /> : <Login />}</>;
 }
 
 export default App;
