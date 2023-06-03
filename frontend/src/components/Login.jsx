@@ -6,7 +6,7 @@ import Alert from "./Alert";
 
 function Login() {
   const [user, setUser] = useState({ email: "", password: "", rol: "" }); //[{},()=>{}
-  const [rol, setRol] = useState("");
+
   const [error, setError] = useState("");
 
   const { login, loginWithGoogle, resetPassword } = useAuth();

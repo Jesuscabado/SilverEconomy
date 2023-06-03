@@ -9,6 +9,7 @@ import {
   sendPasswordResetEmail,
 } from "firebase/auth";
 import { auth } from "../Firebase";
+import { getFirestore, doc, setDoc } from "firebase/firestore";
 
 export const authContext = createContext();
 
@@ -24,11 +25,28 @@ export function AuthContextProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true); // para que no se vea el login por un segundo
 
-  const signup = (email, password, rol) => {
+  const signup = async (email, password, rol) => {
+    try {
+      const { user } = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const firestore = getFirestore();
+      const userDocRef = doc(firestore, "usuarios", user.uid);
+      await setDoc(userDocRef, { email, rol });
+      console.log("signup", email, password, rol);
+    } catch (error) {
+      // Manejo del error
+    }
+  };
+
+  //version funciona con firebase
+  /* const signup = (email, password, rol) => {
     createUserWithEmailAndPassword(auth, email, password, rol);
     console.log("signup", email, password, rol);
   };
-
+ */
   const login = (email, password) => {
     signInWithEmailAndPassword(auth, email, password);
     console.log("login", email, password);

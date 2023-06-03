@@ -12,18 +12,18 @@ function Register() {
   const { signup } = useAuth();
   const navigate = useNavigate();
 
-  // actualizar estado
+  /*   // actualizar estado
   const handleChange = ({ target: { name, value } }) => {
     setUser({ ...user, [name]: value });
     setRol(value);
   };
-
+ */
   //ver el cambio
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     try {
-      await signup(user.email, user.password, user.rol);
+      await signup(user.email, user.password, rol);
       navigate("/");
     } catch (error) {
       // para cambiar el mensaje de error de firebase por uno pesolalizado
@@ -54,7 +54,7 @@ function Register() {
             id='email'
             placeholder='youremail@gmail.com'
             className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-            onChange={handleChange}
+            onChange={(e) => setUser({ ...user, email: e.target.value })}
           />
         </div>
         <div className='mb-4'>
@@ -70,15 +70,14 @@ function Register() {
             id='password'
             placeholder='******'
             className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-            onChange={handleChange}
+            onChange={(e) => setUser({ ...user, password: e.target.value })}
           />
         </div>
         <div className='mb-4'>
           <label htmlFor='rol'>Selecciona Rol</label>
           <select
             name='rol'
-            value={rol}
-            onChange={handleChange}
+            onChange={(e) => setRol({ ...user, rol: e.target.value })}
             className='block border rounded w-full border rounded'
           >
             <option value='admin'>admin</option>
