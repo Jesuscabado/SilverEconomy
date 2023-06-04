@@ -33,6 +33,7 @@ function Register() {
       setError(error.message);
     }
   };
+
   return (
     <div className='w-full max-w-xs m-auto'>
       {error && <Alert message={error} />}
@@ -77,9 +78,10 @@ function Register() {
           <label htmlFor='rol'>Selecciona Rol</label>
           <select
             name='rol'
-            onChange={(e) => setRol({ ...user, rol: e.target.value })}
+            onChange={(e) => setRol(e.target.value)}
             className='block border rounded w-full border rounded'
           >
+            <option value=''>selecciona una opción</option>
             <option value='admin'>admin</option>
             <option value='user'>user</option>
           </select>

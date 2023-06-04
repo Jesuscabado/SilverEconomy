@@ -26,16 +26,20 @@ export function AuthContextProvider({ children }) {
   const [loading, setLoading] = useState(true); // para que no se vea el login por un segundo
 
   const signup = async (email, password, rol) => {
+    //  async para que espere a que se cree el usuario
     try {
+      // try catch para manejar el error
       const { user } = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
+        // destructuring para obtener el usuario
+        auth, // auth es el objeto que importamos de firebase
+        email, // email del usuario
+        password, // password del usuario
+        rol // rol del usuario
       );
-      const firestore = getFirestore();
-      const userDocRef = doc(firestore, "usuarios", user.uid);
-      await setDoc(userDocRef, { email, rol });
-      console.log("signup", email, password, rol);
+      const firestore = getFirestore(); // firestore para crear el documento del usuario para almacenar el rol y el email  del usuario
+      const userDocRef = doc(firestore, "usuarios", user.uid); // referencia para crear el documento del usuario del rol y el email del usuario
+      await setDoc(userDocRef, { email, rol }); // setDoc para crear el documento del usuario del rol y el email del usuario dentor del rol se meto todo otra vez en un objeto
+      console.log("signup", email, password, rol); // Mostrar solo los datos de email, password y rol en la consola
     } catch (error) {
       // Manejo del error
     }
