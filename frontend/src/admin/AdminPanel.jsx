@@ -1,13 +1,13 @@
-import React from 'react';
-import UserList from './UserList';
-import UserEdit from './UserEdit';
-import CreateUser from './CreateUser';
+import React from "react";
+import UserList from "./UserList";
+import UserEdit from "./UserEdit";
+import CreateUser from "./CreateUser";
 
 const AdminPanel = () => {
   const [selectedUser, setSelectedUser] = React.useState(null);
 
   const handleEditUser = (user) => {
-    setSelectedUser(user); 
+    setSelectedUser(user);
   };
 
   return (
