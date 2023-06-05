@@ -19,7 +19,7 @@ const Footer = () => {
         <Routes>
           <Route path='/Avisolegal' component={AvisoLegal} />
         </Routes>
-        <Link class='text-decoration-none custom-link' to='/avisolegal'>
+        <Link className='text-decoration-none custom-link' to='/avisolegal'>
           Aviso legal
         </Link>
       </div>

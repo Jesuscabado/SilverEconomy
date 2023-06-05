@@ -1,4 +1,3 @@
-import { set } from "firebase/database";
 import React, { useState } from "react";
 
 const ImageSlider = ({ slides }) => {

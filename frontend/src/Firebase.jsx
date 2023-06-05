@@ -3,9 +3,9 @@ import { initializeApp } from "firebase/app";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { getAuth } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
-import { getAnalytics } from "firebase/analytics";
+/* import { getAnalytics } from "firebase/analytics"; */
 import { v4 } from "uuid";
-import { getDatabase } from "firebase/database";
+/* import { getDatabase } from "firebase/database"; */
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -18,7 +18,7 @@ const firebaseConfig = {
   storageBucket: "silvereconomy-7895a.appspot.com",
   messagingSenderId: "26118163184",
   appId: "1:26118163184:web:2d4b36a64836fe96a59035",
-  measurementId: "G-JWT0446TK8",
+  measurementId: "G-GX73D1WJXW",
 };
 
 export const provider = new GoogleAuthProvider();
@@ -27,10 +27,10 @@ export const provider = new GoogleAuthProvider();
 const app = initializeApp(firebaseConfig);
 
 // Initialize Realtime Database and get a reference to the service
-const database = getDatabase(app);
+/* const database = getDatabase(app);
 
 const analytics = getAnalytics(app);
-
+ */
 // Initialize Cloud Storage and get a reference to the service
 export const storage = getStorage(app);
 
