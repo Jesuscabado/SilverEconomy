@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { uploadFile } from "../Firebase";
+import SideBar from "./SideBar";
 
 function Home() {
   const { user, logout, loading } = useAuth();
@@ -31,6 +32,7 @@ function Home() {
 
   return (
     <div className='container mx-auto'>
+      <SideBar />
       <div className='w-full max-w-xs m-auto text-black'>
         <div className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>
           <p className='text-xl mb-4 text-right'>
