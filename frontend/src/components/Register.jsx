@@ -75,7 +75,12 @@ function Register() {
           />
         </div>
         <div className='mb-4'>
-          <label htmlFor='rol'>Selecciona Rol</label>
+          <label
+            htmlFor='rol'
+            className='block text-gray-700 text-sm font-bold mb-2'
+          >
+            Selecciona Rol
+          </label>
           <select
             name='rol'
             onChange={(e) => setRol(e.target.value)}
@@ -86,13 +91,13 @@ function Register() {
             <option value='user'>user</option>
           </select>
         </div>
-        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'>
+        <button className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'>
           Register
         </button>
       </form>
       <p className='my-4 text-sm flex justify-between px-3'>
         Already have an Account?
-        <Link to='/login' className='text-blue-700 hover:text-blue-900'>
+        <Link to='/login' className='text-red-700 hover:text-red-900'>
           Login
         </Link>
       </p>

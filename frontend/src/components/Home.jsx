@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { uploadFile } from "../Firebase";
+import Navbar from "././Navbar";
 
 function Home() {
   const { user, logout, loading } = useAuth();
@@ -30,25 +31,32 @@ function Home() {
   };
 
   return (
-    <div className='w-full max-w-xs m-auto text-black'>
-      <div className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>
-        <p className='text-xl mb-4'>Welcome {user.displayName || user.email}</p>
-        <button
-          className='bg-slate-200 hover:bg-slate-300 rounded py-2 px-4 text-black'
-          onClick={handleLogout}
-        >
-          logout
-        </button>
-        {/*  //fomulario de subir archivo */}
-        <form onSubmit={HandleSubmit}>
-          <input
-            type='file'
-            name='file'
-            id='file'
-            onChange={(e) => setFile(e.target.files[0])}
-          />
-          <button>upload</button>
-        </form>
+    <div className='container mx-auto'>
+      <Navbar />
+      <div className='w-full max-w-xs m-auto text-black'>
+        <div className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>
+          <p className='text-xl mb-4 text-right'>
+            Welcome {user.displayName || user.email}
+          </p>
+          <button
+            className='bg-red-500 hover:bg-red-700 rounded py-2 px-4 text-white'
+            onClick={handleLogout}
+          >
+            logout
+          </button>
+          {/*  //fomulario de subir archivo */}
+          <form onSubmit={HandleSubmit}>
+            <input
+              type='file'
+              name='file'
+              id='file'
+              onChange={(e) => setFile(e.target.files[0])}
+            />
+            <button className='bg-red-500 hover:bg-red-700 rounded py-2 px-4 text-white'>
+              upload
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );
