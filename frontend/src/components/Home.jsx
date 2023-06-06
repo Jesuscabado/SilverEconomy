@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { uploadFile } from "../Firebase";
 import SideBar from "./SideBar";
+import "../css/Grid.css";
 
 function Home() {
   const { user, logout, loading } = useAuth();
@@ -56,6 +57,18 @@ function Home() {
             </button>
           </form>
         </div>
+      </div>
+
+      <div className='grid-container'>
+        <div className='grid-item item1'>
+          {/* Otro contenido específico de la página */}
+          <iframe src='././indexmap.html' width='100%' height='500px' />
+        </div>
+        <div className='grid-item item2'>32% de gente mayor</div>
+        <div className='grid-item item3'>3 de cada 4 es mujer</div>
+        <div className='grid-item item4'>4% viudos</div>
+        <div className='grid-item item5'>50% pobres </div>
+        <div className='grid-item item6'>6 viudos</div>
       </div>
     </div>
   );

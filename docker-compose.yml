@@ -9,6 +9,7 @@ services:
       MYSQL_DATABASE: silvereconomy
     ports:
       - 3050:3307
+      - 3050:3307
     volumes:
       - "./docker/mysql/mysql.cnf:/etc/mysql/conf.d/mysql.cnf"
       - "./docker/mysql/1silvereconomy.sql:/docker-entrypoint-initdb.d/1silvereconomy.sql"
@@ -23,11 +24,13 @@ services:
     restart: always
     ports:
       - 3051:3001
+      - 3051:3001
     depends_on:
       - mysql
     networks:
       - silvereconomy
     volumes:
+      - ./backend:/usr/src/app
       - ./backend:/usr/src/app
       - exclude:/usr/src/app/node_modules/
   #react:
