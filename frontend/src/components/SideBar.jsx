@@ -37,10 +37,10 @@ function SideBar() {
                 </a>
               </li>
               <li>
-                <a href='./icons.html'>
-                  <FontAwesomeIcon icon={faCalendarAlt} />{" "}
+                <Link to='/calendar'>
+                  <FontAwesomeIcon icon={faCalendarAlt} />
                   <p>Agenda/Calendario</p>
-                </a>
+                </Link>
               </li>
               <li>
                 <a href='./map.html'>

@@ -11,6 +11,7 @@ import AvisoLegal from "././components/AvisoLegal";
 import "./index.css";
 import BoxIniciarSesin from "./components/BoxIniciarSesin";
 import Footer from "./components/Footer";
+import Calendar from "./components/Calendar/Index";
 
 function App() {
   return (
@@ -30,6 +31,8 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/web' element={<Web />} />
           <Route path='/avisolegal' element={<AvisoLegal />} />
+          <Route path='/calendar' element={<Calendar />} />
+
           <Route path='/BoxIniciarSesin' element={<BoxIniciarSesin />} />
         </Routes>
       </AuthContextProvider>
