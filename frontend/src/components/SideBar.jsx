@@ -86,6 +86,12 @@ function SideBar() {
                   <p>Chat</p>
                 </Link>
               </li>
+              <li className='active-pro'>
+                <a href='./heatmap_v1.html'>
+                  <FontAwesomeIcon icon={faComments} />
+                  <p>Chat</p>
+                </a>
+              </li>
             </ul>
           </div>
         </div>

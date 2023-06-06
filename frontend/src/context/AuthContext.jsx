@@ -51,8 +51,8 @@ export function AuthContextProvider({ children }) {
     console.log("signup", email, password, rol);
   };
  */
-  const login = (email, password) => {
-    signInWithEmailAndPassword(auth, email, password);
+  const login = async (email, password) => {
+    await signInWithEmailAndPassword(auth, email, password);
     console.log("login", email, password);
   };
 

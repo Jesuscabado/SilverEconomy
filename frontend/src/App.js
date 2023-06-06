@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import "./index.css";
 import BoxIniciarSesin from "./components/BoxIniciarSesin";
+import MapComponent from "./components/MapComponent";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path='/BoxIniciarSesin' element={<BoxIniciarSesin />} />
         </Routes>
       </AuthContextProvider>
+      <MapComponent />
       <Footer />
     </div>
   );

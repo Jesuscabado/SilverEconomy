@@ -25,6 +25,7 @@ function Login() {
       await login(user.email, user.password);
       navigate("/");
     } catch (error) {
+      console.log(error);
       // para cambiar el mensaje de error de firebase por uno pesolalizado
       /* console.log(error.code);
       if(error.code === "auth/email-already-in-use"){
