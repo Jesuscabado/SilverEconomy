@@ -3,6 +3,8 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/database";
 import { useAuth } from "../context/AuthContext";
 import { uploadFile } from "../Firebase";
+import Sidebar from "./SideBar";
+
 
 function Home() {
   const { user, logout, loading } = useAuth();
@@ -91,6 +93,7 @@ function Home() {
 
   return (
     <div className="w-full max-w-xs m-auto text-black">
+      <Sidebar />
       <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <p className="text-xl mb-4">Welcome {user.displayName || user.email}</p>
         <button
