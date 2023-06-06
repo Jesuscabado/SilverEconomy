@@ -30,7 +30,12 @@ function Login() {
       /* console.log(error.code);
       if(error.code === "auth/email-already-in-use"){
         setError("El correo ya esta en uso"); */
-      setError(error.message);
+      setError(
+        error.message
+          .replace("Firebase: Error ", "")
+          .split("/")[1]
+          .replace(/[).]+$/, "")
+      );
     }
   };
 
