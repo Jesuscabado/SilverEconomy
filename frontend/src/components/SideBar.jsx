@@ -12,6 +12,7 @@ import {
   faClipboardList,
   faComments,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 function SideBar() {
   return (
@@ -79,6 +80,11 @@ function SideBar() {
                   <FontAwesomeIcon icon={faComments} />
                   <p>Chat</p>
                 </a>
+              </li>
+              <li className='active-pro'>
+                <Link to='/BoxIniciarSesin'>
+                  <p>Chat</p>
+                </Link>
               </li>
             </ul>
           </div>
