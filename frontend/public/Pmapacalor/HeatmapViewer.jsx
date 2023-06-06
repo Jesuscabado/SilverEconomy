@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+/* import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const HeatmapViewer = () => {
@@ -7,7 +7,9 @@ const HeatmapViewer = () => {
   useEffect(() => {
     const fetchHeatmapContent = async () => {
       try {
-        const response = await axios.get("././mapacalor/heatmap_v1.html");
+        const response = await axios.get(
+          "/components/Pmapacalor/HeatmapViewer"
+        );
         setHeatmapContent(response.data);
       } catch (error) {
         console.error("Error al cargar el mapa de calor:", error);
@@ -25,3 +27,4 @@ const HeatmapViewer = () => {
 };
 
 export default HeatmapViewer;
+ */

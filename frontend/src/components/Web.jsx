@@ -5,6 +5,8 @@ import soledad2 from "../img/soledad2.jpg";
 import soledad3 from "../img/soledad3.jpg";
 import soledad4 from "../img/soledad4.jpg";
 import soledad5 from "../img/soledad5.jpg";
+import Footer from "./Footer";
+import Navbar from "../components/Navbar";
 
 function Web() {
   const slides = [
@@ -54,6 +56,7 @@ function Web() {
   };
   return (
     <div>
+      <Navbar />
       <div style={containerStyles}>
         <ImageSlider slides={slides} />
       </div>
@@ -74,6 +77,7 @@ function Web() {
         </div>
         <img src={soledad4} alt='Agenda' style={imageStyles} />
       </div>
+      <Footer />
     </div>
   );
 }

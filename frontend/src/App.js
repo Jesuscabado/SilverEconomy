@@ -6,17 +6,17 @@ import { AuthContextProvider } from "./context/AuthContext";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import Web from "./components/Web";
 import AvisoLegal from "././components/AvisoLegal";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
+/* import Footer from "./components/Footer"; */
+/* import Navbar from "./components/Navbar"; */
 import "./index.css";
 import BoxIniciarSesin from "./components/BoxIniciarSesin";
-import MapComponent from "./components/MapComponent";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <div className='bg-slate-300 h-screen text-black flex'>
       <AuthContextProvider>
-        <Navbar />
+        {/*    <Navbar /> */}
         <Routes>
           <Route
             path='/'
@@ -33,8 +33,7 @@ function App() {
           <Route path='/BoxIniciarSesin' element={<BoxIniciarSesin />} />
         </Routes>
       </AuthContextProvider>
-      <MapComponent />
-      <Footer />
+      {/*  <Footer /> */}
     </div>
   );
 }
