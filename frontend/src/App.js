@@ -10,7 +10,6 @@ import AvisoLegal from "././components/AvisoLegal";
 /* import Navbar from "./components/Navbar"; */
 import "./index.css";
 import BoxIniciarSesin from "./components/BoxIniciarSesin";
-import Footer from "./components/Footer";
 import Calendar from "./components/Calendar/Index";
 import Chat from "./components/chat/Chat";
 
@@ -18,7 +17,7 @@ function App() {
   return (
     <div className="bg-slate-300 h-screen text-black flex">
       <AuthContextProvider>
-        {/*  {/*    <Navbar /> */} */}
+         {/*    <Navbar /> */} 
         <Routes>
           <Route
             path="/"
@@ -39,7 +38,7 @@ function App() {
           <Route path='/BoxIniciarSesin' element={<BoxIniciarSesin />} />
         </Routes>
       </AuthContextProvider>
-      {/* {/*  <Footer /> */} */}
+       {/*  <Footer /> */} 
     </div>
   );
 }
