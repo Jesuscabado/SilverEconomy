@@ -8,6 +8,8 @@ import Web from "./components/Web";
 import AvisoLegal from "././components/AvisoLegal";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import "./index.css";
+import BoxIniciarSesin from "./components/BoxIniciarSesin";
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/web' element={<Web />} />
           <Route path='/avisolegal' element={<AvisoLegal />} />
+          <Route path='/BoxIniciarSesin' element={<BoxIniciarSesin />} />
         </Routes>
       </AuthContextProvider>
       <Footer />
