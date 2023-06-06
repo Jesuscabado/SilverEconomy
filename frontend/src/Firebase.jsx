@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { getAuth } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 /* import { getAnalytics } from "firebase/analytics"; */
 import { v4 } from "uuid";
 /* import { getDatabase } from "firebase/database"; */
@@ -36,8 +37,8 @@ export const storage = getStorage(app);
 
 // Initialize Firebase Authentication and get a reference to the service
 export const auth = getAuth(app);
+export const db = getFirestore(app);
 export default app;
-
 /**
  * upload a file to firebase storage service
  * @param {File} file  archivo que se quiere subir

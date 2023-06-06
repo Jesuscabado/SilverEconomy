@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { uploadFile } from "../Firebase";
 import SideBar from "./SideBar";
-import Chat from "./chat/Chat";
 
 function Home() {
   const { user, logout, loading } = useAuth();

@@ -1,12 +1,20 @@
 import React, { useState } from "react";
-import { auth, db } from "../Firebase";
+import { auth, db } from "../../Firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-const SendMessage = (scroll) => {
+
+const style = {
+  form: `h-14 w-full max-w-[728px]  flex text-xl absolute bottom-0`,
+  input: `w-full text-xl p-3 bg-gray-900 text-white outline-none border-none`,
+  button: `w-[20%] bg-green-500`,
+};
+
+const SendMessage = ({ scroll }) => {
   const [input, setInput] = useState("");
-  const SendMessage = async (e) => {
+
+  const sendMessage = async (e) => {
     e.preventDefault();
     if (input === "") {
-      alert("Please enter a message");
+      alert("Please enter a valid message");
       return;
     }
     const { uid, displayName } = auth.currentUser;
@@ -21,17 +29,18 @@ const SendMessage = (scroll) => {
   };
 
   return (
-    <div>
-      <form onSubmit={SendMessage}>
-        <input
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          type="text"
-          placeholder="Message"
-        />
-        <button type="submit">Send</button>
-      </form>
-    </div>
+    <form onSubmit={sendMessage} className={style.form}>
+      <input
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        className={style.input}
+        type="text"
+        placeholder="Message"
+      />
+      <button className={style.button} type="submit">
+        Send
+      </button>
+    </form>
   );
 };
 

@@ -8,28 +8,31 @@ import Web from "./components/Web";
 import AvisoLegal from "././components/AvisoLegal";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import Chat from "./components/chat/Chat";
 
 function App() {
   return (
-    <div className='bg-slate-300 h-screen text-black flex'>
+    <div className="bg-slate-300 h-screen text-black flex">
       <AuthContextProvider>
-        <Navbar />
+        {/*  <Navbar /> */}
         <Routes>
           <Route
-            path='/'
+            path="/"
             element={
               <ProtectedRoute>
                 <Home />
+                <Chat />
               </ProtectedRoute>
             }
           />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='/web' element={<Web />} />
-          <Route path='/avisolegal' element={<AvisoLegal />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/web" element={<Web />} />
+          <Route path="/avisolegal" element={<AvisoLegal />} />
+          <Route path="/chat" element={<Chat />} />
         </Routes>
       </AuthContextProvider>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
