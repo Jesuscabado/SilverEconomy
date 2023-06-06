@@ -1,82 +1,49 @@
-import React, { useEffect, useState } from 'react';
-import { auth, firestore } from '../Firebase';
+import React, { useEffect, useState } from "react";
+import firebase from "firebase/compat/app";
+import "firebase/compat/database";
 
 const UserList = () => {
   const [users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState('');
 
   useEffect(() => {
-    const fetchUsers = async () => { // Crea una función asíncrona llamada fetchUsers
+    const getUsers = async () => {
       try {
-        const usersRef = firestore.collection('users'); // Obtiene una referencia a la colección "users"
-        const snapshot = await usersRef.get(); // Obtiene una instantánea de la colección "users"
-        const usersData = snapshot.docs.map((doc) => ({ // Mapea los documentos de la colección "users" y crea un nuevo array con los datos de cada documento
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setUsers(usersData);
+        const snapshot = await firebase.database().ref("usuarios").once("value");
+        const usersData = snapshot.val();
+        if (usersData) {
+          const usersArray = Object.keys(usersData).map((userId) => ({
+            id: userId,
+            ...usersData[userId],
+          }));
+          setUsers(usersArray);
+        }
       } catch (error) {
-        console.error('Error fetching users:', error);
+        console.log(error);
       }
     };
 
-    fetchUsers(); // Ejecuta la función fetchUsers
+    getUsers();
   }, []);
 
-  const handleDeleteUser = async (userId) => { // Elimina el usuario seleccionado
-    setLoading(true); // Actualiza el estado de loading a true
-
+  const handleDelete = async (userId) => {
     try {
-      await firestore.collection('users').doc(userId).delete(); // Elimina el documento de usuario en la colección "users"
-      setUsers((prevUsers) => prevUsers.filter((user) => user.id !== userId)); // Actualiza el estado de users eliminando el usuario seleccionado
-      setMessage('Usuario eliminado exitosamente.'); // Actualiza el estado de message con un mensaje de éxito
+      await firebase.database().ref(`usuarios/${userId}`).remove();
+      setUsers(users.filter((user) => user.id !== userId));
     } catch (error) {
-      console.error('Error deleting user:', error);
-      setMessage('Ocurrió un error al eliminar el usuario.');
+      console.log(error);
     }
-
-    setLoading(false);
   };
-
-  if (users.length === 0) {
-    return (
-      <div>
-        <h1>Panel de Administrador</h1>
-        <p>No hay usuarios disponibles.</p>
-        {message && <p>{message}</p>}
-      </div>
-    );
-  }
 
   return (
     <div>
-      <h1>Panel de Administrador</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Email</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user) => (
-            <tr key={user.id}>
-              <td>{user.id}</td>
-              <td>{user.name}</td>
-              <td>{user.email}</td>
-              <td>
-                <button onClick={() => handleDeleteUser(user.id)} disabled={loading}>
-                  {loading ? 'Eliminando...' : 'Eliminar'}
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      {message && <p>{message}</p>}
+      <h2>User List</h2>
+      {users.map((user) => (
+        <div key={user.id}>
+          <p>Email: {user.email}</p>
+          <p>Password: {user.password}</p>
+          <button onClick={() => handleDelete(user.id)}>Delete</button>
+        </div>
+      ))}
     </div>
   );
 };

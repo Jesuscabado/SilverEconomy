@@ -1,63 +1,74 @@
-import React, { useState } from "react";
-import { auth, firestore } from "../firebase";
+import React, { useEffect, useState } from "react";
+import firebase from "firebase/compat/app";
+import "firebase/compat/database";
 
-const UserEdit = ({ user }) => {
-  const [updatedUser, setUpdatedUser] = useState({
-    name: user.name,
-    email: user.email,
-  }); // Crea un nuevo estado para almacenar los valores de los campos de entrada
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
+const UserEdit = ({ userId }) => {
+  const [user, setUser] = useState({});
+  const [newEmail, setNewEmail] = useState("");
+  const [newPassword, setNewPassword] = useState("");
 
-  const handleUpdateUser = async () => {
-    // Actualiza el usuario seleccionado
-    if (!updatedUser.name || !updatedUser.email) {
-      // Valida que los campos de entrada no estén vacíos
-      setMessage("Por favor ingresa todos los campos");
-      return;
-    }
+  useEffect(() => {
+    const getUser = async () => {
+      try {
+        const snapshot = await firebase
+          .database()
+          .ref(`usuarios/${userId}`)
+          .once("value");
+        const userData = snapshot.val();
 
-    setLoading(true);
+        setUser(userData);
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
+    getUser();
+  }, [userId]);
+
+  const handleEdit = async () => {
     try {
-      // Actualiza el documento de usuario en la colección "users"
-      await firestore.collection("users").doc(user.id).update(updatedUser);
-      setMessage("Usuario actualizado exitosamente.");
-    } catch (error) {
-      console.error("Error updating user:", error);
-      setMessage("Ocurrió un error al actualizar el usuario.");
-    }
+      await firebase.database().ref(`usuarios/${userId}`).update({
+        email: newEmail,
+        password: newPassword,
+      });
 
-    setLoading(false);
+      // Aquí puedes realizar alguna acción adicional después de editar el usuario
+
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const handleInputChange = (e) => {
-    // Actualiza el estado de updatedUser con los valores de los campos de entrada
-    setUpdatedUser((prevUser) => ({
-      ...prevUser,
-      [e.target.name]: e.target.value,
-    }));
+  const handleDelete = async () => {
+    try {
+      await firebase.database().ref(`usuarios/${userId}`).remove();
+      // Aquí puedes realizar alguna acción adicional después de eliminar el usuario
+
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
-    <>
+    <div>
+      <h2>User Edit</h2>
+      <p>Email: {user.email}</p>
+      <p>Password: {user.password}</p>
       <input
         type="text"
-        name="name"
-        value={updatedUser.name}
-        onChange={handleInputChange}
+        placeholder="New Email"
+        value={newEmail}
+        onChange={(e) => setNewEmail(e.target.value)}
       />
       <input
-        type="email"
-        name="email"
-        value={updatedUser.email}
-        onChange={handleInputChange}
+        type="password"
+        placeholder="New Password"
+        value={newPassword}
+        onChange={(e) => setNewPassword(e.target.value)}
       />
-      <button onClick={handleUpdateUser} disabled={loading}>
-        {loading ? "Actualizando..." : "Guardar"}
-      </button>
-      {message && <p>{message}</p>}
-    </>
+      <button onClick={handleEdit}>Save</button>
+      <button onClick={handleDelete}>Delete</button>
+    </div>
   );
 };
 
