@@ -4,7 +4,6 @@ import "firebase/compat/database";
 import { useAuth } from "../context/AuthContext";
 import { uploadFile } from "../Firebase";
 
-
 function Home() {
   const { user, logout, loading } = useAuth();
   const [file, setFile] = useState(null);
@@ -12,19 +11,23 @@ function Home() {
   const [newEmail, setNewEmail] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [users, setUsers] = useState([]);
+  const [viewUsers, setViewUsers] = useState(false);
 
   useEffect(() => {
-    // Obtener la lista de usuarios de la base de datos
     const getUsers = async () => {
       try {
-        const snapshot = await firebase.database().ref("usuarios").once("value");
-        const data = snapshot.val();
-        if (data) {
-          const userList = Object.entries(data).map(([id, userData]) => ({
-            id,
-            ...userData,
-          }));
-          setUsers(userList);
+        if (user && user.isAdmin) {
+          const snapshot = await firebase.database().ref("usuarios").once("value");
+          const data = snapshot.val();
+          if (data) {
+            const userList = Object.entries(data).map(([id, userData]) => ({
+              id,
+              ...userData,
+            }));
+            setUsers(userList);
+          }
+        } else {
+          console.log("El usuario no tiene privilegios de administrador");
         }
       } catch (error) {
         console.log(error);
@@ -50,12 +53,9 @@ function Home() {
           password: newPassword,
         });
 
-        // Aquí puedes realizar alguna acción adicional después de editar el usuario
-
-        // Reinicia los valores de email y password
         setNewEmail("");
         setNewPassword("");
-        setEditing(false); // Desactiva el modo de edición
+        setEditing(false);
       }
     } catch (error) {
       console.log(error);
@@ -65,7 +65,6 @@ function Home() {
   const handleDeleteUser = async (userId) => {
     try {
       await firebase.database().ref(`usuarios/${userId}`).remove();
-      // Aquí puedes realizar alguna acción adicional después de eliminar el usuario
     } catch (error) {
       console.log(error);
     }
@@ -75,11 +74,15 @@ function Home() {
     try {
       e.preventDefault();
       const result = await uploadFile(file);
-      console.log(result); // tiene la URL del archivo
+      console.log(result);
     } catch (error) {
       console.log(error);
       alert("Hubo un error al subir el archivo");
     }
+  };
+
+  const handleViewUsers = () => {
+    setViewUsers(true);
   };
 
   if (loading) {
@@ -116,13 +119,21 @@ function Home() {
         ) : (
           <div>
             <button onClick={() => setEditing(true)}>Edit</button>
-            {users.map((user) => (
-              <div key={user.id}>
-                <p>Email: {user.email}</p>
-                <p>Password: {user.password}</p>
-                <button onClick={() => handleDeleteUser(user.id)}>Delete</button>
+            {user && user.isAdmin && (
+              <button onClick={handleViewUsers}>View Users</button>
+            )}
+            {viewUsers && (
+              <div>
+                <h2>Lista de usuarios:</h2>
+                {users.map((user) => (
+                  <div key={user.id}>
+                    <p>Email: {user.email}</p>
+                    <p>Password: {user.password}</p>
+                    <button onClick={() => handleDeleteUser(user.id)}>Delete</button>
+                  </div>
+                ))}
               </div>
-            ))}
+            )}
           </div>
         )}
         <form onSubmit={handleSubmit}>
