@@ -25,11 +25,17 @@ function Login() {
       await login(user.email, user.password);
       navigate("/");
     } catch (error) {
+      console.log(error);
       // para cambiar el mensaje de error de firebase por uno pesolalizado
       /* console.log(error.code);
       if(error.code === "auth/email-already-in-use"){
         setError("El correo ya esta en uso"); */
-      setError(error.message);
+      setError(
+        error.message
+          .replace("Firebase: Error ", "")
+          .split("/")[1]
+          .replace(/[).]+$/, "")
+      );
     }
   };
 
@@ -95,13 +101,13 @@ function Login() {
 
         <div className='flex items-center justify-between'>
           <button
-            className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
+            className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
             type='submit'
           >
             Sign In
           </button>
           <a
-            className='inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800'
+            className='inline-block align-baseline font-bold text-sm text-red-500 hover:text-red-800'
             href='#!'
             onClick={handleResetPassword}
           >
@@ -117,7 +123,7 @@ function Login() {
       </button>
       <p className='my-4 text-sm flex justify-between px-3'>
         Don't have an account?
-        <Link to='/register' className='text-blue-700 hover:text-blue-900'>
+        <Link to='/register' className='text-red-700 hover:text-red-900'>
           Register
         </Link>
       </p>

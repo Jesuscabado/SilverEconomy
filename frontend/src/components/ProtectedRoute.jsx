@@ -9,3 +9,6 @@ export function ProtectedRoute({ children }) {
 
   return <>{children}</>;
 }
+
+  return <>{children}</>;
+}

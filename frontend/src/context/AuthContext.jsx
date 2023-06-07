@@ -51,8 +51,8 @@ export function AuthContextProvider({ children }) {
     console.log("signup", email, password, rol);
   };
  */
-  const login = (email, password) => {
-    signInWithEmailAndPassword(auth, email, password);
+  const login = async (email, password) => {
+    await signInWithEmailAndPassword(auth, email, password);
     console.log("login", email, password);
   };
 
@@ -79,6 +79,23 @@ export function AuthContextProvider({ children }) {
 
     return () => unsubscribe();
   }, []);
+
+  return (
+    <authContext.Provider
+      value={{
+        signup,
+        login,
+        user,
+        logout,
+        loading,
+        loginWithGoogle,
+        resetPassword,
+      }}
+    >
+      {children}
+    </authContext.Provider>
+  );
+}
 
   return (
     <authContext.Provider

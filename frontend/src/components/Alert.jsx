@@ -9,3 +9,5 @@ function Alert({ message }) {
 }
 
 export default Alert;
+
+export default Alert;

@@ -4,14 +4,20 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import { AuthContextProvider } from "./context/AuthContext";
 import { ProtectedRoute } from "./components/ProtectedRoute";
-import FileUpload from "./components/FileUpload";
-import UserList from "./admin/UserList";
-
+import Web from "./components/Web";
+import AvisoLegal from "././components/AvisoLegal";
+/* import Footer from "./components/Footer"; */
+/* import Navbar from "./components/Navbar"; */
+import "./index.css";
+import BoxIniciarSesin from "./components/BoxIniciarSesin";
+import Footer from "./components/Footer";
+import Calendar from "./components/Calendar/Index";
 
 function App() {
   return (
     <div className='bg-slate-300 h-screen text-black flex'>
       <AuthContextProvider>
+        {/*    <Navbar /> */}
         <Routes>
           <Route
             path='/'
@@ -23,10 +29,14 @@ function App() {
           />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
-          <Route path='/upload' element={<FileUpload />} />
-          <Route path="/admin/users" element ={<UserList />} />
+          <Route path='/web' element={<Web />} />
+          <Route path='/avisolegal' element={<AvisoLegal />} />
+          <Route path='/calendar' element={<Calendar />} />
+
+          <Route path='/BoxIniciarSesin' element={<BoxIniciarSesin />} />
         </Routes>
       </AuthContextProvider>
+      {/*  <Footer /> */}
     </div>
   );
 }

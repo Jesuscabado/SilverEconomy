@@ -5,3 +5,5 @@ function UserView() {
 }
 
 export default UserView;
+
+export default UserView;
