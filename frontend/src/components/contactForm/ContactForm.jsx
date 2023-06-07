@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HandleSubmit } from "../Home";
+import { uploadFile } from "../../Firebase";
 const Paso1 = ({ nextStep }) => {
   const [demanda, setDemanda] = useState("");
   const [departamento, setDepartamento] = useState("");
@@ -109,8 +109,7 @@ const Paso1 = ({ nextStep }) => {
   );
 };
 
-const Paso2 = ({ nextStep, demanda, HandleSubmit }) => {
-  const [motivo, setMotivo] = useState("");
+const Paso2 = ({ nextStep }) => {
   const [idioma, setIdioma] = useState("");
   const [file, setFile] = useState(null);
   const tiposArchivoPermitidos = [
@@ -129,17 +128,24 @@ const Paso2 = ({ nextStep, demanda, HandleSubmit }) => {
     "pps",
   ];
 
-  const handleMotivoChange = (event) => {
-    setMotivo(event.target.value);
-  };
-
   const handleIdiomaChange = (event) => {
     setIdioma(event.target.value);
   };
 
   const handleNextStep = () => {
-    if (motivo !== "" && idioma !== "") {
+    if (idioma !== "") {
       nextStep();
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      const result = await uploadFile(file);
+      console.log(result); // tiene la URL del archivo
+    } catch (error) {
+      console.log(error);
+      alert("Hubo un error al subir el archivo");
     }
   };
 
@@ -151,14 +157,12 @@ const Paso2 = ({ nextStep, demanda, HandleSubmit }) => {
         <br />
         <textarea
           placeholder="Explicanos sobre qué quieres realizar tu consulta, sugerencia o comunicación o de qué quieres quejarte"
-          value={motivo}
-          onChange={handleMotivoChange}
           rows={4}
           cols={50}
         />
       </label>
       <br />
-      <form onSubmit={HandleSubmit} method="GET" encType="multipart/form-data">
+      <form onSubmit={handleSubmit} encType="multipart/form-data">
         <input
           type="file"
           name="file"
@@ -180,10 +184,7 @@ const Paso2 = ({ nextStep, demanda, HandleSubmit }) => {
         </select>
       </label>
       <br />
-      <button
-        onClick={handleNextStep}
-        disabled={motivo === "" || idioma === ""}
-      >
+      <button onClick={handleNextStep} disabled={idioma === ""}>
         Siguiente
       </button>
     </div>
