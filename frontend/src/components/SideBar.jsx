@@ -27,7 +27,7 @@ function SideBar() {
             </div>
             <ul className='nav'>
               <li>
-                <a href='./user.html'>
+                <a href='./profile'>
                   <FontAwesomeIcon icon={faUser} /> <p>Profile</p>
                 </a>
               </li>
