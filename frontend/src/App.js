@@ -10,6 +10,8 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import "./index.css";
 import BoxIniciarSesin from "./components/BoxIniciarSesin";
+import Profile from "./components/Profile";
+
 
 function App() {
   return (
@@ -30,6 +32,7 @@ function App() {
           <Route path='/web' element={<Web />} />
           <Route path='/avisolegal' element={<AvisoLegal />} />
           <Route path='/BoxIniciarSesin' element={<BoxIniciarSesin />} />
+          <Route path='/Profile' element={<Profile />} />
         </Routes>
       </AuthContextProvider>
       <Footer />

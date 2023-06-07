@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { getAuth } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 /* import { getAnalytics } from "firebase/analytics"; */
 import { v4 } from "uuid";
 /* import { getDatabase } from "firebase/database"; */
@@ -21,34 +22,30 @@ const firebaseConfig = {
   measurementId: "G-GX73D1WJXW",
 };
 
-export const provider = new GoogleAuthProvider();
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// Initialize Realtime Database and get a reference to the service
-/* const database = getDatabase(app);
+export const provider = new GoogleAuthProvider();
 
-const analytics = getAnalytics(app);
- */
 // Initialize Cloud Storage and get a reference to the service
 export const storage = getStorage(app);
 
 // Initialize Firebase Authentication and get a reference to the service
 export const auth = getAuth(app);
+
 export default app;
 
 /**
- * upload a file to firebase storage service
- * @param {File} file  archivo que se quiere subir
- * @returns {Promise <string>}  url del archivo subido
+ * Upload a file to Firebase Storage service.
+ * @param {File} file - Archivo que se quiere subir.
+ * @returns {Promise<string>} - URL del archivo subido.
  */
-
-// para subir archivo a storage service cualquier tipo de archivo
-
 export async function uploadFile(file) {
-  const storageRef = ref(storage, v4()); // cambiar el nombre en funcion del ususario sino todos subiran como avatar
+  const storageRef = ref(storage, v4());
   await uploadBytes(storageRef, file);
   const url = await getDownloadURL(storageRef);
   return url;
 }
+
+// Initialize Firestore and get a reference to the service
+export const firestore = getFirestore(app);
