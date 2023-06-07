@@ -10,10 +10,8 @@ import AvisoLegal from "././components/AvisoLegal";
 /* import Navbar from "./components/Navbar"; */
 import "./index.css";
 import BoxIniciarSesin from "./components/BoxIniciarSesin";
-
 import Footer from "./components/Footer";
 import Calendar from "./components/Calendar/Index";
-
 import Profile from "./components/Profile";
 
 function App() {

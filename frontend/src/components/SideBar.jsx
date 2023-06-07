@@ -27,9 +27,9 @@ function SideBar() {
             </div>
             <ul className='nav'>
               <li>
-                <a href='./profile'>
+                <Link to='/profile'>
                   <FontAwesomeIcon icon={faUser} /> <p>Profile</p>
-                </a>
+                </Link>
               </li>
               <li className='active '>
                 <a href='./dashboard.html'>
