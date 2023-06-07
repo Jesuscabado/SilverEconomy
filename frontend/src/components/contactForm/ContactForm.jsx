@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { HandleSubmit } from "../Home";
 const Paso1 = ({ nextStep }) => {
   const [demanda, setDemanda] = useState("");
   const [departamento, setDepartamento] = useState("");
@@ -109,10 +109,10 @@ const Paso1 = ({ nextStep }) => {
   );
 };
 
-const Paso2 = ({ nextStep, demanda }) => {
+const Paso2 = ({ nextStep, demanda, HandleSubmit }) => {
   const [motivo, setMotivo] = useState("");
-  const [archivos, setArchivos] = useState([]);
   const [idioma, setIdioma] = useState("");
+  const [file, setFile] = useState(null);
   const tiposArchivoPermitidos = [
     "pdf",
     "doc",
@@ -133,14 +133,6 @@ const Paso2 = ({ nextStep, demanda }) => {
     setMotivo(event.target.value);
   };
 
-  const handleArchivoChange = (event) => {
-    const files = Array.from(event.target.files);
-    const archivosValidos = files.filter((file) =>
-      tiposArchivoPermitidos.includes(file.type.split("/")[1])
-    );
-    setArchivos(archivosValidos);
-  };
-
   const handleIdiomaChange = (event) => {
     setIdioma(event.target.value);
   };
@@ -158,7 +150,7 @@ const Paso2 = ({ nextStep, demanda }) => {
         Motivo de la consulta:
         <br />
         <textarea
-          placeholder="Explicanos sobre que quieres realizar tu consulta, suguerencia o comunicacion o de que queires quejarte"
+          placeholder="Explicanos sobre qué quieres realizar tu consulta, sugerencia o comunicación o de qué quieres quejarte"
           value={motivo}
           onChange={handleMotivoChange}
           rows={4}
@@ -166,11 +158,17 @@ const Paso2 = ({ nextStep, demanda }) => {
         />
       </label>
       <br />
-      <label>
-        Adjuntar archivos (opcional):
-        <br />
-        <input type="file" multiple onChange={handleArchivoChange} />
-      </label>
+      <form onSubmit={HandleSubmit} method="GET" encType="multipart/form-data">
+        <input
+          type="file"
+          name="file"
+          id="file"
+          onChange={(e) => setFile(e.target.files[0])}
+        />
+        <button className="bg-red-500 hover:bg-red-700 rounded py-2 px-4 text-white">
+          Adjuntar archivo
+        </button>
+      </form>
       <br />
       <label>
         Idioma de respuesta:
