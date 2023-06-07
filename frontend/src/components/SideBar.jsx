@@ -18,71 +18,71 @@ function SideBar() {
   return (
     <div>
       <div>
-        <div className='sidebar'>
-          <div className='sidebar-wrapper'>
-            <div className='logo'>
-              <a href='#' className='simple-text logo-mini'>
+        <div className="sidebar">
+          <div className="sidebar-wrapper">
+            <div className="logo">
+              <a href="#" className="simple-text logo-mini">
                 Soledaptive
               </a>
             </div>
-            <ul className='nav'>
+            <ul className="nav">
               <li>
-                <a href='./user.html'>
+                <a href="./user.html">
                   <FontAwesomeIcon icon={faUser} /> <p>Profile</p>
                 </a>
               </li>
-              <li className='active '>
-                <a href='./dashboard.html'>
+              <li className="active ">
+                <a href="./dashboard.html">
                   <FontAwesomeIcon icon={faChartPie} /> <p>Dashboard</p>
                 </a>
               </li>
               <li>
-                <Link to='/calendar'>
+                <Link to="/calendar">
                   <FontAwesomeIcon icon={faCalendarAlt} />
                   <p>Agenda/Calendario</p>
                 </Link>
               </li>
               <li>
-                <a href='./map.html'>
+                <a href="./map.html">
                   <FontAwesomeIcon icon={faFileAlt} />
 
                   <p>Informes y Articulos</p>
                 </a>
               </li>
               <li>
-                <a href='./notifications.html'>
+                <a href="./notifications.html">
                   <FontAwesomeIcon icon={faBell} />
                   <p>Notifications</p>
                 </a>
               </li>
 
               <li>
-                <a href='./tables.html'>
+                <a href="./tables.html">
                   <FontAwesomeIcon icon={faTasks} />
                   <p>Programas</p>
                 </a>
               </li>
               <li>
-                <a href='./typography.html'>
+                <a href="./typography.html">
                   <FontAwesomeIcon icon={faClipboardList} />
                   <p>Plan de acciones</p>
                 </a>
               </li>
               <li>
-                <a href='./rtl.html'>
+                <a href="./rtl.html">
                   <FontAwesomeIcon icon={faGlobe} />
 
                   <p>Retos</p>
                 </a>
               </li>
-              <li className='active-pro'>
-                <a href='./upgrade.html'>
+              <li className="active-pro">
+                <Link to="/Chat">
                   <FontAwesomeIcon icon={faComments} />
                   <p>Chat</p>
-                </a>
+                </Link>
               </li>
-              <li className='active-pro'>
-                <Link to='/BoxIniciarSesin'>
+              <li className="active-pro">
+                <Link to="/BoxIniciarSesin">
                   <p>Chat</p>
                 </Link>
               </li>

@@ -12,33 +12,35 @@ import "./index.css";
 import BoxIniciarSesin from "./components/BoxIniciarSesin";
 import Calendar from "./components/Calendar/Index";
 import Chat from "./components/chat/Chat";
+import ContactForm from "./components/contactForm/ContactForm";
 
 function App() {
   return (
     <div className="bg-slate-300 h-screen text-black flex">
       <AuthContextProvider>
-         {/*    <Navbar /> */} 
+        {/*    <Navbar /> */}
         <Routes>
           <Route
             path="/"
             element={
               <ProtectedRoute>
                 <Home />
-                <Chat />
               </ProtectedRoute>
             }
           />
+
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/web" element={<Web />} />
+          <Route path="/contact" element={<ContactForm />} />
           <Route path="/avisolegal" element={<AvisoLegal />} />
           <Route path="/chat" element={<Chat />} />
-          <Route path='/calendar' element={<Calendar />} />
+          <Route path="/calendar" element={<Calendar />} />
 
-          <Route path='/BoxIniciarSesin' element={<BoxIniciarSesin />} />
+          <Route path="/BoxIniciarSesin" element={<BoxIniciarSesin />} />
         </Routes>
       </AuthContextProvider>
-       {/*  <Footer /> */} 
+      {/*  <Footer /> */}
     </div>
   );
 }
