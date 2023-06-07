@@ -30,18 +30,18 @@ services:
     volumes:
       - ./backend:/usr/src/app
       - exclude:/usr/src/app/node_modules/
-  react:
-    build: ./frontend
-    container_name: react-silvereconomy
-    restart: always
-    ports:
-      - 3050:3000
-    depends_on:
-      - node
-    networks:
-      - silvereconomy
-    volumes:
-      - ./front:/usr/src/app
+#  react:
+#    build: ./frontend
+#   container_name: react-silvereconomy
+#    restart: always
+#    ports:
+#     - 3050:3000
+#  depends_on:
+#     - node
+#   networks:
+#     - silvereconomy
+#   volumes:
+#     - ./front:/usr/src/app
 volumes:
   exclude:
 networks:
