@@ -96,20 +96,3 @@ export function AuthContextProvider({ children }) {
     </authContext.Provider>
   );
 }
-
-  return (
-    <authContext.Provider
-      value={{
-        signup,
-        login,
-        user,
-        logout,
-        loading,
-        loginWithGoogle,
-        resetPassword,
-      }}
-    >
-      {children}
-    </authContext.Provider>
-  );
-}

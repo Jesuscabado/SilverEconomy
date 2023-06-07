@@ -12,6 +12,7 @@ import "./index.css";
 import BoxIniciarSesin from "./components/BoxIniciarSesin";
 import Footer from "./components/Footer";
 import Calendar from "./components/Calendar/Index";
+import Profile from "./components/Profile";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path='/web' element={<Web />} />
           <Route path='/avisolegal' element={<AvisoLegal />} />
           <Route path='/calendar' element={<Calendar />} />
+          <Route path='/profile' element={<Profile/>} />
 
           <Route path='/BoxIniciarSesin' element={<BoxIniciarSesin />} />
         </Routes>
