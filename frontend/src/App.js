@@ -12,6 +12,8 @@ import "./index.css";
 
 /* import Footer from "./components/Footer"; */
 import Calendar from "./components/Calendar/Index";
+import Modelo from "./components/modelo/Modelo";
+import MapeoViveSolo from "./components/modelo/MapeoViveSolo";
 
 function App() {
   return (
@@ -32,6 +34,7 @@ function App() {
           <Route path='/web' element={<Web />} />
           <Route path='/avisolegal' element={<AvisoLegal />} />
           <Route path='/calendar' element={<Calendar />} />
+          <Route path='/modelo' element={<Modelo />} />
         </Routes>
       </AuthContextProvider>
       {/*  <Footer /> */}
