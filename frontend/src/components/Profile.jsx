@@ -40,6 +40,8 @@ const Users = () => {
         )
       );
       setEditingUserId(null);
+      setEmail('');
+      setRol('');
     } catch (error) {
       console.error('Error updating usuario: ', error);
     }
