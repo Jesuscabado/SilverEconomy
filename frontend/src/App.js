@@ -13,6 +13,10 @@ import BoxIniciarSesin from "./components/BoxIniciarSesin";
 import Footer from "./components/Footer";
 import Calendar from "./components/Calendar/Index";
 import Profile from "./components/Profile";
+import Entidades from "./components/Entidades";
+import Accessibilidad from "./components/Accesibilidad";
+import MapaWeb from "./components/MapaWeb";
+import Cookies from './components/Cookies';
 
 function App() {
   return (
@@ -32,10 +36,14 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/web' element={<Web />} />
           <Route path='/avisolegal' element={<AvisoLegal />} />
+          <Route path='/entidades' element={<Entidades/>} />
           <Route path='/calendar' element={<Calendar />} />
           <Route path='/profile' element={<Profile/>} />
-
+          <Route path='/accessibilidad' element={<Accessibilidad/>} />
+          <Route path='/mapaWeb' element={<MapaWeb/>} />
+          <Route path='/cookies' element={<Cookies/>} />
           <Route path='/BoxIniciarSesin' element={<BoxIniciarSesin />} />
+
         </Routes>
       </AuthContextProvider>
       {/*  <Footer /> */}
