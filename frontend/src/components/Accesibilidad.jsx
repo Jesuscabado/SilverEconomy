@@ -1,6 +1,6 @@
 
 
-const Accessibilidad = () => {
+const Accesibilidad = () => {
 
   return (
     <div>
@@ -112,4 +112,4 @@ const Accessibilidad = () => {
   );
 }
 
-export default Accessibilidad;
+export default Accesibilidad;
