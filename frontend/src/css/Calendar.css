@@ -1,0 +1,4 @@
+.my-custom-event-style .fc-content {
+  background-color: #ff0000; /* Cambia el color de fondo del contenido del evento */
+  color: #ffffff; /* Cambia el color del texto del contenido del evento */
+}

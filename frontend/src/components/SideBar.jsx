@@ -86,6 +86,11 @@ function SideBar() {
                   <p>Chat</p>
                 </Link>
               </li>
+              <li className='active-pro'>
+                <Link to='/#'>
+                  <p>Chat</p>
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

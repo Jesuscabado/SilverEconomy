@@ -9,8 +9,8 @@ import AvisoLegal from "././components/AvisoLegal";
 /* import Footer from "./components/Footer"; */
 /* import Navbar from "./components/Navbar"; */
 import "./index.css";
-import BoxIniciarSesin from "./components/BoxIniciarSesin";
-import Footer from "./components/Footer";
+
+/* import Footer from "./components/Footer"; */
 import Calendar from "./components/Calendar/Index";
 
 function App() {
@@ -32,8 +32,6 @@ function App() {
           <Route path='/web' element={<Web />} />
           <Route path='/avisolegal' element={<AvisoLegal />} />
           <Route path='/calendar' element={<Calendar />} />
-
-          <Route path='/BoxIniciarSesin' element={<BoxIniciarSesin />} />
         </Routes>
       </AuthContextProvider>
       {/*  <Footer /> */}
