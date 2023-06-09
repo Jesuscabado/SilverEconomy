@@ -46,7 +46,7 @@ function Modelo({
     const obtenerModelo = async () => {
       try {
         const respuesta = await fetch(
-          `http://localhost:5000/userpred?edad=${edadSeleccionada}&estado_civil=${estadoCivilSeleccionado}&sexo=${seleccionSexo}&nivel_estudios=${nivelEstudiosSeleccionado}&psicofarmacos=${psicofarmacoSeleccionado}&vive_solo=${viveSoloSeleccionado}&hijos=${hijosSeleccionado}&ascensor=${ascensorSeleccionado}&act_fisica=${nivelActividad}&lim_fisica=${limFisicaSeleccionada}&estado_animo=${estadoAnimoSeleccionado}&satisfaccion_vida=${satisfaccionSeleccionada}&ingresos_economicos=${ingresosSeleccionados}&red_apoyo_familiar=${redSeleccionada}&cohesion_social=${cohesionSocial}&municipio_accesible=${municipioSeleccionado}&municipio_rec_social=${municipioRecSocial}&municipio_rec_ocio=${municipioOcioSeleccionado}`
+          `http://lilicasanova.pythonanywhere.com:5000/userpred?edad=${edadSeleccionada}&estado_civil=${estadoCivilSeleccionado}&sexo=${seleccionSexo}&nivel_estudios=${nivelEstudiosSeleccionado}&psicofarmacos=${psicofarmacoSeleccionado}&vive_solo=${viveSoloSeleccionado}&hijos=${hijosSeleccionado}&ascensor=${ascensorSeleccionado}&act_fisica=${nivelActividad}&lim_fisica=${limFisicaSeleccionada}&estado_animo=${estadoAnimoSeleccionado}&satisfaccion_vida=${satisfaccionSeleccionada}&ingresos_economicos=${ingresosSeleccionados}&red_apoyo_familiar=${redSeleccionada}&cohesion_social=${cohesionSocial}&municipio_accesible=${municipioSeleccionado}&municipio_rec_social=${municipioRecSocial}&municipio_rec_ocio=${municipioOcioSeleccionado}`
         ); // Reemplaza los valores con los datos adecuados
         const datos = await respuesta.json();
         setModelo(datos.modelo);

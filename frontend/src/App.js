@@ -1,10 +1,10 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
+import Home from "./components/Web";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import { AuthContextProvider } from "./context/AuthContext";
 import { ProtectedRoute } from "./components/ProtectedRoute";
-import Web from "./components/Web";
+import Web from "./components/Home";
 import AvisoLegal from "././components/AvisoLegal";
 /* import Footer from "./components/Footer"; */
 /* import Navbar from "./components/Navbar"; */
@@ -24,18 +24,18 @@ function App() {
             path='/'
             element={
               <ProtectedRoute>
-                <Home />
+                <Web />
               </ProtectedRoute>
             }
           />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
-          <Route path='/web' element={<Web />} />
+          <Route path='/Home' element={<Home />} />
           <Route path='/avisolegal' element={<AvisoLegal />} />
           <Route path='/calendar' element={<Calendar />} />
           <Route path='/modelo' element={<Modelo />} />
           {/*           <Route path='/profile' element={<Profile />} />
-           */}{" "}
+           */}
         </Routes>
       </AuthContextProvider>
       {/*  <Footer /> */}
