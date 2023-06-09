@@ -16,3 +16,7 @@
   color: cmyk(0, 100, 100, 10);
   font-family: montserrat;
 }
+
+body {
+  background-color: #e0eaeb;
+}

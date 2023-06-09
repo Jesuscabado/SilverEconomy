@@ -44,7 +44,7 @@ function Web() {
   const odsContainerStyles = {
     width: "100vw",
     height: "50vh",
-    backgroundColor: "lightgray",
+
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
