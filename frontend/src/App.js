@@ -13,7 +13,6 @@ import BoxIniciarSesin from "./components/BoxIniciarSesin";
 import Calendar from "./components/Calendar/Index";
 import Chat from "./components/chat/Chat";
 import ContactForm from "./components/contactForm/ContactForm";
-import MUNICIPIO_REC_OCIO from "./components/modelo/MUNICIPIO_REC_OCIO";
 function App() {
   return (
     <div className="bg-slate-300 h-screen text-black flex">
@@ -36,7 +35,6 @@ function App() {
           <Route path="/avisolegal" element={<AvisoLegal />} />
           <Route path="/chat" element={<Chat />} />
           <Route path="/calendar" element={<Calendar />} />
-          <Route path="/MUNICIPIO_REC_OCIO" element={<MUNICIPIO_REC_OCIO />} />
           <Route path="/BoxIniciarSesin" element={<BoxIniciarSesin />} />
         </Routes>
       </AuthContextProvider>
