@@ -8,12 +8,11 @@ import Web from "./components/Web";
 import AvisoLegal from "././components/AvisoLegal";
 /* import Footer from "./components/Footer"; */
 /* import Navbar from "./components/Navbar"; */
-import "./index.css";
-
+/* import Profile from "./components/Profile";
+ */ import "./index.css";
 /* import Footer from "./components/Footer"; */
 import Calendar from "./components/Calendar/Index";
 import Modelo from "./components/modelo/Modelo";
-import MapeoViveSolo from "./components/modelo/MapeoViveSolo";
 
 function App() {
   return (
@@ -35,6 +34,8 @@ function App() {
           <Route path='/avisolegal' element={<AvisoLegal />} />
           <Route path='/calendar' element={<Calendar />} />
           <Route path='/modelo' element={<Modelo />} />
+          {/*           <Route path='/profile' element={<Profile />} />
+           */}{" "}
         </Routes>
       </AuthContextProvider>
       {/*  <Footer /> */}

@@ -25,11 +25,11 @@ function SideBar() {
             <div>{user.displayName || user.email.split("@")[0]}</div>
             <ul className='nav'>
               <li>
-                <a href='./user.html'>
+                <Link to='/profile'>
                   <FontAwesomeIcon className='icono' icon={faUser} />
 
                   <p>Profile</p>
-                </a>
+                </Link>
               </li>
 
               <li>
