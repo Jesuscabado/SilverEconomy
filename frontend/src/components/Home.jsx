@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { uploadFile } from "../Firebase";
 import SideBar from "./SideBar";
-import Footer from "./Footer";
 import "../css/Grid.css";
 
 function Home() {
@@ -72,8 +71,6 @@ function Home() {
         <div className='grid-item item5'>50% pobres </div>
         <div className='grid-item item6'>6 viudos</div>
       </div>
-      
-      <Footer />
     </div>
   );
 }

@@ -16,6 +16,10 @@ import Entidades from "./components/Entidades";
 import Accesibilidad from "./components/Accesibilidad";
 import MapaWeb from "./components/MapaWeb";
 import Cookies from './components/Cookies';
+import Acciones from "./components/Acciones";
+import Ods from "./components/Ods";
+import Agenda from "./components/Agenda";
+
 
 function App() {
   return (
@@ -42,6 +46,9 @@ function App() {
           <Route path='/mapaWeb' element={<MapaWeb/>} />
           <Route path='/cookies' element={<Cookies/>} />
           <Route path='/BoxIniciarSesin' element={<BoxIniciarSesin />} />
+          <Route path='/acciones' element={<Acciones />} />
+          <Route path='/ods' element={<Ods />} />
+          <Route path='/agenda' element={<Agenda />} />
 
         </Routes>
       </AuthContextProvider>
