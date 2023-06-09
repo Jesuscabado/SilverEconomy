@@ -162,6 +162,7 @@ const Paso2 = ({ nextStep }) => {
         />
       </label>
       <br />
+      {/*  formulario de subir archivo */}
       <form onSubmit={handleSubmit} encType="multipart/form-data">
         <input
           type="file"

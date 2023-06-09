@@ -14,7 +14,7 @@ const Chat = () => {
   const scroll = useRef();
 
   useEffect(() => {
-    const q = query(collection(db, "messages"), orderBy("timestamp"));
+    const q = query(collection(db, "messages"), orderBy("timestamp"), limit(5));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let messages = [];
       querySnapshot.forEach((doc) => {
@@ -34,7 +34,7 @@ const Chat = () => {
             <Message key={message.id} message={message} />
           ))}
       </main>
-      {/* Send Message Compoenent */}
+      {/* Send Message Component */}
       <SendMessage scroll={scroll} />
       <span ref={scroll}></span>
     </>
