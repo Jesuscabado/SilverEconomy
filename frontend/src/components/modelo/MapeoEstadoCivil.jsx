@@ -2,8 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 function MapeoEstadoCivil() {
-  const [estadoCivilSeleccionado, setEstadoCivilSeleccionado] =
-    useState("soltero");
+  const [estadoCivilSeleccionado, setEstadoCivilSeleccionado] = useState("");
   const [estadoCivilMapeado, setEstadoCivilMapeado] = useState(null);
 
   const mapeoEstadoCivil = {
@@ -29,6 +28,7 @@ function MapeoEstadoCivil() {
         value={estadoCivilSeleccionado}
         onChange={handleChangeEstadoCivil}
       >
+        <option value=''>selecciona una opción</option>
         {Object.keys(mapeoEstadoCivil).map((estadoCivil) => (
           <option key={estadoCivil} value={estadoCivil}>
             {estadoCivil}

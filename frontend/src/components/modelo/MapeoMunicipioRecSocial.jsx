@@ -23,7 +23,7 @@ function MapeoMunicipioRecSocial() {
   return (
     <div>
       <select value={municipioRecSocial} onChange={handleChangeMunicipio}>
-        <option value=''>Seleccionar municipio</option>
+        <option value=''>selecciona una opción</option>{" "}
         <option value='rec social bajo'>Rec Social Bajo</option>
         <option value='rec social medio'>Rec Social Medio</option>
         <option value='rec social alto'>Rec Social Alto</option>

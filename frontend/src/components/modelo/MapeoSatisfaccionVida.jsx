@@ -2,8 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 function MapeoSatisfaccionVida() {
-  const [satisfaccionSeleccionada, setSatisfaccionSeleccionada] =
-    useState("poco satisfecho");
+  const [satisfaccionSeleccionada, setSatisfaccionSeleccionada] = useState("");
   const [satisfaccionMapeada, setSatisfaccionMapeada] = useState(null);
 
   const mapearSatisfaccion = (satisfaccion) => {
@@ -30,6 +29,7 @@ function MapeoSatisfaccionVida() {
         value={satisfaccionSeleccionada}
         onChange={handleChangeSatisfaccion}
       >
+        <option value=''>selecciona una opción</option>
         <option value='poco satisfecho'>Poco satisfecho</option>
         <option value='satisfecho medio'>Satisfecho medio</option>
         <option value='muy satisfecho'>Muy satisfecho</option>

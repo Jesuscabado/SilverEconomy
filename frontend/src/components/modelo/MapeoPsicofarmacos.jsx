@@ -25,7 +25,8 @@ function MapeoPsicofarmacos() {
         value={psicofarmacoSeleccionado}
         onChange={handleChangePsicofarmaco}
       >
-        <option value=''>Seleccione un psicofármaco</option>
+        {" "}
+        <option value=''>selecciona una opción</option>
         {Object.keys(mapeo_psicofarmacos).map((psicofarmaco) => (
           <option key={psicofarmaco} value={psicofarmaco}>
             {psicofarmaco}

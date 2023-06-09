@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 function MapeoRedApoyoFamiliar() {
-  const [redSeleccionada, setRedSeleccionada] = useState("sin red");
+  const [redSeleccionada, setRedSeleccionada] = useState("");
   const [redMapeada, setRedMapeada] = useState(null);
 
   const mapeoRedApoyoFamiliar = {
@@ -23,6 +23,7 @@ function MapeoRedApoyoFamiliar() {
   return (
     <div>
       <select value={redSeleccionada} onChange={handleChangeRed}>
+        <option value=''>selecciona una opción</option>
         <option value='sin red'>Sin red</option>
         <option value='red: 1 a 5'>Red: 1 a 5</option>
         <option value='red: mas de 5'>Red: más de 5</option>

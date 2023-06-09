@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 function MapeoSexo() {
-  const [sexoSeleccionado, setSexoSeleccionado] = useState("hombre");
+  const [sexoSeleccionado, setSexoSeleccionado] = useState("");
   const [sexoMapeado, setSexoMapeado] = useState(null);
 
   const mapeoSexos = {
@@ -22,6 +22,7 @@ function MapeoSexo() {
   return (
     <div>
       <select value={sexoSeleccionado} onChange={handleChangeSexo}>
+        <option value=''>selecciona una opción</option>{" "}
         <option value='hombre'>Hombre</option>
         <option value='mujer'>Mujer</option>
       </select>

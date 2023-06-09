@@ -23,7 +23,7 @@ function MapeoMunicipioAccesible() {
   return (
     <div>
       <select value={municipioSeleccionado} onChange={handleChangeMunicipio}>
-        <option value=''>Seleccionar municipio</option>
+        <option value=''>selecciona una opción</option>{" "}
         <option value='poco accesible'>Poco accesible</option>
         <option value='medio_accesible'>Medio accesible</option>
         <option value='accesibilidad alta'>Accesibilidad alta</option>

@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 function MapeoViveSolo() {
-  const [viveSoloSeleccionado, setViveSoloSeleccionado] = useState("si");
+  const [viveSoloSeleccionado, setViveSoloSeleccionado] = useState("");
   const [viveSoloMapeado, setViveSoloMapeado] = useState(null);
 
   const mapeoViveSolo = {
@@ -22,6 +22,7 @@ function MapeoViveSolo() {
   return (
     <div>
       <select value={viveSoloSeleccionado} onChange={handleChangeViveSolo}>
+        <option value=''>selecciona una opción</option>
         <option value='si'>Sí</option>
         <option value='no'>No</option>
       </select>

@@ -26,7 +26,7 @@ function MapeoMunicipioRecOcio() {
         value={municipioOcioSeleccionado}
         onChange={handleChangeMunicipio}
       >
-        <option value=''>Seleccionar municipio</option>
+        <option value=''>selecciona una opción</option>
         <option value='rec ocio bajo'>Recreación y ocio bajo</option>
         <option value='rec ocio medio'>Recreación y ocio medio</option>
         <option value='rec ocio alto'>Recreación y ocio alto</option>

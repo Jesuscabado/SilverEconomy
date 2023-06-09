@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 function MapeoHijos() {
-  const [hijosSeleccionado, setHijosSeleccionado] = useState("si");
+  const [hijosSeleccionado, setHijosSeleccionado] = useState("");
   const [valorMapeado, setValorMapeado] = useState(null);
 
   const mapeoHijos = {
@@ -22,6 +22,7 @@ function MapeoHijos() {
   return (
     <div>
       <select value={hijosSeleccionado} onChange={handleChangeRespuesta}>
+        <option value=''>selecciona una opción</option>
         <option value='si'>Sí</option>
         <option value='no'>No</option>
       </select>

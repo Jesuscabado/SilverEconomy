@@ -2,8 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 function MapeoIngresosEconomicos() {
-  const [ingresosSeleccionados, setIngresosSeleccionados] =
-    useState("ingresos_bajos");
+  const [ingresosSeleccionados, setIngresosSeleccionados] = useState("");
   const [ingresosMapeados, setIngresosMapeados] = useState(null);
 
   const mapeoIngresos = {
@@ -24,6 +23,7 @@ function MapeoIngresosEconomicos() {
   return (
     <div>
       <select value={ingresosSeleccionados} onChange={handleChangeIngresos}>
+        <option value=''>selecciona una opción</option>
         <option value='ingresos_bajos'>Ingresos Bajos</option>
         <option value='ingresos_medios'>Ingresos Medios</option>
         <option value='ingresos_altos'>Ingresos Altos</option>

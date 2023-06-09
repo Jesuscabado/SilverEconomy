@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function MapeoEdad() {
-  const [edadSeleccionada, setEdadSeleccionada] = useState(40);
+  const [edadSeleccionada, setEdadSeleccionada] = useState("");
   const [edadMapeada, setEdadMapeada] = useState(null);
 
   const mapearEdad = (edad) => {
@@ -36,6 +36,7 @@ function MapeoEdad() {
   return (
     <div>
       <select value={edadSeleccionada} onChange={handleChangeEdad}>
+        <option value=''>selecciona una opción</option>
         {Array.from({ length: 62 }, (_, index) => 40 + index).map((edad) => (
           <option key={edad} value={edad}>
             {edad}

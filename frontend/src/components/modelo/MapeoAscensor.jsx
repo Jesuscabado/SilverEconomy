@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 function MapeoAscensor() {
-  const [ascensorSeleccionado, setAscensorSeleccionado] = useState("si");
+  const [ascensorSeleccionado, setAscensorSeleccionado] = useState("");
   const [ascensorMapeado, setAscensorMapeado] = useState(null);
 
   const mapeoAscensor = {
@@ -22,6 +22,7 @@ function MapeoAscensor() {
   return (
     <div>
       <select value={ascensorSeleccionado} onChange={handleChangeAscensor}>
+        <option value=''>selecciona una opción</option>
         <option value='si'>Si</option>
         <option value='no'>No</option>
       </select>

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 function MapeoCohesionSocial() {
   const [cohesionSocialSeleccionado, setCohesionSocialSeleccionado] =
-    useState("baja");
+    useState("");
 
   const [cohesionSocial, setCohesionSocial] = useState(null);
 
@@ -27,6 +27,7 @@ function MapeoCohesionSocial() {
         value={cohesionSocialSeleccionado}
         onChange={handleChangeRespuesta}
       >
+        <option value=''>selecciona una opción</option>
         <option value='baja cohesion'>Baja cohesion</option>
         <option value='alta cohesion'>Alta cohesion</option>
       </select>

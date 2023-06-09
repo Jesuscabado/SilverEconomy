@@ -2,8 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 function MapeoEstadoAnimo() {
-  const [estadoAnimoSeleccionado, setEstadoAnimoSeleccionado] =
-    useState("animo_bajo");
+  const [estadoAnimoSeleccionado, setEstadoAnimoSeleccionado] = useState("");
   const [estadoAnimoMapeado, setEstadoAnimoMapeado] = useState(null);
 
   const mapeoEstadoAnimo = {
@@ -27,6 +26,7 @@ function MapeoEstadoAnimo() {
         value={estadoAnimoSeleccionado}
         onChange={handleChangeEstadoAnimo}
       >
+        <option value=''>selecciona una opción</option>
         <option value='animo_bajo'>Ánimo Bajo</option>
         <option value='animo_medio'>Ánimo Medio</option>
         <option value='animo_alto'>Ánimo Alto</option>

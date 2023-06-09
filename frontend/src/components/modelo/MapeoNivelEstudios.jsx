@@ -3,7 +3,7 @@ import { useState } from "react";
 
 function MapeoNivelEstudios() {
   const [nivelEstudiosSeleccionado, setNivelEstudiosSeleccionado] =
-    useState("sin estudios");
+    useState("");
   const [nivelEstudiosMapeado, setNivelEstudiosMapeado] = useState(null);
 
   const mapeoNivelesEstudios = {
@@ -28,6 +28,7 @@ function MapeoNivelEstudios() {
         value={nivelEstudiosSeleccionado}
         onChange={handleChangeNivelEstudios}
       >
+        <option value=''>selecciona una opción</option>
         {Object.keys(mapeoNivelesEstudios).map((nivelEstudios) => (
           <option key={nivelEstudios} value={nivelEstudios}>
             {nivelEstudios}
