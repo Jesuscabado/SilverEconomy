@@ -8,11 +8,14 @@ import Web from "./components/Web";
 import AvisoLegal from "././components/AvisoLegal";
 /* import Footer from "./components/Footer"; */
 /* import Navbar from "./components/Navbar"; */
-import "./index.css";
-import BoxIniciarSesin from "./components/BoxIniciarSesin";
+/* import Profile from "./components/Profile";
+ */ import "./index.css";
+/* import Footer from "./components/Footer"; */
 import Calendar from "./components/Calendar/Index";
 import Chat from "./components/chat/Chat";
 import ContactForm from "./components/contactForm/ContactForm";
+import Modelo from "./components/modelo/Modelo";
+
 function App() {
   return (
     <div className="bg-slate-300 h-screen text-black flex">
@@ -27,7 +30,6 @@ function App() {
               </ProtectedRoute>
             }
           />
-
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/web" element={<Web />} />
@@ -35,7 +37,8 @@ function App() {
           <Route path="/avisolegal" element={<AvisoLegal />} />
           <Route path="/chat" element={<Chat />} />
           <Route path="/calendar" element={<Calendar />} />
-          <Route path="/BoxIniciarSesin" element={<BoxIniciarSesin />} />
+          <Route path="/modelo" element={<Modelo />} />
+          {/* <Route path="/profile" element={<Profile />}/> */}
         </Routes>
       </AuthContextProvider>
       {/*  <Footer /> */}

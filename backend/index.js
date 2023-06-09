@@ -3,9 +3,9 @@ import express from "express"; //IMportamos express
 const app = express(); //Creamos una pp de express
 
 app.use(express.json());
-
+// Configuración de rutas aquí
 app.get("/", (req, res) => {
-  res.send("Hello eComerce");
+  res.send("Hello silvereconomy");
 });
 
 app.listen(3000, () => {

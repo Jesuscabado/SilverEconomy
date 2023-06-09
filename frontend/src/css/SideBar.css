@@ -5,10 +5,14 @@
   left: 0;
   z-index: 100;
   overflow: hidden;
-  width: 260px;
-  background: #101f25;
-  color: #fff;
+  width: 210px;
+  background: linear-gradient(#46393a, #1e1515);
   transition: all 0.3s;
+  color: white;
+}
+
+.icono {
+  margin: 10px;
 }
 
 .sidebar-wrapper {
@@ -30,14 +34,14 @@
 .sidebar ul.nav li a {
   color: #fff;
   text-decoration: none;
-  padding: 10px 15px;
+  padding: 5px 5px;
   display: flex;
   align-items: center;
 }
 
 .sidebar ul.nav li a:hover,
 .sidebar ul.nav li.active a {
-  background-color: #939393;
+  background-color: #067f8d;
 }
 
 .sidebar ul.nav li.active a {
@@ -68,10 +72,6 @@
   margin-top: 20px;
 }
 
-.sidebar .sidebar-wrapper .nav li {
-  margin-bottom: 10px;
-}
-
 .sidebar .sidebar-wrapper .nav li:last-child {
   margin-bottom: 0;
 }
@@ -79,18 +79,18 @@
 .sidebar .sidebar-wrapper .nav li a .notification {
   position: absolute;
   top: 0;
-  right: 20px;
+  /*  right: 20px; */
   font-size: 10px;
 }
 
 .sidebar .sidebar-wrapper .nav li a .badge {
   position: absolute;
   top: 0px;
-  right: 20px;
-  padding: 1px 5px;
+  /* right: 20px; */
+  /*  padding: 1px 5px; */
   border-radius: 5px;
   background-color: #fff;
-  color: #b7b5b5;
+  color: #067f8d;
 }
 
 .sidebar .sidebar-wrapper .nav li .caret {
@@ -110,8 +110,9 @@
 }
 
 .sidebar .sidebar-wrapper .nav li:hover > a {
-  background-color: #555454;
-  color: #ff0000;
+  background-color: #067f8d;
+  border-radius: 5px;
+  color: #ffffff;
 }
 
 @media (min-width: 991px) {
