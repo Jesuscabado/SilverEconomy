@@ -1,8 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-function MapeoViveSolo() {
-  const [viveSoloSeleccionado, setViveSoloSeleccionado] = useState("");
+function MapeoViveSolo({ onViveSoloSeleccionado, onViveSoloMapeado }) {
   const [viveSoloMapeado, setViveSoloMapeado] = useState(null);
 
   const mapeoViveSolo = {
@@ -12,19 +11,20 @@ function MapeoViveSolo() {
 
   const handleChangeViveSolo = (e) => {
     const nuevaRespuesta = e.target.value;
-    setViveSoloSeleccionado(nuevaRespuesta);
+    onViveSoloSeleccionado(nuevaRespuesta);
 
     // Mapear la respuesta de 'vive solo'
     const mapeo = mapeoViveSolo[nuevaRespuesta];
     setViveSoloMapeado(mapeo);
+    onViveSoloMapeado(mapeo);
   };
 
   return (
     <div>
-      <select value={viveSoloSeleccionado} onChange={handleChangeViveSolo}>
-        <option value=''>selecciona una opción</option>
-        <option value='si'>Sí</option>
-        <option value='no'>No</option>
+      <select onChange={handleChangeViveSolo}>
+        <option value="">selecciona una opción</option>
+        <option value="si">Sí</option>
+        <option value="no">No</option>
       </select>
 
       {viveSoloMapeado !== null && (

@@ -1,8 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-function MapeoSexo() {
-  const [sexoSeleccionado, setSexoSeleccionado] = useState("");
+function MapeoSexo({ onSexoSeleccionado, onSexoMapeado }) {
   const [sexoMapeado, setSexoMapeado] = useState(null);
 
   const mapeoSexos = {
@@ -12,19 +11,20 @@ function MapeoSexo() {
 
   const handleChangeSexo = (e) => {
     const nuevoSexo = e.target.value;
-    setSexoSeleccionado(nuevoSexo);
+    onSexoSeleccionado(nuevoSexo);
 
     // Mapear el sexo seleccionado
     const mapeo = mapeoSexos[nuevoSexo];
     setSexoMapeado(mapeo);
+    onSexoMapeado(mapeo);
   };
 
   return (
     <div>
-      <select value={sexoSeleccionado} onChange={handleChangeSexo}>
-        <option value=''>selecciona una opción</option>{" "}
-        <option value='hombre'>Hombre</option>
-        <option value='mujer'>Mujer</option>
+      <select onChange={handleChangeSexo}>
+        <option value="">selecciona una opción</option>{" "}
+        <option value="hombre">Hombre</option>
+        <option value="mujer">Mujer</option>
       </select>
 
       {sexoMapeado !== null && <div>Sexo mapeado: {sexoMapeado}</div>}

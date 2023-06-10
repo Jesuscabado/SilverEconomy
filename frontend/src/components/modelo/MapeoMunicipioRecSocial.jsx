@@ -1,9 +1,12 @@
 import React from "react";
 import { useState } from "react";
 
-function MapeoMunicipioRecSocial() {
-  const [municipioRecSocial, setMunicipioRecSocial] = useState("");
-  const [municipioMapeado, setMunicipioMapeado] = useState(null);
+function MapeoMunicipioRecSocial({
+  onMunicipioRecSocialSeleccionado,
+  onMunicipioRecSocialMapeado,
+}) {
+  const [municipioRecSocialMapeado, setMunicipioRecSocialMapeado] =
+    useState(null);
 
   const mapeoMunicipioRecSocial = {
     "rec social bajo": 3,
@@ -13,24 +16,25 @@ function MapeoMunicipioRecSocial() {
 
   const handleChangeMunicipio = (e) => {
     const nuevoMunicipio = e.target.value;
-    setMunicipioRecSocial(nuevoMunicipio);
+    onMunicipioRecSocialSeleccionado(nuevoMunicipio);
 
     // Mapear el valor del municipio
     const mapeo = mapeoMunicipioRecSocial[nuevoMunicipio];
-    setMunicipioMapeado(mapeo);
+    setMunicipioRecSocialMapeado(mapeo);
+    onMunicipioRecSocialMapeado(mapeo);
   };
 
   return (
     <div>
-      <select value={municipioRecSocial} onChange={handleChangeMunicipio}>
-        <option value=''>selecciona una opción</option>{" "}
-        <option value='rec social bajo'>Rec Social Bajo</option>
-        <option value='rec social medio'>Rec Social Medio</option>
-        <option value='rec social alto'>Rec Social Alto</option>
+      <select onChange={handleChangeMunicipio}>
+        <option value="">selecciona una opción</option>{" "}
+        <option value="rec social bajo">Rec Social Bajo</option>
+        <option value="rec social medio">Rec Social Medio</option>
+        <option value="rec social alto">Rec Social Alto</option>
       </select>
 
-      {municipioMapeado !== null && (
-        <div>Municipio mapeado: {municipioMapeado}</div>
+      {municipioRecSocialMapeado !== null && (
+        <div>Municipio mapeado: {municipioRecSocialMapeado}</div>
       )}
     </div>
   );

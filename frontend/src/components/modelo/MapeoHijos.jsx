@@ -1,9 +1,8 @@
 import React from "react";
 import { useState } from "react";
 
-function MapeoHijos() {
-  const [hijosSeleccionado, setHijosSeleccionado] = useState("");
-  const [valorMapeado, setValorMapeado] = useState(null);
+function MapeoHijos({ onHijosSeleccionado, onHijosMapeado }) {
+  const [HijosMapeado, setHijosMapeado] = useState(null);
 
   const mapeoHijos = {
     si: 0,
@@ -12,22 +11,26 @@ function MapeoHijos() {
 
   const handleChangeRespuesta = (e) => {
     const nuevaRespuesta = e.target.value;
-    setHijosSeleccionado(nuevaRespuesta);
+    onHijosSeleccionado(nuevaRespuesta);
 
     // Mapear la respuesta seleccionada
     const mapeo = mapeoHijos[nuevaRespuesta];
-    setValorMapeado(mapeo);
+    setHijosMapeado(mapeo);
+    onHijosMapeado(mapeo);
   };
 
   return (
     <div>
-      <select value={hijosSeleccionado} onChange={handleChangeRespuesta}>
-        <option value=''>selecciona una opción</option>
-        <option value='si'>Sí</option>
-        <option value='no'>No</option>
+      <select onChange={handleChangeRespuesta}>
+        <option value="">selecciona una opción</option>
+        {Object.keys(mapeoHijos).map((hijos) => (
+          <option key={hijos} value={hijos}>
+            {hijos}
+          </option>
+        ))}
       </select>
 
-      {valorMapeado !== null && <div>Valor mapeado: {valorMapeado}</div>}
+      {HijosMapeado !== null && <div>valor mapeado: {HijosMapeado}</div>}
     </div>
   );
 }

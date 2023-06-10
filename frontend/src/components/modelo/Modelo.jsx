@@ -20,38 +20,197 @@ import MapeoActividadFisica from "./MapeoActividadFisica";
 
 import "../../css/Modelo.css";
 
-function Modelo({
-  seleccionSexo,
-  estadoCivilSeleccionado,
-  nivelEstudiosSeleccionado,
-  psicofarmacoSeleccionado,
-  viveSoloSeleccionado,
-  hijosSeleccionado,
-  ascensorSeleccionado,
-  nivelActividad,
-  limFisicaSeleccionada,
-  estadoAnimoSeleccionado,
-  satisfaccionSeleccionada,
-  ingresosSeleccionados,
-  redSeleccionada,
-  cohesionSocial,
-  municipioSeleccionado,
-  municipioRecSocial,
-  municipioOcioSeleccionado,
-}) {
+function Modelo() {
   const [modelo, setModelo] = useState("");
   const [edadSeleccionada, setEdadSeleccionada] = useState("");
+  const [nivelActividad, setNivelActividad] = useState("");
+  const [mapeoActividad, setMapeoActividad] = useState(null);
+  const [sexoSeleccionado, setSexoSeleccionado] = useState("");
+  const [sexoMapeado, setSexoMapeado] = useState(null);
+  const [estadoCivilSeleccionado, setEstadoCivilSeleccionado] = useState("");
+  const [estadoCivilMapeado, setEstadoCivilMapeado] = useState(null);
+  const [nivelEstudiosSeleccionado, setNivelEstudiosSeleccionado] =
+    useState("");
+  const [nivelEstudiosMapeado, setNivelEstudiosMapeado] = useState(null);
+  const [psicofarmacoSeleccionado, setPsicofarmacoSeleccionado] = useState("");
+  const [psicofarmacosMapeado, setPsicofarmacosMapeado] = useState(null);
+  const [viveSeleccionado, setViveSoloSeleccionado] = useState("");
+  const [viveSoloMapeado, setViveSoloMapeado] = useState(null);
+  const [hijosSeleccionado, setHijosSeleccionado] = useState("");
+  const [HijosMapeado, setHijosMapeado] = useState(null);
+  const [ascensorSeleccionado, setAscensorSeleccionado] = useState("");
+  const [ascensorMapeado, setAscensorMapeado] = useState(null);
+  const [limFisicaSeleccionada, setLimFisicaSeleccionada] = useState("");
+  const [limFisicaMapeada, setLimFisicaMapeada] = useState(null);
+  const [estadoAnimoSeleccionado, setEstadoAnimoSeleccionado] = useState("");
+  const [estadoAnimoMapeado, setEstadoAnimoMapeado] = useState(null);
+  const [satisfaccionSeleccionada, setSatisfaccionSeleccionada] = useState("");
+  const [satisfaccionMapeada, setSatisfaccionMapeada] = useState(null);
+  const [ingresosSeleccionados, setIngresosSeleccionados] = useState("");
+  const [ingresosMapeados, setIngresosMapeados] = useState(null);
+  const [redSeleccionada, setRedSeleccionada] = useState("");
+  const [redApoyoMapeada, setRedApoyoMapeada] = useState(null);
+  const [cohesionSocialSeleccionado, setCohesionSocialSeleccionado] =
+    useState("");
+  const [cohesionSocial, setCohesionSocial] = useState(null);
+  const [municipioOcioSeleccionado, setMunicipioOcioSeleccionado] =
+    useState("");
+  const [municipioRecOcioMapeado, setMunicipioRecOcioMapeado] = useState(null);
+  const [municipioRecSocialSeleccionado, setMunicipioRecSocialSeleccionado] =
+    useState("");
+  const [municipioRecSocialMapeado, setMunicipioRecSocialMapeado] =
+    useState(null);
+  const [municipioSeleccionado, setMunicipioSeleccionado] = useState("");
+  const [municipio_accesibleMapeado, setMunicipio_accesibleMapeado] =
+    useState(null);
 
   const handleEdadSeleccionada = (edad) => {
     setEdadSeleccionada(edad);
   };
 
+  const handleNivelActividad = (nivelActividad) => {
+    setNivelActividad(nivelActividad);
+  };
+
+  const handleMapeoActividad = (mapeo) => {
+    setMapeoActividad(mapeo);
+  };
+
+  const handleSexoSeleccionado = (sexo) => {
+    setSexoSeleccionado(sexo);
+  };
+
+  const handleSexoMapeado = (mapeo) => {
+    setSexoMapeado(mapeo);
+  };
+
+  const handleEstadoCivilSeleccionado = (estadoCivil) => {
+    setEstadoCivilSeleccionado(estadoCivil);
+  };
+
+  const handleEstadoCivilMapeado = (mapeo) => {
+    setEstadoCivilMapeado(mapeo);
+  };
+
+  const handleNivelEstudiosSeleccionado = (nivelEstudios) => {
+    setNivelEstudiosSeleccionado(nivelEstudios);
+  };
+
+  const handleNivelEstudiosMapeado = (mapeo) => {
+    setNivelEstudiosMapeado(mapeo);
+  };
+
+  const handlePsicofarmacoSeleccionado = (psicofarmaco) => {
+    setPsicofarmacoSeleccionado(psicofarmaco);
+  };
+
+  const handlePsicofarmacosMapeado = (mapeo) => {
+    setPsicofarmacosMapeado(mapeo);
+  };
+
+  const handleViveSoloSeleccionado = (viveSolo) => {
+    setViveSoloSeleccionado(viveSolo);
+  };
+
+  const handleViveSoloMapeado = (mapeo) => {
+    setViveSoloMapeado(mapeo);
+  };
+
+  const handleHijosSeleccionado = (hijos) => {
+    setHijosSeleccionado(hijos);
+  };
+
+  const handleHijosMapeado = (mapeo) => {
+    setHijosMapeado(mapeo);
+  };
+
+  const handleAscensorSeleccionado = (ascensor) => {
+    setAscensorSeleccionado(ascensor);
+  };
+
+  const handleAscensorMapeado = (mapeo) => {
+    setAscensorMapeado(mapeo);
+  };
+
+  const handleLimFisicaSeleccionada = (limFisica) => {
+    setLimFisicaSeleccionada(limFisica);
+  };
+
+  const handleLimFisicaMapeada = (mapeo) => {
+    setLimFisicaMapeada(mapeo);
+  };
+
+  const handleEstadoAnimoSeleccionado = (estadoAnimo) => {
+    setEstadoAnimoSeleccionado(estadoAnimo);
+  };
+
+  const handleEstadoAnimoMapeado = (mapeo) => {
+    setEstadoAnimoMapeado(mapeo);
+  };
+
+  const handleSatisfaccionSeleccionada = (satisfaccion) => {
+    setSatisfaccionSeleccionada(satisfaccion);
+  };
+
+  const handleSatisfaccionMapeada = (mapeo) => {
+    setSatisfaccionMapeada(mapeo);
+  };
+
+  const handleIngresosSeleccionados = (ingresos) => {
+    setIngresosSeleccionados(ingresos);
+  };
+
+  const handleIngresosMapeados = (mapeo) => {
+    setIngresosMapeados(mapeo);
+  };
+
+  const handleRedSeleccionada = (red) => {
+    setRedSeleccionada(red);
+  };
+
+  const handleRedApoyoMapeada = (mapeo) => {
+    setRedApoyoMapeada(mapeo);
+  };
+
+  const handleCohesionSocialSeleccionado = (cohesionSocial) => {
+    setCohesionSocialSeleccionado(cohesionSocial);
+  };
+
+  const handleCohesionSocialMapeado = (cohesionSocial) => {
+    setCohesionSocial(cohesionSocial);
+  };
+
+  const handleMunicipioOcioSeleccionado = (municipio) => {
+    setMunicipioOcioSeleccionado(municipio);
+  };
+
+  const handleMunicipioRecOcioMapeado = (mapeo) => {
+    setMunicipioRecOcioMapeado(mapeo);
+  };
+
+  const handleMunicipioAccesibleMapeado = (mapeo) => {
+    setMunicipio_accesibleMapeado(mapeo);
+  };
+
+  const handleMunicipioRecSocial = (municipio) => {
+    setMunicipioRecSocialSeleccionado(municipio);
+  };
+
+  const handleMunicipioRecSocialMapeado = (mapeo) => {
+    setMunicipioRecSocialMapeado(mapeo);
+  };
+
+  const handleMunicipioSeleccionado = (municipio) => {
+    setMunicipioSeleccionado(municipio);
+  };
+
   useEffect(() => {
     const obtenerModelo = async () => {
       try {
-        const url = `https://lilicasanova.pythonanywhere.com/userpred?edad=${edadSeleccionada}&estado_civil=2&sexo=0&nivel_estudios=2&psicofarmacos=1&vive_solo=1&hijos=2&ascensor=0&act_fisica=0&lim_fisica=0&estado_animo=0&satisfaccion_vida=2&ingresos_economicos=0&red_apoyo_familiar=2&cohesion_social=1&municipio_accesible=0&municipio_rec_social=0&municipio_rec_ocio=3`; // Reemplaza los valores con los datos adecuados
-        /* Url con los parametros cambiados`http://lilicasanova.pythonanywhere.com:5000/userpred?edad=${MapeoEdad}&estado_civil=${MapeoEstadoCivil}&sexo=${MapeoSexo}&nivel_estudios=${MapeoNivelEstudios}&psicofarmacos=${MapeoPsicofarmacos}&vive_solo=${MapeoViveSolo}&hijos=${MapeoHijos}&ascensor=${MapeoAscensor}&act_fisica=${MapeoActividadFisica}&lim_fisica=${MapeoLimitacionFisica}&estado_animo=${MapeoEstadoAnimo}&satisfaccion_vida=${MapeoSatisfaccionVida}&ingresos_economicos=${MapeoIngresosEconomicos}&red_apoyo_familiar=${MapeoRedApoyoFamiliar}&cohesion_social=${MapeoCohesionSocial}&municipio_accesible=${MapeoMunicipioAccesible}&municipio_rec_social=${MapeoMunicipioRecSocial}&municipio_rec_ocio=${MapeoMunicipioRecOcio}` */
-        /* `http://lilicasanova.pythonanywhere.com:5000/userpred?edad=${edadSeleccionada}&estado_civil=${estadoCivilSeleccionado}&sexo=${seleccionSexo}&nivel_estudios=${nivelEstudiosSeleccionado}&psicofarmacos=${psicofarmacoSeleccionado}&vive_solo=${viveSoloSeleccionado}&hijos=${hijosSeleccionado}&ascensor=${ascensorSeleccionado}&act_fisica=${nivelActividad}&lim_fisica=${limFisicaSeleccionada}&estado_animo=${estadoAnimoSeleccionado}&satisfaccion_vida=${satisfaccionSeleccionada}&ingresos_economicos=${ingresosSeleccionados}&red_apoyo_familiar=${redSeleccionada}&cohesion_social=${cohesionSocial}&municipio_accesible=${municipioSeleccionado}&municipio_rec_social=${municipioRecSocial}&municipio_rec_ocio=${municipioOcioSeleccionado}` */
+        const url =
+          /* `https://lilicasanova.pythonanywhere.com/userpred?edad=${edadSeleccionada}&estado_civil=2&sexo=0&nivel_estudios=2&psicofarmacos=1&vive_solo=1&hijos=2&ascensor=0&act_fisica=0&lim_fisica=0&estado_animo=0&satisfaccion_vida=2&ingresos_economicos=0&red_apoyo_familiar=2&cohesion_social=1&municipio_accesible=0&municipio_rec_social=0&municipio_rec_ocio=3`; */ // Reemplaza los valores con los datos adecuados
+
+          `http://lilicasanova.pythonanywhere.com/userpred?edad=${edadSeleccionada}&estado_civil=${estadoCivilMapeado}&sexo=${sexoMapeado}&nivel_estudios=${nivelEstudiosMapeado}&psicofarmacos=${psicofarmacosMapeado}&vive_solo=${viveSoloMapeado}&hijos=${HijosMapeado}&ascensor=${ascensorMapeado}&act_fisica=${mapeoActividad}&lim_fisica=${limFisicaMapeada}&estado_animo=${estadoAnimoMapeado}&satisfaccion_vida=${satisfaccionMapeada}&ingresos_economicos=${ingresosMapeados}&red_apoyo_familiar=${redApoyoMapeada}&cohesion_social=${cohesionSocial}&municipio_accesible=${municipio_accesibleMapeado}&municipio_rec_social=${municipioRecSocialMapeado}&municipio_rec_ocio=${municipioRecOcioMapeado}`;
         console.log("URL de la API:", url);
         const respuesta = await fetch(url);
         const datos = await respuesta.text();
@@ -64,24 +223,41 @@ function Modelo({
 
     obtenerModelo();
   }, [
-    seleccionSexo,
+    sexoSeleccionado,
+    sexoMapeado,
     edadSeleccionada,
+    estadoCivilMapeado,
     estadoCivilSeleccionado,
     nivelEstudiosSeleccionado,
+    nivelEstudiosMapeado,
     psicofarmacoSeleccionado,
-    viveSoloSeleccionado,
+    psicofarmacosMapeado,
+    viveSeleccionado,
+    viveSoloMapeado,
     hijosSeleccionado,
+    HijosMapeado,
     ascensorSeleccionado,
+    ascensorMapeado,
+    mapeoActividad,
     nivelActividad,
     limFisicaSeleccionada,
+    limFisicaMapeada,
     estadoAnimoSeleccionado,
+    estadoAnimoMapeado,
+    satisfaccionMapeada,
     satisfaccionSeleccionada,
     ingresosSeleccionados,
+    ingresosMapeados,
     redSeleccionada,
+    redApoyoMapeada,
+    cohesionSocialSeleccionado,
     cohesionSocial,
     municipioSeleccionado,
-    municipioRecSocial,
+    municipio_accesibleMapeado,
+    municipioRecSocialSeleccionado,
+    municipioRecSocialMapeado,
     municipioOcioSeleccionado,
+    municipioRecOcioMapeado,
   ]);
 
   /*   if (!modelo) {
@@ -99,11 +275,17 @@ function Modelo({
           </div>
           <div className="selector-item">
             <p className="selector-label">Estado civil</p>
-            <MapeoEstadoCivil />
+            <MapeoEstadoCivil
+              onEstadoCivilSeleccionado={handleEstadoCivilSeleccionado}
+              onEstadoCivilMapeado={handleEstadoCivilMapeado}
+            />
           </div>
           <div className="selector-item">
             <p className="selector-label">Sexo</p>
-            <MapeoSexo />
+            <MapeoSexo
+              onSexoSeleccionado={handleSexoSeleccionado}
+              onSexoMapeado={handleSexoMapeado}
+            />
           </div>
         </div>
 
@@ -111,23 +293,38 @@ function Modelo({
           <h2 className="group-label">Salud y bienestar</h2>
           <div className="selector-item">
             <p className="selector-label">Psicofármacos</p>
-            <MapeoPsicofarmacos />
+            <MapeoPsicofarmacos
+              onPsicofarmacoSeleccionado={handlePsicofarmacoSeleccionado}
+              onPsicofarmacosMapeado={handlePsicofarmacosMapeado}
+            />
           </div>
           <div className="selector-item">
             <p className="selector-label">Actividad física</p>
-            <MapeoActividadFisica />
+            <MapeoActividadFisica
+              onNivelActividad={handleNivelActividad}
+              onNivelActividadMapeado={handleMapeoActividad}
+            />
           </div>
           <div className="selector-item">
             <p className="selector-label">Limitación física</p>
-            <MapeoLimitacionFisica />
+            <MapeoLimitacionFisica
+              onLimFisicaSeleccionada={handleLimFisicaSeleccionada}
+              onLimiFisicaMapeada={handleLimFisicaMapeada}
+            />
           </div>
           <div className="selector-item">
             <p className="selector-label">Estado de ánimo</p>
-            <MapeoEstadoAnimo />
+            <MapeoEstadoAnimo
+              onEstadoAnimoSeleccionado={handleEstadoAnimoSeleccionado}
+              onEstadoAnimoMapeado={handleEstadoAnimoMapeado}
+            />
           </div>
           <div className="selector-item">
             <p className="selector-label">Satisfacción de vida</p>
-            <MapeoSatisfaccionVida />
+            <MapeoSatisfaccionVida
+              onSatisfaccionMapeada={handleSatisfaccionMapeada}
+              onSatisfaccionSeleccionada={handleSatisfaccionSeleccionada}
+            />
           </div>
         </div>
 
@@ -135,19 +332,31 @@ function Modelo({
           <h2 className="group-label">Familia y vivienda</h2>
           <div className="selector-item">
             <p className="selector-label">Vive solo</p>
-            <MapeoViveSolo />
+            <MapeoViveSolo
+              onViveSoloSeleccionado={handleViveSoloSeleccionado}
+              onViveSoloMapeado={handleViveSoloMapeado}
+            />
           </div>
           <div className="selector-item">
             <p className="selector-label">Hijos</p>
-            <MapeoHijos />
+            <MapeoHijos
+              onHijosSeleccionado={handleHijosSeleccionado}
+              onHijosMapeado={handleHijosMapeado}
+            />
           </div>
           <div className="selector-item">
             <p className="selector-label">Ascensor</p>
-            <MapeoAscensor />
+            <MapeoAscensor
+              onAscensorSeleccionado={handleAscensorSeleccionado}
+              onAscensorMapeado={handleAscensorMapeado}
+            />
           </div>
           <div className="selector-item">
             <p className="selector-label">Red de apoyo familiar</p>
-            <MapeoRedApoyoFamiliar />
+            <MapeoRedApoyoFamiliar
+              onRedSeleccionada={handleRedSeleccionada}
+              onRedApoyoMapeada={handleRedApoyoMapeada}
+            />
           </div>
         </div>
 
@@ -155,7 +364,10 @@ function Modelo({
           <h2 className="group-label">Educación</h2>
           <div className="selector-item">
             <p className="selector-label">Nivel de estudios</p>
-            <MapeoNivelEstudios />
+            <MapeoNivelEstudios
+              onNivelEstudiosSeleccionado={handleNivelEstudiosSeleccionado}
+              onNivelEstudiosMapeado={handleNivelEstudiosMapeado}
+            />
           </div>
         </div>
 
@@ -163,15 +375,24 @@ function Modelo({
           <h2 className="group-label">Aspectos municipales</h2>
           <div className="selector-item">
             <p className="selector-label">Municipio accesible</p>
-            <MapeoMunicipioAccesible />
+            <MapeoMunicipioAccesible
+              onMunicipioSeleccionado={handleMunicipioSeleccionado}
+              onMunicipio_accesibleMapeado={handleMunicipioAccesibleMapeado}
+            />
           </div>
           <div className="selector-item">
             <p className="selector-label">Municipio con rec social</p>
-            <MapeoMunicipioRecSocial />
+            <MapeoMunicipioRecSocial
+              onMunicipioRecSocialSeleccionado={handleMunicipioRecSocial}
+              onMunicipioRecSocialMapeado={handleMunicipioRecSocialMapeado}
+            />
           </div>
           <div className="selector-item">
             <p className="selector-label">Municipio con rec ocio</p>
-            <MapeoMunicipioRecOcio />
+            <MapeoMunicipioRecOcio
+              onMunicipioOcioSeleccionado={handleMunicipioOcioSeleccionado}
+              onMunicipioRecOcioMapeado={handleMunicipioRecOcioMapeado}
+            />
           </div>
         </div>
 
@@ -179,7 +400,10 @@ function Modelo({
           <h2 className="group-label">Economía</h2>
           <div className="selector-item">
             <p className="selector-label">Ingresos Económicos</p>
-            <MapeoIngresosEconomicos />
+            <MapeoIngresosEconomicos
+              onIngresosSeleccionados={handleIngresosSeleccionados}
+              onIngresosMapeados={handleIngresosMapeados}
+            />
           </div>
         </div>
 
@@ -187,14 +411,17 @@ function Modelo({
           <h2 className="group-label">Cohesión social</h2>
           <div className="selector-item">
             <p className="selector-label">Cohesión social</p>
-            <MapeoCohesionSocial />
+            <MapeoCohesionSocial
+              onCohesionSocialSeleccionado={handleCohesionSocialSeleccionado}
+              onCohesionSocialMapeado={handleCohesionSocialMapeado}
+            />
           </div>
         </div>
 
         <h1 className="modelo-label">Modelo: {modelo}</h1>
-        {/* {modelo !== "" && (
-          <div>
-            <p>respuesta del servidor</p>
+        {/*     {modelo !== "" && (
+          <div className="respuesta-servidor">
+            <p>Respuesta del servidor</p>
             <p>{modelo}</p>
           </div>
         )} */}

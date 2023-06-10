@@ -1,8 +1,10 @@
 import React from "react";
 import { useState } from "react";
 
-function MapeoSatisfaccionVida() {
-  const [satisfaccionSeleccionada, setSatisfaccionSeleccionada] = useState("");
+function MapeoSatisfaccionVida({
+  onSatisfaccionSeleccionada,
+  onSatisfaccionMapeada,
+}) {
   const [satisfaccionMapeada, setSatisfaccionMapeada] = useState(null);
 
   const mapearSatisfaccion = (satisfaccion) => {
@@ -17,22 +19,20 @@ function MapeoSatisfaccionVida() {
 
   const handleChangeSatisfaccion = (e) => {
     const nuevaSatisfaccion = e.target.value;
-    setSatisfaccionSeleccionada(nuevaSatisfaccion);
+    onSatisfaccionSeleccionada(nuevaSatisfaccion);
 
     const mapeo = mapearSatisfaccion(nuevaSatisfaccion);
     setSatisfaccionMapeada(mapeo);
+    onSatisfaccionMapeada(mapeo);
   };
 
   return (
     <div>
-      <select
-        value={satisfaccionSeleccionada}
-        onChange={handleChangeSatisfaccion}
-      >
-        <option value=''>selecciona una opción</option>
-        <option value='poco satisfecho'>Poco satisfecho</option>
-        <option value='satisfecho medio'>Satisfecho medio</option>
-        <option value='muy satisfecho'>Muy satisfecho</option>
+      <select onChange={handleChangeSatisfaccion}>
+        <option value="">selecciona una opción</option>
+        <option value="poco satisfecho">Poco satisfecho</option>
+        <option value="satisfecho medio">Satisfecho medio</option>
+        <option value="muy satisfecho">Muy satisfecho</option>
       </select>
 
       {satisfaccionMapeada !== null && (

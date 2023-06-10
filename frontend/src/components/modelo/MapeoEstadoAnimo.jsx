@@ -1,8 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-function MapeoEstadoAnimo() {
-  const [estadoAnimoSeleccionado, setEstadoAnimoSeleccionado] = useState("");
+function MapeoEstadoAnimo({ onEstadoAnimoSeleccionado, onEstadoAnimoMapeado }) {
   const [estadoAnimoMapeado, setEstadoAnimoMapeado] = useState(null);
 
   const mapeoEstadoAnimo = {
@@ -13,23 +12,22 @@ function MapeoEstadoAnimo() {
 
   const handleChangeEstadoAnimo = (e) => {
     const nuevoEstadoAnimo = e.target.value;
-    setEstadoAnimoSeleccionado(nuevoEstadoAnimo);
+    onEstadoAnimoSeleccionado(nuevoEstadoAnimo);
+    console.log("como estas¿?", nuevoEstadoAnimo);
 
     // Mapear el estado de ánimo seleccionado
     const mapeo = mapeoEstadoAnimo[nuevoEstadoAnimo];
     setEstadoAnimoMapeado(mapeo);
+    onEstadoAnimoMapeado(mapeo);
   };
 
   return (
     <div>
-      <select
-        value={estadoAnimoSeleccionado}
-        onChange={handleChangeEstadoAnimo}
-      >
-        <option value=''>selecciona una opción</option>
-        <option value='animo_bajo'>Ánimo Bajo</option>
-        <option value='animo_medio'>Ánimo Medio</option>
-        <option value='animo_alto'>Ánimo Alto</option>
+      <select onChange={handleChangeEstadoAnimo}>
+        <option value="">selecciona una opción</option>
+        <option value="animo_bajo">Ánimo Bajo</option>
+        <option value="animo_medio">Ánimo Medio</option>
+        <option value="animo_alto">Ánimo Alto</option>
       </select>
 
       {estadoAnimoMapeado !== null && (
