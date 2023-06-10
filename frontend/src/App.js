@@ -13,6 +13,7 @@ import AvisoLegal from "././components/AvisoLegal";
 /* import Footer from "./components/Footer"; */
 import Calendar from "./components/Calendar/Index";
 import Modelo from "./components/modelo/Modelo";
+import MapaCalor from "./components/MapaCalor";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path='/avisolegal' element={<AvisoLegal />} />
           <Route path='/calendar' element={<Calendar />} />
           <Route path='/modelo' element={<Modelo />} />
+          <Route path='/mapacalor' element={<MapaCalor />} />
           {/*           <Route path='/profile' element={<Profile />} />
            */}
         </Routes>

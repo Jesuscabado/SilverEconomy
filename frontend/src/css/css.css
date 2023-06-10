@@ -8,7 +8,7 @@ body {
   z-index: 3;
   position: fixed;
   left: 0;
-  top: 70px;
+  top: 0;
   bottom: 0;
   overflow: hidden;
   width: 210px;
@@ -18,17 +18,15 @@ body {
   border-radius: 0 20px 20px 0;
 }
 
-.icono {
-  margin: 10px;
+@media screen and (max-width: 400px) {
+  .sidebar {
+    width: 100px;
+  }
 }
+
 .sidebar-wrapper {
   padding: 20px 10px;
   position: relative;
-}
-
-.sidebar {
-  height: 100vh; /* Establecer altura del menú en 100% del viewport */
-  width: 15vw; /* Establecer ancho del menú en 25% del viewport */
 }
 
 .sidebar ul.nav {

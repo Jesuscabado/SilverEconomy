@@ -1,0 +1,13 @@
+.full-page-container {
+  height: 100vh; /* Establece el 100% del alto de la ventana del navegador */
+  width: 100vw; /* Establece el 100% del ancho de la ventana del navegador */
+}
+
+.card-11 {
+  margin-left: 200px;
+}
+
+.titulomapa {
+  margin-left: 280px;
+  margin-right: -200px;
+}

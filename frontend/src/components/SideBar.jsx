@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/SideBar.css";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
@@ -6,6 +6,30 @@ import { useAuth } from "../context/AuthContext";
 function SideBar() {
   const { user, logout, loading } = useAuth();
   const [activeItem, setActiveItem] = useState("Panel");
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    // Función para actualizar el ancho de la ventana
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    // Agregar el event listener al cargar el componente
+    window.addEventListener("resize", handleResize);
+
+    // Remover el event listener al desmontar el componente
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const handleMouseEnter = (item) => {
     setActiveItem(item);
@@ -41,7 +65,13 @@ function SideBar() {
                       fill='#EBEBE6'
                     />
                   </svg>
-                  <p>Panel</p>
+                  <div>
+                    {windowWidth >= 500 ? (
+                      <p>Panel</p>
+                    ) : (
+                      <p style={{ display: "none" }}>Panel</p>
+                    )}
+                  </div>
                 </Link>
               </li>
 
@@ -65,7 +95,13 @@ function SideBar() {
                     />
                   </svg>
 
-                  <p>Informes</p>
+                  <div>
+                    {windowWidth >= 500 ? (
+                      <p>Informes</p>
+                    ) : (
+                      <p style={{ display: "none" }}>Informes</p>
+                    )}
+                  </div>
                 </a>
               </li>
 
@@ -89,7 +125,13 @@ function SideBar() {
                     />
                   </svg>
 
-                  <p>Notificationes</p>
+                  <div>
+                    {windowWidth >= 500 ? (
+                      <p>Notificaciones</p>
+                    ) : (
+                      <p style={{ display: "none" }}>Notificaciones</p>
+                    )}
+                  </div>
                 </a>
               </li>
 
@@ -112,7 +154,13 @@ function SideBar() {
                       fill='#EBEBE6'
                     />
                   </svg>
-                  <p>Plan de acción</p>
+                  <div>
+                    {windowWidth >= 500 ? (
+                      <p>Plan de acción</p>
+                    ) : (
+                      <p style={{ display: "none" }}>Plan de acción</p>
+                    )}
+                  </div>
                 </a>
               </li>
 
@@ -136,7 +184,13 @@ function SideBar() {
                     />
                   </svg>
 
-                  <p>Calendario</p>
+                  <div>
+                    {windowWidth >= 500 ? (
+                      <p>Calendario</p>
+                    ) : (
+                      <p style={{ display: "none" }}>Calendario</p>
+                    )}
+                  </div>
                 </Link>
               </li>
 
@@ -161,7 +215,13 @@ function SideBar() {
                       strokeWidth='0.4'
                     />
                   </svg>
-                  <p>Chat</p>
+                  <div>
+                    {windowWidth >= 500 ? (
+                      <p>Chat</p>
+                    ) : (
+                      <p style={{ display: "none" }}>Chat</p>
+                    )}
+                  </div>
                 </a>
               </li>
 
@@ -186,7 +246,13 @@ function SideBar() {
                       strokeWidth='0.3'
                     />
                   </svg>
-                  <p>Settings</p>
+                  <div>
+                    {windowWidth >= 500 ? (
+                      <p>Settings</p>
+                    ) : (
+                      <p style={{ display: "none" }}>Settings</p>
+                    )}
+                  </div>
                 </Link>
               </li>
 
@@ -210,7 +276,13 @@ function SideBar() {
                     />
                   </svg>
 
-                  <p>Profile</p>
+                  <div>
+                    {windowWidth >= 500 ? (
+                      <p>Profile</p>
+                    ) : (
+                      <p style={{ display: "none" }}>Profile</p>
+                    )}
+                  </div>
                 </Link>
               </li>
 
@@ -219,9 +291,12 @@ function SideBar() {
                 onMouseEnter={() => handleMouseEnter("modelo")}
                 onMouseLeave={handleMouseLeave}
               >
-                <Link to='/modelo'>
-                  <p>modelo</p>
-                </Link>
+                <button
+                  className='bg-red-500 hover:bg-red-700 rounded py-2 px-4 text-white'
+                  onClick={handleLogout}
+                >
+                  logout
+                </button>
               </li>
             </ul>
           </div>
