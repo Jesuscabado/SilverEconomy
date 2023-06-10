@@ -1,9 +1,11 @@
 import React from "react";
 import { useState } from "react";
 
-function MapeoPsicofarmacos() {
-  const [psicofarmacoSeleccionado, setPsicofarmacoSeleccionado] = useState("");
-  const [valorMapeado, setValorMapeado] = useState(null);
+function MapeoPsicofarmacos({
+  onPsicofarmacoSeleccionado,
+  onPsicofarmacosMapeado,
+}) {
+  const [psicofarmacosMapeado, setPsicofarmacosMapeado] = useState(null);
 
   const mapeo_psicofarmacos = {
     ansioliticos: 2,
@@ -13,18 +15,16 @@ function MapeoPsicofarmacos() {
 
   const handleChangePsicofarmaco = (e) => {
     const psicofarmaco = e.target.value;
-    setPsicofarmacoSeleccionado(psicofarmaco);
+    onPsicofarmacoSeleccionado(psicofarmaco);
 
-    const valorMapeado = mapeo_psicofarmacos[psicofarmaco];
-    setValorMapeado(valorMapeado);
+    const psicofarmacosMapeado = mapeo_psicofarmacos[psicofarmaco];
+    setPsicofarmacosMapeado(psicofarmacosMapeado);
+    onPsicofarmacosMapeado(psicofarmacosMapeado);
   };
 
   return (
     <div>
-      <select
-        value={psicofarmacoSeleccionado}
-        onChange={handleChangePsicofarmaco}
-      >
+      <select onChange={handleChangePsicofarmaco}>
         {" "}
         <option value=''>selecciona una opción</option>
         {Object.keys(mapeo_psicofarmacos).map((psicofarmaco) => (
@@ -34,7 +34,9 @@ function MapeoPsicofarmacos() {
         ))}
       </select>
 
-      {valorMapeado !== null && <div>Valor mapeado: {valorMapeado}</div>}
+      {psicofarmacosMapeado !== null && (
+        <div>Valor mapeado: {psicofarmacosMapeado}</div>
+      )}
     </div>
   );
 }

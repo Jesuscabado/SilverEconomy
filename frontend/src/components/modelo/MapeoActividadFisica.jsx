@@ -1,29 +1,28 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
-function MapeoActividadFisica() {
-  const [nivelActividad, setNivelActividad] = useState("");
+function MapeoActividadFisica({ onNivelActividad, onNivelActividadMapeado }) {
   const [mapeoActividad, setMapeoActividad] = useState(null);
 
   const mapeo_act_fisica = {
     sedentario: 4,
     moderado: 3,
     activo: 1,
-    "muy activo": 0,
+    muyActivo: 0,
   };
 
   const handleChangeNivelActividad = (e) => {
     const nuevoNivelActividad = e.target.value;
-    setNivelActividad(nuevoNivelActividad);
+    onNivelActividad(nuevoNivelActividad);
 
     // Mapear el nivel de actividad seleccionado
     const mapeo = mapeo_act_fisica[nuevoNivelActividad];
     setMapeoActividad(mapeo);
+    onNivelActividadMapeado(mapeo);
   };
 
   return (
     <div>
-      <select value={nivelActividad} onChange={handleChangeNivelActividad}>
+      <select onChange={handleChangeNivelActividad}>
         <option value=''>selecciona una opción</option>
         <option value='sedentario'>Sedentario</option>
         <option value='moderado'>Moderado</option>

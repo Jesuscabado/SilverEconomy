@@ -1,8 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-function MapeoAscensor() {
-  const [ascensorSeleccionado, setAscensorSeleccionado] = useState("");
+function MapeoAscensor({ onAscensorSeleccionado, onAscensorMapeado }) {
   const [ascensorMapeado, setAscensorMapeado] = useState(null);
 
   const mapeoAscensor = {
@@ -12,16 +11,17 @@ function MapeoAscensor() {
 
   const handleChangeAscensor = (e) => {
     const nuevoAscensor = e.target.value;
-    setAscensorSeleccionado(nuevoAscensor);
+    onAscensorSeleccionado(nuevoAscensor);
 
     // Mapear el valor de ascensor
     const mapeo = mapeoAscensor[nuevoAscensor];
     setAscensorMapeado(mapeo);
+    onAscensorMapeado(mapeo);
   };
 
   return (
     <div>
-      <select value={ascensorSeleccionado} onChange={handleChangeAscensor}>
+      <select onChange={handleChangeAscensor}>
         <option value=''>selecciona una opción</option>
         <option value='si'>Si</option>
         <option value='no'>No</option>
