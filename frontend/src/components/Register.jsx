@@ -20,10 +20,11 @@ function Register() {
  */
   //ver el cambio
   const handleSubmit = async (e) => {
+    // e es el evento del formulario  async para que espere a que se cree el usuario
     e.preventDefault();
     setError("");
     try {
-      await signup(user.email, user.password, rol);
+      await signup(user.email, user.password, rol); //  async para que espere a que se cree el usuario
       navigate("/");
     } catch (error) {
       // para cambiar el mensaje de error de firebase por uno pesolalizado
@@ -91,16 +92,20 @@ function Register() {
             <option value='user'>user</option>
           </select>
         </div>
-        <button className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'>
+        <button className=' bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full'>
           Register
         </button>
+
+        <p className='my-4 text-sm flex justify-between px-3'>
+          Already have an Account?
+          <Link
+            to='/login'
+            className='font-bold text-xm text-red-500 hover:text-red-800'
+          >
+            Login
+          </Link>
+        </p>
       </form>
-      <p className='my-4 text-sm flex justify-between px-3'>
-        Already have an Account?
-        <Link to='/login' className='text-red-700 hover:text-red-900'>
-          Login
-        </Link>
-      </p>
     </div>
   );
 }

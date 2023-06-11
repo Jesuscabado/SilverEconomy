@@ -47,6 +47,7 @@ function App() {
           <Route path='/settings' element={<Settings />} />
           <Route path='/chat' element={<Chat />} />
           <Route path='/profile' element={<Profile />} />
+          <Route path='/web/*' element={<Web />} />
         </Routes>
       </AuthContextProvider>
       {/*  <Footer /> */}

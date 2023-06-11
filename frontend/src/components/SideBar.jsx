@@ -13,7 +13,7 @@ function SideBar() {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
-
+    handleResize(); // Obtiene el tamaño inicial de la ventana
     // Agregar el event listener al cargar el componente
     window.addEventListener("resize", handleResize);
 
@@ -22,6 +22,12 @@ function SideBar() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  if (!user) {
+    console.log("Usuario no autenticado", user);
+    window.location.href = "/web";
+    // Redirecciona automáticamente al usuario a la página de inicio de sesión
+  }
 
   const handleLogout = async () => {
     try {

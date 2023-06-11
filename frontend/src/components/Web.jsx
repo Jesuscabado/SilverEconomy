@@ -10,29 +10,31 @@ import modelo1 from "../img/modelo1.jpg";
 import modelo2 from "../img/modelo2.jpg";
 import boton from "../img/Botonredondo.png";
 import barra from "../img/Barrabusquedabaja.jpg";
-import Navbar from "./Navbar";
+import NavbarSinTexto from "./NavbarSinTexto";
 import { Link } from "react-router-dom";
 
 function Home() {
-  const { user, logout, loading } = useAuth();
-  const [file, setFile] = useState(null);
+  const { user, logout, loading } = useAuth(); // para saber si esta logueado o no
+  const [file, setFile] = useState(null); // para subir archivos
 
   const handleLogout = async () => {
+    // para cerrar sesion
     try {
-      await logout();
+      await logout(); // para cerrar sesion con firebase
     } catch (error) {
       console.log(error);
     }
   };
 
-  if (loading) return <h1>Loading...</h1>;
+  if (loading) return <h1>Loading...</h1>; // si esta cargando
 
   // funcion de subir archivo porque que sube y da la url
 
   const HandleSubmit = async (e) => {
+    // para subir archivos
     try {
-      e.preventDefault();
-      const result = await uploadFile(file);
+      e.preventDefault(); //  para que no se recargue la pagina
+      const result = await uploadFile(file); // para subir el archivo
       console.log(result); // tiene la url del archivo
     } catch (error) {
       console.log(error);
@@ -43,7 +45,7 @@ function Home() {
   return (
     <div>
       <div class='containerprincipal'>
-        <Navbar className='z-60' />
+        <NavbarSinTexto className='z-60' />
         <div class='sidebar2'>
           <SideBar />
         </div>

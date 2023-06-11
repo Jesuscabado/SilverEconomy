@@ -11,9 +11,10 @@ import {
 import { auth } from "../Firebase";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
 
-export const authContext = createContext();
+export const authContext = createContext(); // crea el contexto de autenticacion para que se pueda usar en cualquier parte de la aplicacion con el hook useContext
 
 export const useAuth = () => {
+  // hook para usar el contexto de autenticacion
   const context = useContext(authContext);
   if (!context) {
     throw new Error("There is not auth provider");
@@ -22,7 +23,8 @@ export const useAuth = () => {
 };
 
 export function AuthContextProvider({ children }) {
-  const [user, setUser] = useState(null);
+  // componente para proveer el contexto de autenticacion
+  const [user, setUser] = useState(null); // estado inicial del usuario null  porque no hay usuario logeado al inicio
   const [loading, setLoading] = useState(true); // para que no se vea el login por un segundo
 
   const signup = async (email, password, rol) => {
@@ -52,21 +54,25 @@ export function AuthContextProvider({ children }) {
   };
  */
   const login = async (email, password) => {
-    await signInWithEmailAndPassword(auth, email, password);
-    console.log("login", email, password);
+    // funcion para iniciar sesion con email y contraseña  async para que espere a que se inicie sesion
+    await signInWithEmailAndPassword(auth, email, password); // espera a que se inicie sesion con el email y la contraseña  auth es el objeto que importamos de firebase  email y password son los datos que se pasan por parametro
+    console.log("login", email, password); // Mostrar solo los datos de email y password en la consola
   };
 
   const logout = () => {
-    signOut(auth);
+    // funcion para cerrar sesion  async para que espere a que se cierre sesion
+    signOut(auth); // espera a que se cierre sesion  auth es el objeto que importamos de firebase
   };
 
   const loginWithGoogle = () => {
-    const googleProvider = new GoogleAuthProvider();
-    signInWithPopup(auth, googleProvider);
+    // funcion para iniciar sesion con google
+    const googleProvider = new GoogleAuthProvider(); // se crea el proveedor de google  googleProvider es el objeto que importamos de firebase
+    signInWithPopup(auth, googleProvider); // se inicia sesion con el proveedor de google  auth es el objeto que importamos de firebase  googleProvider es el objeto que importamos de firebase
   };
 
   const resetPassword = (email) => {
-    sendPasswordResetEmail(auth, email);
+    // funcion para restablecer la contraseña
+    sendPasswordResetEmail(auth, email); // se envia el email para restablecer la contraseña  auth es el objeto que importamos de firebase  email es el email que se pasa por parametro
   };
 
   useEffect(() => {
@@ -74,16 +80,16 @@ export function AuthContextProvider({ children }) {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       // sino esta logeado te devuelve null
       setUser(currentUser); // almacenara el valor de currentUser
-      setLoading(false);
+      setLoading(false); // para que no se vea el login por un segundo
     });
 
     return () => unsubscribe();
   }, []);
 
   return (
-    <authContext.Provider
+    <authContext.Provider // proveedor de contexto de autenticacion para que se pueda usar en cualquier parte de la aplicacion con el hook useContext
       value={{
-        signup,
+        signup, // signup es la funcion para crear el usuario
         login,
         user,
         logout,
@@ -92,7 +98,7 @@ export function AuthContextProvider({ children }) {
         resetPassword,
       }}
     >
-      {children}
+      {children} {/* // children es el componente que se va a renderizar */}
     </authContext.Provider>
   );
 }

@@ -1,12 +1,10 @@
 import React from "react";
 import { useAuth } from "../context/AuthContext";
-import { Link /* , useLocation */ } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Logodipu from "../img/logodipu.jpg";
 
 function Navbar({ onLoginClick }) {
   const { user /* , handleLogout  */ } = useAuth();
-  /*  const location = useLocation();
-  const isHome = location.pathname === "/"; */
 
   const navbarStyles = {
     padding: "20px",
@@ -26,13 +24,11 @@ function Navbar({ onLoginClick }) {
   return (
     <div>
       <div>
-        {/* <Link to={isHome ? "/" : "/web"}> */}
         <img
           src={Logodipu}
           className='fixed flex justify-between items-center z-50 left-0 ml-19 scale-75 mt-[-13px]'
           alt='Logo Dipu'
-        />
-        {/*  </Link> */}
+        ></img>
       </div>
       <nav className='fixed flex justify-between items-center w-full bg-white z-10 h-9'>
         <div className='flex items-center justify-start w-full'>
@@ -41,34 +37,10 @@ function Navbar({ onLoginClick }) {
 
         <div className='flex items-center justify-end mr-5 text-sm'>
           <p
-            /* onClick={onLoginClick} */
+            onClick={onLoginClick}
             className='cursor-pointer whitespace-nowrap'
           >
-            Accciones de desarrollo |
-          </p>
-        </div>
-        <div className='flex items-center justify-end mr-5 text-sm'>
-          <p
-            /* onClick={onLoginClick} */
-            className='cursor-pointer whitespace-nowrap'
-          >
-            O.D.S |
-          </p>
-        </div>
-        <div className='flex items-center justify-end mr-5 text-sm'>
-          <p
-            /*  onClick={onLoginClick} */
-            className='cursor-pointer whitespace-nowrap'
-          >
-            Agenda / Eventos |
-          </p>
-        </div>
-        <div className='flex items-center justify-end mr-5 text-sm'>
-          <p
-            /* onClick={onLoginClick} */
-            className='cursor-pointer whitespace-nowrap font-bold'
-          >
-            ES
+            {/* Accciones de desarrollo | */}
           </p>
         </div>
         <div className='flex items-center justify-end mr-5 text-sm'>
@@ -76,7 +48,31 @@ function Navbar({ onLoginClick }) {
             onClick={onLoginClick}
             className='cursor-pointer whitespace-nowrap'
           >
-            Iniciar sesión
+            {/*     O.D.S | */}
+          </p>
+        </div>
+        <div className='flex items-center justify-end mr-5 text-sm'>
+          <p
+            onClick={onLoginClick}
+            className='cursor-pointer whitespace-nowrap'
+          >
+            {/* Agenda / Eventos | */}
+          </p>
+        </div>
+        <div className='flex items-center justify-end mr-5 text-sm'>
+          <p
+            onClick={onLoginClick}
+            className='cursor-pointer whitespace-nowrap font-bold'
+          >
+            {/*     ES */}
+          </p>
+        </div>
+        <div className='flex items-center justify-end mr-5 text-sm'>
+          <p
+            onClick={onLoginClick}
+            className='cursor-pointer whitespace-nowrap'
+          >
+            {/*   Iniciar sesión */}
           </p>
         </div>
       </nav>
