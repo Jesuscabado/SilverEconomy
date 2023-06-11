@@ -19,6 +19,7 @@ import Notificaciones from "./components/Notificaciones";
 import PlanAccion from "./components/PlanAccion";
 import Settings from "./components/Settings";
 import Chat from "./components/Chat";
+import RegisterOverlay from "./components/RegisterOverlay";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
           <Route path='/chat' element={<Chat />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='/web/*' element={<Web />} />
+          <Route path='/registeroverlay' element={<RegisterOverlay />} />
         </Routes>
       </AuthContextProvider>
       {/*  <Footer /> */}

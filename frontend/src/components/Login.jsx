@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
 import Alert from "./Alert";
+import Register from "./Register";
 
 function Login() {
   const [user, setUser] = useState({ email: "", password: "", rol: "" }); // estado inicial del usuario
@@ -131,7 +132,7 @@ function Login() {
         </p>
         <div className='flex items-center justify-between '>
           <button className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full'>
-            <Link to='/register'>Register</Link>
+            <Link to='/registeroverlay'>Register</Link>
           </button>
         </div>
       </form>
