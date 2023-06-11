@@ -112,6 +112,7 @@ const Paso1 = ({ nextStep }) => {
 const Paso2 = ({ nextStep }) => {
   const [idioma, setIdioma] = useState("");
   const [file, setFile] = useState(null);
+  const [mensaje, setMensaje] = useState("");
   const tiposArchivoPermitidos = [
     "pdf",
     "doc",
@@ -130,6 +131,10 @@ const Paso2 = ({ nextStep }) => {
 
   const handleIdiomaChange = (event) => {
     setIdioma(event.target.value);
+  };
+
+  const handleMensajeChange = (event) => {
+    setMensaje(event.target.value);
   };
 
   const handleNextStep = () => {
@@ -156,6 +161,8 @@ const Paso2 = ({ nextStep }) => {
         Motivo de la consulta:
         <br />
         <textarea
+          value={mensaje}
+          onChange={handleMensajeChange}
           placeholder="Explicanos sobre qué quieres realizar tu consulta, sugerencia o comunicación o de qué quieres quejarte"
           rows={4}
           cols={50}
@@ -185,14 +192,17 @@ const Paso2 = ({ nextStep }) => {
         </select>
       </label>
       <br />
-      <button onClick={handleNextStep} disabled={idioma === ""}>
+      <button
+        onClick={handleNextStep}
+        disabled={idioma === "" || mensaje === ""}
+      >
         Siguiente
       </button>
     </div>
   );
 };
 
-const Paso3 = () => {
+const Paso3 = ({ file, setFile }) => {
   const [email, setEmail] = useState("");
   const [confirmarEmail, setConfirmarEmail] = useState("");
   const [sexo, setSexo] = useState("");
@@ -254,114 +264,140 @@ const Paso3 = () => {
     setAutorizacion(event.target.checked);
   };
 
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      const result = await uploadFile(file);
+      console.log(result); // tiene la URL del archivo
+    } catch (error) {
+      console.log(error);
+      alert("Hubo un error al subir el archivo");
+    }
+  };
+
   return (
     <div>
-      <h3>Paso 3: Datos personales</h3>
-      <p>Los campos marcados con el signo (*) son obligatorios.</p>
-      <label>
-        E-mail (*):
-        <input
-          type="email"
-          value={email}
-          onChange={handleEmailChange}
-          required
-        />
-      </label>
-      <br />
-      <label>
-        Confirmar e-mail (*):
-        <input
-          type="email"
-          value={confirmarEmail}
-          onChange={handleConfirmarEmailChange}
-          required
-        />
-      </label>
-      <br />
-      <label>
-        Sexo (*):
+      <form onSubmit={handleSubmit} encType="multipart/form-data">
+        {/*  <input
+          type="file"
+          name="file"
+          id="file"
+          onChange={(e) => setFile(e.target.files[0])}
+        /> */}
+        <h3>Paso 3: Datos personales</h3>
+        <p>Los campos marcados con el signo (*) son obligatorios.</p>
+        <label>
+          E-mail (*):
+          <input
+            type="email"
+            value={email}
+            onChange={handleEmailChange}
+            required
+          />
+        </label>
         <br />
-        <select value={sexo} onChange={handleSexoChange} required>
-          <option value="">Selecciona el sexo</option>
-          <option value="Hombre">Hombre</option>
-          <option value="Mujer">Mujer</option>
-          <option value="Otros">Otros</option>
-        </select>
-      </label>
-      <br />
-      <h4>Datos opcionales</h4>
-      <label>
-        Nombre y apellidos:
-        <input type="text" value={nombre} onChange={handleNombreChange} />
-      </label>
-      <br />
-      <label>
-        DNI:
-        <input type="text" value={dni} onChange={handleDniChange} />
-      </label>
-      <br />
-      <label>
-        Teléfono:
-        <input type="text" value={telefono} onChange={handleTelefonoChange} />
-      </label>
-      <br />
-      <p>
-        En el caso de que el trámite sea complicado de realizar vía email, nos
-        pondremos en contacto vía telefónica.
-      </p>
-      <label>
-        Calle:
-        <input type="text" value={calle} onChange={handleCalleChange} />
-      </label>
-      <br />
-      <label>
-        Número:
-        <input type="text" value={numero} onChange={handleNumeroChange} />
-      </label>
-      <br />
-      <label>
-        Piso:
-        <input type="text" value={piso} onChange={handlePisoChange} />
-      </label>
-      <br />
-      <label>
-        Municipio:
-        <input type="text" value={municipio} onChange={handleMunicipioChange} />
-      </label>
-      <br />
-      <label>
-        Código postal:
-        <input
-          type="text"
-          value={codigoPostal}
-          onChange={handleCodigoPostalChange}
-        />
-      </label>
-      <br />
-      <p>Protección de datos personales y garantía de los derechos digitales</p>
-      <label>
-        <input
-          type="checkbox"
-          checked={autorizacion}
-          onChange={handleAutorizacionChange}
-          required
-        />
-        Autorizo a la Dirección General de Digitalización y Atención Ciudadana a
-        derivar mi demanda al Departamento de la Diputación Foral de Bizkaia
-        competente para su tramitación. Y en el supuesto de que la demanda no se
-        refiera a una materia competencia de la Diputación Foral de Bizkaia,
-        presto mi consentimiento para que, si es posible, se dé traslado de la
-        misma a la Administración Pública u organismo correspondiente. (*)
-      </label>
-      <br />
-      <button>Enviar</button>
+        <label>
+          Confirmar e-mail (*):
+          <input
+            type="email"
+            value={confirmarEmail}
+            onChange={handleConfirmarEmailChange}
+            required
+          />
+        </label>
+        <br />
+        <label>
+          Sexo (*):
+          <br />
+          <select value={sexo} onChange={handleSexoChange} required>
+            <option value="">Selecciona el sexo</option>
+            <option value="Hombre">Hombre</option>
+            <option value="Mujer">Mujer</option>
+            <option value="Otros">Otros</option>
+          </select>
+        </label>
+        <br />
+        <h4>Datos opcionales</h4>
+        <label>
+          Nombre y apellidos:
+          <input type="text" value={nombre} onChange={handleNombreChange} />
+        </label>
+        <br />
+        <label>
+          DNI:
+          <input type="text" value={dni} onChange={handleDniChange} />
+        </label>
+        <br />
+        <label>
+          Teléfono:
+          <input type="text" value={telefono} onChange={handleTelefonoChange} />
+        </label>
+        <br />
+        <p>
+          En el caso de que el trámite sea complicado de realizar vía email, nos
+          pondremos en contacto vía telefónica.
+        </p>
+        <label>
+          Calle:
+          <input type="text" value={calle} onChange={handleCalleChange} />
+        </label>
+        <br />
+        <label>
+          Número:
+          <input type="text" value={numero} onChange={handleNumeroChange} />
+        </label>
+        <br />
+        <label>
+          Piso:
+          <input type="text" value={piso} onChange={handlePisoChange} />
+        </label>
+        <br />
+        <label>
+          Municipio:
+          <input
+            type="text"
+            value={municipio}
+            onChange={handleMunicipioChange}
+          />
+        </label>
+        <br />
+        <label>
+          Código postal:
+          <input
+            type="text"
+            value={codigoPostal}
+            onChange={handleCodigoPostalChange}
+          />
+        </label>
+        <br />
+        <p>
+          Protección de datos personales y garantía de los derechos digitales
+        </p>
+        <label>
+          <input
+            type="checkbox"
+            checked={autorizacion}
+            onChange={handleAutorizacionChange}
+            required
+          />
+          Autorizo a la Dirección General de Digitalización y Atención Ciudadana
+          a derivar mi demanda al Departamento de la Diputación Foral de Bizkaia
+          competente para su tramitación. Y en el supuesto de que la demanda no
+          se refiera a una materia competencia de la Diputación Foral de
+          Bizkaia, presto mi consentimiento para que, si es posible, se dé
+          traslado de la misma a la Administración Pública u organismo
+          correspondiente. (*)
+        </label>
+        <br />
+        <button>Enviar</button>
+      </form>
     </div>
   );
 };
 
 const FormularioEnTresPasos = () => {
   const [step, setStep] = useState(1);
-
+  const [file, setFile] = useState(null); // file es un objeto de tipo File
   const handleNextStep = () => {
     setStep(step + 1);
   };
@@ -370,7 +406,8 @@ const FormularioEnTresPasos = () => {
     <div>
       {step === 1 && <Paso1 nextStep={handleNextStep} />}
       {step === 2 && <Paso2 nextStep={handleNextStep} />}
-      {step === 3 && <Paso3 />}
+      {step === 3 && <Paso3 file={file} setFile={setFile} />}{" "}
+      {/* Paso el estado y la función como props */}
     </div>
   );
 };
