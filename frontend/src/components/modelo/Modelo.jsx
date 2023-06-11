@@ -274,7 +274,6 @@ function Modelo() {
       label: "Datos demográficos",
       components: [
         {
-          label: "Edad",
           component: (
             <div>
               <p className='selector-label'>Edad</p>
@@ -283,7 +282,6 @@ function Modelo() {
           ),
         },
         {
-          label: "Estado civil",
           component: (
             <div>
               <p className='selector-label'>Estado civil</p>
@@ -292,7 +290,6 @@ function Modelo() {
           ),
         },
         {
-          label: "Sexo",
           component: (
             <div>
               <p className='selector-label'>Sexo</p>
@@ -307,7 +304,6 @@ function Modelo() {
       label: "Salud y bienestar",
       components: [
         {
-          label: "Psicofármacos",
           component: (
             <div>
               <p className='selector-label'>Psicofármacos</p>
@@ -316,7 +312,6 @@ function Modelo() {
           ),
         },
         {
-          label: "Actividad física",
           component: (
             <div>
               <p className='selector-label'>Actividad física</p>
@@ -325,7 +320,6 @@ function Modelo() {
           ),
         },
         {
-          label: "Limitación física",
           component: (
             <div>
               <p className='selector-label'>Limitación física</p>
@@ -334,7 +328,6 @@ function Modelo() {
           ),
         },
         {
-          label: "Estado de ánimo",
           component: (
             <div>
               <p className='selector-label'>Estado de ánimo</p>
@@ -343,7 +336,6 @@ function Modelo() {
           ),
         },
         {
-          label: "Satisfacción de vida",
           component: (
             <div>
               <p className='selector-label'>Satisfacción de vida</p>
@@ -358,7 +350,6 @@ function Modelo() {
       label: "Familia y vivienda",
       components: [
         {
-          label: "Vive solo",
           component: (
             <div>
               <p className='selector-label'>Vive solo</p>
@@ -367,7 +358,6 @@ function Modelo() {
           ),
         },
         {
-          label: "Hijos",
           component: (
             <div>
               <p className='selector-label'>Hijos</p>
@@ -376,7 +366,6 @@ function Modelo() {
           ),
         },
         {
-          label: "Ascensor",
           component: (
             <div>
               <p className='selector-label'>Ascensor</p>
@@ -385,7 +374,6 @@ function Modelo() {
           ),
         },
         {
-          label: "Red de apoyo familiar",
           component: (
             <div>
               <p className='selector-label'>Red de apoyo familiar</p>
@@ -400,7 +388,6 @@ function Modelo() {
       label: "Educación",
       components: [
         {
-          label: "Nivel de estudios",
           component: (
             <div>
               <p className='selector-label'>Nivel de estudios</p>
@@ -415,7 +402,6 @@ function Modelo() {
       label: "Aspectos municipales",
       components: [
         {
-          label: "Municipio accesible",
           component: (
             <div>
               <p className='selector-label'>Municipio accesible</p>
@@ -424,7 +410,6 @@ function Modelo() {
           ),
         },
         {
-          label: "Municipio con rec social",
           component: (
             <div>
               <p className='selector-label'>Municipio con rec social</p>
@@ -433,7 +418,6 @@ function Modelo() {
           ),
         },
         {
-          label: "Municipio con rec ocio",
           component: (
             <div>
               <p className='selector-label'>Municipio con rec ocio</p>
@@ -448,7 +432,6 @@ function Modelo() {
       label: "Economía",
       components: [
         {
-          label: "Ingresos Económicos",
           component: (
             <div>
               <p className='selector-label'>Ingresos Económicos</p>
@@ -463,7 +446,6 @@ function Modelo() {
       label: "Cohesión social",
       components: [
         {
-          label: "Cohesión social",
           component: (
             <div>
               <p className='selector-label'>Cohesión social</p>
@@ -483,20 +465,28 @@ function Modelo() {
 
   return (
     <div>
-      {/* <Navbar />
-      <SideBar /> */}
+      <Navbar />
+      <SideBar />
+      <div className='flex flex-row items-center justify-center h-screen'>
+        <h3 className='titulomapa text-3xl font-bold mb-4'>
+          Modelo predictivo
+        </h3>
+        <div className='container mx-auto'>
+          <div className='card-11 flex flex-row items-center justify-center ml-4'>
+            <div className='main-container '>
+              <div className='group-container'>
+                <h2 className='group-label'>
+                  {sections[currentSection].label}
+                </h2>
+                {sections[currentSection].components.map((component, index) => (
+                  <div key={index} className='selector-item'>
+                    <p className='selector-label'>{component.label}</p>
+                    {component.component}
+                  </div>
+                ))}
+              </div>
 
-      <div className='group-container'>
-        <h2 className='group-label'>{sections[currentSection].label}</h2>
-        {sections[currentSection].components.map((component, index) => (
-          <div key={index} className='selector-item'>
-            <p className='selector-label'>{component.label}</p>
-            {component.component}
-          </div>
-        ))}
-      </div>
-
-      {/*  <div className='selectors-container'>
+              {/*  <div className='selectors-container'>
         <div className='group-container'>
           <h2 className='group-label'>{sections[currentSection].label}</h2>
           <div className='selector-item'>
@@ -504,15 +494,17 @@ function Modelo() {
           </div>
         </div>
       </div>*/}
-      {currentSection < sections.length - 1 && (
-        <button onClick={handleNextSection}>Siguiente</button>
-      )}
-      {currentSection === sections.length - 1 && (
-        <h1 className='modelo-label'>Modelo: {modelo}</h1>
-      )}
-
-      {/* /* --------------------------------- */}
-      {/* 
+              {currentSection < sections.length - 1 && (
+                <button onClick={handleNextSection}>Siguiente</button>
+              )}
+              {currentSection === sections.length - 1 && (
+                <h1 className='modelo-label'>Modelo: {modelo}</h1>
+              )}
+            </div>
+          </div>
+        </div>
+        {/* /* --------------------------------- */}
+        {/* 
       <div className='modelo-container'>
         <div className='selectors-container'>
           <div className='group-container'>
@@ -670,7 +662,8 @@ function Modelo() {
         </div>
       </div>
     </div> */}
-      {/* -------------------------------------------------------------------------- */}
+        {/* -------------------------------------------------------------------------- */}
+      </div>
     </div>
   );
 }

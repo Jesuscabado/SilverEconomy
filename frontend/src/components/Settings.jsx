@@ -1,7 +1,8 @@
 import React from "react";
 import Navbar from "./Navbar";
 import SideBar from "./SideBar";
-function Profile() {
+
+function Settings() {
   return (
     <div>
       <Navbar />
@@ -10,4 +11,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default Settings;

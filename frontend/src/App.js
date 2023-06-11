@@ -8,12 +8,17 @@ import Web from "./components/Home";
 import AvisoLegal from "././components/AvisoLegal";
 /* import Footer from "./components/Footer"; */
 /* import Navbar from "./components/Navbar"; */
-/* import Profile from "./components/Profile";
- */ import "./index.css";
+import Profile from "./components/Profile";
+import "./index.css";
 /* import Footer from "./components/Footer"; */
 import Calendar from "./components/Calendar/Index";
 import Modelo from "./components/modelo/Modelo";
 import MapaCalor from "./components/MapaCalor";
+import Informes from "./components/Informes";
+import Notificaciones from "./components/Notificaciones";
+import PlanAccion from "./components/PlanAccion";
+import Settings from "./components/Settings";
+import Chat from "./components/Chat";
 
 function App() {
   return (
@@ -36,8 +41,12 @@ function App() {
           <Route path='/calendar' element={<Calendar />} />
           <Route path='/modelo' element={<Modelo />} />
           <Route path='/mapacalor' element={<MapaCalor />} />
-          {/*           <Route path='/profile' element={<Profile />} />
-           */}
+          <Route path='/informes' element={<Informes />} />
+          <Route path='/notificaciones' element={<Notificaciones />} />
+          <Route path='/planaccion' element={<PlanAccion />} />
+          <Route path='/settings' element={<Settings />} />
+          <Route path='/chat' element={<Chat />} />
+          <Route path='/profile' element={<Profile />} />
         </Routes>
       </AuthContextProvider>
       {/*  <Footer /> */}

@@ -80,7 +80,7 @@ function SideBar() {
                 onMouseEnter={() => handleMouseEnter("Informes")}
                 onMouseLeave={handleMouseLeave}
               >
-                <a href='./map.html'>
+                <Link to='/informes'>
                   <svg
                     className='icono'
                     width='23'
@@ -102,7 +102,7 @@ function SideBar() {
                       <p style={{ display: "none" }}>Informes</p>
                     )}
                   </div>
-                </a>
+                </Link>
               </li>
 
               <li
@@ -110,7 +110,7 @@ function SideBar() {
                 onMouseEnter={() => handleMouseEnter("notificaciones")}
                 onMouseLeave={handleMouseLeave}
               >
-                <a href='./notifications.html'>
+                <Link to='/notificaciones'>
                   <svg
                     className='icono'
                     width='23'
@@ -132,7 +132,7 @@ function SideBar() {
                       <p style={{ display: "none" }}>Notificaciones</p>
                     )}
                   </div>
-                </a>
+                </Link>
               </li>
 
               <li
@@ -140,7 +140,7 @@ function SideBar() {
                 onMouseEnter={() => handleMouseEnter("planaccion")}
                 onMouseLeave={handleMouseLeave}
               >
-                <a href='./tables.html'>
+                <Link to='/planaccion'>
                   <svg
                     className='icono'
                     width='23'
@@ -161,7 +161,7 @@ function SideBar() {
                       <p style={{ display: "none" }}>Plan de acción</p>
                     )}
                   </div>
-                </a>
+                </Link>
               </li>
 
               <li
@@ -199,7 +199,7 @@ function SideBar() {
                 onMouseEnter={() => handleMouseEnter("chat")}
                 onMouseLeave={handleMouseLeave}
               >
-                <a href='./upgrade.html'>
+                <Link to='/chat'>
                   <svg
                     className='icono'
                     width='25'
@@ -222,7 +222,7 @@ function SideBar() {
                       <p style={{ display: "none" }}>Chat</p>
                     )}
                   </div>
-                </a>
+                </Link>
               </li>
 
               <li
@@ -230,7 +230,7 @@ function SideBar() {
                 onMouseEnter={() => handleMouseEnter("settings")}
                 onMouseLeave={handleMouseLeave}
               >
-                <Link to='/#'>
+                <Link to='/settings'>
                   <svg
                     className='icono'
                     width='25'
@@ -292,8 +292,8 @@ function SideBar() {
                 onMouseLeave={handleMouseLeave}
               >
                 <button
-                  className='bg-red-500 hover:bg-red-700 rounded py-2 px-4 text-white'
-                  onClick={handleLogout}
+                  /*                   className='bg-red-500 hover:bg-red-700 rounded py-2 px-4 text-white'
+                   */ onClick={handleLogout}
                 >
                   logout
                 </button>
