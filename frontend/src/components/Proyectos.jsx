@@ -1,11 +1,11 @@
 import React from "react";
-import Navbar from "./Navbar";
+import NavbarSinTexto from "./NavbarSinTexto";
 import SideBar from "./SideBar";
 
 function Proyectos() {
   return (
     <div>
-      <Navbar />
+      <NavbarSinTexto />
       <SideBar />
       <div className='flex flex-row items-center justify-center h-screen'>
         <div className='container mx-auto mt-10 ml-60'>

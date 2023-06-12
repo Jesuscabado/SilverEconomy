@@ -461,6 +461,10 @@ function Modelo() {
     setCurrentSection(currentSection + 1);
   };
 
+  const handlePreviousSection = () => {
+    setCurrentSection(currentSection - 1);
+  };
+
   /*  -------------------------------------------   */
 
   return (
@@ -494,9 +498,17 @@ function Modelo() {
           </div>
         </div>
       </div>*/}
+
+              {/* Botón "Anterior" */}
+              {currentSection > 0 && (
+                <button onClick={handlePreviousSection}>Anterior</button>
+              )}
+
+              {/* Botón "Siguiente" */}
               {currentSection < sections.length - 1 && (
                 <button onClick={handleNextSection}>Siguiente</button>
               )}
+
               {currentSection === sections.length - 1 && (
                 <h1 className='modelo-label'>Modelo: {modelo}</h1>
               )}
