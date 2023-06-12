@@ -23,7 +23,6 @@ import Navbar from "../Navbar";
 import "../../css/Modelo.css";
 
 function Modelo() {
-function Modelo() {
   const [modelo, setModelo] = useState("");
   const [edadSeleccionada, setEdadSeleccionada] = useState("");
   const [nivelActividad, setNivelActividad] = useState("");
