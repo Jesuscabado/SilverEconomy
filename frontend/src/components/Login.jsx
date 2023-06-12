@@ -1,92 +1,142 @@
-import React, { useState } from "react";
-import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
-import { auth, provider } from "../components/Firebase";
+import React from "react";
+import { useState } from "react";
+import { useAuth } from "../context/AuthContext";
+import { useNavigate, Link } from "react-router-dom";
+import Alert from "./Alert";
 
-import { NavLink, useNavigate } from "react-router-dom";
+function Login() {
+  const [user, setUser] = useState({ email: "", password: "", rol: "" }); //[{},()=>{}
 
-const Login = () => {
+  const [error, setError] = useState("");
+
+  const { login, loginWithGoogle, resetPassword } = useAuth();
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
-  const onLogin = (e) => {
-    e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        navigate("/");
-        console.log(user);
-      })
-      .catch((error) => {
-        alert("Invalid email or password");
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-      });
+  // actualizar estado
+  const handleChange = ({ target: { name, value } }) => {
+    setUser({ ...user, [name]: value });
   };
 
-  const onGoogleLogin = (e) => {
+  //ver el cambio
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        navigate("/");
-      })
-      .catch((error) => {
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-      });
+    setError("");
+    try {
+      await login(user.email, user.password);
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+      // para cambiar el mensaje de error de firebase por uno pesolalizado
+      /* console.log(error.code);
+      if(error.code === "auth/email-already-in-use"){
+        setError("El correo ya esta en uso"); */
+      setError(
+        error.message
+          .replace("Firebase: Error ", "")
+          .split("/")[1]
+          .replace(/[).]+$/, "")
+      );
+    }
+  };
+
+  const handleGoogleSignin = async () => {
+    try {
+      await loginWithGoogle();
+      navigate("/");
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
+  const handleResetPassword = async (e) => {
+    e.preventDefault();
+    if (!user.email) return setError("Write an email to reset password");
+    try {
+      await resetPassword(user.email);
+      setError("We sent you an email. Check your inbox");
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
   return (
-    <>
-      <main>
-        <section>
-          <div>
-            <p> FocusApp </p>
+    <div className="w-full max-w-xs m-auto">
+      {error && <Alert message={error} />}
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+      >
+        <span className="flex justify-center items-center font-bold">
+          Iniciar sesión
+        </span>
+        <div className="mb-4">
+          <label
+            htmlFor="email-address"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          ></label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="youremail@gmail.com"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="mb-4">
+          <label
+            htmlFor="email-address"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          ></label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="******"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <p className="inline-block align-baseline text-xs ">
+            ¿Has olvidado tu contraseña? Pincha
+          </p>
 
-            <form>
-              <div>
-                <label htmlFor='email-address'>Email address</label>
-                <input
-                  id='email-address'
-                  name='email'
-                  type='email'
-                  required
-                  placeholder='Email address'
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
+          <a
+            className="inline-block align-baseline font-bold text-xs text-red-500 hover:text-red-800 m-4"
+            href="#!"
+            onClick={handleResetPassword}
+          >
+            aqui
+          </a>
+        </div>
+        <div className=" m-4 flex items-center justify-between">
+          <button
+            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
+            type="submit"
+          >
+            Inicio de sesión
+          </button>
+        </div>
 
-              <div>
-                <label htmlFor='password'>Password</label>
-                <input
-                  id='password'
-                  name='password'
-                  type='password'
-                  required
-                  placeholder='Password'
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
+        <button
+          onClick={handleGoogleSignin}
+          className="m-4 flex items-center justify-between bg-slate-50 hover:bg-slate-200 text-black  shadow rounded border-2 border-gray-300 py-2 px-4 w-full"
+        >
+          Inicia sesión con Google
+        </button>
 
-              <div>
-                <button onClick={onLogin}>Login</button>
-                <button onClick={onGoogleLogin}>Login with google</button>
-              </div>
-            </form>
-
-            <p className='text-sm text-white text-center'>
-              No account yet? <NavLink to='/signup'>Sign up</NavLink>
-            </p>
-          </div>
-        </section>
-      </main>
-    </>
+        <p className="my-4 text-xs flex justify-center items-center">
+          ¿No tienes una cuenta?
+        </p>
+        <div className="flex items-center justify-between ">
+          <button className="m-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full">
+            <Link to="/register">Register</Link>
+          </button>
+        </div>
+      </form>
+    </div>
   );
-};
+}
 
 export default Login;
