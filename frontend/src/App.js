@@ -12,6 +12,8 @@ import Profile from "./components/Profile";
 import "./index.css";
 /* import Footer from "./components/Footer"; */
 import Calendar from "./components/Calendar/Index";
+import Chat from "./components/chat/Chat";
+import ContactForm from "./components/contactForm/ContactForm";
 import Modelo from "./components/modelo/Modelo";
 import MapaCalor from "./components/MapaCalor";
 import Informes from "./components/Informes";

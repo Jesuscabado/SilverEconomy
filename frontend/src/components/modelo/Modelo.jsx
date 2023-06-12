@@ -23,6 +23,7 @@ import Navbar from "../Navbar";
 import "../../css/Modelo.css";
 
 function Modelo() {
+function Modelo() {
   const [modelo, setModelo] = useState("");
   const [edadSeleccionada, setEdadSeleccionada] = useState("");
   const [nivelActividad, setNivelActividad] = useState("");
@@ -232,30 +233,46 @@ function Modelo() {
   }, [
     sexoSeleccionado,
     sexoMapeado,
+    sexoSeleccionado,
+    sexoMapeado,
     edadSeleccionada,
+    estadoCivilMapeado,
     estadoCivilMapeado,
     estadoCivilSeleccionado,
     nivelEstudiosSeleccionado,
+    nivelEstudiosMapeado,
     nivelEstudiosMapeado,
     psicofarmacoSeleccionado,
     psicofarmacosMapeado,
     viveSeleccionado,
     viveSoloMapeado,
+    psicofarmacosMapeado,
+    viveSeleccionado,
+    viveSoloMapeado,
     hijosSeleccionado,
     HijosMapeado,
+    HijosMapeado,
     ascensorSeleccionado,
+    ascensorMapeado,
+    mapeoActividad,
     ascensorMapeado,
     mapeoActividad,
     nivelActividad,
     limFisicaSeleccionada,
     limFisicaMapeada,
+    limFisicaMapeada,
     estadoAnimoSeleccionado,
+    estadoAnimoMapeado,
+    satisfaccionMapeada,
     estadoAnimoMapeado,
     satisfaccionMapeada,
     satisfaccionSeleccionada,
     ingresosSeleccionados,
     ingresosMapeados,
+    ingresosMapeados,
     redSeleccionada,
+    redApoyoMapeada,
+    cohesionSocialSeleccionado,
     redApoyoMapeada,
     cohesionSocialSeleccionado,
     cohesionSocial,
@@ -263,7 +280,11 @@ function Modelo() {
     municipio_accesibleMapeado,
     municipioRecSocialSeleccionado,
     municipioRecSocialMapeado,
+    municipio_accesibleMapeado,
+    municipioRecSocialSeleccionado,
+    municipioRecSocialMapeado,
     municipioOcioSeleccionado,
+    municipioRecOcioMapeado,
     municipioRecOcioMapeado,
   ]);
 
