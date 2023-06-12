@@ -22,12 +22,12 @@ function MapeoSexo({ onSexoSeleccionado, onSexoMapeado }) {
   return (
     <div>
       <select onChange={handleChangeSexo}>
-        <option value="">selecciona una opción</option>{" "}
-        <option value="hombre">Hombre</option>
-        <option value="mujer">Mujer</option>
+        <option value=''>selecciona una opción</option>{" "}
+        <option value='hombre'>Hombre</option>
+        <option value='mujer'>Mujer</option>
       </select>
-
-      {sexoMapeado !== null && <div>Sexo mapeado: {sexoMapeado}</div>}
+      {/*       {sexoMapeado !== null && <div>Sexo mapeado: {sexoMapeado}</div>}
+       */}
     </div>
   );
 }

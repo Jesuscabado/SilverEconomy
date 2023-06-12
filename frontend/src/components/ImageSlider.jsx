@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 const ImageSlider = ({ slides }) => {
+  const [showLogin, setShowLogin] = useState(false);
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const sliderStyles = {
@@ -20,7 +22,7 @@ const ImageSlider = ({ slides }) => {
   const leftArrowStyles = {
     position: "absolute",
     top: "50%",
-    transform: "translate (0, -50%)",
+    transform: "translate(0, -50%)",
     left: "32px",
     fontSize: "45px",
     color: "#fff",
@@ -44,6 +46,7 @@ const ImageSlider = ({ slides }) => {
     justifyContent: "center",
   };
   const dotStyles = {
+    zIndex: "99",
     margin: "0 3px",
     cursor: "pointer",
     fontSize: "20px",
@@ -66,13 +69,15 @@ const ImageSlider = ({ slides }) => {
     color: "#fff",
     textAlign: "center",
     backgroundColor: "rgba(0, 0, 0, 0.5)",
-    visibility: currentIndex === 1 ? "visible" : "hidden",
+    visibility: currentIndex === 0 ? "visible" : "hidden",
   };
 
   const buttonTextStyles = {
     fontSize: "18px",
     fontWeight: "bold",
+
     marginTop: "10px",
+    backgroundColor: "#fff",
   };
 
   const goToPrevious = () => {
@@ -93,8 +98,17 @@ const ImageSlider = ({ slides }) => {
   return (
     <div style={sliderStyles}>
       <div style={contentContainerStyles}>
-        <h2>{slides[currentIndex].title}</h2>
-        <button style={buttonTextStyles}>Login</button>
+        {currentIndex === 0 && (
+          <>
+            <h2>{slides[currentIndex].title}</h2>
+            <div>
+              <p>Inicia sesión o regístrate para obtener datos</p>
+              <button className='bg-red-500 text-white px-4 py-2 rounded m-4'>
+                {/* onLoginClick={() => setShowLogin(true)} */} Aquí
+              </button>
+            </div>
+          </>
+        )}
       </div>
       <div style={leftArrowStyles} onClick={goToPrevious}>
         ‹

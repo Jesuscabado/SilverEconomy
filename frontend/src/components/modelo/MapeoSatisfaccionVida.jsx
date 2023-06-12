@@ -29,15 +29,15 @@ function MapeoSatisfaccionVida({
   return (
     <div>
       <select onChange={handleChangeSatisfaccion}>
-        <option value="">selecciona una opción</option>
-        <option value="poco satisfecho">Poco satisfecho</option>
-        <option value="satisfecho medio">Satisfecho medio</option>
-        <option value="muy satisfecho">Muy satisfecho</option>
+        <option value=''>selecciona una opción</option>
+        <option value='poco satisfecho'>Poco satisfecho</option>
+        <option value='satisfecho medio'>Satisfecho medio</option>
+        <option value='muy satisfecho'>Muy satisfecho</option>
       </select>
 
-      {satisfaccionMapeada !== null && (
+      {/*   {satisfaccionMapeada !== null && (
         <div>Satisfacción mapeada: {satisfaccionMapeada}</div>
-      )}
+      )} */}
     </div>
   );
 }

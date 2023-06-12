@@ -26,15 +26,15 @@ function MapeoMunicipioRecOcio({
   return (
     <div>
       <select onChange={handleChangeMunicipioOcio}>
-        <option value="">selecciona una opción</option>
-        <option value="rec ocio bajo">Recreación y ocio bajo</option>
-        <option value="rec ocio medio">Recreación y ocio medio</option>
-        <option value="rec ocio alto">Recreación y ocio alto</option>
+        <option value=''>selecciona una opción</option>
+        <option value='rec ocio bajo'>Recreación y ocio bajo</option>
+        <option value='rec ocio medio'>Recreación y ocio medio</option>
+        <option value='rec ocio alto'>Recreación y ocio alto</option>
       </select>
 
-      {municipioRecOcioMapeado !== null && (
+      {/*   {municipioRecOcioMapeado !== null && (
         <div>Municipio mapeado: {municipioRecOcioMapeado}</div>
-      )}
+      )} */}
     </div>
   );
 }

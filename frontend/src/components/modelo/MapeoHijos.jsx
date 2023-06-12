@@ -22,15 +22,15 @@ function MapeoHijos({ onHijosSeleccionado, onHijosMapeado }) {
   return (
     <div>
       <select onChange={handleChangeRespuesta}>
-        <option value="">selecciona una opción</option>
+        <option value=''>selecciona una opción</option>
         {Object.keys(mapeoHijos).map((hijos) => (
           <option key={hijos} value={hijos}>
             {hijos}
           </option>
         ))}
       </select>
-
-      {HijosMapeado !== null && <div>valor mapeado: {HijosMapeado}</div>}
+      {/*       {HijosMapeado !== null && <div>valor mapeado: {HijosMapeado}</div>}
+       */}{" "}
     </div>
   );
 }

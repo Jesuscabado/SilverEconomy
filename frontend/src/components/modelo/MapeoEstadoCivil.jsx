@@ -24,7 +24,7 @@ function MapeoEstadoCivil({ onEstadoCivilSeleccionado, onEstadoCivilMapeado }) {
   return (
     <div>
       <select onChange={handleChangeEstadoCivil}>
-        <option value="">selecciona una opción</option>
+        <option value=''>selecciona una opción</option>
         {Object.keys(mapeoEstadoCivil).map((estadoCivil) => (
           <option key={estadoCivil} value={estadoCivil}>
             {estadoCivil}
@@ -32,9 +32,9 @@ function MapeoEstadoCivil({ onEstadoCivilSeleccionado, onEstadoCivilMapeado }) {
         ))}
       </select>
 
-      {estadoCivilMapeado !== null && (
+      {/* {estadoCivilMapeado !== null && (
         <div>Estado civil mapeado: {estadoCivilMapeado}</div>
-      )}
+      )} */}
     </div>
   );
 }

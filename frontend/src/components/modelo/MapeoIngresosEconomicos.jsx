@@ -26,15 +26,15 @@ function MapeoIngresosEconomicos({
   return (
     <div>
       <select onChange={handleChangeIngresos}>
-        <option value="">selecciona una opción</option>
-        <option value="ingresos_bajos">Ingresos Bajos</option>
-        <option value="ingresos_medios">Ingresos Medios</option>
-        <option value="ingresos_altos">Ingresos Altos</option>
+        <option value=''>selecciona una opción</option>
+        <option value='ingresos_bajos'>Ingresos Bajos</option>
+        <option value='ingresos_medios'>Ingresos Medios</option>
+        <option value='ingresos_altos'>Ingresos Altos</option>
       </select>
 
-      {ingresosMapeados !== null && (
+      {/* {ingresosMapeados !== null && (
         <div>Ingresos mapeados: {ingresosMapeados}</div>
-      )}
+      )} */}
     </div>
   );
 }

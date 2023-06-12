@@ -23,16 +23,16 @@ function MapeoActividadFisica({ onNivelActividad, onNivelActividadMapeado }) {
   return (
     <div>
       <select onChange={handleChangeNivelActividad}>
-        <option value="">selecciona una opción</option>
-        <option value="sedentario">Sedentario</option>
-        <option value="moderado">Moderado</option>
-        <option value="activo">Activo</option>
-        <option value="muyActivo">Muy Activo</option>
+        <option value=''>selecciona una opción</option>
+        <option value='sedentario'>Sedentario</option>
+        <option value='moderado'>Moderado</option>
+        <option value='activo'>Activo</option>
+        <option value='muyActivo'>Muy Activo</option>
       </select>
 
-      {mapeoActividad !== null && (
+      {/* {mapeoActividad !== null && (
         <div>Mapeo de Actividad: {mapeoActividad}</div>
-      )}
+      )} */}
     </div>
   );
 }

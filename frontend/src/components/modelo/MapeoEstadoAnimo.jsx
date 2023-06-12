@@ -24,15 +24,15 @@ function MapeoEstadoAnimo({ onEstadoAnimoSeleccionado, onEstadoAnimoMapeado }) {
   return (
     <div>
       <select onChange={handleChangeEstadoAnimo}>
-        <option value="">selecciona una opción</option>
-        <option value="animo_bajo">Ánimo Bajo</option>
-        <option value="animo_medio">Ánimo Medio</option>
-        <option value="animo_alto">Ánimo Alto</option>
+        <option value=''>selecciona una opción</option>
+        <option value='animo_bajo'>Ánimo Bajo</option>
+        <option value='animo_medio'>Ánimo Medio</option>
+        <option value='animo_alto'>Ánimo Alto</option>
       </select>
 
-      {estadoAnimoMapeado !== null && (
+      {/*  {estadoAnimoMapeado !== null && (
         <div>Estado de ánimo mapeado: {estadoAnimoMapeado}</div>
-      )}
+      )} */}
     </div>
   );
 }

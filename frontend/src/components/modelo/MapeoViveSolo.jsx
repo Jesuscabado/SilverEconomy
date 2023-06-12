@@ -22,14 +22,14 @@ function MapeoViveSolo({ onViveSoloSeleccionado, onViveSoloMapeado }) {
   return (
     <div>
       <select onChange={handleChangeViveSolo}>
-        <option value="">selecciona una opción</option>
-        <option value="si">Sí</option>
-        <option value="no">No</option>
+        <option value=''>selecciona una opción</option>
+        <option value='si'>Sí</option>
+        <option value='no'>No</option>
       </select>
 
-      {viveSoloMapeado !== null && (
+      {/* {viveSoloMapeado !== null && (
         <div>Vive solo mapeado: {viveSoloMapeado}</div>
-      )}
+      )} */}
     </div>
   );
 }

@@ -1,14 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
 .sidebar {
+  z-index: 3;
   position: fixed;
-  top: 0;
-  bottom: 0;
   left: 0;
-  z-index: 100;
+  top: 70px;
+  bottom: 0;
   overflow: hidden;
   width: 210px;
   background: linear-gradient(#46393a, #1e1515);
   transition: all 0.3s;
   color: white;
+  border-radius: 0 20px 20px 0;
 }
 
 .icono {
@@ -18,7 +25,11 @@
 .sidebar-wrapper {
   padding: 20px 10px;
   position: relative;
-  height: 100%;
+}
+
+.sidebar {
+  height: 100vh; /* Establecer altura del menú en 100% del viewport */
+  width: 15vw; /* Establecer ancho del menú en 25% del viewport */
 }
 
 .sidebar ul.nav {
@@ -34,13 +45,14 @@
 .sidebar ul.nav li a {
   color: #fff;
   text-decoration: none;
-  padding: 5px 5px;
+  padding-left: 5px;
   display: flex;
   align-items: center;
 }
 
 .sidebar ul.nav li a:hover,
 .sidebar ul.nav li.active a {
+  border-radius: 5px;
   background-color: #067f8d;
 }
 
@@ -79,7 +91,7 @@
 .sidebar .sidebar-wrapper .nav li a .notification {
   position: absolute;
   top: 0;
-  /*  right: 20px; */
+  /* right: 20px; */
   font-size: 10px;
 }
 
@@ -87,7 +99,7 @@
   position: absolute;
   top: 0px;
   /* right: 20px; */
-  /*  padding: 1px 5px; */
+  /* padding: 1px 5px; */
   border-radius: 5px;
   background-color: #fff;
   color: #067f8d;
@@ -117,7 +129,7 @@
 
 @media (min-width: 991px) {
   .sidebar {
-    width: 260px;
+    width: 230px;
   }
 
   .sidebar .sidebar-wrapper {

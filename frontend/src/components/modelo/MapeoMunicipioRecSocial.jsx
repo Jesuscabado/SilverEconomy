@@ -27,15 +27,15 @@ function MapeoMunicipioRecSocial({
   return (
     <div>
       <select onChange={handleChangeMunicipio}>
-        <option value="">selecciona una opción</option>{" "}
-        <option value="rec social bajo">Rec Social Bajo</option>
-        <option value="rec social medio">Rec Social Medio</option>
-        <option value="rec social alto">Rec Social Alto</option>
+        <option value=''>selecciona una opción</option>{" "}
+        <option value='rec social bajo'>Rec Social Bajo</option>
+        <option value='rec social medio'>Rec Social Medio</option>
+        <option value='rec social alto'>Rec Social Alto</option>
       </select>
 
-      {municipioRecSocialMapeado !== null && (
+      {/*  {municipioRecSocialMapeado !== null && (
         <div>Municipio mapeado: {municipioRecSocialMapeado}</div>
-      )}
+      )} */}
     </div>
   );
 }

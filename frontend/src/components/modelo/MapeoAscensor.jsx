@@ -22,14 +22,14 @@ function MapeoAscensor({ onAscensorSeleccionado, onAscensorMapeado }) {
   return (
     <div>
       <select onChange={handleChangeAscensor}>
-        <option value="">selecciona una opción</option>
-        <option value="si">Si</option>
-        <option value="no">No</option>
+        <option value=''>selecciona una opción</option>
+        <option value='si'>Si</option>
+        <option value='no'>No</option>
       </select>
 
-      {ascensorMapeado !== null && (
+      {/* {ascensorMapeado !== null && (
         <div>Ascensor mapeado: {ascensorMapeado}</div>
-      )}
+      )} */}
     </div>
   );
 }

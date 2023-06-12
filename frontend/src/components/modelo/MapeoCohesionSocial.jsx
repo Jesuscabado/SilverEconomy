@@ -25,11 +25,12 @@ function MapeoCohesionSocial({
   return (
     <div>
       <select onChange={handleChangeCohesionSocial}>
-        <option value="">selecciona una opción</option>
-        <option value="baja cohesion">Baja cohesion</option>
-        <option value="alta cohesion">Alta cohesion</option>
+        <option value=''>selecciona una opción</option>
+        <option value='baja cohesion'>Baja cohesion</option>
+        <option value='alta cohesion'>Alta cohesion</option>
       </select>
-      {cohesionSocial !== null && <div>Valor mapeado: {cohesionSocial}</div>}
+      {/*       {cohesionSocial !== null && <div>Valor mapeado: {cohesionSocial}</div>}
+       */}{" "}
     </div>
   );
 }

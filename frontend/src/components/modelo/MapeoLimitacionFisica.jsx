@@ -26,15 +26,15 @@ function MapeoLimitacionFisica({
   return (
     <div>
       <select onChange={handleChangeLimFisica}>
-        <option value="">selecciona una opción</option>
-        <option value="nada limitado">Nada limitado</option>
-        <option value="limitado no grave">Limitado no grave</option>
-        <option value="limitado grave">Limitado grave</option>
+        <option value=''>selecciona una opción</option>
+        <option value='nada limitado'>Nada limitado</option>
+        <option value='limitado no grave'>Limitado no grave</option>
+        <option value='limitado grave'>Limitado grave</option>
       </select>
 
-      {limFisicaMapeada !== null && (
+      {/*  {limFisicaMapeada !== null && (
         <div>Limitación física mapeada: {limFisicaMapeada}</div>
-      )}
+      )} */}
     </div>
   );
 }

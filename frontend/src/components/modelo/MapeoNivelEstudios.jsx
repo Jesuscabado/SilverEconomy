@@ -27,7 +27,7 @@ function MapeoNivelEstudios({
   return (
     <div>
       <select onChange={handleChangeNivelEstudios}>
-        <option value="">selecciona una opción</option>
+        <option value=''>selecciona una opción</option>
         {Object.keys(mapeoNivelesEstudios).map((nivelEstudios) => (
           <option key={nivelEstudios} value={nivelEstudios}>
             {nivelEstudios}
@@ -35,9 +35,9 @@ function MapeoNivelEstudios({
         ))}
       </select>
 
-      {nivelEstudiosMapeado !== null && (
+      {/*  {nivelEstudiosMapeado !== null && (
         <div>Nivel de estudios mapeado: {nivelEstudiosMapeado}</div>
-      )}
+      )} */}
     </div>
   );
 }

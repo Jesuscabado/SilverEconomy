@@ -37,15 +37,15 @@ function MapeoEdad({ onEdadSeleccionada }) {
   return (
     <div>
       <select onChange={handleChangeEdad}>
-        <option value="">selecciona una opción</option>
+        <option value=''>selecciona una opción</option>
         {Array.from({ length: 62 }, (_, index) => 40 + index).map((edad) => (
           <option key={edad} value={edad}>
             {edad}
           </option>
         ))}
       </select>
-
-      {edadMapeada !== null && <div>Edad mapeada: {edadMapeada}</div>}
+      {/*       {edadMapeada !== null && <div>Edad mapeada: {edadMapeada}</div>}
+       */}{" "}
     </div>
   );
 }

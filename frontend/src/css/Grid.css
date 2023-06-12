@@ -1,110 +1,348 @@
-.item1 iframe {
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 15px;
+.containerprincipal {
+  display: flex;
+  grid-template-columns: 1fr 1fr; /* Dos columnas con el mismo ancho */
+  grid-gap: 10px; /* Espacio entre columnas */
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-gap: 10px;
-  width: 100%;
-  height: 100vh;
+.sidebar2 {
+  /* Estilos de la barra lateral */
+  /* order: 1; */ /* Cambiar el orden de aparición */
 }
 
-.grid-item {
+.main2 {
+  /* Estilos del contenido principal */
+  margin-top: 10%;
+  margin-right: 11%;
+  margin-left: 7%;
+  order: 2; /* Cambiar el orden de aparición */
+}
+
+.boton {
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+
+.busqueda {
+  position: relative;
+
+  margin-left: 261px;
+  width: 1413px;
+  height: 40px;
+}
+
+.button-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.boton1 {
+  left: 362px;
+  top: 0px;
+  font-size: 0.875rem; /* Tamaño de texto más pequeño (0.875rem = 14px) */
+}
+.boton1 text {
+  width: 67px;
+  height: 22px;
+}
+
+.hover-button {
+  background-color: #808080; /* Color gris sin hover */
+  color: #ffffff; /* Texto en blanco sin hover */
+  font-weight: normal; /* Fuente normal, no negrita */
+}
+
+.hover-button:hover {
+  background-color: #067f8d; /* Color #067F8D en hover */
+}
+
+.image-container {
+  position: relative;
+  width: 100px; /* Ajusta el tamaño según tus necesidades */
+  height: 100px; /* Ajusta el tamaño según tus necesidades */
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 100%;
+
+  transition: opacity 0.5s ease; /* Define la transición de opacidad */
+}
+
+.image:nth-child(2) {
+  opacity: 0; /* La segunda imagen estará oculta inicialmente */
+}
+
+.image-container:hover .image:first-child {
+  opacity: 0; /* Al hacer hover, la primera imagen se oculta */
+}
+
+.image-container:hover .image:nth-child(2) {
+  opacity: 1; /* Al hacer hover, la segunda imagen se muestra */
+}
+
+/* .mapa {
+  position: absolute;
+  width: 338px;
+  height: 199px;
+  left: 16px;
+  top: 70px;
+} */
+
+/* ----------------------------------------- */
+
+.card-1,
+.card-2,
+.card-3,
+.card-4,
+.card-5,
+.card-6,
+.card-7 {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px 2px #d7d7d7;
+}
+.chart-lbl {
+  margin-left: 5%;
+  font-size: 12px;
+  color: var(--grey-d3);
+  opacity: 0.8;
+}
+.content-center {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-  background: #ffffff;
-  box-shadow: 0px 4px 30px rgba(18, 77, 84, 0.75);
-  border-radius: 15px;
+}
+.divider {
+  background-color: var(--grey-d2);
+  height: 2px;
+  margin: auto;
+  width: 98%;
 }
 
-.item1 {
-  position: absolute;
-  width: 517px;
-  height: 358px;
-  left: 320px;
-  top: 280px;
+/*  media queries */
 
-  /* grid-column: 1 / span 2;
-  grid-row: 1 / span 2; */
-  background-color: red;
+@media only screen and (min-width: 320px) {
+  .dashboard-container {
+    display: grid;
+    grid-template: repeat(7, 15%) / repeat(1, 1fr);
+    grid-gap: 20px;
+  }
+  .porcentaje-chart-container,
+  .modelo-chart-container,
+  .curvas-chart-container {
+    margin: 5% auto 5% auto;
+    position: relative;
+    width: 95%;
+  }
+  /*porcentaje chart*/
+  .card-1 {
+    grid-row: 1 / 2;
+  }
+  /*modelo chart*/
+  .card-2 {
+    grid-row: 2 / 3;
+  }
+  /*curvas area*/
+  .card-3 {
+    grid-row: 3 / 4;
+  }
+  /*mapa chart*/
+  .card-4 {
+    grid-row: 4 / 5;
+  }
+  /*bar chart*/
+  .card-5 {
+    grid-row: 5 / 6;
+  }
+  /*line chart*/
+  .card-6 {
+    grid-row: 6 / 7;
+  }
+  /*circulo chart*/
+  .card-7 {
+    grid-row: 7 / 8;
+  }
+  main {
+    margin: 10% 0 140% 0;
+  }
+  .line-chart-container,
+  .bar-chart-container,
+  .mapa-chart-container,
+  .circulo-chart-container {
+    height: 70%;
+    margin: 5% auto 5% auto;
+    position: relative;
+    width: 90%;
+  }
 }
-
-.item2 {
-  position: absolute;
-  width: 369px;
-  height: 753px;
-  left: 872px;
-  top: 281px;
-  /*  grid-column: 3;
-  grid-row: 1; */
-  background-color: blue;
+@media only screen and (min-width: 400px) {
+  main {
+    margin: 10% 5% 90% 5%;
+  }
 }
-
-.item3 {
-  position: absolute;
-  width: 503px;
-  height: 353px;
-  left: 329px;
-  top: 680px;
-  /*  grid-column: 3;
-  grid-row: 2 / span 2; */
-  background-color: green;
+@media only screen and (min-width: 750px) {
+  /*porcentaje chart*/
+  .card-1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
+  /*modelo chart*/
+  .card-2 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+  }
+  /*curvas area*/
+  .card-3 {
+    grid-column: 1 / 2;
+    grid-row: 3 / 5;
+  }
+  /*mapa chart*/
+  .card-4 {
+    grid-column: 2 / 3;
+    grid-row: 3 / 5;
+  }
+  /*bar chart*/
+  .card-5 {
+    grid-column: 1 / 3;
+    grid-row: 5 / 7;
+  }
+  /*line chart*/
+  .card-6 {
+    grid-column: 1 / 3;
+    grid-row: 7 / 9;
+  }
+  /*circulo chart*/
+  .card-7 {
+    grid-column: 1 / 3;
+    grid-row: 9 / -1;
+  }
+  .dashboard-container {
+    display: grid;
+    grid-template: repeat(10, 10%) / repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+  main {
+    margin: 10% 5% 45% 5%;
+  }
+  .line-chart-container,
+  .bar-chart-container,
+  .mapa-chart-container,
+  .circulo-chart-container {
+    margin: 2% auto 3% auto;
+  }
 }
-
-.item4 {
-  position: absolute;
-  width: 565px;
-  height: 185px;
-  left: 1286px;
-  top: 285px;
-
-  /*   grid-column: 1;
-  grid-row: 3; */
-  background-color: yellow;
+@media only screen and (min-width: 1000px) {
+  .bar-chart-container {
+    width: 90%;
+    height: 70%;
+    margin-top: 10%;
+  }
+  .mapa-chart-container,
+  .line-chart-container {
+    margin: 1% auto 0 auto;
+    width: 90%;
+    height: 65%;
+  }
+  /*porcentaje chart*/
+  .card-1 {
+    grid-column: 9 / -1;
+    grid-row: 1 / 5;
+  }
+  /*modelo chart*/
+  .card-2 {
+    grid-column: 9 / -1;
+    grid-row: 5 / 9;
+  }
+  /*curvas area*/
+  .card-3 {
+    grid-column: 1 / 5;
+    grid-row: 7 / -1;
+  }
+  /*mapa chart*/
+  .card-4 {
+    grid-column: 5 / 9;
+    grid-row: 1 /14;
+  }
+  /*bar chart*/
+  .card-5 {
+    grid-column: 1 / 5;
+    grid-row: 1 / 7;
+  }
+  /*line chart*/
+  .card-6 {
+    grid-column: 4 / 10;
+    grid-row: 5 / 9;
+  }
+  /*circulo chart*/
+  .card-7 {
+    grid-column: 9 / -1;
+    grid-row: 9 / -1;
+  }
+  .content-height {
+    height: 70%;
+  }
+  .dashboard-container {
+    grid-template: repeat(13, 7%) / repeat(13, 1fr);
+    grid-gap: 5px;
+    padding: 0;
+    width: 100%;
+  }
+  .porcentaje-chart-container,
+  .modelo-chart-container {
+    margin: 0 auto 2% auto;
+    width: 95%;
+  }
+  .curvas-chart-container {
+    margin-top: 2%;
+    width: 95%;
+  }
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 80vw;
+    margin: 5vh 10vw 5vh 10vw;
+    padding: 0;
+  }
+  .radar-chart-container {
+    width: 75%;
+    margin-top: 3%;
+  }
 }
-
-.item5 {
-  position: absolute;
-  width: 565px;
-  height: 185px;
-  left: 1282px;
-  top: 509px;
-  /*   grid-column: 2;
-  grid-row: 3; */
-  background-color: purple;
+@media only screen and (min-width: 1300px) {
+  .dashboard-container {
+    grid-template: repeat(13, 6.8%) / repeat(13, 1fr);
+  }
+  .porcentaje-chart-container,
+  .modelo-chart-container {
+    margin: 0 auto 2% auto;
+    width: 80%;
+  }
+  .curvas-chart-container {
+    margin-top: 2%;
+    width: 85%;
+  }
 }
-
-.item6 {
-  position: absolute;
-  width: 565px;
-  height: 304px;
-  left: 1282px;
-  top: 729px;
-
-  /* grid-column: 3;
-  grid-row: 3; */
-  background-color: orange;
+@media screen and (min-width: 1500px) {
+  .dashboard-container {
+    grid-template: repeat(13, 7.3%) / repeat(13, 1fr);
+  }
 }
-
-/* .item7 {
-  background-color: pink;
+@media screen and (min-width: 1920px) {
+  .dashboard-container {
+    grid-template: repeat(13, 7.5%) / repeat(13, 1fr);
+    max-width: 1536px;
+  }
 }
-
-.item8 {
-  background-color: gray;
-}
-
-.item9 {
-  background-color: cyan;
-}
- */
