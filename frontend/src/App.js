@@ -18,7 +18,7 @@ import Informes from "./components/Informes";
 import Notificaciones from "./components/Notificaciones";
 import PlanAccion from "./components/PlanAccion";
 import Settings from "./components/Settings";
-import Chat from "./components/Chat";
+/* import Chat from "./components/Chat"; */
 import RegisterOverlay from "./components/RegisterOverlay";
 import Proyectos from "./components/Proyectos";
 
@@ -47,7 +47,7 @@ function App() {
           <Route path='/notificaciones' element={<Notificaciones />} />
           <Route path='/planaccion' element={<PlanAccion />} />
           <Route path='/settings' element={<Settings />} />
-          <Route path='/chat' element={<Chat />} />
+          {/*   <Route path='/chat' element={<Chat />} /> */}
           <Route path='/profile' element={<Profile />} />
           <Route path='/proyectos' element={<Proyectos />} />
           <Route path='/web/*' element={<Web />} />
