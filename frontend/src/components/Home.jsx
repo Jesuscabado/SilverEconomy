@@ -9,13 +9,13 @@ import soledad6 from "../img/soledad6.jpg";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import LoginOverlay from "./LoginOverlay"; // Corregido
-import RegisterOverlay from "./RegisterOverlay"; // Corregido
+/* import RegisterOverlay from "./RegisterOverlay"; // Corregido */
 
 import "../css/LoginOverlay.css";
 
 function Web() {
   const [showLogin, setShowLogin] = useState(false);
-  const [showRegister, setShowRegister] = useState(false);
+  /*   const [showRegister, setShowRegister] = useState(false); */
 
   const slides = [
     {
@@ -81,9 +81,7 @@ function Web() {
         <ImageSlider slides={slides} />
       </div>
       {showLogin && <LoginOverlay onClose={() => setShowLogin(false)} />}
-      {showRegister && (
-        <RegisterOverlay onClose={() => setShowRegister(false)} />
-      )}
+
       {/* Corregido */}
       <div style={odsContainerStyles}>
         <img src={soledad4} alt='ODS' style={imageStyles} />
