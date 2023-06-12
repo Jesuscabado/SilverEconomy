@@ -13,7 +13,7 @@ import LoginOverlay from "./LoginOverlay"; // Corregido
 
 import "../css/LoginOverlay.css";
 
-function Web() {
+function Web({ onLoginClick }) {
   const [showLogin, setShowLogin] = useState(false);
   /*   const [showRegister, setShowRegister] = useState(false); */
 
@@ -72,13 +72,21 @@ function Web() {
     maxHeight: "80%",
     borderRadius: "10px",
   };
+
+  const handleLoginClick = () => {
+    setShowLogin(true);
+    if (typeof onLoginClick === "function") {
+      onLoginClick();
+    }
+  };
+
   return (
     <div>
       <div>
         <Navbar onLoginClick={() => setShowLogin(true)} />
       </div>
       <div style={containerStyles}>
-        <ImageSlider slides={slides} />
+        <ImageSlider slides={slides} onLoginClick={handleLoginClick} />
       </div>
       {showLogin && <LoginOverlay onClose={() => setShowLogin(false)} />}
 

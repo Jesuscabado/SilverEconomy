@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ImageSlider = ({ slides }) => {
+const ImageSlider = ({ slides, onLoginClick }) => {
   const [showLogin, setShowLogin] = useState(false);
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -95,6 +95,11 @@ const ImageSlider = ({ slides }) => {
     setCurrentIndex(slideIndex);
   };
 
+  const handleLoginClick = () => {
+    setShowLogin(true);
+    onLoginClick();
+  };
+
   return (
     <div style={sliderStyles}>
       <div style={contentContainerStyles}>
@@ -103,8 +108,11 @@ const ImageSlider = ({ slides }) => {
             <h2>{slides[currentIndex].title}</h2>
             <div>
               <p>Inicia sesión o regístrate para obtener datos</p>
-              <button className='bg-red-500 text-white px-4 py-2 rounded m-4'>
-                {/* onLoginClick={() => setShowLogin(true)} */} Aquí
+              <button
+                className='bg-red-500 text-white px-4 py-2 rounded m-4'
+                onClick={handleLoginClick}
+              >
+                Aquí
               </button>
             </div>
           </>
