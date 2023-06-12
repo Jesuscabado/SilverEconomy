@@ -1,10 +1,10 @@
 import React from "react";
-import Navbar from "./Navbar";
+import NavbarSinTexto from "./NavbarSinTexto";
 import SideBar from "./SideBar";
 function Profile() {
   return (
     <div>
-      <Navbar />
+      <NavbarSinTexto />
       <SideBar />
     </div>
   );

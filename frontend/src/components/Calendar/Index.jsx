@@ -6,7 +6,7 @@ import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
 import moment from "moment";
 import "../../css/Calendar.css"; // Importar el archivo CSS aquí
-import Navbar from "../Navbar";
+import NavbarSinTexto from "../NavbarSinTexto";
 import SideBar from "../SideBar";
 
 function Calendar() {
@@ -53,7 +53,7 @@ function Calendar() {
 
   return (
     <div>
-      <Navbar />
+      <NavbarSinTexto />
       <SideBar />
       <div className='m-20'>
         <header className='text-2xl font-bold mb-4'>CALENDAR</header>

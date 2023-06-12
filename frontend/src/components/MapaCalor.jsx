@@ -1,12 +1,12 @@
 import React from "react";
 import "../css/MapaCalor.css";
-import Navbar from "./Navbar";
+import NavbarSinTexto from "./NavbarSinTexto";
 import SideBar from "./SideBar";
 
 function MapaCalor() {
   return (
     <div>
-      <Navbar />
+      <NavbarSinTexto />
       <SideBar />
       <div className='flex flex-row items-center justify-center h-screen'>
         <h3 className='titulomapa text-3xl font-bold mb-4'>Mapa de Calor</h3>

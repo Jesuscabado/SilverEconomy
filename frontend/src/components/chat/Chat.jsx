@@ -9,7 +9,8 @@ import {
   onSnapshot,
   limit,
 } from "firebase/firestore";
-import NavBar from "./NavBar";
+import NavbarSinTexto from "../NavbarSinTexto";
+import SideBar from "../SideBar";
 
 const style = {
   main: `flex flex-col p-[10px]`,
@@ -37,7 +38,8 @@ const Chat = () => {
 
   return (
     <>
-      {/* <NavBar /> */}
+      <NavbarSinTexto />
+      <SideBar />
       <main className={style.main}>
         {messages &&
           messages.map((message) => (
