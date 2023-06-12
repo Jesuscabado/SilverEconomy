@@ -30,9 +30,9 @@ function MapeoActividadFisica({ onNivelActividad, onNivelActividadMapeado }) {
         <option value='muy activo'>Muy Activo</option>
       </select>
 
-      {mapeoActividad !== null && (
+      {/* {mapeoActividad !== null && (
         <div>Mapeo de Actividad: {mapeoActividad}</div>
-      )}
+      )} */}
     </div>
   );
 }

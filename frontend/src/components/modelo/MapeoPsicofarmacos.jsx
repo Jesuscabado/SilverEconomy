@@ -34,9 +34,9 @@ function MapeoPsicofarmacos({
         ))}
       </select>
 
-      {psicofarmacosMapeado !== null && (
+      {/*   {psicofarmacosMapeado !== null && (
         <div>Valor mapeado: {psicofarmacosMapeado}</div>
-      )}
+      )} */}
     </div>
   );
 }

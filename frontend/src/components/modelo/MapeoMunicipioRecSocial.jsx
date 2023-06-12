@@ -33,9 +33,9 @@ function MapeoMunicipioRecSocial({
         <option value='rec social alto'>Rec Social Alto</option>
       </select>
 
-      {municipioRecSocialMapeado !== null && (
+      {/*  {municipioRecSocialMapeado !== null && (
         <div>Municipio mapeado: {municipioRecSocialMapeado}</div>
-      )}
+      )} */}
     </div>
   );
 }

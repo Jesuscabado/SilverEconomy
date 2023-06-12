@@ -277,7 +277,7 @@ function Modelo() {
           component: (
             <div>
               <p className='selector-label'>Edad</p>
-              <MapeoEdad />
+              <MapeoEdad onEdadSeleccionada={handleEdadSeleccionada} />
             </div>
           ),
         },
@@ -285,7 +285,10 @@ function Modelo() {
           component: (
             <div>
               <p className='selector-label'>Estado civil</p>
-              <MapeoEstadoCivil />
+              <MapeoEstadoCivil
+                onEstadoCivilSeleccionado={handleEstadoCivilSeleccionado}
+                onEstadoCivilMapeado={handleEstadoCivilMapeado}
+              />
             </div>
           ),
         },
@@ -293,7 +296,10 @@ function Modelo() {
           component: (
             <div>
               <p className='selector-label'>Sexo</p>
-              <MapeoSexo />
+              <MapeoSexo
+                onSexoSeleccionado={handleSexoSeleccionado}
+                onSexoMapeado={handleSexoMapeado}
+              />
             </div>
           ),
         },
@@ -307,7 +313,10 @@ function Modelo() {
           component: (
             <div>
               <p className='selector-label'>Psicofármacos</p>
-              <MapeoPsicofarmacos />
+              <MapeoPsicofarmacos
+                onPsicofarmacoSeleccionado={handlePsicofarmacoSeleccionado}
+                onPsicofarmacosMapeado={handlePsicofarmacosMapeado}
+              />
             </div>
           ),
         },
@@ -315,7 +324,10 @@ function Modelo() {
           component: (
             <div>
               <p className='selector-label'>Actividad física</p>
-              <MapeoActividadFisica />
+              <MapeoActividadFisica
+                onNivelActividad={handleNivelActividad}
+                onNivelActividadMapeado={handleMapeoActividad}
+              />
             </div>
           ),
         },
@@ -323,7 +335,10 @@ function Modelo() {
           component: (
             <div>
               <p className='selector-label'>Limitación física</p>
-              <MapeoLimitacionFisica />
+              <MapeoLimitacionFisica
+                onLimFisicaSeleccionada={handleLimFisicaSeleccionada}
+                onLimiFisicaMapeada={handleLimFisicaMapeada}
+              />
             </div>
           ),
         },
@@ -331,7 +346,10 @@ function Modelo() {
           component: (
             <div>
               <p className='selector-label'>Estado de ánimo</p>
-              <MapeoEstadoAnimo />
+              <MapeoEstadoAnimo
+                onEstadoAnimoSeleccionado={handleEstadoAnimoSeleccionado}
+                onEstadoAnimoMapeado={handleEstadoAnimoMapeado}
+              />
             </div>
           ),
         },
@@ -339,7 +357,10 @@ function Modelo() {
           component: (
             <div>
               <p className='selector-label'>Satisfacción de vida</p>
-              <MapeoSatisfaccionVida />
+              <MapeoSatisfaccionVida
+                onSatisfaccionMapeada={handleSatisfaccionMapeada}
+                onSatisfaccionSeleccionada={handleSatisfaccionSeleccionada}
+              />
             </div>
           ),
         },
@@ -353,7 +374,10 @@ function Modelo() {
           component: (
             <div>
               <p className='selector-label'>Vive solo</p>
-              <MapeoViveSolo />
+              <MapeoViveSolo
+                onViveSoloSeleccionado={handleViveSoloSeleccionado}
+                onViveSoloMapeado={handleViveSoloMapeado}
+              />
             </div>
           ),
         },
@@ -361,7 +385,10 @@ function Modelo() {
           component: (
             <div>
               <p className='selector-label'>Hijos</p>
-              <MapeoHijos />
+              <MapeoHijos
+                onHijosSeleccionado={handleHijosSeleccionado}
+                onHijosMapeado={handleHijosMapeado}
+              />
             </div>
           ),
         },
@@ -369,7 +396,10 @@ function Modelo() {
           component: (
             <div>
               <p className='selector-label'>Ascensor</p>
-              <MapeoAscensor />
+              <MapeoAscensor
+                onAscensorSeleccionado={handleAscensorSeleccionado}
+                onAscensorMapeado={handleAscensorMapeado}
+              />
             </div>
           ),
         },
@@ -377,7 +407,10 @@ function Modelo() {
           component: (
             <div>
               <p className='selector-label'>Red de apoyo familiar</p>
-              <MapeoRedApoyoFamiliar />
+              <MapeoRedApoyoFamiliar
+                onRedSeleccionada={handleRedSeleccionada}
+                onRedApoyoMapeada={handleRedApoyoMapeada}
+              />
             </div>
           ),
         },
@@ -391,7 +424,10 @@ function Modelo() {
           component: (
             <div>
               <p className='selector-label'>Nivel de estudios</p>
-              <MapeoNivelEstudios />
+              <MapeoNivelEstudios
+                onNivelEstudiosSeleccionado={handleNivelEstudiosSeleccionado}
+                onNivelEstudiosMapeado={handleNivelEstudiosMapeado}
+              />
             </div>
           ),
         },
@@ -405,7 +441,10 @@ function Modelo() {
           component: (
             <div>
               <p className='selector-label'>Municipio accesible</p>
-              <MapeoMunicipioAccesible />
+              <MapeoMunicipioAccesible
+                onMunicipioSeleccionado={handleMunicipioSeleccionado}
+                onMunicipio_accesibleMapeado={handleMunicipioAccesibleMapeado}
+              />
             </div>
           ),
         },
@@ -413,7 +452,10 @@ function Modelo() {
           component: (
             <div>
               <p className='selector-label'>Municipio con rec social</p>
-              <MapeoMunicipioRecSocial />
+              <MapeoMunicipioRecSocial
+                onMunicipioRecSocialSeleccionado={handleMunicipioRecSocial}
+                onMunicipioRecSocialMapeado={handleMunicipioRecSocialMapeado}
+              />
             </div>
           ),
         },
@@ -421,7 +463,10 @@ function Modelo() {
           component: (
             <div>
               <p className='selector-label'>Municipio con rec ocio</p>
-              <MapeoMunicipioRecOcio />
+              <MapeoMunicipioRecOcio
+                onMunicipioOcioSeleccionado={handleMunicipioOcioSeleccionado}
+                onMunicipioRecOcioMapeado={handleMunicipioRecOcioMapeado}
+              />
             </div>
           ),
         },
@@ -435,7 +480,10 @@ function Modelo() {
           component: (
             <div>
               <p className='selector-label'>Ingresos Económicos</p>
-              <MapeoIngresosEconomicos />
+              <MapeoIngresosEconomicos
+                onIngresosSeleccionados={handleIngresosSeleccionados}
+                onIngresosMapeados={handleIngresosMapeados}
+              />
             </div>
           ),
         },
@@ -449,7 +497,10 @@ function Modelo() {
           component: (
             <div>
               <p className='selector-label'>Cohesión social</p>
-              <MapeoCohesionSocial />
+              <MapeoCohesionSocial
+                onCohesionSocialSeleccionado={handleCohesionSocialSeleccionado}
+                onCohesionSocialMapeado={handleCohesionSocialMapeado}
+              />
             </div>
           ),
         },

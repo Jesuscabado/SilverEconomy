@@ -28,8 +28,8 @@ function MapeoRedApoyoFamiliar({ onRedSeleccionada, onRedApoyoMapeada }) {
         <option value='red: 1 a 5'>Red: 1 a 5</option>
         <option value='red: mas de 5'>Red: más de 5</option>
       </select>
-
-      {redApoyoMapeada !== null && <div>Red mapeada: {redApoyoMapeada}</div>}
+      {/*       {redApoyoMapeada !== null && <div>Red mapeada: {redApoyoMapeada}</div>}
+       */}
     </div>
   );
 }

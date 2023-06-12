@@ -44,8 +44,8 @@ function MapeoEdad({ onEdadSeleccionada }) {
           </option>
         ))}
       </select>
-
-      {edadMapeada !== null && <div>Edad mapeada: {edadMapeada}</div>}
+      {/*       {edadMapeada !== null && <div>Edad mapeada: {edadMapeada}</div>}
+       */}{" "}
     </div>
   );
 }

@@ -30,9 +30,9 @@ function MapeoEstadoAnimo({ onEstadoAnimoSeleccionado, onEstadoAnimoMapeado }) {
         <option value='animo_alto'>Ánimo Alto</option>
       </select>
 
-      {estadoAnimoMapeado !== null && (
+      {/*  {estadoAnimoMapeado !== null && (
         <div>Estado de ánimo mapeado: {estadoAnimoMapeado}</div>
-      )}
+      )} */}
     </div>
   );
 }

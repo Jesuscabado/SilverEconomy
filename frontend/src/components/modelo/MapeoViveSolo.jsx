@@ -27,9 +27,9 @@ function MapeoViveSolo({ onViveSoloSeleccionado, onViveSoloMapeado }) {
         <option value='no'>No</option>
       </select>
 
-      {viveSoloMapeado !== null && (
+      {/* {viveSoloMapeado !== null && (
         <div>Vive solo mapeado: {viveSoloMapeado}</div>
-      )}
+      )} */}
     </div>
   );
 }

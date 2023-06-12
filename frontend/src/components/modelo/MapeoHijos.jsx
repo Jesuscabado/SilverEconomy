@@ -29,8 +29,8 @@ function MapeoHijos({ onHijosSeleccionado, onHijosMapeado }) {
           </option>
         ))}
       </select>
-
-      {HijosMapeado !== null && <div>valor mapeado: {HijosMapeado}</div>}
+      {/*       {HijosMapeado !== null && <div>valor mapeado: {HijosMapeado}</div>}
+       */}{" "}
     </div>
   );
 }

@@ -32,9 +32,9 @@ function MapeoIngresosEconomicos({
         <option value='ingresos_altos'>Ingresos Altos</option>
       </select>
 
-      {ingresosMapeados !== null && (
+      {/* {ingresosMapeados !== null && (
         <div>Ingresos mapeados: {ingresosMapeados}</div>
-      )}
+      )} */}
     </div>
   );
 }

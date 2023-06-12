@@ -32,9 +32,9 @@ function MapeoMunicipioRecOcio({
         <option value='rec ocio alto'>Recreación y ocio alto</option>
       </select>
 
-      {municipioRecOcioMapeado !== null && (
+      {/*   {municipioRecOcioMapeado !== null && (
         <div>Municipio mapeado: {municipioRecOcioMapeado}</div>
-      )}
+      )} */}
     </div>
   );
 }

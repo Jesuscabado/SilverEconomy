@@ -27,9 +27,9 @@ function MapeoAscensor({ onAscensorSeleccionado, onAscensorMapeado }) {
         <option value='no'>No</option>
       </select>
 
-      {ascensorMapeado !== null && (
+      {/* {ascensorMapeado !== null && (
         <div>Ascensor mapeado: {ascensorMapeado}</div>
-      )}
+      )} */}
     </div>
   );
 }

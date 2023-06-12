@@ -32,10 +32,10 @@ function MapeoMunicipioAccesible({
         <option value='medio_accesible'>Medio accesible</option>
         <option value='accesibilidad alta'>Accesibilidad alta</option>
       </select>
-
+      {/* 
       {municipio_accesibleMapeado !== null && (
         <div>Municipio mapeado: {municipio_accesibleMapeado}</div>
-      )}
+      )} */}
     </div>
   );
 }

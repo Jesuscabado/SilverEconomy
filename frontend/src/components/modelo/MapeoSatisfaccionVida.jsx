@@ -35,9 +35,9 @@ function MapeoSatisfaccionVida({
         <option value='muy satisfecho'>Muy satisfecho</option>
       </select>
 
-      {satisfaccionMapeada !== null && (
+      {/*   {satisfaccionMapeada !== null && (
         <div>Satisfacción mapeada: {satisfaccionMapeada}</div>
-      )}
+      )} */}
     </div>
   );
 }

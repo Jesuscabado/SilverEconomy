@@ -35,9 +35,9 @@ function MapeoNivelEstudios({
         ))}
       </select>
 
-      {nivelEstudiosMapeado !== null && (
+      {/*  {nivelEstudiosMapeado !== null && (
         <div>Nivel de estudios mapeado: {nivelEstudiosMapeado}</div>
-      )}
+      )} */}
     </div>
   );
 }

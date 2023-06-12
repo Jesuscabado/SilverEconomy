@@ -32,9 +32,9 @@ function MapeoLimitacionFisica({
         <option value='limitado grave'>Limitado grave</option>
       </select>
 
-      {limFisicaMapeada !== null && (
+      {/*  {limFisicaMapeada !== null && (
         <div>Limitación física mapeada: {limFisicaMapeada}</div>
-      )}
+      )} */}
     </div>
   );
 }

@@ -32,9 +32,9 @@ function MapeoEstadoCivil({ onEstadoCivilSeleccionado, onEstadoCivilMapeado }) {
         ))}
       </select>
 
-      {estadoCivilMapeado !== null && (
+      {/* {estadoCivilMapeado !== null && (
         <div>Estado civil mapeado: {estadoCivilMapeado}</div>
-      )}
+      )} */}
     </div>
   );
 }
