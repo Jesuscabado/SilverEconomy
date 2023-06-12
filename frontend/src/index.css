@@ -3,18 +3,13 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: frutiger;
-  src: url(../../frontend/public/fonts/FTB.ttf);
-}
-
-@font-face {
-  font-family: montserrat;
-  src: url(../../frontend/public/fonts/Montserrat-VariableFont_wght.ttf);
+  font-family: raleway;
+  src: url(../../frontend/public/fonts/Raleway-VariableFont_wght.ttf);
 }
 
 * {
   color: cmyk(0, 100, 100, 10);
-  font-family: montserrat;
+  font-family: raleway;
 }
 
 body {
