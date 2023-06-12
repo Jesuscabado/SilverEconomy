@@ -9,13 +9,12 @@ import soledad6 from "../img/soledad6.jpg";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import LoginOverlay from "./LoginOverlay"; // Corregido
-import RegisterOverlay from "./RegisterOverlay"; // Corregido
 
 import "../css/LoginOverlay.css";
+import "../css/Home.css";
 
 function Web() {
   const [showLogin, setShowLogin] = useState(false);
-  const [showRegister, setShowRegister] = useState(false);
 
   const slides = [
     {
@@ -23,8 +22,10 @@ function Web() {
       title: " ",
       content: (
         <>
-          <p></p>
-          <button className='bg-red-500 text-white px-4 py-2 rounded'></button>
+          <p>Aquí puedes agregar tu contenido personalizado</p>
+          <button className="bg-red-500 text-white px-4 py-2 rounded">
+            Aquí
+          </button>
         </>
       ),
     },
@@ -80,19 +81,16 @@ function Web() {
       <div style={containerStyles}>
         <ImageSlider slides={slides} />
       </div>
-      {showLogin && <LoginOverlay onClose={() => setShowLogin(false)} />}
-      {showRegister && (
-        <RegisterOverlay onClose={() => setShowRegister(false)} />
-      )}
+      {showLogin && <LoginOverlay onClose={() => setShowLogin(false)} />}{" "}
       {/* Corregido */}
       <div style={odsContainerStyles}>
-        <img src={soledad4} alt='ODS' style={imageStyles} />
+        <img src={soledad4} alt="ODS" style={imageStyles} />
         <div style={odsTextStyles}>
           <h2>
             Soledad no deseada en personas mayores afecta a más del 56% de los
             mayores de 65 años.
           </h2>
-          <p className=''>
+          <p className="">
             El envejecimiento de la población puede acentuar situaciones de
             soledad, pero existen otros factores sociales y estructurales que
             han contribuido a su aumento también en otros tramos de edad:
@@ -121,12 +119,13 @@ function Web() {
             todas las edades.
           </p>
         </div>
-        <img src={soledad5} alt='' style={imageStyles} />
+        <img src={soledad5} alt="" style={imageStyles} />
       </div>
-      <div style={agendaContainerStyles}>
-        <div style={agendaTextStyles}>
+      <div style={odsContainerStyles}>
+        <img src={soledad6} alt="ODS" style={imageStyles} />
+        <div style={odsTextStyles}>
           <h2>Experiencias de fragilidad y soledad en el envejecimiento.</h2>
-          <p>
+          <p className="">
             Las personas que experimentan soledad, como cualquier otra emoción
             negativa, en general tratan de aplicar estrategias para afrontar
             esta situación o minimizar los efectos negativos. Es decir, la
@@ -136,7 +135,20 @@ function Web() {
             consecuencias más negativas pueden ser muy variadas.{" "}
           </p>
         </div>
-        <img src={soledad6} alt='' style={imageStyles} />
+      </div>
+      <div class="box">
+        <title>Caja de Suscripción</title>
+
+        <h1>Suscríbete a nuestra newsletter</h1>
+        <p>
+          Recibe las últimas noticias y actualizaciones directamente en tu
+          bandeja de entrada.
+        </p>
+        <label>
+          <input type="checkbox" name="privacy" required />
+          He leído y acepto la información en Protección de Datos
+        </label>
+        <button>Suscribirse</button>
       </div>
       <Footer />
     </div>
