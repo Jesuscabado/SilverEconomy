@@ -1,3 +1,11 @@
+.containermodelo {
+  background-image: url("../img/fondomodelo.jpg");
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  height: 100%; /* Ajusta la altura según tus necesidades */
+}
+
 .selectors-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

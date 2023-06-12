@@ -12,6 +12,7 @@ import boton from "../img/Botonredondo.png";
 import barra from "../img/Barrabusquedabaja.jpg";
 import NavbarSinTexto from "./NavbarSinTexto";
 import { Link } from "react-router-dom";
+import VideoBar from "../video/AnimacionGrafica.mp4";
 
 function Home() {
   const { user, logout, loading } = useAuth(); // para saber si esta logueado o no
@@ -612,7 +613,13 @@ function Home() {
                   <div className='divider'></div>
                   <div className='circulo-chart-container'>
                     {/* <canvas className='circulo-chart' id='circulo'></canvas> */}
-                    <img src={grafica3} alt='grafica3' />
+                    {/*  <img src={grafica3} alt='grafica3' /> */}
+                    <video autoPlay loop>
+                      <source src={VideoBar} type='video/mp4' />
+                      {/* Agrega más etiquetas <source> aquí si deseas proporcionar otros formatos de video */}
+                      Tu navegador no admite el elemento de video.
+                    </video>
+
                     <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
                       Acceder
                     </button>

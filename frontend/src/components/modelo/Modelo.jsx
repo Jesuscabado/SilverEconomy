@@ -520,7 +520,7 @@ function Modelo() {
   /*  -------------------------------------------   */
 
   return (
-    <div>
+    <div className='containermodelo'>
       <NavbarSinTexto />
       <SideBar />
       <div className='flex flex-row items-center justify-center h-screen'>
