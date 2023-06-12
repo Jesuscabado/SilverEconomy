@@ -20,7 +20,6 @@ import Informes from "./components/Informes";
 import Notificaciones from "./components/Notificaciones";
 import PlanAccion from "./components/PlanAccion";
 import Settings from "./components/Settings";
-import Chat from "./components/Chat";
 import RegisterOverlay from "./components/RegisterOverlay";
 import Proyectos from "./components/Proyectos";
 
