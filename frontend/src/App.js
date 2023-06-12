@@ -20,6 +20,7 @@ import PlanAccion from "./components/PlanAccion";
 import Settings from "./components/Settings";
 import Chat from "./components/Chat";
 import RegisterOverlay from "./components/RegisterOverlay";
+import Proyectos from "./components/Proyectos";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
           <Route path='/settings' element={<Settings />} />
           <Route path='/chat' element={<Chat />} />
           <Route path='/profile' element={<Profile />} />
+          <Route path='/proyectos' element={<Proyectos />} />
           <Route path='/web/*' element={<Web />} />
           <Route path='/registeroverlay' element={<RegisterOverlay />} />
         </Routes>
