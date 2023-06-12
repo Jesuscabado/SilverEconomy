@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 const ImageSlider = ({ slides }) => {
+  const [showLogin, setShowLogin] = useState(false);
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const sliderStyles = {
@@ -102,7 +104,7 @@ const ImageSlider = ({ slides }) => {
             <div>
               <p>Inicia sesión o regístrate para obtener datos</p>
               <button className='bg-red-500 text-white px-4 py-2 rounded m-4'>
-                Aquí
+                {/* onLoginClick={() => setShowLogin(true)} */} Aquí
               </button>
             </div>
           </>
