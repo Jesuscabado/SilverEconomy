@@ -22,12 +22,15 @@ import Mern from "../img/IconosFooter/Mern.png"; */
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import LoginOverlay from "./LoginOverlay"; // Corregido
+/* import RegisterOverlay from "./RegisterOverlay"; // Corregido */
 
 import "../css/LoginOverlay.css";
 import "../css/Home.css";
 
-function Web() {
+function Web({ onLoginClick }) {
   const [showLogin, setShowLogin] = useState(false);
+
+  /*   const [showRegister, setShowRegister] = useState(false); */
 
   const slides = [
     {
@@ -86,15 +89,23 @@ function Web() {
     maxHeight: "80%",
     borderRadius: "10px",
   };
+
+  const handleLoginClick = () => {
+    setShowLogin(true);
+    if (typeof onLoginClick === "function") {
+      onLoginClick();
+    }
+  };
+
   return (
     <div>
       <div>
         <Navbar onLoginClick={() => setShowLogin(true)} />
       </div>
       <div style={containerStyles}>
-        <ImageSlider slides={slides} />
+        <ImageSlider slides={slides} onLoginClick={handleLoginClick} />
       </div>
-      {showLogin && <LoginOverlay onClose={() => setShowLogin(false)} />}{" "}
+      {showLogin && <LoginOverlay onClose={() => setShowLogin(false)} />}
       {/* Corregido */}
       <div style={odsContainerStyles}>
         <img src={soledad4} alt="ODS" style={imageStyles} />

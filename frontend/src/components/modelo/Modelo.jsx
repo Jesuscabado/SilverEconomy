@@ -19,6 +19,7 @@ import MapeoLimitacionFisica from "./MapeoLimitacionFisica";
 import MapeoActividadFisica from "./MapeoActividadFisica";
 import SideBar from "../SideBar";
 import NavbarSinTexto from "../NavbarSinTexto";
+import Matrix from "../../img/corr_matrix.png";
 
 import "../../css/Modelo.css";
 
@@ -520,9 +521,10 @@ function Modelo() {
   /*  -------------------------------------------   */
 
   return (
-    <div>
+    <div className='containermodelo'>
       <NavbarSinTexto />
       <SideBar />
+
       <div className='flex flex-row items-center justify-center h-screen'>
         <h3 className='titulomapa text-3xl font-bold mb-4'>
           Modelo predictivo
@@ -564,6 +566,9 @@ function Modelo() {
               {currentSection === sections.length - 1 && (
                 <h1 className='modelo-label'>Modelo: {modelo}</h1>
               )}
+            </div>
+            <div>
+              <img className='mapaimg' src={Matrix} />
             </div>
           </div>
         </div>

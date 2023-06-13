@@ -145,12 +145,13 @@ const Users = () => {
     getUsuarios();
   }, []);
   return (
-    <div className='container'>
+    <div className='userscontainer'>
       <NavbarSinTexto />
       <SideBar />
-      <h1 className='perfil'>Inicio de tu perfil</h1>
-      <h2 className='datos'>Datos</h2>
+      <h1 className='usersperfil'>Inicio de tu perfil</h1>
+      <h2 className='usersdatos'>Datos</h2>
       <input
+        className='usersinput'
         name='nombre'
         placeholder='Nombre'
         value={userData.nombre}
@@ -158,6 +159,7 @@ const Users = () => {
         type='text'
       />
       <input
+        className='usersinput'
         name='apellido'
         placeholder='Apellido'
         value={userData.apellido}
@@ -165,6 +167,7 @@ const Users = () => {
         type='text'
       />
       <input
+        className='usersinput'
         name='email'
         placeholder='Email'
         value={userData.email}
@@ -173,6 +176,7 @@ const Users = () => {
         disabled={editingUserId !== null}
       />
       <input
+        className='usersinput'
         name='fechaNacimiento'
         placeholder='Fecha de Nacimiento'
         value={userData.fechaNacimiento}
@@ -180,23 +184,33 @@ const Users = () => {
         type='date'
       />
       <div>
-        <select name='sexo' value={userData.sexo} onChange={handleSexoChange}>
+        <select
+          className='userselect'
+          name='sexo'
+          value={userData.sexo}
+          onChange={handleSexoChange}
+        >
           <option value=''>Sexo</option>
           <option value='hombre'>Hombre</option>
           <option value='mujer'>Mujer</option>
         </select>
       </div>
       <div>
-        <select name='rol' value={userData.rol} onChange={handleRolChange}>
+        <select
+          className='userselect'
+          name='rol'
+          value={userData.rol}
+          onChange={handleRolChange}
+        >
           <option value=''>Rol</option>
           <option value='user'>User</option>
           <option value='admin'>Admin</option>
         </select>
       </div>
       <button onClick={crearUsuario}>Crear Usuario</button>
-      <div className='user-list'>
+      <div className='usersuser-list'>
         {usuarios.map((usuario) => (
-          <div className='user-item' key={usuario.id}>
+          <div className='usersuser-item' key={usuario.id}>
             <p>Nombre: {usuario.nombre}</p>
             <p>Apellido: {usuario.apellido}</p>
             <p>Email: {usuario.email}</p>
@@ -206,6 +220,7 @@ const Users = () => {
               Rol:{" "}
               {editingUserId === usuario.id ? (
                 <select
+                  className='userselect'
                   name='rol'
                   value={userData.rol}
                   onChange={handleRolChange}
@@ -222,23 +237,31 @@ const Users = () => {
                 <>
                   <label htmlFor={`file-input-${usuario.id}`}>
                     <input
+                      className='usersinput'
                       id={`file-input-${usuario.id}`}
                       type='file'
                       onChange={(e) => handleFileChange(e, usuario.id)}
                     />
                   </label>
                   {selectedFile && selectedFile[usuario.id] && (
-                    <button onClick={() => handleUpload(usuario.id)}>
+                    <button
+                      className='userbutton'
+                      onClick={() => handleUpload(usuario.id)}
+                    >
                       Subir imagen
                     </button>
                   )}
                   {uploadedImages[usuario.id] && (
                     <div>
                       <img
+                        className='userimg'
                         src={uploadedImages[usuario.id]}
                         alt='Imagen subida'
                       />
-                      <button onClick={() => handleDelete(usuario.id)}>
+                      <button
+                        className='userbutton'
+                        onClick={() => handleDelete(usuario.id)}
+                      >
                         Borrar imagen
                       </button>
                     </div>
@@ -246,7 +269,11 @@ const Users = () => {
                 </>
               ) : (
                 uploadedImages[usuario.id] && (
-                  <img src={uploadedImages[usuario.id]} alt='Imagen subida' />
+                  <img
+                    className='userimg'
+                    src={uploadedImages[usuario.id]}
+                    alt='Imagen subida'
+                  />
                 )
               )}
             </div>
@@ -254,19 +281,28 @@ const Users = () => {
               {editingUserId === usuario.id ? (
                 <div>
                   <button
+                    className='userbutton'
                     disabled={isUserDataIncomplete()}
                     onClick={() => editarUsuario(usuario.id)}
                   >
                     Guardar
                   </button>
-                  <button onClick={cancelEditMode}>Cancelar</button>
+                  <button className='userbutton' onClick={cancelEditMode}>
+                    Cancelar
+                  </button>
                 </div>
               ) : (
                 <div>
-                  <button onClick={() => enterEditMode(usuario.id)}>
+                  <button
+                    className='userbutton'
+                    onClick={() => enterEditMode(usuario.id)}
+                  >
                     Editar
                   </button>
-                  <button onClick={() => borrarUsuario(usuario.id)}>
+                  <button
+                    className='userbutton'
+                    onClick={() => borrarUsuario(usuario.id)}
+                  >
                     Eliminar
                   </button>
                 </div>

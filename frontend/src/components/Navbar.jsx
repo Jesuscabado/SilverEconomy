@@ -60,7 +60,9 @@ function Navbar({ onLoginClick }) {
             /*  onClick={onLoginClick} */
             className='cursor-pointer whitespace-nowrap'
           >
-            Agenda / Eventos |
+            <a href='https://www.bizkaia.eus/es/agenda' target='_blank'>
+              Agenda / Eventos |
+            </a>
           </p>
         </div>
         <div className='flex items-center justify-end mr-5 text-sm'>

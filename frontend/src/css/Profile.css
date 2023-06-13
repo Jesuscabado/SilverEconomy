@@ -1,76 +1,70 @@
-
-
 /* Container styles */
-.container {
+.userscontainer {
   max-width: 500px;
   margin: 0 auto;
   padding: 16px;
 }
 
-.perfil{
+.usersperfil {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
-.datos{
+.usersdatos {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-
-th, td {
+/* th,
+td {
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid #ffffff;
 }
-
-
+ */
 /* Styles for form inputs and buttons */
-input[type="text"],
-input[type="date"],
-select {
+.usersinput[type="text"],
+.usersinput[type="date"],
+.userselect {
   width: 100%;
   padding: 8px;
   border: 1px solid #ffffff;
   border-radius: 4px;
   margin-bottom: 8px;
-
-
 }
 
-button {
+.userbutton {
   color: rgb(0, 0, 0);
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
-button:disabled {
+.userbutton:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
 /* Styles for uploaded images */
-.img-container {
+.userimg-container {
   display: flex;
   align-items: center;
 }
 
-img {
+.userimg {
   width: 100px;
   height: 100px;
   object-fit: cover;
   margin-right: 8px;
 }
 
-.user-item {
+.usersuser-item {
   margin-top: 20px;
   align-items: center;
   margin-bottom: 20px;
   border: 1px solid #000000;
   border-radius: 4px;
   padding: 16px;
-
 }
