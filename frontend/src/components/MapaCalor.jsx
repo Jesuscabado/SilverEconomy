@@ -9,11 +9,11 @@ function MapaCalor() {
       <NavbarSinTexto />
       <SideBar />
       <div className='flex flex-row items-center justify-center h-screen'>
-        <h3 className='titulomapa text-3xl font-bold mb-4'>Mapa de Calor</h3>
+        {/* <h3 className='titulomapa text-3xl font-bold mb-4'>Mapa de Calor</h3> */}
         <div className='container mx-auto'>
           <div
             className='card-11 flex flex-row items-center justify-center ml-4'
-            style={{ width: "800px", height: "450px" }}
+            style={{ width: "1200px", height: "650px" }}
           >
             {" "}
             {/* Otro contenido específico de la página */}

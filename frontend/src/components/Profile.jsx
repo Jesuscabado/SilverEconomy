@@ -27,13 +27,8 @@ const Users = () => {
     sexo: "",
     rol: "",
   });
-<<<<<<< HEAD
 
   const userCollectionRef = collection(db, "usuarios");
-=======
-  
-  const userCollectionRef = collection(db, 'usuarios');
->>>>>>> 3a66e1b417d54fb8c695dc6a66698892c2e16cac
 
   const crearUsuario = async () => {
     if (isUserDataIncomplete()) {
@@ -49,7 +44,6 @@ const Users = () => {
       console.error("Error adding usuario: ", error);
     }
   };
-  
 
   /* const signup = async (email, password, rol, nombre, apellido, fechaNacimiento, sexo) => {
     try {
