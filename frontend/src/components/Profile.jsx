@@ -1,7 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { collection, getDocs, updateDoc, deleteDoc, addDoc, doc } from 'firebase/firestore';
-import { db, uploadFile } from '../Firebase';
-import '../css/Profile.css';
+
+import NavbarSinTexto from "./NavbarSinTexto";
+import SideBar from "./SideBar";
+import React, { useState, useEffect } from "react";
+import {
+  collection,
+  getDocs,
+  updateDoc,
+  deleteDoc,
+  addDoc,
+  doc,
+} from "firebase/firestore";
+import { db, uploadFile } from "../Firebase";
+import "../css/Profile.css";
 
 const Users = () => {
   const [usuarios, setUsuarios] = useState([]);
@@ -43,11 +53,13 @@ const Users = () => {
   
       await setDoc(userDocRef, { email, rol, nombre, apellido, fechaNacimiento, sexo });
   
+
       console.log("signup", email, password, rol, nombre, apellido, fechaNacimiento, sexo);
     } catch (error) {
       console.error('Error en el registro: ', error);
     }
   }; */
+
 
   const editarUsuario = async (id) => {
     try {
@@ -107,6 +119,7 @@ const Users = () => {
     setUserData((prevUserData) => ({ ...prevUserData, sexo: value }));
   };
 
+
   const handleRolChange = (event) => {
     const { value } = event.target;
     setUserData((prevUserData) => ({ ...prevUserData, rol: value }));
@@ -141,6 +154,7 @@ const Users = () => {
     });
   };
 
+
   const isUserDataIncomplete = () => {
     const { nombre, apellido, fechaNacimiento, sexo, rol } = userData;
     return !nombre || !apellido || !fechaNacimiento || !sexo || !rol;
@@ -153,11 +167,14 @@ const Users = () => {
         const snapshot = await getDocs(userCollectionRef);
         const data = snapshot.docs.map((doc) => ({
           ...doc.data(),
+
           id: doc.id
+
         }));
         setUsuarios(data);
         setIsLoading(false);
       } catch (error) {
+
         console.error('Error getting usuarios: ', error);
         setIsLoading(false);
       }
@@ -279,6 +296,7 @@ const Users = () => {
            )}
          </div>
        </div>
+
         ))}
       </div>
     </div>

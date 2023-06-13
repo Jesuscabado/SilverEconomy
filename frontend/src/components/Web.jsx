@@ -12,6 +12,10 @@ import boton from "../img/Botonredondo.png";
 import barra from "../img/Barrabusquedabaja.jpg";
 import NavbarSinTexto from "./NavbarSinTexto";
 import { Link } from "react-router-dom";
+import gifUrl1 from "../video/An.gif";
+import gifUrl2 from "../video/Linea.gif";
+import gifUrl3 from "../video/Mapa.gif";
+import gifUrl4 from "../video/Pie.gif";
 
 function Home() {
   const { user, logout, loading } = useAuth(); // para saber si esta logueado o no
@@ -26,7 +30,7 @@ function Home() {
     }
   };
 
-  if (loading) return <h1>Loading...</h1>; // si esta cargando
+  if (loading) return <h1>Cargando...</h1>; // si esta cargando
 
   // funcion de subir archivo porque que sube y da la url
 
@@ -81,7 +85,7 @@ function Home() {
             <main>
               <div className='dashboard-container'>
                 <div className='card-1'>
-                  <h4 className='chart-lbl'>porcentaje Chart</h4>
+                  <h4 className='chart-lbl'>Informe 2022</h4>
                   <div className='divider'></div>
                   <div className='content-center'>
                     <div className='porcentaje-chart-container'>
@@ -96,7 +100,7 @@ function Home() {
                         </p>
                       </div>
                       <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
-                        Acceder
+                        Descargar
                       </button>
                       {/*  <canvas className='porcentaje-chart' id='porcentaje'></canvas> */}
                     </div>
@@ -138,13 +142,13 @@ function Home() {
                   </Link>
                 </div>
                 <div className='card-3'>
-                  <h4 className='chart-lbl'>Curvas</h4>
+                  <h4 className='chart-lbl'>Sedentarismo en Bizkaia</h4>
                   <div className='divider'></div>
                   <div className='content-center'>
                     <div className='curvas-chart-container'>
                       {/*  <canvas className='curvas-chart' id='curvas'></canvas> */}
-
-                      <img src={grafica2} alt='grafica2' />
+                      <img src={gifUrl2} />
+                      {/* <img src={grafica2} alt='grafica2' /> */}
                       <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
                         Acceder
                       </button>
@@ -152,11 +156,14 @@ function Home() {
                   </div>
                 </div>
                 <div className='card-4'>
-                  <h4 className='chart-lbl'>Mapa</h4>
+                  <h4 className='chart-lbl'>
+                    Indice de soledad por municipios
+                  </h4>
                   <div className='divider'></div>
                   <div className='mapa-chart-container'>
                     {/* <canvas className='mapa-chart' id='mapa'></canvas> */}
-                    <svg
+                    <img src={gifUrl3} />
+                    {/* <svg
                       width='280'
                       height='199'
                       viewBox='0 0 338 199'
@@ -567,7 +574,7 @@ function Home() {
                         d='M254 44.9323L245 47C245.872 45.0805 247.749 44.0501 246.737 41.9683C246.216 40.9027 245.464 39.4701 247.573 39.0678C249.57 38.6867 250.386 39.9641 250.428 41.5942C250.491 43.4362 250.85 44.8123 254 44.9323Z'
                         fill='#506062'
                       />
-                    </svg>
+                    </svg> */}
                     <div className='text-center mt-16'>
                       <h1 className='text-2xm font-bold mb-4'>
                         Índice de Sedentarismo por Municipios:
@@ -589,11 +596,12 @@ function Home() {
                   </div>
                 </div>
                 <div className='card-5'>
-                  <h4 className='chart-lbl'>Bar</h4>
+                  <h4 className='chart-lbl'>Dificultad en la movilidad</h4>
                   <div className='divider'></div>
                   <div className='bar-chart-container'>
                     {/* <canvas className='bar-chart' id='bar'> */}
-                    <img src={grafica1} alt='grafica1' />
+                    {/* <img src={grafica1} alt='grafica1' /> */}
+                    <img src={gifUrl1} />
                     <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
                       Acceder
                     </button>
@@ -608,11 +616,17 @@ function Home() {
               </div>
             </div> */}
                 <div className='card-7'>
-                  <h4 className='chart-lbl'>Circulo</h4>
+                  <h4 className='chart-lbl'>Tiempo de cuidado</h4>
                   <div className='divider'></div>
                   <div className='circulo-chart-container'>
                     {/* <canvas className='circulo-chart' id='circulo'></canvas> */}
-                    <img src={grafica3} alt='grafica3' />
+                    {/*  <img src={grafica3} alt='grafica3' /> */}
+                    {/*  <video autoPlay loop>
+                      <source src={VideoBar} type='video/mp4' />
+                      Tu navegador no admite el elemento de video.
+                    </video> */}
+                    <img src={gifUrl4} />
+
                     <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
                       Acceder
                     </button>

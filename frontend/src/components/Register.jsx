@@ -4,7 +4,7 @@ import { useAuth } from "../context/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
 import Alert from "./Alert";
 
-function Register() {
+function Register({ onClose, onRegister }) {
   const [user, setUser] = useState({ email: "", password: "", rol: "" }); //[{},()=>{}
   const [rol, setRol] = useState("");
   const [error, setError] = useState("");
@@ -25,7 +25,7 @@ function Register() {
     setError("");
     try {
       await signup(user.email, user.password, rol); //  async para que espere a que se cree el usuario
-      navigate("/");
+      navigate("/home");
     } catch (error) {
       // para cambiar el mensaje de error de firebase por uno pesolalizado
       /* console.log(error.code);
@@ -92,10 +92,14 @@ function Register() {
             <option value='user'>user</option>
           </select>
         </div>
-        <button className=' bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full'>
-          Register
+        <button
+          className=' bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full'
+          onClick={handleSubmit}
+        >
+          {/* // Llamar a handleSubmit en lugar de onRegister */}
+          Regístrate
         </button>
-
+        {/* 
         <p className='my-4 text-sm flex justify-between px-3'>
           Already have an Account?
           <Link
@@ -104,7 +108,7 @@ function Register() {
           >
             Login
           </Link>
-        </p>
+        </p> */}
       </form>
     </div>
   );

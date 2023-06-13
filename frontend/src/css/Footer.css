@@ -1,0 +1,9 @@
+.FooterWeb {
+  background-color: lightgray;
+  margin-top: 231px;
+  padding: 20px;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+}

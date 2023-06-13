@@ -18,7 +18,8 @@ import MapeoMunicipioRecOcio from "./MapeoMunicipioRecOcio";
 import MapeoLimitacionFisica from "./MapeoLimitacionFisica";
 import MapeoActividadFisica from "./MapeoActividadFisica";
 import SideBar from "../SideBar";
-import Navbar from "../Navbar";
+import NavbarSinTexto from "../NavbarSinTexto";
+import Matrix from "../../img/corr_matrix.png";
 
 import "../../css/Modelo.css";
 
@@ -233,45 +234,30 @@ function Modelo() {
     sexoSeleccionado,
     sexoMapeado,
     sexoSeleccionado,
-    sexoMapeado,
     edadSeleccionada,
-    estadoCivilMapeado,
     estadoCivilMapeado,
     estadoCivilSeleccionado,
     nivelEstudiosSeleccionado,
-    nivelEstudiosMapeado,
     nivelEstudiosMapeado,
     psicofarmacoSeleccionado,
     psicofarmacosMapeado,
     viveSeleccionado,
     viveSoloMapeado,
-    psicofarmacosMapeado,
-    viveSeleccionado,
-    viveSoloMapeado,
     hijosSeleccionado,
     HijosMapeado,
-    HijosMapeado,
     ascensorSeleccionado,
-    ascensorMapeado,
-    mapeoActividad,
     ascensorMapeado,
     mapeoActividad,
     nivelActividad,
     limFisicaSeleccionada,
     limFisicaMapeada,
-    limFisicaMapeada,
     estadoAnimoSeleccionado,
-    estadoAnimoMapeado,
-    satisfaccionMapeada,
     estadoAnimoMapeado,
     satisfaccionMapeada,
     satisfaccionSeleccionada,
     ingresosSeleccionados,
     ingresosMapeados,
-    ingresosMapeados,
     redSeleccionada,
-    redApoyoMapeada,
-    cohesionSocialSeleccionado,
     redApoyoMapeada,
     cohesionSocialSeleccionado,
     cohesionSocial,
@@ -279,11 +265,7 @@ function Modelo() {
     municipio_accesibleMapeado,
     municipioRecSocialSeleccionado,
     municipioRecSocialMapeado,
-    municipio_accesibleMapeado,
-    municipioRecSocialSeleccionado,
-    municipioRecSocialMapeado,
     municipioOcioSeleccionado,
-    municipioRecOcioMapeado,
     municipioRecOcioMapeado,
   ]);
 
@@ -539,9 +521,10 @@ function Modelo() {
   /*  -------------------------------------------   */
 
   return (
-    <div>
-      <Navbar />
+    <div className='containermodelo'>
+      <NavbarSinTexto />
       <SideBar />
+
       <div className='flex flex-row items-center justify-center h-screen'>
         <h3 className='titulomapa text-3xl font-bold mb-4'>
           Modelo predictivo
@@ -583,6 +566,9 @@ function Modelo() {
               {currentSection === sections.length - 1 && (
                 <h1 className='modelo-label'>Modelo: {modelo}</h1>
               )}
+            </div>
+            <div>
+              <img className='mapaimg' src={Matrix} />
             </div>
           </div>
         </div>

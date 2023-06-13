@@ -261,7 +261,7 @@ function SideBar() {
                 </Link>
               </li>
 
-              <li
+              {/*  <li
                 className={activeItem === "settings" ? "active" : ""}
                 onMouseEnter={() => handleMouseEnter("settings")}
                 onMouseLeave={handleMouseLeave}
@@ -290,7 +290,7 @@ function SideBar() {
                     )}
                   </div>
                 </Link>
-              </li>
+              </li> */}
 
               <li
                 className={activeItem === "profile" ? "active" : ""}
@@ -314,9 +314,9 @@ function SideBar() {
 
                   <div>
                     {windowWidth >= 500 ? (
-                      <p>Profile</p>
+                      <p>Perfil</p>
                     ) : (
-                      <p style={{ display: "none" }}>Profile</p>
+                      <p style={{ display: "none" }}>Perfil</p>
                     )}
                   </div>
                 </Link>
@@ -331,7 +331,7 @@ function SideBar() {
                   /*                   className='bg-red-500 hover:bg-red-700 rounded py-2 px-4 text-white'
                    */ onClick={handleLogout}
                 >
-                  logout
+                  Salir
                 </button>
               </li>
             </ul>
