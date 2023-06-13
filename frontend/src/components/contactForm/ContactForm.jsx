@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { uploadFile } from "../../Firebase";
+import "../../css/contactForm.scss";
 const Paso1 = ({ nextStep }) => {
   const [demanda, setDemanda] = useState("");
   const [departamento, setDepartamento] = useState("");
@@ -48,7 +49,7 @@ const Paso1 = ({ nextStep }) => {
   };
 
   return (
-    <div>
+    <div className="PrimerPaso">
       <h3>Paso 1: Tipo de demanda</h3>
       <div>
         <label>
@@ -74,20 +75,28 @@ const Paso1 = ({ nextStep }) => {
           <label>
             ¿Con qué departamento deseas comunicarte?
             <br />
-            <select value={departamento} onChange={handleDepartamentoChange}>
+            <select
+              className="SelectDepartamento"
+              value={departamento}
+              onChange={handleDepartamentoChange}
+            >
               {departamentos.map((opcion) => (
                 <option key={opcion} value={opcion}>
                   {opcion}
                 </option>
               ))}
             </select>
-            <br></br>
+            <br />
           </label>
           {departamento !== "Selecciona el departamento" && (
             <label>
               ¿Cuál es el tema de tu {demanda}?
               <br />
-              <select value={tema} onChange={handleTemaChange}>
+              <select
+                className="SelectTema"
+                value={tema}
+                onChange={handleTemaChange}
+              >
                 {temas.map((opcion) => (
                   <option key={opcion} value={opcion}>
                     {opcion}
@@ -100,6 +109,7 @@ const Paso1 = ({ nextStep }) => {
       )}
 
       <button
+        className="SiguienteButton"
         onClick={handleNextStep}
         disabled={demanda === "" || departamento === ""}
       >
@@ -155,7 +165,7 @@ const Paso2 = ({ nextStep }) => {
   };
 
   return (
-    <div>
+    <div className="ApartadoForm">
       <h3>Paso 2: Mensaje</h3>
       <label>
         Motivo de la consulta:
@@ -276,7 +286,7 @@ const Paso3 = ({ file, setFile }) => {
   };
 
   return (
-    <div>
+    <div className="DatosForm">
       <form onSubmit={handleSubmit} encType="multipart/form-data">
         {/*  <input
           type="file"

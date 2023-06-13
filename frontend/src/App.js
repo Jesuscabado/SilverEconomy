@@ -24,7 +24,7 @@ import Proyectos from "./components/Proyectos";
 
 function App() {
   return (
-    <div className=" h-screen text-black flex">
+    <div className="h-screen text-black flex">
       <AuthContextProvider>
         {/*    <Navbar /> */}
         <Routes>
