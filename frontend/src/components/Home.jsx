@@ -6,7 +6,7 @@ import soledad3 from "../img/soledad3.jpg";
 import soledad4 from "../img/soledad4.jpg";
 import soledad5 from "../img/soledad5.jpg";
 import soledad6 from "../img/soledad6.jpg";
-/* import facebook from "../img/IconosFooter/facebook.png";
+ /* import facebook from "../img/IconosFooter/facebook.png";
 import twitter from "../img/IconosFooter/twitter.png";
 import youtube from "../img/IconosFooter/youtube.png";
 import iconoMas from "../img/IconosFooter/icono+.png";
@@ -17,7 +17,7 @@ import UniversidadDeusto from "../img/IconosFooter/UniversidadDeusto.png";
 import MondragonUniversidad from "../img/IconosFooter/MondragonUniversidad.png";
 import logoCofinanciado from "../img/IconosFooter/logoCofinanciado.png";
 import Upv from "../img/IconosFooter/Upv.png";
-import Mern from "../img/IconosFooter/Mern.png"; */
+import Mern from "../img/IconosFooter/Mern.png";  */
 
 import Footer from "./Footer";
 import Navbar from "./Navbar";
@@ -181,7 +181,7 @@ function Web({ onLoginClick }) {
           colaborar con GovTech Lab Bizkaia escribenos al mail
           govtechlab@bizkaia.eus.
         </h2>
-        <div className="ColaboradorasIconos">
+        {/* <div className="ColaboradorasIconos">
           <img src={MondragonAcademy} alt="Mondragon Academy" />
           <img src={MondragonUniversidad} alt="Mondragon Universidad" />
           <img src={Zitek} alt="Zitek" />
@@ -192,7 +192,7 @@ function Web({ onLoginClick }) {
           <img src={twitter} alt="twitter"></img>
           <img src={youtube} alt="youtube"></img>
           <img src={iconoMas} alt="icono+"></img>
-        </div>
+        </div> */}
       </div>
       <Footer />
     </div>

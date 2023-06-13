@@ -1,109 +1,126 @@
-import NavbarSinTexto from "./NavbarSinTexto";
-import SideBar from "./SideBar";
 import React, { useState, useEffect } from "react";
-import {
-  getStorage,
-  ref,
-  uploadBytes,
-  getDownloadURL,
-  deleteObject,
-  listAll,
-} from "firebase/storage";
-/* import { Document, Page } from "react-pdf";
- */
+import { getStorage, ref, uploadBytes, getDownloadURL, deleteObject, listAll, getMetadata } from "firebase/storage";
+import SideBar from "./SideBar";
+import "../css/Informes.css";
+
 const PDFUploader = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [pdfUrls, setPdfUrls] = useState([]);
   const [pdfList, setPdfList] = useState([]);
   const storage = getStorage();
+
   useEffect(() => {
-    // Load the list of existing PDFs
     loadPDFList();
   }, []);
+
   const loadPDFList = async () => {
     try {
-      // Get references to all objects in storage
       const storageRef = ref(storage);
       const listResult = await listAll(storageRef);
-      // Create a list of file names for the PDFs
-      const pdfNames = listResult.items.map((item) => item.name);
-      setPdfList(pdfNames);
-      // Fetch download URLs for each PDF
-      const urls = await Promise.all(
-        listResult.items.map(async (item) => {
-          const url = await getDownloadURL(ref(storage, item.name));
-          return { name: item.name, url };
-        })
-      );
-      setPdfUrls(urls);
+
+      const pdfInfoPromises = listResult.items.map(async (item) => {
+        const url = await getDownloadURL(ref(storage, item.name));
+        const metadata = await getMetadata(ref(storage, item.name));
+        const uploadTime = new Date(metadata.timeCreated);
+        const pdfInfo = {
+          name: item.name,
+          url,
+          uploadTime,
+          uploadDate: uploadTime.toLocaleDateString(),
+          uploadTime: uploadTime.toLocaleTimeString(),
+        };
+        return pdfInfo;
+      });
+
+      const pdfInfo = await Promise.all(pdfInfoPromises);
+      setPdfList(pdfInfo.map((pdf) => pdf.name));
+      setPdfUrls(pdfInfo);
     } catch (error) {
       console.error("Error loading PDF list:", error);
     }
   };
+
   const handleFileChange = (e) => {
     setSelectedFile(e.target.files[0]);
   };
+
   const handleUpload = async () => {
     if (selectedFile) {
       try {
         const storageRef = ref(storage, selectedFile.name);
         await uploadBytes(storageRef, selectedFile);
         const url = await getDownloadURL(storageRef);
-        setPdfList([...pdfList, selectedFile.name]); // Add the PDF name to the list
-        setPdfUrls([...pdfUrls, { name: selectedFile.name, url }]); // Add the PDF URL to the URLs list
+        const uploadTime = new Date();
+        const pdfInfo = {
+          name: selectedFile.name,
+          url,
+          uploadTime,
+          uploadDate: uploadTime.toLocaleDateString(),
+          uploadTime: uploadTime.toLocaleTimeString(),
+        };
+        setPdfList((prevPdfList) => [...prevPdfList, selectedFile.name]);
+        setPdfUrls((prevPdfUrls) => [...prevPdfUrls, pdfInfo]);
       } catch (error) {
         console.error("Error uploading PDF:", error);
       }
     }
   };
+
   const handleDelete = async (fileName) => {
     try {
       const storageRef = ref(storage, fileName);
       await deleteObject(storageRef);
-      setPdfList(pdfList.filter((name) => name !== fileName)); // Remove the PDF name from the list
-      setPdfUrls(pdfUrls.filter((pdf) => pdf.name !== fileName)); // Remove the PDF URL from the URLs list
+      setPdfList((prevPdfList) => prevPdfList.filter((name) => name !== fileName));
+      setPdfUrls((prevPdfUrls) => prevPdfUrls.filter((pdf) => pdf.name !== fileName));
     } catch (error) {
       console.error("Error deleting PDF:", error);
     }
   };
-  return (
-    <div>
-      <NavbarSinTexto />
-      <SideBar />
-      <input type='file' onChange={handleFileChange} />
-      <button onClick={handleUpload}>Upload PDF</button>
-      {pdfList.length > 0 && (
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Actions</th>
+
+  const renderPDFList = () => {
+    if (pdfList.length === 0) return null;
+
+    return (
+      <table className="pdf-table">
+        <thead>
+          <tr>
+            <th>Nombre del archivo</th>
+            <th>Fecha de subida</th>
+            <th>Hora de subida</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {pdfUrls.map((pdf, index) => (
+            <tr key={index}>
+              <td>{pdf.name}</td>
+              <td>{pdf.uploadDate}</td>
+              <td>{pdf.uploadTime}</td>
+              <td className="pdf-actions">
+                <button className="view-button" onClick={() => window.open(pdf.url)}>
+                  Ver
+                </button>
+                <button className="delete-button" onClick={() => handleDelete(pdf.name)}>
+                  Borrar
+                </button>
+              </td>
             </tr>
-          </thead>
-          <tbody>
-            {pdfList.map((fileName, index) => (
-              <tr key={index}>
-                <td>{fileName}</td>
-                <td>
-                  <button onClick={() => handleDelete(fileName)}>Borrar</button>
-                  <button
-                    onClick={() =>
-                      window.open(
-                        pdfUrls.find((pdf) => pdf.name === fileName)?.url
-                      )
-                    }
-                  >
-                    Ver
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
+          ))}
+        </tbody>
+      </table>
+    );
+  };
+
+  return (
+    <div className="container-informes">
+      <SideBar />
+      <input type="file" className="file-input" onChange={handleFileChange} />
+      <button className="upload-button" onClick={handleUpload}>
+        Upload PDF
+      </button>
+      {renderPDFList()}
     </div>
   );
 };
 
 export default PDFUploader;
-
