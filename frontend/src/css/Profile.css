@@ -1,0 +1,70 @@
+/* Container styles */
+.userscontainer {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.usersperfil {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.usersdatos {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* th,
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ffffff;
+}
+ */
+/* Styles for form inputs and buttons */
+.usersinput[type="text"],
+.usersinput[type="date"],
+.userselect {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.userbutton {
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.userbutton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Styles for uploaded images */
+.userimg-container {
+  display: flex;
+  align-items: center;
+}
+
+.userimg {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 8px;
+}
+
+.usersuser-item {
+  margin-top: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  padding: 16px;
+}
