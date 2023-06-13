@@ -12,8 +12,10 @@ import boton from "../img/Botonredondo.png";
 import barra from "../img/Barrabusquedabaja.jpg";
 import NavbarSinTexto from "./NavbarSinTexto";
 import { Link } from "react-router-dom";
-import VideoBar from "../video/AnimacionGrafica.mp4";
-import gifUrl from "../video/An.gif";
+import gifUrl1 from "../video/An.gif";
+import gifUrl2 from "../video/Linea.gif";
+import gifUrl3 from "../video/Mapa.gif";
+import gifUrl4 from "../video/Pie.gif";
 
 function Home() {
   const { user, logout, loading } = useAuth(); // para saber si esta logueado o no
@@ -145,8 +147,8 @@ function Home() {
                   <div className='content-center'>
                     <div className='curvas-chart-container'>
                       {/*  <canvas className='curvas-chart' id='curvas'></canvas> */}
-
-                      <img src={grafica2} alt='grafica2' />
+                      <img src={gifUrl2} />
+                      {/* <img src={grafica2} alt='grafica2' /> */}
                       <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
                         Acceder
                       </button>
@@ -158,7 +160,8 @@ function Home() {
                   <div className='divider'></div>
                   <div className='mapa-chart-container'>
                     {/* <canvas className='mapa-chart' id='mapa'></canvas> */}
-                    <svg
+                    <img src={gifUrl3} />
+                    {/* <svg
                       width='280'
                       height='199'
                       viewBox='0 0 338 199'
@@ -569,7 +572,7 @@ function Home() {
                         d='M254 44.9323L245 47C245.872 45.0805 247.749 44.0501 246.737 41.9683C246.216 40.9027 245.464 39.4701 247.573 39.0678C249.57 38.6867 250.386 39.9641 250.428 41.5942C250.491 43.4362 250.85 44.8123 254 44.9323Z'
                         fill='#506062'
                       />
-                    </svg>
+                    </svg> */}
                     <div className='text-center mt-16'>
                       <h1 className='text-2xm font-bold mb-4'>
                         Índice de Sedentarismo por Municipios:
@@ -595,7 +598,8 @@ function Home() {
                   <div className='divider'></div>
                   <div className='bar-chart-container'>
                     {/* <canvas className='bar-chart' id='bar'> */}
-                    <img src={grafica1} alt='grafica1' />
+                    {/* <img src={grafica1} alt='grafica1' /> */}
+                    <img src={gifUrl1} />
                     <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
                       Acceder
                     </button>
@@ -619,8 +623,8 @@ function Home() {
                       <source src={VideoBar} type='video/mp4' />
                       Tu navegador no admite el elemento de video.
                     </video> */}
+                    <img src={gifUrl4} />
 
-                    <img src={gifUrl} />
                     <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
                       Acceder
                     </button>
