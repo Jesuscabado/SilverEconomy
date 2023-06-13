@@ -47,9 +47,11 @@ export default app;
 
 // para subir archivo a storage service cualquier tipo de archivo
 
-export async function uploadFile(file) {
-  const storageRef = ref(storage, v4()); // cambiar el nombre en funcion del ususario sino todos subiran como avatar
+
+export async function uploadFile(file, path) {
+  const storageRef = ref(storage, path); // Utiliza la ruta proporcionada para la referencia de almacenamiento
   await uploadBytes(storageRef, file);
   const url = await getDownloadURL(storageRef);
   return url;
 }
+
