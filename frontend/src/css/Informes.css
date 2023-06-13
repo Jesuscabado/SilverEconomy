@@ -58,11 +58,11 @@
   }
   
   .file-input {
-    margin-top: 20px;
+    margin-top: 10%;
+    margin-left: 40%;
   }
   
   .upload-button {
-    margin-top: 10px;
     padding: 8px 16px;
     border: none;
     background-color: #4caf50;
