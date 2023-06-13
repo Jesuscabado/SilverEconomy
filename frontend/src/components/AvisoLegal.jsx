@@ -1,18 +1,24 @@
-//import "../css/AvisoLegalScreen.css";
+import "../css/AvisoLegal.css";
 
 const Aviso = () => {
   return (
-    <div>
-      <h2>AVISO LEGAL</h2>
-      <p>
+    <div className='aviso-container'>
+      <h2 className='aviso-title'>AVISO LEGAL</h2>
+      <p className='aviso-text'>
         Todos los derechos de propiedad industrial e intelectual del sitio
-        <a href='https://www.bizkaia.eus/'> www.bizkaia.eus </a> y de sus
-        contenidos (textos, imágenes, sonidos, audio, vídeo, diseño,
+        <a className='aviso-link' href='https://www.bizkaia.eus/'>
+          {" "}
+          www.bizkaia.eus{" "}
+        </a>
+        y de sus contenidos (textos, imágenes, sonidos, audio, vídeo, diseño,
         creatividades, software) pertenecen a la Diputación Foral de Bizkaia.
       </p>
 
-      <h2> Garantia de protección de datos personales</h2>
-      <p>
+      <h2 className='aviso-title'>
+        {" "}
+        Garantia de protección de datos personales
+      </h2>
+      <p className='aviso-text'>
         La Diputación Foral de Bizkaia asegura la más estricta confidencialidad
         en la recogida y tratamiento de los datos facilitados por las personas
         usuarias. Asimismo se han adoptado los niveles de seguridad de
@@ -29,17 +35,23 @@ const Aviso = () => {
         LOPDGDD) tiene como objeto la adaptación del ordenamiento jurídico al
         citado reglamento, así como garantizar los derechos digitales de la
         ciudadanía.
-        <br></br>
-        <br></br>
-        <a href='https://www.boe.es/doue/2016/119/L00001-00088.pdf'>
+        <br />
+        <br />
+        <a
+          className='aviso-link'
+          href='https://www.boe.es/doue/2016/119/L00001-00088.pdf'
+        >
           https://www.boe.es/doue/2016/119/L00001-00088.pdf
         </a>
-        <br></br>
-        <a href='https://www.boe.es/buscar/pdf/2018/BOE-A-2018-16673-consolidado.pdf'>
+        <br />
+        <a
+          className='aviso-link'
+          href='https://www.boe.es/buscar/pdf/2018/BOE-A-2018-16673-consolidado.pdf'
+        >
           https://www.boe.es/buscar/pdf/2018/BOE-A-2018-16673-consolidado.pdf
         </a>
-        <br></br>
-        <br></br>
+        <br />
+        <br />
         La Diputación Foral de Bizkaia y su sector público foral actúan como
         responsables y encargados de tratamientos de datos personales de la
         ciudadanía en el desarrollo de muchas de sus actividades. En
@@ -61,10 +73,13 @@ const Aviso = () => {
         Datos (AVPD). Para todas las consultas en materia de protección de datos
         relativas a los tratamientos que realice la Diputación Foral de Bizkaia
         y sus Entidades Forales, pueden dirigirse
-        <a href='https://www.bizkaia.eus/laguntzaile-protecciondatos'>
+        <a
+          className='aviso-link'
+          href='https://www.bizkaia.eus/laguntzaile-protecciondatos'
+        >
           {" "}
           aquí
-        </a>{" "}
+        </a>
         .
       </p>
     </div>

@@ -136,3 +136,98 @@ body {
     padding-bottom: 60px;
   }
 }
+
+@media only screen and (min-width: 320px) {
+  .icono {
+    margin-top: 23%;
+    margin-left: 23%;
+  }
+  .sidebar .sidebar-wrapper .nav li:hover > a {
+    background-color: #067f8d;
+    border-radius: 5px;
+    color: #ffffff;
+  }
+
+  .sidebar .sidebar-wrapper .nav {
+    margin-top: 20px;
+  }
+
+  .sidebar .sidebar-wrapper .nav li:last-child {
+    margin-bottom: 0;
+  }
+
+  .sidebar .sidebar-wrapper .nav li a .notification {
+    position: absolute;
+    top: 0;
+    /* right: 20px; */
+    font-size: 10px;
+  }
+
+  .sidebar .sidebar-wrapper .nav li a .badge {
+    position: absolute;
+    top: 0px;
+    /* right: 20px; */
+    /* padding: 1px 5px; */
+    border-radius: 5px;
+    background-color: #fff;
+    color: #067f8d;
+  }
+
+  .sidebar .sidebar-wrapper .nav li .caret {
+    position: absolute;
+    top: 14px;
+    right: 10px;
+  }
+
+  .sidebar .sidebar-wrapper .nav li .arrow {
+    position: absolute;
+    top: 20px;
+    right: 5px;
+  }
+
+  .sidebar .sidebar-wrapper .nav li .fa {
+    font-size: 14px;
+  }
+
+  .sidebar-wrapper {
+    padding: 20px 10px;
+    position: relative;
+  }
+
+  .sidebar {
+    height: 100vh; /* Establecer altura del menú en 100% del viewport */
+    width: 15vw; /* Establecer ancho del menú en 25% del viewport */
+  }
+
+  .sidebar ul.nav {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .sidebar ul.nav li {
+    position: relative;
+    display: block;
+  }
+
+  .sidebar ul.nav li a {
+    color: #fff;
+    text-decoration: none;
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+  }
+
+  .sidebar ul.nav li a:hover,
+  .sidebar ul.nav li.active a {
+    border-radius: 5px;
+    background-color: #067f8d;
+  }
+
+  .sidebar ul.nav li.active a {
+    color: #ffffff;
+  }
+
+  .sidebar ul.nav li a .fa {
+    margin-right: 10px;
+  }
+}
