@@ -6,6 +6,19 @@ import soledad3 from "../img/soledad3.jpg";
 import soledad4 from "../img/soledad4.jpg";
 import soledad5 from "../img/soledad5.jpg";
 import soledad6 from "../img/soledad6.jpg";
+/* import facebook from "../img/IconosFooter/facebook.png";
+import twitter from "../img/IconosFooter/twitter.png";
+import youtube from "../img/IconosFooter/youtube.png";
+import iconoMas from "../img/IconosFooter/icono+.png";
+import Bizkaia from "../img/IconosFooter/Bizkaia.png";
+import Zitek from "../img/IconosFooter/Zitek.png";
+import MondragonAcademy from "../img/IconosFooter/MondragonAcademy.png";
+import UniversidadDeusto from "../img/IconosFooter/UniversidadDeusto.png";
+import MondragonUniversidad from "../img/IconosFooter/MondragonUniversidad.png";
+import logoCofinanciado from "../img/IconosFooter/logoCofinanciado.png";
+import Upv from "../img/IconosFooter/Upv.png";
+import Mern from "../img/IconosFooter/Mern.png"; */
+
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import LoginOverlay from "./LoginOverlay"; // Corregido
@@ -136,7 +149,7 @@ function Web() {
           </p>
         </div>
       </div>
-      <div class="box">
+      <div className="box">
         <title>Caja de Suscripción</title>
 
         <h1>Suscríbete a nuestra newsletter</h1>
@@ -149,6 +162,26 @@ function Web() {
           He leído y acepto la información en Protección de Datos
         </label>
         <button>Suscribirse</button>
+      </div>
+      <div className="ColaboradorasBox">
+        <h1>Colaboradoras</h1>
+        <h2>
+          Si formas parte del ecosistema de inovacion de Bizkaia y quieres
+          colaborar con GovTech Lab Bizkaia escribenos al mail
+          govtechlab@bizkaia.eus.
+        </h2>
+        <div className="ColaboradorasIconos">
+          <img src={MondragonAcademy} alt="Mondragon Academy" />
+          <img src={MondragonUniversidad} alt="Mondragon Universidad" />
+          <img src={Zitek} alt="Zitek" />
+          <img src={Upv} alt="Upv" />
+          <img src={UniversidadDeusto} alt="Universidad Deusto" />
+          <p>Siguenos en nuestras redes sociales</p>
+          <img src={facebook} alt="facebook"></img>
+          <img src={twitter} alt="twitter"></img>
+          <img src={youtube} alt="youtube"></img>
+          <img src={iconoMas} alt="icono+"></img>
+        </div>
       </div>
       <Footer />
     </div>
