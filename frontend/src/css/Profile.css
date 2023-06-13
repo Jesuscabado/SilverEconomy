@@ -1,5 +1,4 @@
-
-/* Container styles */
+/* 
 .userscontainer {
   max-width: 500px;
   margin: 0 auto;
@@ -18,14 +17,6 @@
   margin-bottom: 10px;
 }
 
-/* th,
-td {
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #ffffff;
-}
- */
-/* Styles for form inputs and buttons */
 .usersinput[type="text"],
 .usersinput[type="date"],
 .userselect {
@@ -48,7 +39,7 @@ td {
   cursor: not-allowed;
 }
 
-/* Styles for uploaded images */
+
 .userimg-container {
   display: flex;
   align-items: center;
@@ -69,4 +60,83 @@ td {
   border-radius: 4px;
   padding: 16px;
 }
+ */
 
+.usercontainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.user-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.user-item {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px;
+}
+.user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-details {
+  flex: 1;
+}
+
+.user-details p {
+  margin-bottom: 10px;
+}
+
+.user-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.user-actions button {
+  padding: 8px 12px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.user-actions button:first-child {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.user-actions button:last-child {
+  background-color: #f44336;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .user-list {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}

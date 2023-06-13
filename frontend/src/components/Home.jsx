@@ -39,7 +39,7 @@ function Web({ onLoginClick }) {
       content: (
         <>
           <p>Aquí puedes agregar tu contenido personalizado</p>
-          <button className="bg-red-500 text-white px-4 py-2 rounded">
+          <button className='bg-red-500 text-white px-4 py-2 rounded'>
             Aquí
           </button>
         </>
@@ -108,13 +108,13 @@ function Web({ onLoginClick }) {
       {showLogin && <LoginOverlay onClose={() => setShowLogin(false)} />}
       {/* Corregido */}
       <div style={odsContainerStyles}>
-        <img src={soledad4} alt="ODS" style={imageStyles} />
+        <img src={soledad4} alt='ODS' style={imageStyles} />
         <div style={odsTextStyles}>
           <h2>
             Soledad no deseada en personas mayores afecta a más del 56% de los
             mayores de 65 años.
           </h2>
-          <p className="">
+          <p className=''>
             El envejecimiento de la población puede acentuar situaciones de
             soledad, pero existen otros factores sociales y estructurales que
             han contribuido a su aumento también en otros tramos de edad:
@@ -143,13 +143,13 @@ function Web({ onLoginClick }) {
             todas las edades.
           </p>
         </div>
-        <img src={soledad5} alt="" style={imageStyles} />
+        <img src={soledad5} alt='' style={imageStyles} />
       </div>
       <div style={odsContainerStyles}>
-        <img src={soledad6} alt="ODS" style={imageStyles} />
+        <img src={soledad6} alt='ODS' style={imageStyles} />
         <div style={odsTextStyles}>
           <h2>Experiencias de fragilidad y soledad en el envejecimiento.</h2>
-          <p className="">
+          <p className=''>
             Las personas que experimentan soledad, como cualquier otra emoción
             negativa, en general tratan de aplicar estrategias para afrontar
             esta situación o minimizar los efectos negativos. Es decir, la
@@ -160,7 +160,7 @@ function Web({ onLoginClick }) {
           </p>
         </div>
       </div>
-      <div className="box">
+      <div className='box'>
         <title>Caja de Suscripción</title>
 
         <h1>Suscríbete a nuestra newsletter</h1>
@@ -169,19 +169,19 @@ function Web({ onLoginClick }) {
           bandeja de entrada.
         </p>
         <label>
-          <input type="checkbox" name="privacy" required />
+          <input type='checkbox' name='privacy' required />
           He leído y acepto la información en Protección de Datos
         </label>
         <button>Suscribirse</button>
       </div>
-      <div className="ColaboradorasBox">
+      <div className='ColaboradorasBox'>
         <h1>Colaboradoras</h1>
         <h2>
           Si formas parte del ecosistema de inovacion de Bizkaia y quieres
           colaborar con GovTech Lab Bizkaia escribenos al mail
           govtechlab@bizkaia.eus.
         </h2>
-        <div className="ColaboradorasIconos">
+        {/* <div className="ColaboradorasIconos">
           <img src={MondragonAcademy} alt="Mondragon Academy" />
           <img src={MondragonUniversidad} alt="Mondragon Universidad" />
           <img src={Zitek} alt="Zitek" />
@@ -192,7 +192,7 @@ function Web({ onLoginClick }) {
           <img src={twitter} alt="twitter"></img>
           <img src={youtube} alt="youtube"></img>
           <img src={iconoMas} alt="icono+"></img>
-        </div>
+        </div> */}
       </div>
       <Footer />
     </div>
