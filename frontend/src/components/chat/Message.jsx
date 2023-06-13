@@ -1,3 +1,21 @@
+/*COMPONENTE SIN CSS*/
+/* import React from "react";
+import { auth } from "../../Firebase";
+
+const Message = ({ message }) => {
+  const mesage = message.uid === auth.currentUser.uid;
+
+  return (
+    <div>
+      <div>
+        <h1>{message.name}</h1>
+        <p>{message.text}</p>
+      </div>
+    </div>
+  );
+};
+
+export default Message; */
 import React from "react";
 import { auth } from "../../Firebase";
 
@@ -25,24 +43,3 @@ const Message = ({ message }) => {
 };
 
 export default Message;
-
-/*COMPONENTE SIN CSS
-import React from "react";
-import { auth } from "../../Firebase";
-
-const Message = ({ message }) => {
-  const mesage =
-    message.uid === auth.currentUser.uid;
-
-  return (
-    <div>
-      <div>
-        <h1>{message.name}</h1>
-        <p>{message.text}</p>
-      </div>
-    </div>
-  );
-};
-
-export default Message;
- */
