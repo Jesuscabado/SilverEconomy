@@ -48,7 +48,11 @@ export default app;
 // para subir archivo a storage service cualquier tipo de archivo
 
 export async function uploadFile(file, path) {
+<<<<<<< HEAD
   const storageRef = ref(storage, path, v4()); // Utiliza la ruta proporcionada para la referencia de almacenamiento
+=======
+  const storageRef = ref(storage, path,v4()); // Utiliza la ruta proporcionada para la referencia de almacenamiento
+>>>>>>> 3a66e1b417d54fb8c695dc6a66698892c2e16cac
   await uploadBytes(storageRef, file);
   const url = await getDownloadURL(storageRef);
   return url;
