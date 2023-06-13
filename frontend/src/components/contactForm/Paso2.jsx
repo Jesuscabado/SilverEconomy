@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { uploadFile } from "../../Firebase";
+import "../../css/Paso1.css";
 
 const Paso2 = ({ nextStep }) => {
   const [idioma, setIdioma] = useState("");
@@ -59,8 +60,8 @@ const Paso2 = ({ nextStep }) => {
   };
 
   return (
-    <div>
-      <h3>Paso 2: Mensaje</h3>
+    <div className='clasepaso1'>
+      <h3 className='clasepaso1titulo'>Paso 2: Mensaje</h3>
       <label>
         Motivo de la consulta:
         <br />
@@ -86,7 +87,7 @@ const Paso2 = ({ nextStep }) => {
         </button> */}
       </form>
       <br />
-      <label>
+      <label className='clasepaso1departamento'>
         Idioma de respuesta:
         <br />
         <select value={idioma} onChange={handleIdiomaChange}>
@@ -97,6 +98,7 @@ const Paso2 = ({ nextStep }) => {
       </label>
       <br />
       <button
+        className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'
         onClick={handleNextStep} /*  
         disabled={idioma === "" || mensaje === ""}*/
       >

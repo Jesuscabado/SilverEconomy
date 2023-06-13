@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../../css/Paso1.css";
 
 const Paso1 = ({ nextStep }) => {
   const [demanda, setDemanda] = useState("");
@@ -53,9 +54,9 @@ const Paso1 = ({ nextStep }) => {
   };
 
   return (
-    <div>
-      <h3>Paso 1: Tipo de demanda</h3>
-      <div>
+    <div className='clasepaso1'>
+      <h3 className='clasepaso1titulo'>Paso 1: Tipo de demanda</h3>
+      <div className='clasepaso1realizar'>
         <label>
           ¿Qué deseas realizar?
           <br />
@@ -74,7 +75,7 @@ const Paso1 = ({ nextStep }) => {
           ))}
         </label>
       </div>
-      <div>
+      <div className='clasepaso1departamento'>
         <label>
           Departamento:
           <br />
@@ -87,7 +88,7 @@ const Paso1 = ({ nextStep }) => {
           </select>
         </label>
       </div>
-      <div>
+      <div className='clasepaso1tema'>
         <label>
           Tema:
           <br />
@@ -100,7 +101,12 @@ const Paso1 = ({ nextStep }) => {
           </select>
         </label>
       </div>
-      <button onClick={handleNextStep}>Siguiente</button>
+      <button
+        className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'
+        onClick={handleNextStep}
+      >
+        Siguiente
+      </button>
     </div>
   );
 };

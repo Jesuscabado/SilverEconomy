@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { collection, getFirestore, addDoc } from "firebase/firestore";
 import { useNavigate, Link } from "react-router-dom";
+import "../../css/Paso1.css";
 
 /* import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
  */
@@ -118,7 +119,7 @@ const Paso3 = ({ file, setFile, datosPaso1, datosPaso2 }) => {
     }
   };
   return (
-    <div>
+    <div className='clasepaso1'>
       <form /* onSubmit={handleSubmit} encType='multipart/form-data' */>
         {/*  <input
           type='file'
@@ -126,9 +127,11 @@ const Paso3 = ({ file, setFile, datosPaso1, datosPaso2 }) => {
           id='file'
           onChange={(e) => setFile(e.target.files[0])}
         /> */}
-        <h3>Paso 3: Datos personales</h3>
-        <p>Los campos marcados con el signo (*) son obligatorios.</p>
-        <label>
+        <h3 className='clasepaso1titulo'>Paso 3: Datos personales</h3>
+        <p className='clasepaso1autorizacion'>
+          Los campos marcados con el signo (*) son obligatorios.
+        </p>
+        <label className='clasepaso1realizar'>
           E-mail (*):
           <input
             type='email'
@@ -138,7 +141,7 @@ const Paso3 = ({ file, setFile, datosPaso1, datosPaso2 }) => {
           />
         </label>
         <br />
-        <label>
+        <label className='clasepaso1realizar'>
           Confirmar e-mail (*):
           <input
             type='email'
@@ -148,7 +151,7 @@ const Paso3 = ({ file, setFile, datosPaso1, datosPaso2 }) => {
           />
         </label>
         <br />
-        <label>
+        <label className='clasepaso1realizar'>
           Sexo (*):
           <br />
           <select value={sexo} onChange={handleSexoChange} required>
@@ -159,42 +162,42 @@ const Paso3 = ({ file, setFile, datosPaso1, datosPaso2 }) => {
           </select>
         </label>
         <br />
-        <h4>Datos opcionales</h4>
-        <label>
+        <h4 className='clasepaso1titulo'>Datos opcionales</h4>
+        <label className='clasepaso1realizar'>
           Nombre y apellidos:
           <input type='text' value={nombre} onChange={handleNombreChange} />
         </label>
         <br />
-        <label>
+        <label className='clasepaso1realizar'>
           DNI:
           <input type='text' value={dni} onChange={handleDniChange} />
         </label>
         <br />
-        <label>
+        <label className='clasepaso1realizar'>
           Teléfono:
           <input type='text' value={telefono} onChange={handleTelefonoChange} />
         </label>
         <br />
-        <p>
+        <p className='clasepaso1autorizacion'>
           En el caso de que el trámite sea complicado de realizar vía email, nos
           pondremos en contacto vía telefónica.
         </p>
-        <label>
+        <label className='clasepaso1realizar'>
           Calle:
           <input type='text' value={calle} onChange={handleCalleChange} />
         </label>
         <br />
-        <label>
+        <label className='clasepaso1realizar'>
           Número:
           <input type='text' value={numero} onChange={handleNumeroChange} />
         </label>
         <br />
-        <label>
+        <label className='clasepaso1realizar'>
           Piso:
           <input type='text' value={piso} onChange={handlePisoChange} />
         </label>
         <br />
-        <label>
+        <label className='clasepaso1realizar'>
           Municipio:
           <input
             type='text'
@@ -203,7 +206,7 @@ const Paso3 = ({ file, setFile, datosPaso1, datosPaso2 }) => {
           />
         </label>
         <br />
-        <label>
+        <label className='clasepaso1realizar'>
           Código postal:
           <input
             type='text'
@@ -212,7 +215,7 @@ const Paso3 = ({ file, setFile, datosPaso1, datosPaso2 }) => {
           />
         </label>
         <br />
-        <p>
+        <p className='clasepaso1autorizacion'>
           Protección de datos personales y garantía de los derechos digitales
         </p>
         <label>
@@ -222,17 +225,24 @@ const Paso3 = ({ file, setFile, datosPaso1, datosPaso2 }) => {
             onChange={handleAutorizacionChange}
             required
           />
-          Autorizo a la Dirección General de Digitalización y Atención Ciudadana
-          a derivar mi demanda al Departamento de la Diputación Foral de Bizkaia
-          competente para su tramitación. Y en el supuesto de que la demanda no
-          se refiera a una materia competencia de la Diputación Foral de
-          Bizkaia, presto mi consentimiento para que, si es posible, se dé
-          traslado de la misma a la Administración Pública u organismo
-          correspondiente. (*)
+          <p className='clasepaso1autorizacion'>
+            Autorizo a la Dirección General de Digitalización y Atención
+            Ciudadana a derivar mi demanda al Departamento de la Diputación
+            Foral de Bizkaia competente para su tramitación. Y en el supuesto de
+            que la demanda no se refiera a una materia competencia de la
+            Diputación Foral de Bizkaia, presto mi consentimiento para que, si
+            es posible, se dé traslado de la misma a la Administración Pública u
+            organismo correspondiente. (*)
+          </p>
         </label>
         <br />
-        <button onClick={handleSubmit}>Enviar</button>
         {successMessage && <p>Mensaje enviado</p>}
+        <button
+          className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'
+          onClick={handleSubmit}
+        >
+          Enviar
+        </button>
       </form>
     </div>
   );
