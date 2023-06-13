@@ -6,15 +6,30 @@ import soledad3 from "../img/soledad3.jpg";
 import soledad4 from "../img/soledad4.jpg";
 import soledad5 from "../img/soledad5.jpg";
 import soledad6 from "../img/soledad6.jpg";
+/* import facebook from "../img/IconosFooter/facebook.png";
+import twitter from "../img/IconosFooter/twitter.png";
+import youtube from "../img/IconosFooter/youtube.png";
+import iconoMas from "../img/IconosFooter/icono+.png";
+import Bizkaia from "../img/IconosFooter/Bizkaia.png";
+import Zitek from "../img/IconosFooter/Zitek.png";
+import MondragonAcademy from "../img/IconosFooter/MondragonAcademy.png";
+import UniversidadDeusto from "../img/IconosFooter/UniversidadDeusto.png";
+import MondragonUniversidad from "../img/IconosFooter/MondragonUniversidad.png";
+import logoCofinanciado from "../img/IconosFooter/logoCofinanciado.png";
+import Upv from "../img/IconosFooter/Upv.png";
+import Mern from "../img/IconosFooter/Mern.png"; */
+
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import LoginOverlay from "./LoginOverlay"; // Corregido
 /* import RegisterOverlay from "./RegisterOverlay"; // Corregido */
 
 import "../css/LoginOverlay.css";
+import "../css/Home.css";
 
 function Web({ onLoginClick }) {
   const [showLogin, setShowLogin] = useState(false);
+
   /*   const [showRegister, setShowRegister] = useState(false); */
 
   const slides = [
@@ -23,8 +38,10 @@ function Web({ onLoginClick }) {
       title: " ",
       content: (
         <>
-          <p></p>
-          <button className='bg-red-500 text-white px-4 py-2 rounded'></button>
+          <p>Aquí puedes agregar tu contenido personalizado</p>
+          <button className="bg-red-500 text-white px-4 py-2 rounded">
+            Aquí
+          </button>
         </>
       ),
     },
@@ -89,16 +106,15 @@ function Web({ onLoginClick }) {
         <ImageSlider slides={slides} onLoginClick={handleLoginClick} />
       </div>
       {showLogin && <LoginOverlay onClose={() => setShowLogin(false)} />}
-
       {/* Corregido */}
       <div style={odsContainerStyles}>
-        <img src={soledad4} alt='ODS' style={imageStyles} />
+        <img src={soledad4} alt="ODS" style={imageStyles} />
         <div style={odsTextStyles}>
           <h2>
             Soledad no deseada en personas mayores afecta a más del 56% de los
             mayores de 65 años.
           </h2>
-          <p className=''>
+          <p className="">
             El envejecimiento de la población puede acentuar situaciones de
             soledad, pero existen otros factores sociales y estructurales que
             han contribuido a su aumento también en otros tramos de edad:
@@ -127,12 +143,13 @@ function Web({ onLoginClick }) {
             todas las edades.
           </p>
         </div>
-        <img src={soledad5} alt='' style={imageStyles} />
+        <img src={soledad5} alt="" style={imageStyles} />
       </div>
-      <div style={agendaContainerStyles}>
-        <div style={agendaTextStyles}>
+      <div style={odsContainerStyles}>
+        <img src={soledad6} alt="ODS" style={imageStyles} />
+        <div style={odsTextStyles}>
           <h2>Experiencias de fragilidad y soledad en el envejecimiento.</h2>
-          <p>
+          <p className="">
             Las personas que experimentan soledad, como cualquier otra emoción
             negativa, en general tratan de aplicar estrategias para afrontar
             esta situación o minimizar los efectos negativos. Es decir, la
@@ -142,7 +159,40 @@ function Web({ onLoginClick }) {
             consecuencias más negativas pueden ser muy variadas.{" "}
           </p>
         </div>
-        <img src={soledad6} alt='' style={imageStyles} />
+      </div>
+      <div className="box">
+        <title>Caja de Suscripción</title>
+
+        <h1>Suscríbete a nuestra newsletter</h1>
+        <p>
+          Recibe las últimas noticias y actualizaciones directamente en tu
+          bandeja de entrada.
+        </p>
+        <label>
+          <input type="checkbox" name="privacy" required />
+          He leído y acepto la información en Protección de Datos
+        </label>
+        <button>Suscribirse</button>
+      </div>
+      <div className="ColaboradorasBox">
+        <h1>Colaboradoras</h1>
+        <h2>
+          Si formas parte del ecosistema de inovacion de Bizkaia y quieres
+          colaborar con GovTech Lab Bizkaia escribenos al mail
+          govtechlab@bizkaia.eus.
+        </h2>
+        <div className="ColaboradorasIconos">
+          <img src={MondragonAcademy} alt="Mondragon Academy" />
+          <img src={MondragonUniversidad} alt="Mondragon Universidad" />
+          <img src={Zitek} alt="Zitek" />
+          <img src={Upv} alt="Upv" />
+          <img src={UniversidadDeusto} alt="Universidad Deusto" />
+          <p>Siguenos en nuestras redes sociales</p>
+          <img src={facebook} alt="facebook"></img>
+          <img src={twitter} alt="twitter"></img>
+          <img src={youtube} alt="youtube"></img>
+          <img src={iconoMas} alt="icono+"></img>
+        </div>
       </div>
       <Footer />
     </div>
