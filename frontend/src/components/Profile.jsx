@@ -1,5 +1,6 @@
 import NavbarSinTexto from "./NavbarSinTexto";
 import SideBar from "./SideBar";
+import { v4 as uuidv4 } from "uuid";
 import React, { useState, useEffect } from "react";
 import {
   collection,
@@ -11,7 +12,12 @@ import {
 } from "firebase/firestore";
 import { db, uploadFile } from "../Firebase";
 import "../css/Profile.css";
-import { getMetadata, getDownloadURL, ref } from "firebase/storage";
+import {
+  getMetadata,
+  uploadBytes,
+  getDownloadURL,
+  ref,
+} from "firebase/storage";
 import { storage } from "../Firebase";
 
 const Users = () => {
@@ -118,12 +124,35 @@ const Users = () => {
   const handleUpload = async (id) => {
     if (selectedFile && selectedFile[id]) {
       const file = selectedFile[id];
-      const avatarPath = `avatar/${file.name}`; // Ruta dentro de la carpeta "avatar" con el ID del usuario y el nombre del archivo
-      const imageUrl = await uploadFile(file, avatarPath); // Pasa la ruta como segundo argumento en la llamada a uploadFile
-      setUploadedImages((prevImages) => ({ ...prevImages, [id]: imageUrl }));
+      const fileId = uuidv4();
+      const avatarPath = `avatar/${id}/${fileId}_${file.name}`; // Ruta dentro de la carpeta "avatar" con el ID del usuario y el nombre del archivo
+
+      try {
+        const storageRef = ref(storage, avatarPath);
+        await uploadBytes(storageRef, file);
+
+        const imageUrl = await getDownloadURL(storageRef);
+
+        // Guarda la URL de la imagen en Firestore
+        const userDocRef = doc(db, "usuarios", id);
+        await updateDoc(userDocRef, { avatarUrl: imageUrl });
+
+        // Actualiza el estado de uploadedImages con la URL de la imagen
+        setUploadedImages((prevImages) => ({
+          ...prevImages,
+          [id]: imageUrl,
+        }));
+
+        // Actualiza también la URL de la imagen en el objeto de usuario actualizado
+        setUserData((prevUserData) => ({
+          ...prevUserData,
+          avatarUrl: imageUrl,
+        }));
+      } catch (error) {
+        console.error("Error uploading file: ", error);
+      }
     }
   };
-
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setUserData((prevUserData) => ({ ...prevUserData, [name]: value }));
@@ -183,20 +212,15 @@ const Users = () => {
 
           id: doc.id,
         }));
-        // Cargar imágenes previamente subidas al estado uploadedImages
+
+        // Obtén las URL de las imágenes de perfil desde Firestore
         const uploadedImages = {};
         for (const usuario of data) {
-          const avatarPath = `avatar/${usuario.id}`;
-          const avatarRef = ref(storage, avatarPath);
-          try {
-            const metadata = await getMetadata(avatarRef);
-            const downloadURL = await getDownloadURL(avatarRef);
-            uploadedImages[usuario.id] = downloadURL;
-          } catch (error) {
-            console.error("Error getting image metadata: ", error);
-            // Trata el error aquí, por ejemplo, estableciendo una URL de imagen por defecto
+          if (usuario.avatarUrl) {
+            uploadedImages[usuario.id] = usuario.avatarUrl;
           }
         }
+
         setUploadedImages(uploadedImages);
 
         setUsuarios(data);
