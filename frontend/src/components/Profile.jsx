@@ -1,5 +1,6 @@
 import NavbarSinTexto from "./NavbarSinTexto";
 import SideBar from "./SideBar";
+import { v4 as uuidv4 } from "uuid";
 import React, { useState, useEffect } from "react";
 import {
   collection,
@@ -11,7 +12,7 @@ import {
 } from "firebase/firestore";
 import { db, uploadFile } from "../Firebase";
 import "../css/Profile.css";
-import { getMetadata, getDownloadURL, ref } from "firebase/storage";
+import { getMetadata,uploadBytes, getDownloadURL, ref } from "firebase/storage";
 import { storage } from "../Firebase";
 
 const Users = () => {
@@ -118,17 +119,36 @@ const Users = () => {
   const handleUpload = async (id) => {
     if (selectedFile && selectedFile[id]) {
       const file = selectedFile[id];
-      const avatarPath = `avatar/${id}/${file.name}`; // Ruta dentro de la carpeta "avatar" con el ID del usuario y el nombre del archivo
-      const imageUrl = await uploadFile(file, avatarPath); // Pasa la ruta como segundo argumento en la llamada a uploadFile
+      const fileId = uuidv4();
+      const avatarPath = `avatar/${id}/${fileId}_${file.name}`; // Ruta dentro de la carpeta "avatar" con el ID del usuario y el nombre del archivo
   
-      // Guarda la URL de la imagen en Firestore
-      const userDocRef = doc(db, "usuarios", id);
-      await updateDoc(userDocRef, { avatarUrl: imageUrl });
+      try {
+        const storageRef = ref(storage, avatarPath);
+        await uploadBytes(storageRef, file);
   
-      // Actualiza el estado de uploadedImages con la URL de la imagen
-      setUploadedImages((prevImages) => ({ ...prevImages, [id]: imageUrl }));
+        const imageUrl = await getDownloadURL(storageRef);
+  
+        // Guarda la URL de la imagen en Firestore
+        const userDocRef = doc(db, "usuarios", id);
+        await updateDoc(userDocRef, { avatarUrl: imageUrl });
+  
+        // Actualiza el estado de uploadedImages con la URL de la imagen
+        setUploadedImages((prevImages) => ({
+          ...prevImages,
+          [id]: imageUrl,
+        }));
+  
+        // Actualiza también la URL de la imagen en el objeto de usuario actualizado
+        setUserData((prevUserData) => ({
+          ...prevUserData,
+          avatarUrl: imageUrl,
+        }));
+      } catch (error) {
+        console.error("Error uploading file: ", error);
+      }
     }
   };
+  
   
 
   const handleInputChange = (event) => {
