@@ -1,3 +1,15 @@
+.main-container {
+  margin-top: 120px;
+}
+
+.modelotexto {
+  font-size: x-large;
+  font-weight: 600;
+  margin-left: 350px;
+  margin-top: 100px;
+  position: absolute;
+}
+
 .mapaimg {
   width: 75%;
   height: 75%;

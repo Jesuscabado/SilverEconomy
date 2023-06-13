@@ -8,6 +8,7 @@ import ContactForm from "./contactForm/ContactForm";
 import "../css/Footer.css";
 import { Link, Route, Routes } from "react-router-dom";
 import LogoBizkaia from "../img/IconosFooter/Bizkaia.png";
+import Formulario from "../components/contactForm/Formulario";
 
 const Footer = () => {
   /*   const footerStyles = {
@@ -56,10 +57,11 @@ const Footer = () => {
         <Link className='text-decoration-none custom-link' to='/cookies'>
           Cookies{" "}
         </Link>
-        <Routes>
+        {/* <Routes>
           <Route path='/contact' component={ContactForm} />
-        </Routes>
-        <Link className='text-decoration-none custom-link' to='/contact'>
+          <Route path='/formulario' component={Formulario} />
+        </Routes> */}
+        <Link className='text-decoration-none custom-link' to='/formulario'>
           Formulario de contacto{" "}
         </Link>
       </div>

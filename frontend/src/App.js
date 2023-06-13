@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Form } from "react-router-dom";
 import Home from "./components/Web";
 import Login from "./components/Login";
 import Register from "./components/Register";
@@ -21,38 +21,41 @@ import PlanAccion from "./components/PlanAccion";
 import Settings from "./components/Settings";
 import RegisterOverlay from "./components/RegisterOverlay";
 import Proyectos from "./components/Proyectos";
+import Formulario from "./components/contactForm/Formulario";
 
 function App() {
   return (
-    <div className=" h-screen text-black flex">
+    <div className=' h-screen text-black flex'>
       <AuthContextProvider>
         {/*    <Navbar /> */}
         <Routes>
           <Route
-            path="/"
+            path='/'
             element={
               <ProtectedRoute>
                 <Web />
               </ProtectedRoute>
             }
           />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/Home" element={<Home />} />
-          <Route path="/avisolegal" element={<AvisoLegal />} />
-          <Route path="/calendar" element={<Calendar />} />
-          <Route path="/modelo" element={<Modelo />} />
-          <Route path="/mapacalor" element={<MapaCalor />} />
-          <Route path="/informes" element={<Informes />} />
-          <Route path="/notificaciones" element={<Notificaciones />} />
-          <Route path="/planaccion" element={<PlanAccion />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/chat" element={<Chat />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/proyectos" element={<Proyectos />} />
-          <Route path="/web/*" element={<Web />} />
-          <Route path="/registeroverlay" element={<RegisterOverlay />} />
-          <Route path="/contact" element={<ContactForm />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/Home' element={<Home />} />
+          <Route path='/avisolegal' element={<AvisoLegal />} />
+          <Route path='/calendar' element={<Calendar />} />
+          <Route path='/modelo' element={<Modelo />} />
+          <Route path='/mapacalor' element={<MapaCalor />} />
+          <Route path='/informes' element={<Informes />} />
+          <Route path='/notificaciones' element={<Notificaciones />} />
+          <Route path='/planaccion' element={<PlanAccion />} />
+          <Route path='/settings' element={<Settings />} />
+          <Route path='/chat' element={<Chat />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/proyectos' element={<Proyectos />} />
+          <Route path='/web/*' element={<Web />} />
+          <Route path='/registeroverlay' element={<RegisterOverlay />} />
+          <Route path='/contact' element={<ContactForm />} />
+          <Route path='/formulario' element={<Formulario />} />
+          {/*   <Route path='/form' element={<Form />} /> */}
         </Routes>
       </AuthContextProvider>
       {/*  <Footer /> */}

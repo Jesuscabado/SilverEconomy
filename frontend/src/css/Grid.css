@@ -17,12 +17,6 @@
   order: 2; /* Cambiar el orden de aparición */
 }
 
-@media only screen and (min-width: 320px) {
-  .main2 {
-    margin-top: 23%;
-    margin-left: 23%;
-  }
-}
 .boton {
   position: relative;
   width: 48px;

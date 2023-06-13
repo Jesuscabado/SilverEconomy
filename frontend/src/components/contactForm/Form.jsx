@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import { uploadFile } from "../../Firebase";
+import { collection, getFirestore, addDoc } from "firebase/firestore";
+import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
+import Paso1 from "../../components/contactForm/Paso1";
+import Paso2 from "../../components/contactForm/Paso2";
+import Paso3 from "../../components/contactForm/Paso3";
 
-const Paso1 = ({ nextStep }) => {
+export const Paso1 = ({ nextStep }) => {
   const [demanda, setDemanda] = useState("");
   const [departamento, setDepartamento] = useState("");
   const [tema, setTema] = useState("");
@@ -110,10 +115,10 @@ const Paso1 = ({ nextStep }) => {
   );
 };
 
-const Paso2 = ({ nextStep }) => {
+export const Paso2 = ({ nextStep }) => {
   const [idioma, setIdioma] = useState("");
-  /*   const [file, setFile] = useState(null);
-   */ const [mensaje, setMensaje] = useState("");
+  const [file, setFile] = useState(null);
+  const [mensaje, setMensaje] = useState("");
   const tiposArchivoPermitidos = [
     "pdf",
     "doc",
@@ -144,7 +149,7 @@ const Paso2 = ({ nextStep }) => {
     }
   };
 
-  /*  const handleSubmit = async (e) => {
+  /* const handleSubmit = async (e) => {
     try {
       e.preventDefault();
       const result = await uploadFile(file);
@@ -171,7 +176,7 @@ const Paso2 = ({ nextStep }) => {
       </label>
       <br />
       {/*  formulario de subir archivo */}
-      {/*  <form onSubmit={handleSubmit} encType='multipart/form-data'>
+      {/* <form onSubmit={handleSubmit} encType='multipart/form-data'>
         <input
           type='file'
           name='file'
@@ -203,7 +208,7 @@ const Paso2 = ({ nextStep }) => {
   );
 };
 
-const Paso3 = ({ file, setFile }) => {
+export const Paso3 = ({ file, setFile }) => {
   const [email, setEmail] = useState("");
   const [confirmarEmail, setConfirmarEmail] = useState("");
   const [sexo, setSexo] = useState("");
@@ -216,6 +221,7 @@ const Paso3 = ({ file, setFile }) => {
   const [municipio, setMunicipio] = useState("");
   const [codigoPostal, setCodigoPostal] = useState("");
   const [autorizacion, setAutorizacion] = useState(false);
+  const [fileURL, setFileURL] = useState(""); // Agregado: Estado para la URL del archivo
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -268,6 +274,31 @@ const Paso3 = ({ file, setFile }) => {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
+      const firestore = getFirestore();
+      const collectionRef = collection(firestore, "FormulariosContacto");
+
+      // Crea un objeto con los datos del formulario
+      const formData = {
+        /*  fileURL, */
+        email,
+        confirmarEmail,
+        sexo,
+        nombre,
+        dni,
+        telefono,
+        calle,
+        numero,
+        piso,
+        municipio,
+        codigoPostal,
+        autorizacion,
+      };
+
+      // Almacena los datos del formulario en Firestore
+      await addDoc(collectionRef, formData); // Utiliza addDoc en lugar de collectionRef.add
+
+      console.log("Datos enviados correctamente");
+      // Realiza las acciones necesarias, como mostrar un mensaje de éxito o redirigir al usuario a otra página
       const result = await uploadFile(file);
       console.log(result); // tiene la URL del archivo
     } catch (error) {
@@ -280,9 +311,9 @@ const Paso3 = ({ file, setFile }) => {
     <div>
       <form onSubmit={handleSubmit} encType='multipart/form-data'>
         {/*  <input
-          type="file"
-          name="file"
-          id="file"
+          type='file'
+          name='file'
+          id='file'
           onChange={(e) => setFile(e.target.files[0])}
         /> */}
         <h3>Paso 3: Datos personales</h3>
@@ -396,7 +427,7 @@ const Paso3 = ({ file, setFile }) => {
   );
 };
 
-const FormularioEnTresPasos = () => {
+export const FormularioEnTresPasos = () => {
   const [step, setStep] = useState(1);
   const [file, setFile] = useState(null); // file es un objeto de tipo File
   const handleNextStep = () => {
@@ -407,10 +438,8 @@ const FormularioEnTresPasos = () => {
     <div>
       {step === 1 && <Paso1 nextStep={handleNextStep} />}
       {step === 2 && <Paso2 nextStep={handleNextStep} />}
-      {step === 3 && <Paso3 file={file} setFile={setFile} />}{" "}
+      {step === 3 && <Paso3 file={file} setFile={setFile} />}
       {/* Paso el estado y la función como props */}
     </div>
   );
 };
-
-export default FormularioEnTresPasos;
