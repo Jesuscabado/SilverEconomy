@@ -20,42 +20,42 @@ const Footer = () => {
   return (
     <footer className="FooterWeb" /*  style={footerStyles} */>
       <div className="text-center">
-        Copyright © 2023 · Bizkaiko Foru Aldundia · Diputacion Foral de Bizkaia
+        Copyright © 2023 · Bizkaiko Foru Aldundia · Diputacion Foral de Bizkaia{" "}
         <Routes>
           <Route path="/Avisolegal" component={AvisoLegal} />
         </Routes>
         <Link className="text-decoration-none custom-link" to="/avisolegal">
-          Aviso legal
+          Aviso legal{" "}
         </Link>
         <Routes>
           <Route path="/Entidades" component={Entidades} />
         </Routes>
         <Link className="text-decoration-none custom-link" to="/entidades">
-          Entidades
+          Entidades{" "}
         </Link>
         <Routes>
           <Route path="/Accesibilidad" component={Accesibilidad} />
         </Routes>
         <Link className="text-decoration-none custom-link" to="/accesibilidad">
-          Accesibilidad
+          Accesibilidad{" "}
         </Link>
         <Routes>
           <Route path="/Mapaweb" component={Mapaweb} />
         </Routes>
         <Link className="text-decoration-none custom-link" to="/mapaweb">
-          Mapa web
+          Mapa web{" "}
         </Link>
         <Routes>
           <Route path="/Cookies" component={Cookies} />
         </Routes>
         <Link className="text-decoration-none custom-link" to="/cookies">
-          Cookies
+          Cookies{" "}
         </Link>
         <Routes>
           <Route path="/contact" component={ContactForm} />
         </Routes>
         <Link className="text-decoration-none custom-link" to="/contact">
-          Formulario de contacto
+          Formulario de contacto{" "}
         </Link>
       </div>
     </footer>

@@ -17,10 +17,10 @@ const SendMessage = ({ scroll }) => {
       alert("Please enter a valid message");
       return;
     }
-    const { uid, displayName } = auth.currentUser;
+    const { uid, email } = auth.currentUser;
     await addDoc(collection(db, "messages"), {
       text: input,
-      name: displayName,
+      name: email.split("@")[0],
       uid,
       timestamp: serverTimestamp(),
     });
