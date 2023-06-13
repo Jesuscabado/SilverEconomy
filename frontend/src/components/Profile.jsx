@@ -1,4 +1,3 @@
-
 import NavbarSinTexto from "./NavbarSinTexto";
 import SideBar from "./SideBar";
 import React, { useState, useEffect } from "react";
@@ -26,7 +25,7 @@ const Users = () => {
     sexo: '',
     rol: ''
   });
-
+  
   const userCollectionRef = collection(db, 'usuarios');
 
   const crearUsuario = async () => {
@@ -43,6 +42,7 @@ const Users = () => {
       console.error('Error adding usuario: ', error);
     }
   };
+  
 
   /* const signup = async (email, password, rol, nombre, apellido, fechaNacimiento, sexo) => {
     try {
@@ -82,8 +82,6 @@ const Users = () => {
       console.error('Error al editar usuario: ', error);
     }
   };
-  
-  
 
   const borrarUsuario = async (id) => {
     try {
@@ -153,7 +151,6 @@ const Users = () => {
       rol: ''
     });
   };
-
 
   const isUserDataIncomplete = () => {
     const { nombre, apellido, fechaNacimiento, sexo, rol } = userData;

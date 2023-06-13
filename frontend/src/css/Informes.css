@@ -1,0 +1,82 @@
+.container-informes {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .pdf-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-left: 35%;
+   margin-top: 5%;
+  }
+  
+  .pdf-table th,
+  .pdf-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: justify;
+  }
+  
+  .pdf-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .pdf-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .delete-button,
+  .view-button {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .delete-button {
+    background-color: #f44336;
+    color: white;
+    border-radius: 5px;
+  }
+
+  .delete-button:hover {
+    background-color: #da1717;
+  }
+  
+  .view-button {
+    background-color: #aaa;
+    color: white;
+    border-radius: 5px;
+  }
+
+  .view-button:hover {
+    background-color: #057f8c;
+  }
+  
+  .file-input {
+    margin-top: 10%;
+    margin-left: 40%;
+  }
+  
+  .upload-button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 10px;
+    margin-left: 10px;
+  }
+  
+  .upload-button:hover {
+    background-color: #45a049;
+   
+  }
+
+
+  
