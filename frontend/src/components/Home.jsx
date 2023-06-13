@@ -17,7 +17,7 @@ import UniversidadDeusto from "../img/IconosFooter/UniversidadDeusto.png";
 import MondragonUniversidad from "../img/IconosFooter/MondragonUniversidad.png";
 import logoCofinanciado from "../img/IconosFooter/logoCofinanciado.png";
 import Upv from "../img/IconosFooter/Upv.png";
-import Mern from "../img/IconosFooter/Mern.png"; */
+import Mern from "../img/IconosFooter/Mern.png";
 
 import Footer from "./Footer";
 import Navbar from "./Navbar";
@@ -197,7 +197,7 @@ function Web({ onLoginClick }) {
           <img src={twitter} alt="twitter"></img>
           <img src={youtube} alt="youtube"></img>
           <img src={iconoMas} alt="icono+"></img>
-        </div> 
+        </div>
       </div>
 
       <Footer />
