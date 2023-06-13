@@ -11,6 +11,7 @@ import {
 } from "firebase/firestore";
 import NavbarSinTexto from "../NavbarSinTexto";
 import SideBar from "../SideBar";
+import "../../css/Chat.css";
 
 const style = {
   main: `flex flex-col p-[10px]`,
