@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getStorage, ref, uploadBytes, getDownloadURL, deleteObject, listAll, getMetadata } from "firebase/storage";
 import SideBar from "./SideBar";
 import "../css/Informes.css";
+import NavbarSinTexto from "./NavbarSinTexto";
 
 const PDFUploader = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -23,7 +24,7 @@ const PDFUploader = () => {
         const metadata = await getMetadata(ref(storage, item.name));
         const uploadTime = new Date(metadata.timeCreated);
         const pdfInfo = {
-          name: item.name,
+          name: item.name.replace(/_/g, " "),
           url,
           uploadTime,
           uploadDate: uploadTime.toLocaleDateString(),
@@ -52,13 +53,13 @@ const PDFUploader = () => {
         const url = await getDownloadURL(storageRef);
         const uploadTime = new Date();
         const pdfInfo = {
-          name: selectedFile.name,
+          name: selectedFile.name.replace(/_/g, " "),
           url,
           uploadTime,
           uploadDate: uploadTime.toLocaleDateString(),
           uploadTime: uploadTime.toLocaleTimeString(),
         };
-        setPdfList((prevPdfList) => [...prevPdfList, selectedFile.name]);
+        setPdfList((prevPdfList) => [...prevPdfList, pdfInfo.name]);
         setPdfUrls((prevPdfUrls) => [...prevPdfUrls, pdfInfo]);
       } catch (error) {
         console.error("Error uploading PDF:", error);
@@ -68,8 +69,9 @@ const PDFUploader = () => {
 
   const handleDelete = async (fileName) => {
     try {
-      const storageRef = ref(storage, fileName);
+      const storageRef = ref(storage, fileName.replace(/ /g, "_"));
       await deleteObject(storageRef);
+
       setPdfList((prevPdfList) => prevPdfList.filter((name) => name !== fileName));
       setPdfUrls((prevPdfUrls) => prevPdfUrls.filter((pdf) => pdf.name !== fileName));
     } catch (error) {
@@ -85,8 +87,8 @@ const PDFUploader = () => {
         <thead>
           <tr>
             <th>Nombre del archivo</th>
-            <th>Fecha de subida</th>
-            <th>Hora de subida</th>
+            <th>Fecha subida</th>
+            <th>Hora subida</th>
             <th>Acciones</th>
           </tr>
         </thead>
@@ -113,14 +115,19 @@ const PDFUploader = () => {
 
   return (
     <div className="container-informes">
-      <SideBar />
+      <NavbarSinTexto />
+    <SideBar />
+    <div className="upload-section">
       <input type="file" className="file-input" onChange={handleFileChange} />
-      <button className="upload-button" onClick={handleUpload}>
-        Upload PDF
-      </button>
-      {renderPDFList()}
+      {selectedFile && (
+        <button className="upload-button" onClick={handleUpload}>
+          Subir archivo
+        </button>
+      )}
     </div>
-  );
+    {renderPDFList()}
+  </div>
+);
 };
 
 export default PDFUploader;

@@ -2,20 +2,21 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    margin-left: 23%;
   }
   
   .pdf-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    margin-left: 35%;
+   margin-top: 5%;
   }
   
   .pdf-table th,
   .pdf-table td {
     border: 1px solid #ddd;
     padding: 8px;
-    text-align: center;
+    text-align: justify;
   }
   
   .pdf-table th {
@@ -39,11 +40,21 @@
   .delete-button {
     background-color: #f44336;
     color: white;
+    border-radius: 5px;
+  }
+
+  .delete-button:hover {
+    background-color: #da1717;
   }
   
   .view-button {
-    background-color: #15446b;
+    background-color: #aaa;
     color: white;
+    border-radius: 5px;
+  }
+
+  .view-button:hover {
+    background-color: #057f8c;
   }
   
   .file-input {
@@ -66,4 +77,6 @@
     background-color: #45a049;
    
   }
+
+
   
