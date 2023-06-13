@@ -30,7 +30,7 @@ function Home() {
     }
   };
 
-  if (loading) return <h1>Loading...</h1>; // si esta cargando
+  if (loading) return <h1>Cargando...</h1>; // si esta cargando
 
   // funcion de subir archivo porque que sube y da la url
 
@@ -85,7 +85,7 @@ function Home() {
             <main>
               <div className='dashboard-container'>
                 <div className='card-1'>
-                  <h4 className='chart-lbl'>porcentaje Chart</h4>
+                  <h4 className='chart-lbl'>Informe 2022</h4>
                   <div className='divider'></div>
                   <div className='content-center'>
                     <div className='porcentaje-chart-container'>
@@ -100,7 +100,7 @@ function Home() {
                         </p>
                       </div>
                       <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
-                        Acceder
+                        Descargar
                       </button>
                       {/*  <canvas className='porcentaje-chart' id='porcentaje'></canvas> */}
                     </div>
@@ -142,7 +142,7 @@ function Home() {
                   </Link>
                 </div>
                 <div className='card-3'>
-                  <h4 className='chart-lbl'>Curvas</h4>
+                  <h4 className='chart-lbl'>Sedentarismo en Bizkaia</h4>
                   <div className='divider'></div>
                   <div className='content-center'>
                     <div className='curvas-chart-container'>
@@ -156,7 +156,9 @@ function Home() {
                   </div>
                 </div>
                 <div className='card-4'>
-                  <h4 className='chart-lbl'>Mapa</h4>
+                  <h4 className='chart-lbl'>
+                    Indice de soledad por municipios
+                  </h4>
                   <div className='divider'></div>
                   <div className='mapa-chart-container'>
                     {/* <canvas className='mapa-chart' id='mapa'></canvas> */}
@@ -594,7 +596,7 @@ function Home() {
                   </div>
                 </div>
                 <div className='card-5'>
-                  <h4 className='chart-lbl'>Bar</h4>
+                  <h4 className='chart-lbl'>Dificultad en la movilidad</h4>
                   <div className='divider'></div>
                   <div className='bar-chart-container'>
                     {/* <canvas className='bar-chart' id='bar'> */}
@@ -614,7 +616,7 @@ function Home() {
               </div>
             </div> */}
                 <div className='card-7'>
-                  <h4 className='chart-lbl'>Circulo</h4>
+                  <h4 className='chart-lbl'>Tiempo de cuidado</h4>
                   <div className='divider'></div>
                   <div className='circulo-chart-container'>
                     {/* <canvas className='circulo-chart' id='circulo'></canvas> */}

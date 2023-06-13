@@ -97,7 +97,7 @@ function Register({ onClose, onRegister }) {
           onClick={handleSubmit}
         >
           {/* // Llamar a handleSubmit en lugar de onRegister */}
-          Register
+          Regístrate
         </button>
         {/* 
         <p className='my-4 text-sm flex justify-between px-3'>
