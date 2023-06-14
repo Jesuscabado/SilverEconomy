@@ -12,15 +12,20 @@ function SideBar() {
 
   const [dragging, setDragging] = useState(false);
   const [items, setItems] = useState([
-    { id: 1, name: "Item 1" },
-    { id: 2, name: "Item 2" },
-    { id: 3, name: "Item 3" },
-    { id: 4, name: "Item 4" },
+    { id: "panel", name: "Panel" },
+    { id: "informes", name: "informes" },
+    { id: "planaccion", name: "plan de accion" },
+    { id: "proyectos", name: "proyectos" },
+    { id: "notificaciones", name: "notificaciones" },
+    { id: "calendar", name: "calendar" },
+    { id: "chat", name: "chat" },
+    { id: "profile", name: "profile" },
+    { id: "mensajeformulario", name: "mensajeformulario" },
   ]);
 
-  const handleDragStart = (event, index) => {
+  const handleDragStart = (event, itemId) => {
     setDragging(true);
-    event.dataTransfer.setData("index", index);
+    event.dataTransfer.setData("itemId", itemId);
   };
 
   const handleDragOver = (event) => {
@@ -29,13 +34,14 @@ function SideBar() {
 
   const handleDrop = (event, newIndex) => {
     event.preventDefault();
-    const oldIndex = event.dataTransfer.getData("index");
+    const itemId = event.dataTransfer.getData("itemId");
 
     const newItems = [...items];
-    const draggedItem = newItems[oldIndex];
+    const draggedItemIndex = newItems.findIndex((item) => item.id === itemId);
+    const draggedItem = newItems[draggedItemIndex];
 
     // Remove the item from its previous position
-    newItems.splice(oldIndex, 1);
+    newItems.splice(draggedItemIndex, 1);
 
     // Move the item to the new position
     newItems.splice(newIndex, 0, draggedItem);
@@ -90,22 +96,33 @@ function SideBar() {
           {items.map((item, index) => (
             <div
               key={item.id}
-              className={`item ${dragging ? "dragging" : ""}`}
-              draggable
-              onDragStart={(event) => handleDragStart(event, index)}
-              onDragOver={handleDragOver}
+              className={`item ${activeItem === item.name ? "active" : ""} ${
+                dragging ? "dragging" : ""
+              }`}
+              draggable={!loading}
+              onDragStart={(event) => handleDragStart(event, item.id)}
+              onDragOver={(event) => handleDragOver(event)}
               onDrop={(event) => handleDrop(event, index)}
+              onMouseEnter={() => handleMouseEnter(item.name)}
+              onMouseLeave={handleMouseLeave}
             >
-              {item.name}
+              <Link to={`/${item.id}`}>
+                <span>{item.name}</span>
+              </Link>
             </div>
           ))}
           <div className='sidebar-wrapper'>
             <div>{user.displayName || user.email.split("@")[0]}</div>
             <ul className='nav'>
-              <li
-                className={activeItem === "Panel" ? "active" : ""}
-                onMouseEnter={() => handleMouseEnter("Panel")}
-                onMouseLeave={handleMouseLeave}
+              <div
+                key='panel'
+                className={`item ${activeItem === "Panel" ? "active" : ""} ${
+                  dragging ? "dragging" : ""
+                }`}
+                draggable={!dragging} // Solo se puede arrastrar si no hay elementos en proceso de arrastre
+                onDragStart={(event) => handleDragStart(event, "panel")}
+                onDragOver={handleDragOver}
+                onDrop={(event) => handleDrop(event, 0)} // El ítem "Panel" siempre se coloca en la primera posición
               >
                 <Link to='/home'>
                   <svg
@@ -129,12 +146,17 @@ function SideBar() {
                     )}
                   </div>
                 </Link>
-              </li>
+              </div>
 
-              <li
-                className={activeItem === "Informes" ? "active" : ""}
-                onMouseEnter={() => handleMouseEnter("Informes")}
-                onMouseLeave={handleMouseLeave}
+              <div
+                key='informes'
+                className={`item ${activeItem === "Informes" ? "active" : ""} ${
+                  dragging ? "dragging" : ""
+                }`}
+                draggable={!loading}
+                onDragStart={(event) => handleDragStart(event, "informes")}
+                onDragOver={handleDragOver}
+                onDrop={(event) => handleDrop(event, 1)} // Cambiar el número según la posición deseada
               >
                 <Link to='/informes'>
                   <svg
@@ -146,11 +168,10 @@ function SideBar() {
                     xmlns='http://www.w3.org/2000/svg'
                   >
                     <path
-                      d='M22.6942 7.7925L15.376 0.7925C15.2789 0.699666 15.1635 0.626052 15.0366 0.575864C14.9097 0.525676 14.7737 0.499897 14.6364 0.5H2.09091C1.53637 0.5 1.00453 0.710714 0.612413 1.08579C0.220291 1.46086 0 1.96957 0 2.5V24.5C0 25.0304 0.220291 25.5391 0.612413 25.9142C1.00453 26.2893 1.53637 26.5 2.09091 26.5H20.9091C21.4636 26.5 21.9955 26.2893 22.3876 25.9142C22.7797 25.5391 23 25.0304 23 24.5V8.5C23.0001 8.36864 22.9732 8.23855 22.9207 8.11715C22.8682 7.99576 22.7913 7.88544 22.6942 7.7925ZM15.6818 3.91375L19.4311 7.5H15.6818V3.91375ZM20.9091 24.5H2.09091V2.5H13.5909V8.5C13.5909 8.76522 13.7011 9.01957 13.8971 9.20711C14.0932 9.39464 14.3591 9.5 14.6364 9.5H20.9091V24.5ZM16.7273 14.5C16.7273 14.7652 16.6171 15.0196 16.4211 15.2071C16.225 15.3946 15.9591 15.5 15.6818 15.5H7.31818C7.04091 15.5 6.77499 15.3946 6.57893 15.2071C6.38287 15.0196 6.27273 14.7652 6.27273 14.5C6.27273 14.2348 6.38287 13.9804 6.57893 13.7929C6.77499 13.6054 7.04091 13.5 7.31818 13.5H15.6818C15.9591 13.5 16.225 13.6054 16.4211 13.7929C16.6171 13.9804 16.7273 14.2348 16.7273 14.5ZM16.7273 18.5C16.7273 18.7652 16.6171 19.0196 16.4211 19.2071C16.225 19.3946 15.9591 19.5 15.6818 19.5H7.31818C7.04091 19.5 6.77499 19.3946 6.57893 19.2071C6.38287 19.0196 6.27273 18.7652 6.27273 18.5C6.27273 18.2348 6.38287 17.9804 6.57893 17.7929C6.77499 17.6054 7.04091 17.5 7.31818 17.5H15.6818C15.9591 17.5 16.225 17.6054 16.4211 17.7929C16.6171 17.9804 16.7273 18.2348 16.7273 18.5Z'
+                      d='M22.6942 7.7925L15.376 0.7925C15.2789 0.699666 15.1635 0.626052 15.0366 0.575864C14.9097 0.525676 14.7737 0.499897 14.6364 0.5H2.09091C1.53637 0.5 1.00453 0.710714 0.612413 1.08579C0.220291 1.46086 0 1.96957 0 2.5V24.5C0 25.0304 0.220291 25.5391 0.612413 25.9142C1.00453 26.2893 1.53637 26.5 2.09091 26.5H20.9091C21.4636 26.5 21.9955 26.2893 22.3876 25.9142C22.7797 25.5391 23 25.0304 23 24.5V8.5C23.0001 8.36864 22.9732 8.23855 22.9207 8.11715C22.8682 7.99576 22.7913 7.88544 22.6942 7.7925ZM15.6818 3.91375L19.4311 7.5H15.6818V3.91375ZM20.9091 24.5H2.09091V2.5H13.5909V8.5C13.5909 8.76522 13.7011 9.01957 13.8971 9.20711C14.0932 9.39464 14.3591 9.5 14.6364 9.5H20.9091V24.5ZM16.7273 14.5C16.7273 14.7652 16.6171 15.0196 16.4211 15.2071C16.225 15.3946 15.9591 15.5 15.6818 15.5H7.31818C7.04091 15.5 6.77499 15.3946 6.57893 15.2071C6.38287 15.0196 6.27273 14.7652 6.27273 14.5C6.27273 14.2348 6.38287 13.9804 6.57893 13.7929C6.77499 13.6054 7.04091 13.5 7.31818 13.5H15.6818C15.9591 13.5 16.225 13.6054 16.4211 13.7929C16.6171 13.9804 16.7273 14.2348 16.7273 14.5ZM15.6818 18.0863L19.4311 21.6725V18.0863H15.6818Z'
                       fill='#EBEBE6'
                     />
                   </svg>
-
                   <div>
                     {windowWidth >= 500 ? (
                       <p>Informes</p>
@@ -159,12 +180,17 @@ function SideBar() {
                     )}
                   </div>
                 </Link>
-              </li>
+              </div>
 
-              <li
-                className={activeItem === "planaccion" ? "active" : ""}
-                onMouseEnter={() => handleMouseEnter("planaccion")}
-                onMouseLeave={handleMouseLeave}
+              <div
+                key='planaccion'
+                className={`item ${
+                  activeItem === "planaccion" ? "active" : ""
+                } ${dragging ? "dragging" : ""}`}
+                draggable={!loading}
+                onDragStart={(event) => handleDragStart(event, "planaccion")}
+                onDragOver={handleDragOver}
+                onDrop={(event) => handleDrop(event, 1)} // Cambiar el número según la posición deseada
               >
                 <Link to='/planaccion'>
                   <svg
@@ -188,12 +214,17 @@ function SideBar() {
                     )}
                   </div>
                 </Link>
-              </li>
+              </div>
 
-              <li
-                className={activeItem === "proyectos" ? "active" : ""}
-                onMouseEnter={() => handleMouseEnter("proyectos")}
-                onMouseLeave={handleMouseLeave}
+              <div
+                key='proyectos'
+                className={`item ${
+                  activeItem === "proyectos" ? "active" : ""
+                } ${dragging ? "dragging" : ""}`}
+                draggable={!loading}
+                onDragStart={(event) => handleDragStart(event, "proyectos")}
+                onDragOver={handleDragOver}
+                onDrop={(event) => handleDrop(event, 1)} // Cambiar el número según la posición deseada
               >
                 <Link to='/proyectos'>
                   <svg
@@ -218,12 +249,19 @@ function SideBar() {
                     )}
                   </div>
                 </Link>
-              </li>
+              </div>
 
-              <li
-                className={activeItem === "notificaciones" ? "active" : ""}
-                onMouseEnter={() => handleMouseEnter("notificaciones")}
-                onMouseLeave={handleMouseLeave}
+              <div
+                key='notificaciones'
+                className={`item ${
+                  activeItem === "notificaciones" ? "active" : ""
+                } ${dragging ? "dragging" : ""}`}
+                draggable={!loading}
+                onDragStart={(event) =>
+                  handleDragStart(event, "notificaciones")
+                }
+                onDragOver={handleDragOver}
+                onDrop={(event) => handleDrop(event, 1)} // Cambiar el número según la posición deseada
               >
                 <Link to='/notificaciones'>
                   <svg
@@ -248,12 +286,17 @@ function SideBar() {
                     )}
                   </div>
                 </Link>
-              </li>
+              </div>
 
-              <li
-                className={activeItem === "calendar" ? "active" : ""}
-                onMouseEnter={() => handleMouseEnter("calendar")}
-                onMouseLeave={handleMouseLeave}
+              <div
+                key='calendar'
+                className={`item ${activeItem === "calendar" ? "active" : ""} ${
+                  dragging ? "dragging" : ""
+                }`}
+                draggable={!loading}
+                onDragStart={(event) => handleDragStart(event, "calendar")}
+                onDragOver={handleDragOver}
+                onDrop={(event) => handleDrop(event, 1)} // Cambiar el número según la posición deseada
               >
                 <Link to='/calendar'>
                   <svg
@@ -278,12 +321,17 @@ function SideBar() {
                     )}
                   </div>
                 </Link>
-              </li>
+              </div>
 
-              <li
-                className={activeItem === "chat" ? "active" : ""}
-                onMouseEnter={() => handleMouseEnter("chat")}
-                onMouseLeave={handleMouseLeave}
+              <div
+                key='chat'
+                className={`item ${activeItem === "chat" ? "active" : ""} ${
+                  dragging ? "dragging" : ""
+                }`}
+                draggable={!loading}
+                onDragStart={(event) => handleDragStart(event, "chat")}
+                onDragOver={handleDragOver}
+                onDrop={(event) => handleDrop(event, 1)} // Cambiar el número según la posición deseada
               >
                 <Link to='/chat'>
                   <svg
@@ -309,12 +357,17 @@ function SideBar() {
                     )}
                   </div>
                 </Link>
-              </li>
+              </div>
 
-              <li
-                className={activeItem === "profile" ? "active" : ""}
-                onMouseEnter={() => handleMouseEnter("profile")}
-                onMouseLeave={handleMouseLeave}
+              <div
+                key='profile'
+                className={`item ${activeItem === "profile" ? "active" : ""} ${
+                  dragging ? "dragging" : ""
+                }`}
+                draggable={!loading}
+                onDragStart={(event) => handleDragStart(event, "profile")}
+                onDragOver={handleDragOver}
+                onDrop={(event) => handleDrop(event, 1)} // Cambiar el número según la posición deseada
               >
                 <Link to='/profile'>
                   <svg
@@ -339,11 +392,19 @@ function SideBar() {
                     )}
                   </div>
                 </Link>
-              </li>
-              <li
-                className={activeItem === "mensajesformulario" ? "active" : ""}
-                onMouseEnter={() => handleMouseEnter("mensajesformulario")}
-                onMouseLeave={handleMouseLeave}
+              </div>
+
+              <div
+                key='mensajeformulario'
+                className={`item ${
+                  activeItem === "mensajeformulario" ? "active" : ""
+                } ${dragging ? "dragging" : ""}`}
+                draggable={!loading}
+                onDragStart={(event) =>
+                  handleDragStart(event, "mensajeformulario")
+                }
+                onDragOver={handleDragOver}
+                onDrop={(event) => handleDrop(event, 1)} // Cambiar el número según la posición deseada
               >
                 <Link to='/mensajesformulario'>
                   <svg
@@ -367,7 +428,7 @@ function SideBar() {
                     )}
                   </div>
                 </Link>
-              </li>
+              </div>
 
               <li
                 className={activeItem === "modelo" ? "active" : ""}

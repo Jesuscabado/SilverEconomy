@@ -30,7 +30,7 @@ const ImageSlider = ({ onLoginClick }) => {
       url: soledad2,
       title: "Aplicación web para paliar la soledad",
       description:
-        "desde el ámbito de las transacciones burocráticas y del día a día",
+        "Desde el ámbito de las transacciones burocráticas y del día a día",
       buttonText: "Descargar",
       content: (
         <>
@@ -45,8 +45,10 @@ const ImageSlider = ({ onLoginClick }) => {
     },
     {
       url: soledad3,
-      title: "sdgsdg",
-      buttonText: "sdgsdg",
+      title: "Eres profesional de la salud",
+      description:
+        "Una nueva herramienta que te permitirá conocer el estado de tus pacientes",
+      buttonText: "Acceder",
       content: (
         <>
           {/*   <p>Aquí puedes agregar tu contenido personalizado</p>

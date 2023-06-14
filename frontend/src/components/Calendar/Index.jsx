@@ -9,7 +9,6 @@ import "../../css/Calendar.css"; // Importar el archivo CSS aquí
 import NavbarSinTexto from "../NavbarSinTexto";
 import SideBar from "../SideBar";
 
-
 function Calendar() {
   const [currentEvents, setCurrentEvents] = useState([]);
 
