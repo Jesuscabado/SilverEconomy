@@ -22,6 +22,7 @@ import Settings from "./components/Settings";
 import RegisterOverlay from "./components/RegisterOverlay";
 import Proyectos from "./components/Proyectos";
 import Formulario from "./components/contactForm/Formulario";
+import MesssageForm from "./components/MesssageForm";
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
           <Route path='/contact' element={<ContactForm />} />
           <Route path='/formulario' element={<Formulario />} />
           {/*   <Route path='/form' element={<Form />} /> */}
+          <Route path='/mensajesformulario' element={<MesssageForm />} />
         </Routes>
       </AuthContextProvider>
       {/*  <Footer /> */}

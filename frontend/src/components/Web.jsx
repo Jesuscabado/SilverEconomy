@@ -45,9 +45,9 @@ function Home() {
 
   return (
     <div>
-      <div class='containerprincipal'>
+      <div className='containerprincipal'>
         <NavbarSinTexto className='z-60' />
-        <div class='sidebar2'>
+        <div className='sidebar2'>
           <SideBar />
         </div>
 
