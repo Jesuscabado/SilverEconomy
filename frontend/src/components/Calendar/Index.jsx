@@ -9,6 +9,7 @@ import "../../css/Calendar.css"; // Importar el archivo CSS aquí
 import NavbarSinTexto from "../NavbarSinTexto";
 import SideBar from "../SideBar";
 
+
 function Calendar() {
   const [currentEvents, setCurrentEvents] = useState([]);
 
@@ -56,10 +57,10 @@ function Calendar() {
       <NavbarSinTexto />
       <SideBar />
       <div className='m-20'>
-        <header className='text-2xl font-bold mb-4'>CALENDAR</header>
+        <header className='text-2xl font-bold mb-4'>CALENDARIO</header>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
           <div className='bg-gray-500 p-4 rounded'>
-            <h5 className='text-white mb-2'>Events</h5>
+            <h5 className='text-white mb-2'>Eventos</h5>
             <ul>
               {currentEvents.map((event) => (
                 <li key={event.id} className='bg-green-500 my-2 rounded p-2'>

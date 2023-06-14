@@ -23,10 +23,16 @@ import RegisterOverlay from "./components/RegisterOverlay";
 import Proyectos from "./components/Proyectos";
 import Formulario from "./components/contactForm/Formulario";
 import MesssageForm from "./components/MesssageForm";
+import Movilidad from "./components/Movilidad";
+import Cuidado from "./components/Cuidado";
+import Sedentarismo from "./components/Sedentarismo";
+import InformeChart from "./components/InformeChart";
+
 
 function App() {
   return (
-    <div className=' h-screen text-black flex'>
+    <div className="h-screen text-black flex">
+
       <AuthContextProvider>
         {/*    <Navbar /> */}
         <Routes>
@@ -38,6 +44,7 @@ function App() {
               </ProtectedRoute>
             }
           />
+
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/Home' element={<Home />} />
@@ -56,8 +63,12 @@ function App() {
           <Route path='/registeroverlay' element={<RegisterOverlay />} />
           <Route path='/contact' element={<ContactForm />} />
           <Route path='/formulario' element={<Formulario />} />
-          {/*   <Route path='/form' element={<Form />} /> */}
           <Route path='/mensajesformulario' element={<MesssageForm />} />
+            <Route path="/movilidad" element={<Movilidad />} />
+          <Route path="/cuidado" element={<Cuidado />} />
+          <Route path="/sedentarismo" element={<Sedentarismo />} />
+          <Route path="/informechart" element={<InformeChart />} />
+
         </Routes>
       </AuthContextProvider>
       {/*  <Footer /> */}

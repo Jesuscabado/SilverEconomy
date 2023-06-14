@@ -2,3 +2,10 @@
   background-color: #ff0000; /* Cambia el color de fondo del contenido del evento */
   color: #ffffff; /* Cambia el color del texto del contenido del evento */
 }
+
+.m-20 {
+  margin-left: 30%;
+  width: 100%;
+  margin-bottom: 15%;
+ 
+}
