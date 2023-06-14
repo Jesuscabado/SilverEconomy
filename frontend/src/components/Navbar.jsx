@@ -24,7 +24,7 @@ function Navbar({ onLoginClick }) {
   };
 
   return (
-    <div>
+    <div className='menu'>
       <div>
         {/* <Link to={isHome ? "/" : "/web"}> */}
         <img
@@ -39,7 +39,7 @@ function Navbar({ onLoginClick }) {
           {/* Aquí se encuentra tu logo o nombre del sitio */}
         </div>
 
-        <div className='flex items-center justify-end mr-5 text-sm'>
+        <div className='flex items-center justify-end mr-5 text-sm hidden md:block'>
           <p
             /* onClick={onLoginClick} */
             className='cursor-pointer whitespace-nowrap'
@@ -47,7 +47,7 @@ function Navbar({ onLoginClick }) {
             Accciones de desarrollo |
           </p>
         </div>
-        <div className='flex items-center justify-end mr-5 text-sm'>
+        <div className='flex items-center justify-end mr-5 text-sm hidden md:block'>
           <p
             /* onClick={onLoginClick} */
             className='cursor-pointer whitespace-nowrap'
@@ -57,7 +57,7 @@ function Navbar({ onLoginClick }) {
             </a>
           </p>
         </div>
-        <div className='flex items-center justify-end mr-5 text-sm'>
+        <div className='flex items-center justify-end mr-5 text-sm hidden md:block'>
           <p
             /*  onClick={onLoginClick} */
             className='cursor-pointer whitespace-nowrap'
@@ -67,15 +67,15 @@ function Navbar({ onLoginClick }) {
             </a>
           </p>
         </div>
-        <div className='flex items-center justify-end mr-5 text-sm'>
+        <div className='flex items-center justify-end mr-5 text-sm hidden md:block'>
           <p
             /* onClick={onLoginClick} */
             className='cursor-pointer whitespace-nowrap font-bold'
           >
-            ES
+            ES |
           </p>
         </div>
-        <div className='flex items-center justify-end mr-5 text-sm'>
+        <div className='flex items-center justify-end mr-5 text-sm '>
           <p
             onClick={onLoginClick}
             className='cursor-pointer whitespace-nowrap'

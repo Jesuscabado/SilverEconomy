@@ -35,9 +35,9 @@ const Chat = () => {
 
   return (
     <>
-      {/* <NavbarSinTexto />*/}
+      <NavbarSinTexto />
       <SideBar />
-      <main className="main">
+      <main className='main'>
         {messages &&
           messages.map((message) => (
             <Message key={message.id} message={message} />
