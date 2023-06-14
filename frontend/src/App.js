@@ -21,6 +21,11 @@ import PlanAccion from "./components/PlanAccion";
 import Settings from "./components/Settings";
 import RegisterOverlay from "./components/RegisterOverlay";
 import Proyectos from "./components/Proyectos";
+import Movilidad from "./components/Movilidad";
+import Cuidado from "./components/Cuidado";
+import Sedentarismo from "./components/Sedentarismo";
+import InformeChart from "./components/InformeChart";
+
 
 function App() {
   return (
@@ -53,6 +58,11 @@ function App() {
           <Route path="/web/*" element={<Web />} />
           <Route path="/registeroverlay" element={<RegisterOverlay />} />
           <Route path="/contact" element={<ContactForm />} />
+          <Route path="/movilidad" element={<Movilidad />} />
+          <Route path="/cuidado" element={<Cuidado />} />
+          <Route path="/sedentarismo" element={<Sedentarismo />} />
+          <Route path="/informechart" element={<InformeChart />} />
+          
         </Routes>
       </AuthContextProvider>
       {/*  <Footer /> */}

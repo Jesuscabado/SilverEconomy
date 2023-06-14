@@ -1,6 +1,7 @@
 import React from "react";
 import NavbarSinTexto from "./NavbarSinTexto";
 import SideBar from "./SideBar";
+import Group11 from "../img/Group11.png";
 
 function Proyectos() {
   return (
@@ -14,11 +15,13 @@ function Proyectos() {
             style={{ width: "85vw", height: "100vh", overflow: "hidden" }}
           >
             {/* Otro contenido específico de la página */}
-            <iframe
+        {/*     <iframe
               src='https://bizkaiaok.eus/es/retos/'
               width='100%'
               height='100%'
-            ></iframe>
+            ></iframe> */}
+              <img src={Group11} alt="Notificaciones" border="0" />
+
           </div>
         </div>
       </div>
