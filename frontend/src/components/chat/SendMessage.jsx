@@ -43,11 +43,12 @@ import { auth, db } from "../../Firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 const style = {
+
   form: `h-14 w-[40%] max-w-[40%] mx-auto ml-90 flex text-xl absolute bottom-0 p-1`,
   input: `w-full text-xl p-3 bg-gray-400 text-black outline-none border-none`,
   button: `w-[20%] bg-gray-500`,
-};
 
+};
 const SendMessage = ({ scroll }) => {
   const [input, setInput] = useState("");
 
@@ -69,18 +70,20 @@ const SendMessage = ({ scroll }) => {
   };
 
   return (
-    <form onSubmit={sendMessage} className={style.form}>
-      <input
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        className={style.input}
-        type="text"
-        placeholder="Message"
-      />
-      <button className={style.button} type="submit">
-        Send
-      </button>
-    </form>
+    <div>
+      <form onSubmit={sendMessage} className={style.form}>
+        <input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          className={style.input}
+          type='text'
+          placeholder='Message'
+        />
+        <button className={style.button} type='submit'>
+          Send
+        </button>
+      </form>
+    </div>
   );
 };
 

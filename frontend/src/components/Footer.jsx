@@ -7,6 +7,8 @@ import Cookies from "./Cookies";
 import ContactForm from "./contactForm/ContactForm";
 import "../css/Footer.css";
 import { Link, Route, Routes } from "react-router-dom";
+import LogoBizkaia from "../img/IconosFooter/Bizkaia.png";
+import Formulario from "../components/contactForm/Formulario";
 
 const Footer = () => {
   /*   const footerStyles = {
@@ -18,43 +20,60 @@ const Footer = () => {
   }; */
 
   return (
-    <footer className="FooterWeb" /*  style={footerStyles} */>
-      <div className="text-center">
-        Copyright © 2023 · Bizkaiko Foru Aldundia · Diputacion Foral de Bizkaia{" "}
+
+    <footer className='FooterWeb' /*  style={footerStyles} */>
+      <span className='texto1'>
+        Copyright © 2023 · Bizkaiko Foru Aldundia · Diputacion Foral de Bizkai
+      </span>
+      <img className='claselogo' src={LogoBizkaia} alt='logo' />
+
+      <div className='text-center'>
+
         <Routes>
-          <Route path="/Avisolegal" component={AvisoLegal} />
+          <Route path='/Avisolegal' component={AvisoLegal} />
         </Routes>
-        <Link className="text-decoration-none custom-link" to="/avisolegal">
+
+        <Link className='text-decoration-none custom-link' to='/avisolegal'>
+
           Aviso legal{" "}
         </Link>
         <Routes>
-          <Route path="/Entidades" component={Entidades} />
+          <Route path='/Entidades' component={Entidades} />
         </Routes>
-        <Link className="text-decoration-none custom-link" to="/entidades">
+
+        <Link className='text-decoration-none custom-link' to='/entidades'>
+
           Entidades{" "}
         </Link>
         <Routes>
-          <Route path="/Accesibilidad" component={Accesibilidad} />
+          <Route path='/Accesibilidad' component={Accesibilidad} />
         </Routes>
-        <Link className="text-decoration-none custom-link" to="/accesibilidad">
+
+        <Link className='text-decoration-none custom-link' to='/accesibilidad'>
+
           Accesibilidad{" "}
         </Link>
         <Routes>
-          <Route path="/Mapaweb" component={Mapaweb} />
+          <Route path='/Mapaweb' component={Mapaweb} />
         </Routes>
-        <Link className="text-decoration-none custom-link" to="/mapaweb">
+
+        <Link className='text-decoration-none custom-link' to='/mapaweb'>
+
           Mapa web{" "}
         </Link>
         <Routes>
-          <Route path="/Cookies" component={Cookies} />
+          <Route path='/Cookies' component={Cookies} />
         </Routes>
-        <Link className="text-decoration-none custom-link" to="/cookies">
+
+        <Link className='text-decoration-none custom-link' to='/cookies'>
           Cookies{" "}
         </Link>
-        <Routes>
-          <Route path="/contact" component={ContactForm} />
-        </Routes>
-        <Link className="text-decoration-none custom-link" to="/contact">
+        {/* <Routes>
+          <Route path='/contact' component={ContactForm} />
+          <Route path='/formulario' component={Formulario} />
+        </Routes> */}
+        <Link className='text-decoration-none custom-link' to='/formulario'>
+
           Formulario de contacto{" "}
         </Link>
       </div>

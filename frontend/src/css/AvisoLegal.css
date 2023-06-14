@@ -1,0 +1,24 @@
+.aviso-container {
+  margin: 20px;
+}
+
+.aviso-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.aviso-text {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.aviso-link {
+  text-decoration: none;
+  color: blue;
+}
+
+.aviso-link:hover {
+  text-decoration: underline;
+}

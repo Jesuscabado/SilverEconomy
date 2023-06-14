@@ -13,7 +13,7 @@ import NavbarSinTexto from "../NavbarSinTexto";
 import SideBar from "../SideBar";
 
 const style = {
-  main: `flex flex-col p-[10px]`,
+  main: `flex flex-col p-[10%] h-screen overflow-y-scroll scrollbar-hide`,
 };
 
 const Chat = () => {
@@ -38,8 +38,8 @@ const Chat = () => {
 
   return (
     <>
-      <NavbarSinTexto />
-      <SideBar />
+      {/* <NavbarSinTexto />
+      <SideBar /> */}
       <main className={style.main}>
         {messages &&
           messages.map((message) => (

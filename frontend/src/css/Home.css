@@ -1,3 +1,4 @@
+
 .OdsContainer {
   display: flex;
   flex-direction: column;
@@ -20,6 +21,7 @@
   position: relative;
   width: 100%;
   margin: 65px 0;
+
   /*  max-width: 600px; */
   height: auto;
   left: 50%;
@@ -31,7 +33,9 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
+
   padding: 100px;
+
   /*   box-sizing: border-box; */
 }
 
@@ -74,6 +78,7 @@
   color: #fff;
 }
 
+
 .Iconos {
   display: flex;
   flex-direction: column;
@@ -83,6 +88,7 @@
   padding: 40px;
   width: 100%;
 }
+
 
 .ColaboradorasTitle {
   color: black;
@@ -94,6 +100,7 @@
   text-decoration: underline;
   text-decoration-color: red;
 }
+
 
 .Colaboradoras {
   display: flex;

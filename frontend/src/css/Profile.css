@@ -1,142 +1,122 @@
-/* 
-.userscontainer {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 16px;
+.usercontainer {
+  padding: 20px;
+  margin-left: 300px;
+  margin-top: 80px;
 }
 
-.usersperfil {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 20px;
+.fondo {
+  background-image: url(../img/fondoperfil.jpg);
+  background-size: 100vw 100vh;
+  background-position: center;
+}
+.user-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  background-color: #06808d9d;
+  padding: 20px;
 }
 
-.usersdatos {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
+@media (max-width: 768px) {
+  .user-list {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
 }
 
-.usersinput[type="text"],
-.usersinput[type="date"],
-.userselect {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ffffff;
-  border-radius: 4px;
-  margin-bottom: 8px;
+.user-item {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.userbutton {
-  color: rgb(0, 0, 0);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.userbutton:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-
-.userimg-container {
+.user-info {
   display: flex;
   align-items: center;
 }
 
-.userimg {
-  width: 100px;
-  height: 100px;
+.user-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px;
+}
+.user-avatar img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  margin-right: 8px;
 }
 
-.usersuser-item {
-  margin-top: 20px;
-  align-items: center;
-  margin-bottom: 20px;
-  border: 1px solid #000000;
-  border-radius: 4px;
-  padding: 16px;
+.user-details {
+  flex: 1;
 }
- */
 
- .usercontainer {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
+.user-details {
+  margin-bottom: 10px;
+  font-weight: lighter;
+}
+.userdatos {
+  font-weight: bold;
+}
+.user-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.user-actions button {
+  padding: 8px 12px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.user-actions button:first-child {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.user-actions button:last-child {
+  background-color: #f44336;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
   .user-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
-  
-  .user-item {
-    background-color: #f1f1f1;
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  .user-info {
-    display: flex;
-    align-items: center;
-  }
-  
-  .user-avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-right: 20px;
-  }
-  .user-avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .user-details {
-    flex: 1;
-  }
-  
-  .user-details p {
-    margin-bottom: 10px;
-  }
-  
-  .user-actions {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 10px;
-  }
-  
-  .user-actions button {
-    padding: 8px 12px;
-    margin-right: 5px;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
-  }
-  
-  .user-actions button:first-child {
-    background-color: #4caf50;
-    color: #fff;
-  }
-  
-  .user-actions button:last-child {
-    background-color: #f44336;
-    color: #fff;
-  }
-  
-  @media (max-width: 768px) {
-    .user-list {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-  }
+}
+
+.usercontainer__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.userperfil {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.userdatos {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.userinput {
+  width: 300px;
+  height: 30px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

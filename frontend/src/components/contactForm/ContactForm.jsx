@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { uploadFile } from "../../Firebase";
+
 const Paso1 = ({ nextStep }) => {
   const [demanda, setDemanda] = useState("");
   const [departamento, setDepartamento] = useState("");
@@ -57,8 +58,8 @@ const Paso1 = ({ nextStep }) => {
           {demandas.map((opcion) => (
             <div key={opcion}>
               <input
-                type="radio"
-                name="demanda"
+                type='radio'
+                name='demanda'
                 value={opcion}
                 checked={demanda === opcion}
                 onChange={handleDemandaChange}
@@ -120,8 +121,8 @@ const Paso1 = ({ nextStep }) => {
 
 const Paso2 = ({ nextStep }) => {
   const [idioma, setIdioma] = useState("");
-  const [file, setFile] = useState(null);
-  const [mensaje, setMensaje] = useState("");
+  /*   const [file, setFile] = useState(null);
+   */ const [mensaje, setMensaje] = useState("");
   const tiposArchivoPermitidos = [
     "pdf",
     "doc",
@@ -152,7 +153,7 @@ const Paso2 = ({ nextStep }) => {
     }
   };
 
-  const handleSubmit = async (e) => {
+  /*  const handleSubmit = async (e) => {
     try {
       e.preventDefault();
       const result = await uploadFile(file);
@@ -162,7 +163,7 @@ const Paso2 = ({ nextStep }) => {
       alert("Hubo un error al subir el archivo");
     }
   };
-
+ */
   return (
     <div className="ApartadoForm">
       <h3>Paso 2: Mensaje</h3>
@@ -172,32 +173,32 @@ const Paso2 = ({ nextStep }) => {
         <textarea
           value={mensaje}
           onChange={handleMensajeChange}
-          placeholder="Explicanos sobre qué quieres realizar tu consulta, sugerencia o comunicación o de qué quieres quejarte"
+          placeholder='Explicanos sobre qué quieres realizar tu consulta, sugerencia o comunicación o de qué quieres quejarte'
           rows={4}
           cols={50}
         />
       </label>
       <br />
       {/*  formulario de subir archivo */}
-      <form onSubmit={handleSubmit} encType="multipart/form-data">
+      {/*  <form onSubmit={handleSubmit} encType='multipart/form-data'>
         <input
-          type="file"
-          name="file"
-          id="file"
+          type='file'
+          name='file'
+          id='file'
           onChange={(e) => setFile(e.target.files[0])}
         />
-        <button className="bg-red-500 hover:bg-red-700 rounded py-2 px-4 text-white">
+        <button className='bg-red-500 hover:bg-red-700 rounded py-2 px-4 text-white'>
           Adjuntar archivo
         </button>
-      </form>
+      </form> */}
       <br />
       <label>
         Idioma de respuesta:
         <br />
         <select value={idioma} onChange={handleIdiomaChange}>
-          <option value="">Selecciona el idioma</option>
-          <option value="euskera">Euskera</option>
-          <option value="castellano">Castellano</option>
+          <option value=''>Selecciona el idioma</option>
+          <option value='euskera'>Euskera</option>
+          <option value='castellano'>Castellano</option>
         </select>
       </label>
       <br />
@@ -285,8 +286,10 @@ const Paso3 = ({ file, setFile }) => {
   };
 
   return (
+
     <div className="DatosForm">
       <form onSubmit={handleSubmit} encType="multipart/form-data">
+
         {/*  <input
           type="file"
           name="file"
@@ -298,7 +301,7 @@ const Paso3 = ({ file, setFile }) => {
         <label>
           E-mail (*):
           <input
-            type="email"
+            type='email'
             value={email}
             onChange={handleEmailChange}
             required
@@ -308,7 +311,7 @@ const Paso3 = ({ file, setFile }) => {
         <label>
           Confirmar e-mail (*):
           <input
-            type="email"
+            type='email'
             value={confirmarEmail}
             onChange={handleConfirmarEmailChange}
             required
@@ -319,27 +322,27 @@ const Paso3 = ({ file, setFile }) => {
           Sexo (*):
           <br />
           <select value={sexo} onChange={handleSexoChange} required>
-            <option value="">Selecciona el sexo</option>
-            <option value="Hombre">Hombre</option>
-            <option value="Mujer">Mujer</option>
-            <option value="Otros">Otros</option>
+            <option value=''>Selecciona el sexo</option>
+            <option value='Hombre'>Hombre</option>
+            <option value='Mujer'>Mujer</option>
+            <option value='Otros'>Otros</option>
           </select>
         </label>
         <br />
         <h4>Datos opcionales</h4>
         <label>
           Nombre y apellidos:
-          <input type="text" value={nombre} onChange={handleNombreChange} />
+          <input type='text' value={nombre} onChange={handleNombreChange} />
         </label>
         <br />
         <label>
           DNI:
-          <input type="text" value={dni} onChange={handleDniChange} />
+          <input type='text' value={dni} onChange={handleDniChange} />
         </label>
         <br />
         <label>
           Teléfono:
-          <input type="text" value={telefono} onChange={handleTelefonoChange} />
+          <input type='text' value={telefono} onChange={handleTelefonoChange} />
         </label>
         <br />
         <p>
@@ -348,23 +351,23 @@ const Paso3 = ({ file, setFile }) => {
         </p>
         <label>
           Calle:
-          <input type="text" value={calle} onChange={handleCalleChange} />
+          <input type='text' value={calle} onChange={handleCalleChange} />
         </label>
         <br />
         <label>
           Número:
-          <input type="text" value={numero} onChange={handleNumeroChange} />
+          <input type='text' value={numero} onChange={handleNumeroChange} />
         </label>
         <br />
         <label>
           Piso:
-          <input type="text" value={piso} onChange={handlePisoChange} />
+          <input type='text' value={piso} onChange={handlePisoChange} />
         </label>
         <br />
         <label>
           Municipio:
           <input
-            type="text"
+            type='text'
             value={municipio}
             onChange={handleMunicipioChange}
           />
@@ -373,7 +376,7 @@ const Paso3 = ({ file, setFile }) => {
         <label>
           Código postal:
           <input
-            type="text"
+            type='text'
             value={codigoPostal}
             onChange={handleCodigoPostalChange}
           />
@@ -384,7 +387,7 @@ const Paso3 = ({ file, setFile }) => {
         </p>
         <label>
           <input
-            type="checkbox"
+            type='checkbox'
             checked={autorizacion}
             onChange={handleAutorizacionChange}
             required

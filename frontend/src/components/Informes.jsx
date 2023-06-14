@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { getStorage, ref, uploadBytes, getDownloadURL, deleteObject, listAll, getMetadata } from "firebase/storage";
+import {
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL,
+  deleteObject,
+  listAll,
+  getMetadata,
+} from "firebase/storage";
 import SideBar from "./SideBar";
 import "../css/Informes.css";
 import NavbarSinTexto from "./NavbarSinTexto";
@@ -72,8 +80,12 @@ const PDFUploader = () => {
       const storageRef = ref(storage, fileName.replace(/ /g, "_"));
       await deleteObject(storageRef);
 
-      setPdfList((prevPdfList) => prevPdfList.filter((name) => name !== fileName));
-      setPdfUrls((prevPdfUrls) => prevPdfUrls.filter((pdf) => pdf.name !== fileName));
+      setPdfList((prevPdfList) =>
+        prevPdfList.filter((name) => name !== fileName)
+      );
+      setPdfUrls((prevPdfUrls) =>
+        prevPdfUrls.filter((pdf) => pdf.name !== fileName)
+      );
     } catch (error) {
       console.error("Error deleting PDF:", error);
     }
@@ -83,7 +95,7 @@ const PDFUploader = () => {
     if (pdfList.length === 0) return null;
 
     return (
-      <table className="pdf-table">
+      <table className='pdf-table'>
         <thead>
           <tr>
             <th>Nombre del archivo</th>
@@ -98,11 +110,17 @@ const PDFUploader = () => {
               <td>{pdf.name}</td>
               <td>{pdf.uploadDate}</td>
               <td>{pdf.uploadTime}</td>
-              <td className="pdf-actions">
-                <button className="view-button" onClick={() => window.open(pdf.url)}>
+              <td className='pdf-actions'>
+                <button
+                  className='view-button'
+                  onClick={() => window.open(pdf.url)}
+                >
                   Ver
                 </button>
-                <button className="delete-button" onClick={() => handleDelete(pdf.name)}>
+                <button
+                  className='delete-button'
+                  onClick={() => handleDelete(pdf.name)}
+                >
                   Borrar
                 </button>
               </td>
@@ -114,20 +132,26 @@ const PDFUploader = () => {
   };
 
   return (
-    <div className="container-informes">
+    <div>
       <NavbarSinTexto />
-    <SideBar />
-    <div className="upload-section">
-      <input type="file" className="file-input" onChange={handleFileChange} />
-      {selectedFile && (
-        <button className="upload-button" onClick={handleUpload}>
-          Subir archivo
-        </button>
-      )}
+      <SideBar />
+      <div className='container-informes'>
+        <div className='upload-section'>
+          <input
+            type='file'
+            className='file-input'
+            onChange={handleFileChange}
+          />
+          {selectedFile && (
+            <button className='upload-button' onClick={handleUpload}>
+              Subir archivo
+            </button>
+          )}
+        </div>
+        {renderPDFList()}
+      </div>
     </div>
-    {renderPDFList()}
-  </div>
-);
+  );
 };
 
 export default PDFUploader;

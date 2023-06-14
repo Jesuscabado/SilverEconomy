@@ -52,7 +52,9 @@ function Navbar({ onLoginClick }) {
             /* onClick={onLoginClick} */
             className='cursor-pointer whitespace-nowrap'
           >
-            O.D.S |
+            <a href='https://www.ine.es/dyngs/ODS/es/index.htm' target='_blank'>
+              O.D.S |
+            </a>
           </p>
         </div>
         <div className='flex items-center justify-end mr-5 text-sm'>

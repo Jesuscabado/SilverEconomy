@@ -45,7 +45,12 @@ function Login() {
 
   const handleGoogleSignin = async () => {
     // funcion para iniciar sesion con google
+    console.log("google signin", loginWithGoogle);
     try {
+      if (user === null) {
+        // Si user es null, puedes hacer algo aquí, como mostrar un mensaje de error o redirigir a otra página.
+        return;
+      }
       await loginWithGoogle(); // espera a que se ejecute la funcion loginWithGoogle
       navigate("/home"); // redirecciona a la pagina home page
     } catch (error) {

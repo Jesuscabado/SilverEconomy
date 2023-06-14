@@ -39,7 +39,7 @@ function Web({ onLoginClick }) {
       content: (
         <>
           <p>Aquí puedes agregar tu contenido personalizado</p>
-          <button className="bg-red-500 text-white px-4 py-2 rounded">
+          <button className='bg-red-500 text-white px-4 py-2 rounded'>
             Aquí
           </button>
         </>
@@ -106,6 +106,7 @@ function Web({ onLoginClick }) {
       </div>
       {showLogin && <LoginOverlay onClose={() => setShowLogin(false)} />}
       {/* Corregido */}
+
       <div className="OdsContainer">
         <div style={odsContainerStyles}>
           <img src={soledad4} alt="ODS" style={imageStyles} />
@@ -123,6 +124,7 @@ function Web({ onLoginClick }) {
               ciudades y despoblación del medio rural.
             </p>
           </div>
+
         </div>
         <div style={agendaContainerStyles}>
           <div style={agendaTextStyles}>
@@ -145,6 +147,7 @@ function Web({ onLoginClick }) {
           </div>
           <img src={soledad5} alt="" style={imageStyles} />
         </div>
+
         <div style={odsContainerStyles}>
           <img src={soledad6} alt="ODS" style={imageStyles} />
           <div style={odsTextStyles}>
@@ -162,6 +165,7 @@ function Web({ onLoginClick }) {
         </div>
       </div>
       <div className="NewsletterBox">
+
         <title>Caja de Suscripción</title>
 
         <h1>Suscríbete a nuestra newsletter</h1>
@@ -170,13 +174,15 @@ function Web({ onLoginClick }) {
           bandeja de entrada.
         </p>
         <label>
-          <input type="checkbox" name="privacy" required />
+          <input type='checkbox' name='privacy' required />
           He leído y acepto la información en Protección de Datos
         </label>
         <button>Suscribirse</button>
       </div>
       {/*  <div className="ColaboradorasTitle"></div> */}
+
       <div className="Iconos">
+
         <h1>Colaboradoras</h1>
         <br />
         <h2>
@@ -184,6 +190,7 @@ function Web({ onLoginClick }) {
           colaborar con GovTech Lab Bizkaia escribenos al mail
           govtechlab@bizkaia.eus.
         </h2>
+
         <div className="Colaboradoras">
           <img src={MondragonAcademy} /*  alt="Mondragon Academy" */ />
           <img src={MondragonUniversidad} alt="Mondragon Universidad" />
@@ -198,6 +205,7 @@ function Web({ onLoginClick }) {
           <img src={twitter} alt="twitter"></img>
           <img src={youtube} alt="youtube"></img>
           <img src={iconoMas} alt="icono+"></img>
+
         </div>
       </div>
 

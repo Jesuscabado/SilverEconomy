@@ -19,7 +19,7 @@ import MapeoLimitacionFisica from "./MapeoLimitacionFisica";
 import MapeoActividadFisica from "./MapeoActividadFisica";
 import SideBar from "../SideBar";
 import NavbarSinTexto from "../NavbarSinTexto";
-import Matrix from "../../img/corr_matrix.png";
+import imagenfondomodelo from "../../img/fondomodelo.jpg";
 
 import "../../css/Modelo.css";
 
@@ -521,30 +521,29 @@ function Modelo() {
   /*  -------------------------------------------   */
 
   return (
-    <div className='containermodelo'>
+    <div>
       <NavbarSinTexto />
       <SideBar />
-
-      <div className='flex flex-row items-center justify-center h-screen'>
-        <h3 className='titulomapa text-3xl font-bold mb-4'>
-          Modelo predictivo
-        </h3>
-        <div className='container mx-auto'>
-          <div className='card-11 flex flex-row items-center justify-center ml-4'>
-            <div className='main-container '>
-              <div className='group-container'>
-                <h2 className='group-label'>
-                  {sections[currentSection].label}
-                </h2>
-                {sections[currentSection].components.map((component, index) => (
-                  <div key={index} className='selector-item'>
-                    <p className='selector-label'>{component.label}</p>
-                    {component.component}
-                  </div>
-                ))}
-              </div>
-
-              {/*  <div className='selectors-container'>
+      <div className='containermodelo'>
+        <h1 className='modelotexto'>Modelo predictivo</h1>
+        <div className='flex flex-row items-center justify-center h-screen'>
+          <div className='container mx-auto'>
+            <div className='card-11 flex flex-row items-center justify-center ml-4'>
+              <div className='main-container '>
+                <div className='group-container'>
+                  <h2 className='group-label'>
+                    {sections[currentSection].label}
+                  </h2>
+                  {sections[currentSection].components.map(
+                    (component, index) => (
+                      <div key={index} className='selector-item'>
+                        <p className='selector-label'>{component.label}</p>
+                        {component.component}
+                      </div>
+                    )
+                  )}
+                </div>
+                {/*  <div className='selectors-container'>
         <div className='group-container'>
           <h2 className='group-label'>{sections[currentSection].label}</h2>
           <div className='selector-item'>
@@ -552,28 +551,24 @@ function Modelo() {
           </div>
         </div>
       </div>*/}
+                {/* Botón "Anterior" */}
+                {currentSection > 0 && (
+                  <button onClick={handlePreviousSection}>Anterior</button>
+                )}
+                {/* Botón "Siguiente" */}
+                {currentSection < sections.length - 1 && (
+                  <button onClick={handleNextSection}>Siguiente</button>
+                )}
 
-              {/* Botón "Anterior" */}
-              {currentSection > 0 && (
-                <button onClick={handlePreviousSection}>Anterior</button>
-              )}
-
-              {/* Botón "Siguiente" */}
-              {currentSection < sections.length - 1 && (
-                <button onClick={handleNextSection}>Siguiente</button>
-              )}
-
-              {currentSection === sections.length - 1 && (
-                <h1 className='modelo-label'>Modelo: {modelo}</h1>
-              )}
+                {currentSection === sections.length - 1 && (
+                  <h1 className='modelo-label'>Modelo: {modelo}</h1>
+                )}
+              </div>
             </div>
-            <div>
-              <img className='mapaimg' src={Matrix} />
-            </div>
+            <div style={{ width: "1300px", height: "100px" }}></div>
           </div>
-        </div>
-        {/* /* --------------------------------- */}
-        {/* 
+          {/* /* --------------------------------- */}
+          {/* 
       <div className='modelo-container'>
         <div className='selectors-container'>
           <div className='group-container'>
@@ -731,7 +726,8 @@ function Modelo() {
         </div>
       </div>
     </div> */}
-        {/* -------------------------------------------------------------------------- */}
+          {/* -------------------------------------------------------------------------- */}
+        </div>
       </div>
     </div>
   );

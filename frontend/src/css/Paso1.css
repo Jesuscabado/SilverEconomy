@@ -1,0 +1,72 @@
+/* Paso1.css */
+
+.clasepaso1 {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+.clasepaso1titulo {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.clasepaso1realizar {
+  margin-bottom: 10px;
+}
+
+.clasepaso1realizar label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.clasepaso1realizar input[type="radio"] .clasepaso1realizar select {
+  margin-right: 5px;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.clasepaso1realizar input[type="text"],
+.clasepaso1realizar input[type="email"] {
+  margin-right: 5px;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.clasepaso1departamento,
+.clasepaso1tema {
+  margin-bottom: 10px;
+}
+
+.clasepaso1departamento select,
+.clasepaso1tema select {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.clasepaso1boton {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.clasepaso1boton:hover {
+  background-color: #0056b3;
+}
+
+.clasepaso1autorizacion {
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
