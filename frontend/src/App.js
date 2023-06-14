@@ -29,7 +29,9 @@ import InformeChart from "./components/InformeChart";
 
 function App() {
   return (
-    <div className="h-screen text-black flex">
+
+    <div className='h-screen text-black flex'>
+
       <AuthContextProvider>
         {/*    <Navbar /> */}
         <Routes>
@@ -62,10 +64,11 @@ function App() {
           <Route path='/registeroverlay' element={<RegisterOverlay />} />
           <Route path='/formulario' element={<Formulario />} />
           <Route path='/mensajesformulario' element={<MesssageForm />} />
-          <Route path="/movilidad" element={<Movilidad />} />
-          <Route path="/cuidado" element={<Cuidado />} />
-          <Route path="/sedentarismo" element={<Sedentarismo />} />
-          <Route path="/informechart" element={<InformeChart />} />
+          <Route path='/movilidad' element={<Movilidad />} />
+          <Route path='/cuidado' element={<Cuidado />} />
+          <Route path='/sedentarismo' element={<Sedentarismo />} />
+          <Route path='/informechart' element={<InformeChart />} />
+
         </Routes>
       </AuthContextProvider>
       {/*  <Footer /> */}
