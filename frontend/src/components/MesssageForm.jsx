@@ -49,12 +49,27 @@ const MessageForm = () => {
     }
   };
 
+  const getDemandColorClass = (demanda) => {
+    switch (demanda) {
+      case "consulta":
+        return "consulta-color";
+      case "queja":
+        return "queja-color";
+      case "sugerencia":
+        return "sugerencia-color";
+      case "comunicación":
+        return "comunicacion-color";
+      default:
+        return "";
+    }
+  };
+
   const renderMessageList = () => {
     if (messages.length === 0) return null;
     console.log("Renderizando lista de mensajes", messages);
 
     return (
-      <table className='messageformpdf-table'>
+      <table className="messageformpdf-table">
         <thead>
           <tr>
             {/*  <th>Nombre</th> */}
@@ -68,8 +83,11 @@ const MessageForm = () => {
         </thead>
         <tbody>
           {messages.map((message) => (
-            <tr key={message.id}>
-              {/* <td>{message.nombre}</td> */}{" "}
+            <tr
+              key={message.id}
+              className={getDemandColorClass(message.demanda)}
+            >
+              {/* <td>{message.nombre}</td> */}
               <td>
                 <strong>{message.email}</strong>
               </td>
@@ -79,9 +97,9 @@ const MessageForm = () => {
               </td>
               <td>{message.departamento}</td>
               <td>{message.tema}</td>
-              <td className='messageformpdf-actions'>
+              <td className="messageformpdf-actions">
                 <button
-                  className='messageformdelete-button'
+                  className="messageformdelete-button"
                   onClick={() => handleDelete(message.id)}
                 >
                   Borrar
@@ -98,7 +116,7 @@ const MessageForm = () => {
     <div>
       <NavbarSinTexto />
       <SideBar />
-      <div className='messageformcontainer'>{renderMessageList()}</div>
+      <div className="messageformcontainer">{renderMessageList()}</div>
     </div>
   );
 };

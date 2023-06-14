@@ -27,22 +27,22 @@ import Cuidado from "./components/Cuidado";
 import Sedentarismo from "./components/Sedentarismo";
 import InformeChart from "./components/InformeChart";
 
-
 function App() {
   return (
     <div className="h-screen text-black flex">
-
       <AuthContextProvider>
         {/*    <Navbar /> */}
         <Routes>
           <Route
-            path='/'
+            path="/"
             element={
               <ProtectedRoute>
                 <Web />
               </ProtectedRoute>
             }
           />
+
+
 
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
@@ -62,11 +62,10 @@ function App() {
           <Route path='/registeroverlay' element={<RegisterOverlay />} />
           <Route path='/formulario' element={<Formulario />} />
           <Route path='/mensajesformulario' element={<MesssageForm />} />
-            <Route path="/movilidad" element={<Movilidad />} />
+          <Route path="/movilidad" element={<Movilidad />} />
           <Route path="/cuidado" element={<Cuidado />} />
           <Route path="/sedentarismo" element={<Sedentarismo />} />
           <Route path="/informechart" element={<InformeChart />} />
-
         </Routes>
       </AuthContextProvider>
       {/*  <Footer /> */}

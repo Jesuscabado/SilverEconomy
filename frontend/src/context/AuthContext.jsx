@@ -55,8 +55,8 @@ export function AuthContextProvider({ children }) {
  */
   const login = async (email, password) => {
     // funcion para iniciar sesion con email y contraseña  async para que espere a que se inicie sesion
-    await signInWithEmailAndPassword(auth, email, password); // espera a que se inicie sesion con el email y la contraseña  auth es el objeto que importamos de firebase  email y password son los datos que se pasan por parametro
     console.log("login", email, password); // Mostrar solo los datos de email y password en la consola
+    await signInWithEmailAndPassword(auth, email, password); // espera a que se inicie sesion con el email y la contraseña  auth es el objeto que importamos de firebase  email y password son los datos que se pasan por parametro
   };
 
   const logout = () => {
@@ -64,10 +64,13 @@ export function AuthContextProvider({ children }) {
     signOut(auth); // espera a que se cierre sesion  auth es el objeto que importamos de firebase
   };
 
-  const loginWithGoogle = () => {
+  const loginWithGoogle = async () => {
+    console.log("auth", auth);
     // funcion para iniciar sesion con google
     const googleProvider = new GoogleAuthProvider(); // se crea el proveedor de google  googleProvider es el objeto que importamos de firebase
-    signInWithPopup(auth, googleProvider); // se inicia sesion con el proveedor de google  auth es el objeto que importamos de firebase  googleProvider es el objeto que importamos de firebase
+    const result = await signInWithPopup(auth, googleProvider); // se inicia sesion con el proveedor de google  auth es el objeto que importamos de firebase  googleProvider es el objeto que importamos de firebase
+    console.log(result);
+    return result;
   };
 
   const resetPassword = (email) => {
