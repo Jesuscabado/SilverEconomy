@@ -1,10 +1,29 @@
-.box {
+.OdsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 50px;
+  width: 100%;
+  height: auto;
+}
+
+.OdsContainer h2 {
+  font-weight: bold; /* Aplicar negrita */
+  font-size: 1.8em; /* Aumentar el tamaño de la fuente */
+  /*  line-height: 4; /* Establecer una separación de 3 líneas */
+  margin-bottom: 60px;
+}
+
+.NewsletterBox {
   position: relative;
-  width: 90%;
+  width: 100%;
+  margin: 65px 0;
   /*  max-width: 600px; */
   height: auto;
   left: 50%;
-  top: 50%;
+  /* top: 50%; */
   transform: translate(-50%, -50%);
   background-color: #057f8c;
   display: flex;
@@ -12,24 +31,24 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
-  padding: 20px;
-  box-sizing: border-box;
+  padding: 100px;
+  /*   box-sizing: border-box; */
 }
 
-.box h1 {
+.NewsletterBox h1 {
   color: white;
   font-size: 24px;
   text-align: center;
 }
 
-.box p {
+.NewsletterBox p {
   color: white;
   font-size: 16px;
   text-align: center;
   margin-bottom: 20px;
 }
 
-.box label {
+.NewsletterBox label {
   display: flex;
   align-items: center;
   color: white;
@@ -37,11 +56,11 @@
   margin-bottom: 10px;
 }
 
-.box label input[type="checkbox"] {
+.NewsletterBox label input[type="checkbox"] {
   margin-right: 5px;
 }
 
-.box button {
+.NewsletterBox button {
   padding: 10px 20px;
   background-color: white;
   color: #057f8c;
@@ -50,7 +69,54 @@
   cursor: pointer;
 }
 
-.box button:hover {
+.NewsletterBox button:hover {
   background-color: #066470;
   color: #fff;
+}
+
+.Iconos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #fff;
+  padding: 40px;
+  width: 100%;
+}
+
+.ColaboradorasTitle {
+  color: black;
+  margin-left: 60px;
+}
+
+.ColaboradorasTitle h1 {
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+
+.Colaboradoras {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.Colaboradoras img {
+  margin: 0 10px; /* Margen horizontal para separar las imágenes */
+}
+
+.redesSociales {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.redesSociales img {
+  margin: 0 10px; /* Margen superior para separar las imágenes */
+}
+.Iconos p {
+  margin: 0 10px; /* Margen superior para separar las imágenes */
+  text-align: center;
 }

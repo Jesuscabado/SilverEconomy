@@ -6,10 +6,10 @@ import soledad3 from "../img/soledad3.jpg";
 import soledad4 from "../img/soledad4.jpg";
 import soledad5 from "../img/soledad5.jpg";
 import soledad6 from "../img/soledad6.jpg";
- /* import facebook from "../img/IconosFooter/facebook.png";
+import facebook from "../img/IconosFooter/facebook.png";
 import twitter from "../img/IconosFooter/twitter.png";
 import youtube from "../img/IconosFooter/youtube.png";
-import iconoMas from "../img/IconosFooter/icono+.png";
+import iconoMas from "../img/IconosFooter/iconoMas.png";
 import Bizkaia from "../img/IconosFooter/Bizkaia.png";
 import Zitek from "../img/IconosFooter/Zitek.png";
 import MondragonAcademy from "../img/IconosFooter/MondragonAcademy.png";
@@ -17,7 +17,7 @@ import UniversidadDeusto from "../img/IconosFooter/UniversidadDeusto.png";
 import MondragonUniversidad from "../img/IconosFooter/MondragonUniversidad.png";
 import logoCofinanciado from "../img/IconosFooter/logoCofinanciado.png";
 import Upv from "../img/IconosFooter/Upv.png";
-import Mern from "../img/IconosFooter/Mern.png";  */
+import Mern from "../img/IconosFooter/Mern.png";
 
 import Footer from "./Footer";
 import Navbar from "./Navbar";
@@ -59,7 +59,7 @@ function Web({ onLoginClick }) {
     backgroundColor: "white", // Agregar estilo de fondo blanco
   };
   const odsContainerStyles = {
-    width: "100vw",
+    width: "80vw",
     height: "50vh",
 
     display: "flex",
@@ -68,9 +68,8 @@ function Web({ onLoginClick }) {
   };
 
   const agendaContainerStyles = {
-    width: "100vw",
+    width: "80vw",
     height: "50vh",
-    backgroundColor: "lightblue",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -107,60 +106,62 @@ function Web({ onLoginClick }) {
       </div>
       {showLogin && <LoginOverlay onClose={() => setShowLogin(false)} />}
       {/* Corregido */}
-      <div style={odsContainerStyles}>
-        <img src={soledad4} alt="ODS" style={imageStyles} />
-        <div style={odsTextStyles}>
-          <h2>
-            Soledad no deseada en personas mayores afecta a más del 56% de los
-            mayores de 65 años.
-          </h2>
-          <p className="">
-            El envejecimiento de la población puede acentuar situaciones de
-            soledad, pero existen otros factores sociales y estructurales que
-            han contribuido a su aumento también en otros tramos de edad:
-            cambios en el estilo de vida, sociedades más compartimentadas e
-            individualistas, ritmos de vida más acelerados, crecimiento de las
-            ciudades y despoblación del medio rural.
-          </p>
+      <div className="OdsContainer">
+        <div style={odsContainerStyles}>
+          <img src={soledad4} alt="ODS" style={imageStyles} />
+          <div style={odsTextStyles}>
+            <h2>
+              Soledad no deseada en personas mayores afecta a más del 56% de los
+              mayores de 65 años.
+            </h2>
+            <p className="">
+              El envejecimiento de la población puede acentuar situaciones de
+              soledad, pero existen otros factores sociales y estructurales que
+              han contribuido a su aumento también en otros tramos de edad:
+              cambios en el estilo de vida, sociedades más compartimentadas e
+              individualistas, ritmos de vida más acelerados, crecimiento de las
+              ciudades y despoblación del medio rural.
+            </p>
+          </div>
+        </div>
+        <div style={agendaContainerStyles}>
+          <div style={agendaTextStyles}>
+            <h2>
+              Los jóvenes sufren la soledad no deseada el doble que las personas
+              mayores.
+            </h2>
+            <p>
+              La soledad elegida no supone un problema, pero la soledad no
+              deseada sí que tiene consecuencias negativas para la persona que
+              la sufre. También existen personas que viven acompañadas y, sin
+              embargo, se sienten solas, a menudo con un sentimiento de
+              exclusión y de falta de conexión con lo que les rodea (sociedad,
+              entorno, familia, lugar en el que viven…). Por lo tanto, se habla
+              de soledad como sentimiento, expresado en términos como “me siento
+              sola, me siento solo”. Ese sentimiento de soledad es negativo para
+              la salud física y emocional de la persona, y es susceptible de
+              afectar a personas de todas las edades.
+            </p>
+          </div>
+          <img src={soledad5} alt="" style={imageStyles} />
+        </div>
+        <div style={odsContainerStyles}>
+          <img src={soledad6} alt="ODS" style={imageStyles} />
+          <div style={odsTextStyles}>
+            <h2>Experiencias de fragilidad y soledad en el envejecimiento.</h2>
+            <p className="">
+              Las personas que experimentan soledad, como cualquier otra emoción
+              negativa, en general tratan de aplicar estrategias para afrontar
+              esta situación o minimizar los efectos negativos. Es decir, la
+              soledad es un estado que la persona trata de gestionar con mayor o
+              menor éxito. Sin embargo, las estrategias que las personas mayores
+              aplican para abordar y gestionar la soledad minimizando sus
+              consecuencias más negativas pueden ser muy variadas.{" "}
+            </p>
+          </div>
         </div>
       </div>
-      <div style={agendaContainerStyles}>
-        <div style={agendaTextStyles}>
-          <h2>
-            Los jóvenes sufren la soledad no deseada el doble que las personas
-            mayores.
-          </h2>
-          <p>
-            La soledad elegida no supone un problema, pero la soledad no deseada
-            sí que tiene consecuencias negativas para la persona que la sufre.
-            También existen personas que viven acompañadas y, sin embargo, se
-            sienten solas, a menudo con un sentimiento de exclusión y de falta
-            de conexión con lo que les rodea (sociedad, entorno, familia, lugar
-            en el que viven…). Por lo tanto, se habla de soledad como
-            sentimiento, expresado en términos como “me siento sola, me siento
-            solo”. Ese sentimiento de soledad es negativo para la salud física y
-            emocional de la persona, y es susceptible de afectar a personas de
-            todas las edades.
-          </p>
-        </div>
-        <img src={soledad5} alt="" style={imageStyles} />
-      </div>
-      <div style={odsContainerStyles}>
-        <img src={soledad6} alt="ODS" style={imageStyles} />
-        <div style={odsTextStyles}>
-          <h2>Experiencias de fragilidad y soledad en el envejecimiento.</h2>
-          <p className="">
-            Las personas que experimentan soledad, como cualquier otra emoción
-            negativa, en general tratan de aplicar estrategias para afrontar
-            esta situación o minimizar los efectos negativos. Es decir, la
-            soledad es un estado que la persona trata de gestionar con mayor o
-            menor éxito. Sin embargo, las estrategias que las personas mayores
-            aplican para abordar y gestionar la soledad minimizando sus
-            consecuencias más negativas pueden ser muy variadas.{" "}
-          </p>
-        </div>
-      </div>
-      <div className="box">
+      <div className="NewsletterBox">
         <title>Caja de Suscripción</title>
 
         <h1>Suscríbete a nuestra newsletter</h1>
@@ -174,26 +175,32 @@ function Web({ onLoginClick }) {
         </label>
         <button>Suscribirse</button>
       </div>
-      <div className="ColaboradorasBox">
+      {/*  <div className="ColaboradorasTitle"></div> */}
+      <div className="Iconos">
         <h1>Colaboradoras</h1>
+        <br />
         <h2>
           Si formas parte del ecosistema de inovacion de Bizkaia y quieres
           colaborar con GovTech Lab Bizkaia escribenos al mail
           govtechlab@bizkaia.eus.
         </h2>
-        {/* <div className="ColaboradorasIconos">
-          <img src={MondragonAcademy} alt="Mondragon Academy" />
+        <div className="Colaboradoras">
+          <img src={MondragonAcademy} /*  alt="Mondragon Academy" */ />
           <img src={MondragonUniversidad} alt="Mondragon Universidad" />
           <img src={Zitek} alt="Zitek" />
           <img src={Upv} alt="Upv" />
           <img src={UniversidadDeusto} alt="Universidad Deusto" />
+        </div>
+        <div className="redesSociales">
+          {" "}
           <p>Siguenos en nuestras redes sociales</p>
           <img src={facebook} alt="facebook"></img>
           <img src={twitter} alt="twitter"></img>
           <img src={youtube} alt="youtube"></img>
           <img src={iconoMas} alt="icono+"></img>
-        </div> */}
+        </div>
       </div>
+
       <Footer />
     </div>
   );

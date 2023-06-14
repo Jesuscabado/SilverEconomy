@@ -29,7 +29,7 @@ import InformeChart from "./components/InformeChart";
 
 function App() {
   return (
-    <div className=" h-screen text-black flex">
+    <div className="h-screen text-black flex">
       <AuthContextProvider>
         {/*    <Navbar /> */}
         <Routes>
