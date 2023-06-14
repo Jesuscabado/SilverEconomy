@@ -8,6 +8,44 @@ function SideBar() {
   const [activeItem, setActiveItem] = useState("Panel");
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+  /* ----------------------------------------------------------------*/
+
+  const [dragging, setDragging] = useState(false);
+  const [items, setItems] = useState([
+    { id: 1, name: "Item 1" },
+    { id: 2, name: "Item 2" },
+    { id: 3, name: "Item 3" },
+    { id: 4, name: "Item 4" },
+  ]);
+
+  const handleDragStart = (event, index) => {
+    setDragging(true);
+    event.dataTransfer.setData("index", index);
+  };
+
+  const handleDragOver = (event) => {
+    event.preventDefault();
+  };
+
+  const handleDrop = (event, newIndex) => {
+    event.preventDefault();
+    const oldIndex = event.dataTransfer.getData("index");
+
+    const newItems = [...items];
+    const draggedItem = newItems[oldIndex];
+
+    // Remove the item from its previous position
+    newItems.splice(oldIndex, 1);
+
+    // Move the item to the new position
+    newItems.splice(newIndex, 0, draggedItem);
+
+    setItems(newItems);
+    setDragging(false);
+  };
+
+  /* ----------------------------------------------------------------*/
+
   useEffect(() => {
     // Función para actualizar el ancho de la ventana
     const handleResize = () => {
@@ -49,6 +87,18 @@ function SideBar() {
     <div className='menudashboard'>
       <div>
         <div className='sidebar'>
+          {items.map((item, index) => (
+            <div
+              key={item.id}
+              className={`item ${dragging ? "dragging" : ""}`}
+              draggable
+              onDragStart={(event) => handleDragStart(event, index)}
+              onDragOver={handleDragOver}
+              onDrop={(event) => handleDrop(event, index)}
+            >
+              {item.name}
+            </div>
+          ))}
           <div className='sidebar-wrapper'>
             <div>{user.displayName || user.email.split("@")[0]}</div>
             <ul className='nav'>
