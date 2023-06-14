@@ -1,0 +1,16 @@
+.bakarradar {
+  position: absolute;
+  top: -23px;
+  right: 20px; /* Ajusta la distancia desde el borde derecho */
+  height: 13%;
+  z-index: 80;
+}
+
+@media (max-width: 768px) {
+  .bakarradar {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px; /* Ajusta la distancia desde la parte superior */
+  }
+}

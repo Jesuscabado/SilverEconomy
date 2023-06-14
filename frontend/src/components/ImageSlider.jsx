@@ -12,7 +12,7 @@ const ImageSlider = ({ onLoginClick }) => {
   const slides = [
     {
       url: soledad1,
-      title: "Aquí puedes agregar tu contenido personalizado",
+      title: "Inicia sesión o regístrate en Bakar Radar para obtener datos",
       buttonText: "Aquí",
       content: (
         <>
@@ -23,14 +23,13 @@ const ImageSlider = ({ onLoginClick }) => {
         </>
       ),
       position: "center", // Posición a la derecha
-      opacity: true, // Oscurecer la imagen del slide soledad1
       paddingTop: "200px", // Alineación centrada
     },
     {
       url: soledad2,
-      title: "Aplicación web para paliar la soledad",
+      title: "2Konecta: Combatiendo la soledad con conectividad",
       description:
-        "Desde el ámbito de las transacciones burocráticas y del día a día",
+        "Una aplicación web que va más allá de las transacciones burocráticas, brindándote compañía y conexión en tu día a día",
       buttonText: "Descargar",
       content: (
         <>
@@ -41,13 +40,12 @@ const ImageSlider = ({ onLoginClick }) => {
         </>
       ),
       position: "right", // Posición a la derecha
-      opacity: true, // Oscurecer la imagen del slide soledad1
     },
     {
       url: soledad3,
-      title: "Eres profesional de la salud",
+      title: "Batera: Conoce el estado de tus pacientes",
       description:
-        "Una nueva herramienta que te permitirá conocer el estado de tus pacientes",
+        "Descubre una innovadora herramienta diseñada especialmente para profesionales. ",
       buttonText: "Acceder",
       content: (
         <>
@@ -58,7 +56,6 @@ const ImageSlider = ({ onLoginClick }) => {
         </>
       ),
       position: "right", // Posición a la derecha
-      opacity: true, // Oscurecer la imagen del slide soledad1
       marginTop: "-200px", // Alineación centrada
     },
   ];
@@ -137,7 +134,7 @@ const ImageSlider = ({ onLoginClick }) => {
     boxSizing: "border-box",
     color: "#fff",
     textAlign: "center",
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
+
     paddingTop: slides[currentIndex].paddingTop,
     marginTop: slides[currentIndex].marginTop,
     visibility: currentIndex === 0 ? "visible" : "hidden",
