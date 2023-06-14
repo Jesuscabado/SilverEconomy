@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { uploadFile } from "../../Firebase";
-import "../../css/contactForm.scss";
 const Paso1 = ({ nextStep }) => {
   const [demanda, setDemanda] = useState("");
   const [departamento, setDepartamento] = useState("");
