@@ -12,7 +12,6 @@ import "./index.css";
 /* import Footer from "./components/Footer"; */
 import Calendar from "./components/Calendar/Index";
 import Chat from "./components/chat/Chat";
-
 import Modelo from "./components/modelo/Modelo";
 import MapaCalor from "./components/MapaCalor";
 import Informes from "./components/Informes";
@@ -30,18 +29,22 @@ import InformeChart from "./components/InformeChart";
 
 function App() {
   return (
+
     <div className='h-screen text-black flex'>
+
       <AuthContextProvider>
         {/*    <Navbar /> */}
         <Routes>
           <Route
-            path='/'
+            path="/"
             element={
               <ProtectedRoute>
                 <Web />
               </ProtectedRoute>
             }
           />
+
+
 
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
@@ -65,6 +68,7 @@ function App() {
           <Route path='/cuidado' element={<Cuidado />} />
           <Route path='/sedentarismo' element={<Sedentarismo />} />
           <Route path='/informechart' element={<InformeChart />} />
+
         </Routes>
       </AuthContextProvider>
       {/*  <Footer /> */}

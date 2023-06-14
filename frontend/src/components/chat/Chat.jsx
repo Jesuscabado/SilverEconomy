@@ -11,10 +11,7 @@ import {
 } from "firebase/firestore";
 import NavbarSinTexto from "../NavbarSinTexto";
 import SideBar from "../SideBar";
-
-const style = {
-  main: `flex flex-col p-[10%] h-screen overflow-y-scroll scrollbar-hide`,
-};
+import "../../css/chat.scss";
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
@@ -38,17 +35,17 @@ const Chat = () => {
 
   return (
     <>
-      {/* <NavbarSinTexto />
-      <SideBar /> */}
-      <main className={style.main}>
+      {/* <NavbarSinTexto />*/}
+      <SideBar />
+      <main className="main">
         {messages &&
           messages.map((message) => (
             <Message key={message.id} message={message} />
           ))}
+        {/* Send Message Component */}
+        <SendMessage scroll={scroll} />
+        <span ref={scroll}></span>
       </main>
-      {/* Send Message Component */}
-      <SendMessage scroll={scroll} />
-      <span ref={scroll}></span>
     </>
   );
 };

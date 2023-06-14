@@ -62,16 +62,6 @@
     margin-left: 40%;
   }
   
-  .upload-button {
-    padding: 8px 16px;
-    border: none;
-    background-color: #4caf50;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 10px;
-    margin-left: 10px;
-  }
   
   .upload-button:hover {
     background-color: #45a049;
