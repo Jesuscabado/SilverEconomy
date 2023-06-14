@@ -49,7 +49,7 @@ export default app;
 
 
 export async function uploadFile(file, path) {
-  const storageRef = ref(storage, path); // Utiliza la ruta proporcionada para la referencia de almacenamiento
+  const storageRef = ref(storage, path,v4()); // Utiliza la ruta proporcionada para la referencia de almacenamiento
   await uploadBytes(storageRef, file);
   const url = await getDownloadURL(storageRef);
   return url;

@@ -99,9 +99,11 @@ function Home() {
                           de mujeres + 80 viven solas.
                         </p>
                       </div>
+                      <Link to='/informechart' className='full-container-link'>
                       <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
                         Descargar
                       </button>
+                      </Link>
                       {/*  <canvas className='porcentaje-chart' id='porcentaje'></canvas> */}
                     </div>
                   </div>
@@ -149,9 +151,11 @@ function Home() {
                       {/*  <canvas className='curvas-chart' id='curvas'></canvas> */}
                       <img src={gifUrl2} />
                       {/* <img src={grafica2} alt='grafica2' /> */}
+                      <Link to='/sedentarismo'>
                       <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
                         Acceder
                       </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -602,9 +606,11 @@ function Home() {
                     {/* <canvas className='bar-chart' id='bar'> */}
                     {/* <img src={grafica1} alt='grafica1' /> */}
                     <img src={gifUrl1} />
+                    <Link to='/movilidad'>
                     <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
                       Acceder
                     </button>
+                    </Link>
                     {/*  </canvas> */}
                   </div>
                 </div>
@@ -626,10 +632,11 @@ function Home() {
                       Tu navegador no admite el elemento de video.
                     </video> */}
                     <img src={gifUrl4} />
-
+                    <Link to='/cuidado'>
                     <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
                       Acceder
                     </button>
+                    </Link>
                   </div>
                 </div>
               </div>
