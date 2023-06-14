@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { getStorage, ref, listAll, getDownloadURL, getMetadata, deleteObject } from 'firebase/storage';
-import Linechart from '../img/linechart.png';
 
 
 const HTMLViewer = () => {
@@ -36,53 +35,15 @@ const HTMLViewer = () => {
       // Ordenar la lista de archivos por fecha de subida en orden descendente
       const sortedFileData = fileData.sort((a, b) => b.uploadTime - a.uploadTime);
 
-      // Obtener solo los últimos 5 archivos
-      const lastFiveFiles = sortedFileData.slice(15,17);
-
-      setFileList(lastFiveFiles);
+      setFileList(sortedFileData);
     } catch (error) {
       console.error("Error loading file list:", error);
     }
   };
 
-  const handleViewFile = (url) => {
-    window.open(url, "_blank");
-  };
-
-  const handleDeleteFile = async (fileName) => {
-    try {
-      const fileRef = ref(storage, fileName);
-      await deleteObject(fileRef);
-      console.log(`File "${fileName}" deleted successfully.`);
-      loadFileList(); // Actualizar la lista de archivos después de borrar uno
-    } catch (error) {
-      console.error("Error deleting file:", error);
-    }
-  };
 
   return (
-    <div>
-            <img src={Linechart} alt="Info" border="0" />
-      <table>
-        <thead>
-          <tr>
-            <th>Archivos</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          {fileList.map((file, index) => (
-            <tr key={index}>
-              <td>{file.name}</td>
-              <td>
-                <button onClick={() => handleViewFile(file.url)}>Ver</button>
-                <button onClick={() => handleDeleteFile(file.name)}>Borrar</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+      <a href="/home/AUMENTO DE LA POBLACION ENVEJECIDA.pdf" download="AUMENTO DE LA POBLACION ENVEJECIDA.pdf.pdf">Descargar</a>
   );
 };
 

@@ -96,11 +96,12 @@ function Home() {
                           de mujeres + 80 viven solas.
                         </p>
                       </div>
-                      <Link to='/informechart' className='full-container-link'>
+                      
                       <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
-                        Descargar
+                      <a href="/home/AUMENTO DE LA POBLACION ENVEJECIDA.pdf" download="AUMENTO DE LA POBLACION ENVEJECIDA.pdf.pdf">Descargar</a>
+                    
                       </button>
-                      </Link>
+                    
                       {/*  <canvas className='porcentaje-chart' id='porcentaje'></canvas> */}
                     </div>
                   </div>
@@ -130,9 +131,6 @@ function Home() {
                               <h4 className='text-2xm font-bold ml-4 mr-5'>
                                 Acceso al modelo predictivo
                               </h4>
-                              {/* <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
-                              Acceder
-                            </button> */}
                             </div>
                           </div>
                         </div>
@@ -593,6 +591,7 @@ function Home() {
                           Acceder
                         </button>
                       </Link>
+                      <a href="/home/informemapa.pdf" className="mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105" download="informemapa.pdf">Descargar</a>
                     </div>
                   </div>
                 </div>

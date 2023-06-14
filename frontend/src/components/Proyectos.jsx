@@ -2,6 +2,7 @@ import React from "react";
 import NavbarSinTexto from "./NavbarSinTexto";
 import SideBar from "./SideBar";
 import Group11 from "../img/Group11.png";
+import "../css/Notificaciones.css";
 
 function Proyectos() {
   return (
@@ -20,7 +21,7 @@ function Proyectos() {
               width='100%'
               height='100%'
             ></iframe> */}
-              <img src={Group11} alt="Notificaciones" border="0" />
+              <img src={Group11} alt="proyectos" border="0" className="proyectos" />
 
           </div>
         </div>

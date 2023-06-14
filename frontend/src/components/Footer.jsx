@@ -4,7 +4,6 @@ import Entidades from "./Entidades";
 import Accesibilidad from "./Accesibilidad";
 import Mapaweb from "./MapaWeb";
 import Cookies from "./Cookies";
-import ContactForm from "./contactForm/ContactForm";
 import "../css/Footer.css";
 import { Link, Route, Routes } from "react-router-dom";
 import LogoBizkaia from "../img/IconosFooter/Bizkaia.png";
