@@ -12,7 +12,6 @@ import "./index.css";
 /* import Footer from "./components/Footer"; */
 import Calendar from "./components/Calendar/Index";
 import Chat from "./components/chat/Chat";
-import ContactForm from "./components/contactForm/ContactForm";
 import Modelo from "./components/modelo/Modelo";
 import MapaCalor from "./components/MapaCalor";
 import Informes from "./components/Informes";
@@ -61,7 +60,6 @@ function App() {
           <Route path='/proyectos' element={<Proyectos />} />
           <Route path='/web/*' element={<Web />} />
           <Route path='/registeroverlay' element={<RegisterOverlay />} />
-          <Route path='/contact' element={<ContactForm />} />
           <Route path='/formulario' element={<Formulario />} />
           <Route path='/mensajesformulario' element={<MesssageForm />} />
             <Route path="/movilidad" element={<Movilidad />} />

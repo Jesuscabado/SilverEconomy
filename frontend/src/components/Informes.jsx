@@ -79,7 +79,7 @@ const PDFUploader = () => {
     try {
       const storageRef = ref(storage, fileName.replace(/ /g, "_"));
       await deleteObject(storageRef);
-
+  
       setPdfList((prevPdfList) =>
         prevPdfList.filter((name) => name !== fileName)
       );
@@ -90,6 +90,7 @@ const PDFUploader = () => {
       console.error("Error deleting PDF:", error);
     }
   };
+  
 
   const renderPDFList = () => {
     if (pdfList.length === 0) return null;
