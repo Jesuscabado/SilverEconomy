@@ -42,24 +42,26 @@ function App() {
             }
           />
 
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/Home" element={<Home />} />
-          <Route path="/avisolegal" element={<AvisoLegal />} />
-          <Route path="/calendar" element={<Calendar />} />
-          <Route path="/modelo" element={<Modelo />} />
-          <Route path="/mapacalor" element={<MapaCalor />} />
-          <Route path="/informes" element={<Informes />} />
-          <Route path="/notificaciones" element={<Notificaciones />} />
-          <Route path="/planaccion" element={<PlanAccion />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/chat" element={<Chat />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/proyectos" element={<Proyectos />} />
-          <Route path="/web/*" element={<Web />} />
-          <Route path="/registeroverlay" element={<RegisterOverlay />} />
-          <Route path="/formulario" element={<Formulario />} />
-          <Route path="/mensajesformulario" element={<MesssageForm />} />
+
+
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/Home' element={<Home />} />
+          <Route path='/avisolegal' element={<AvisoLegal />} />
+          <Route path='/calendar' element={<Calendar />} />
+          <Route path='/modelo' element={<Modelo />} />
+          <Route path='/mapacalor' element={<MapaCalor />} />
+          <Route path='/informes' element={<Informes />} />
+          <Route path='/notificaciones' element={<Notificaciones />} />
+          <Route path='/planaccion' element={<PlanAccion />} />
+          <Route path='/settings' element={<Settings />} />
+          <Route path='/chat' element={<Chat />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/proyectos' element={<Proyectos />} />
+          <Route path='/web/*' element={<Web />} />
+          <Route path='/registeroverlay' element={<RegisterOverlay />} />
+          <Route path='/formulario' element={<Formulario />} />
+          <Route path='/mensajesformulario' element={<MesssageForm />} />
           <Route path="/movilidad" element={<Movilidad />} />
           <Route path="/cuidado" element={<Cuidado />} />
           <Route path="/sedentarismo" element={<Sedentarismo />} />

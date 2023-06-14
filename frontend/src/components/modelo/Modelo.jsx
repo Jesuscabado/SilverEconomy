@@ -526,6 +526,7 @@ function Modelo() {
       <SideBar />
       <div className='containermodelo'>
         <h1 className='modelotexto'>Modelo predictivo</h1>
+
         <div className='flex flex-row items-center justify-center h-screen'>
           <div className='container mx-auto'>
             <div className='card-11 flex flex-row items-center justify-center ml-4'>
@@ -539,10 +540,13 @@ function Modelo() {
                       <div key={index} className='selector-item'>
                         <p className='selector-label'>{component.label}</p>
                         {component.component}
+
                       </div>
+                      
                     )
                   )}
                 </div>
+            
                 {/*  <div className='selectors-container'>
         <div className='group-container'>
           <h2 className='group-label'>{sections[currentSection].label}</h2>
@@ -564,6 +568,9 @@ function Modelo() {
                   <h1 className='modelo-label'>Modelo: {modelo}</h1>
                 )}
               </div>
+              <div className="eda">
+           <a href="/home/EDA.pdf" download="EDA.pdf">Descargar Informe</a>
+           </div>
             </div>
             <div style={{ width: "1300px", height: "100px" }}></div>
           </div>
@@ -727,6 +734,7 @@ function Modelo() {
       </div>
     </div> */}
           {/* -------------------------------------------------------------------------- */}
+          
         </div>
       </div>
     </div>

@@ -1,0 +1,68 @@
+
+.movilidad{
+    width: 70%;
+    margin-top:10%;
+    margin-left: 25%;
+    border-radius: 10px;
+}
+
+.info{
+    width: 70%;
+    margin-top:5%;
+    margin-left: 25%;
+    margin-bottom: 5%;
+    border-radius: 10px;
+}
+
+.movitable{
+    width: 70%;
+    margin-left: 25%;
+    margin-bottom: 5%;
+}
+
+thead {
+    background-color: #f2f2f2;
+    margin-top: 10px;
+  }
+  
+  th {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+ 
+  
+  th:first-child {
+    border-top-left-radius: 5px;
+  }
+  
+  th:last-child {
+    border-top-right-radius: 5px;
+  }
+  
+.ver{
+    border-radius: 3px;
+    margin-right: 10px;
+    background-color: #aaa;
+    padding: 5px;
+}
+
+.ver:hover{
+    background-color: #057f8c;
+}
+
+.borrar{
+    border-radius: 5%;
+    background-color: #f44336;
+    padding: 5px;
+}
+
+.borrar:hover{
+    background-color: #da1717;
+}
+
+.prueba{
+  color: black;
+}
+
