@@ -12,7 +12,6 @@ import "./index.css";
 /* import Footer from "./components/Footer"; */
 import Calendar from "./components/Calendar/Index";
 import Chat from "./components/chat/Chat";
-import ContactForm from "./components/contactForm/ContactForm";
 import Modelo from "./components/modelo/Modelo";
 import MapaCalor from "./components/MapaCalor";
 import Informes from "./components/Informes";
@@ -28,16 +27,14 @@ import Cuidado from "./components/Cuidado";
 import Sedentarismo from "./components/Sedentarismo";
 import InformeChart from "./components/InformeChart";
 
-
 function App() {
   return (
     <div className="h-screen text-black flex">
-
       <AuthContextProvider>
         {/*    <Navbar /> */}
         <Routes>
           <Route
-            path='/'
+            path="/"
             element={
               <ProtectedRoute>
                 <Web />
@@ -45,30 +42,28 @@ function App() {
             }
           />
 
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='/Home' element={<Home />} />
-          <Route path='/avisolegal' element={<AvisoLegal />} />
-          <Route path='/calendar' element={<Calendar />} />
-          <Route path='/modelo' element={<Modelo />} />
-          <Route path='/mapacalor' element={<MapaCalor />} />
-          <Route path='/informes' element={<Informes />} />
-          <Route path='/notificaciones' element={<Notificaciones />} />
-          <Route path='/planaccion' element={<PlanAccion />} />
-          <Route path='/settings' element={<Settings />} />
-          <Route path='/chat' element={<Chat />} />
-          <Route path='/profile' element={<Profile />} />
-          <Route path='/proyectos' element={<Proyectos />} />
-          <Route path='/web/*' element={<Web />} />
-          <Route path='/registeroverlay' element={<RegisterOverlay />} />
-          <Route path='/contact' element={<ContactForm />} />
-          <Route path='/formulario' element={<Formulario />} />
-          <Route path='/mensajesformulario' element={<MesssageForm />} />
-            <Route path="/movilidad" element={<Movilidad />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/Home" element={<Home />} />
+          <Route path="/avisolegal" element={<AvisoLegal />} />
+          <Route path="/calendar" element={<Calendar />} />
+          <Route path="/modelo" element={<Modelo />} />
+          <Route path="/mapacalor" element={<MapaCalor />} />
+          <Route path="/informes" element={<Informes />} />
+          <Route path="/notificaciones" element={<Notificaciones />} />
+          <Route path="/planaccion" element={<PlanAccion />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/chat" element={<Chat />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/proyectos" element={<Proyectos />} />
+          <Route path="/web/*" element={<Web />} />
+          <Route path="/registeroverlay" element={<RegisterOverlay />} />
+          <Route path="/formulario" element={<Formulario />} />
+          <Route path="/mensajesformulario" element={<MesssageForm />} />
+          <Route path="/movilidad" element={<Movilidad />} />
           <Route path="/cuidado" element={<Cuidado />} />
           <Route path="/sedentarismo" element={<Sedentarismo />} />
           <Route path="/informechart" element={<InformeChart />} />
-
         </Routes>
       </AuthContextProvider>
       {/*  <Footer /> */}
