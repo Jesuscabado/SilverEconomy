@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import ImageSlider from "./ImageSlider";
 import soledad1 from "../img/soledad1.jpg";
-import soledad2 from "../img/soledad2.jpg";
-import soledad3 from "../img/soledad3.jpg";
+import soledad2 from "../img/soledad2.png";
+import soledad3 from "../img/soledad3.png";
 import soledad4 from "../img/soledad4.jpg";
 import soledad5 from "../img/soledad5.jpg";
 import soledad6 from "../img/soledad6.jpg";
@@ -38,18 +38,37 @@ function Web({ onLoginClick }) {
       title: " ",
       content: (
         <>
-          <p>Aquí puedes agregar tu contenido personalizado</p>
+          {/* <p>Aquí puedes agregar tu contenido personalizado</p>
           <button className='bg-red-500 text-white px-4 py-2 rounded'>
             Aquí
-          </button>
+          </button> */}
         </>
       ),
     },
     {
       url: soledad2,
       title: " ",
+      content: (
+        <>
+          {/*  <p>Aquí puedes agregar tu contenido personalizado</p>
+          <button className='bg-red-500 text-white px-4 py-2 rounded'>
+            Aquí
+          </button> */}
+        </>
+      ),
     },
-    { url: soledad3, title: "" },
+    {
+      url: soledad3,
+      title: "",
+      content: (
+        <>
+          {/*   <p>Aquí puedes agregar tu contenido personalizado</p>
+          <button className='bg-red-500 text-white px-4 py-2 rounded'>
+            Aquí
+          </button> */}
+        </>
+      ),
+    },
   ];
 
   const containerStyles = {
@@ -107,15 +126,15 @@ function Web({ onLoginClick }) {
       {showLogin && <LoginOverlay onClose={() => setShowLogin(false)} />}
       {/* Corregido */}
 
-      <div className="OdsContainer">
+      <div className='OdsContainer'>
         <div style={odsContainerStyles}>
-          <img src={soledad4} alt="ODS" style={imageStyles} />
+          <img src={soledad4} alt='ODS' style={imageStyles} />
           <div style={odsTextStyles}>
             <h2>
               Soledad no deseada en personas mayores afecta a más del 56% de los
               mayores de 65 años.
             </h2>
-            <p className="">
+            <p className=''>
               El envejecimiento de la población puede acentuar situaciones de
               soledad, pero existen otros factores sociales y estructurales que
               han contribuido a su aumento también en otros tramos de edad:
@@ -124,7 +143,6 @@ function Web({ onLoginClick }) {
               ciudades y despoblación del medio rural.
             </p>
           </div>
-
         </div>
         <div style={agendaContainerStyles}>
           <div style={agendaTextStyles}>
@@ -145,14 +163,14 @@ function Web({ onLoginClick }) {
               afectar a personas de todas las edades.
             </p>
           </div>
-          <img src={soledad5} alt="" style={imageStyles} />
+          <img src={soledad5} alt='' style={imageStyles} />
         </div>
 
         <div style={odsContainerStyles}>
-          <img src={soledad6} alt="ODS" style={imageStyles} />
+          <img src={soledad6} alt='ODS' style={imageStyles} />
           <div style={odsTextStyles}>
             <h2>Experiencias de fragilidad y soledad en el envejecimiento.</h2>
-            <p className="">
+            <p className=''>
               Las personas que experimentan soledad, como cualquier otra emoción
               negativa, en general tratan de aplicar estrategias para afrontar
               esta situación o minimizar los efectos negativos. Es decir, la
@@ -164,8 +182,7 @@ function Web({ onLoginClick }) {
           </div>
         </div>
       </div>
-      <div className="NewsletterBox">
-
+      <div className='NewsletterBox'>
         <title>Caja de Suscripción</title>
 
         <h1>Suscríbete a nuestra newsletter</h1>
@@ -181,8 +198,7 @@ function Web({ onLoginClick }) {
       </div>
       {/*  <div className="ColaboradorasTitle"></div> */}
 
-      <div className="Iconos">
-
+      <div className='Iconos'>
         <h1>Colaboradoras</h1>
         <br />
         <h2>
@@ -191,21 +207,20 @@ function Web({ onLoginClick }) {
           govtechlab@bizkaia.eus.
         </h2>
 
-        <div className="Colaboradoras">
+        <div className='Colaboradoras'>
           <img src={MondragonAcademy} /*  alt="Mondragon Academy" */ />
-          <img src={MondragonUniversidad} alt="Mondragon Universidad" />
-          <img src={Zitek} alt="Zitek" />
-          <img src={Upv} alt="Upv" />
-          <img src={UniversidadDeusto} alt="Universidad Deusto" />
+          <img src={MondragonUniversidad} alt='Mondragon Universidad' />
+          <img src={Zitek} alt='Zitek' />
+          <img src={Upv} alt='Upv' />
+          <img src={UniversidadDeusto} alt='Universidad Deusto' />
         </div>
-        <div className="redesSociales">
+        <div className='redesSociales'>
           {" "}
           <p>Siguenos en nuestras redes sociales</p>
-          <img src={facebook} alt="facebook"></img>
-          <img src={twitter} alt="twitter"></img>
-          <img src={youtube} alt="youtube"></img>
-          <img src={iconoMas} alt="icono+"></img>
-
+          <img src={facebook} alt='facebook'></img>
+          <img src={twitter} alt='twitter'></img>
+          <img src={youtube} alt='youtube'></img>
+          <img src={iconoMas} alt='icono+'></img>
         </div>
       </div>
 

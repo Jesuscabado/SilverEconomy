@@ -4,7 +4,6 @@ import Entidades from "./Entidades";
 import Accesibilidad from "./Accesibilidad";
 import Mapaweb from "./MapaWeb";
 import Cookies from "./Cookies";
-import ContactForm from "./contactForm/ContactForm";
 import "../css/Footer.css";
 import { Link, Route, Routes } from "react-router-dom";
 import LogoBizkaia from "../img/IconosFooter/Bizkaia.png";
@@ -20,7 +19,6 @@ const Footer = () => {
   }; */
 
   return (
-
     <footer className='FooterWeb' /*  style={footerStyles} */>
       <span className='texto1'>
         Copyright © 2023 · Bizkaiko Foru Aldundia · Diputacion Foral de Bizkai
@@ -28,13 +26,11 @@ const Footer = () => {
       <img className='claselogo' src={LogoBizkaia} alt='logo' />
 
       <div className='text-center'>
-
         <Routes>
           <Route path='/Avisolegal' component={AvisoLegal} />
         </Routes>
 
         <Link className='text-decoration-none custom-link' to='/avisolegal'>
-
           Aviso legal{" "}
         </Link>
         <Routes>
@@ -42,7 +38,6 @@ const Footer = () => {
         </Routes>
 
         <Link className='text-decoration-none custom-link' to='/entidades'>
-
           Entidades{" "}
         </Link>
         <Routes>
@@ -50,7 +45,6 @@ const Footer = () => {
         </Routes>
 
         <Link className='text-decoration-none custom-link' to='/accesibilidad'>
-
           Accesibilidad{" "}
         </Link>
         <Routes>
@@ -58,7 +52,6 @@ const Footer = () => {
         </Routes>
 
         <Link className='text-decoration-none custom-link' to='/mapaweb'>
-
           Mapa web{" "}
         </Link>
         <Routes>
@@ -73,8 +66,7 @@ const Footer = () => {
           <Route path='/formulario' component={Formulario} />
         </Routes> */}
         <Link className='text-decoration-none custom-link' to='/formulario'>
-
-          Formulario de contacto{" "}
+          Formulario de contacto
         </Link>
       </div>
     </footer>

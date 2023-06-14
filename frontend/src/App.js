@@ -12,7 +12,7 @@ import "./index.css";
 /* import Footer from "./components/Footer"; */
 import Calendar from "./components/Calendar/Index";
 import Chat from "./components/chat/Chat";
-import ContactForm from "./components/contactForm/ContactForm";
+
 import Modelo from "./components/modelo/Modelo";
 import MapaCalor from "./components/MapaCalor";
 import Informes from "./components/Informes";
@@ -28,11 +28,9 @@ import Cuidado from "./components/Cuidado";
 import Sedentarismo from "./components/Sedentarismo";
 import InformeChart from "./components/InformeChart";
 
-
 function App() {
   return (
-    <div className="h-screen text-black flex">
-
+    <div className='h-screen text-black flex'>
       <AuthContextProvider>
         {/*    <Navbar /> */}
         <Routes>
@@ -61,14 +59,12 @@ function App() {
           <Route path='/proyectos' element={<Proyectos />} />
           <Route path='/web/*' element={<Web />} />
           <Route path='/registeroverlay' element={<RegisterOverlay />} />
-          <Route path='/contact' element={<ContactForm />} />
           <Route path='/formulario' element={<Formulario />} />
           <Route path='/mensajesformulario' element={<MesssageForm />} />
-            <Route path="/movilidad" element={<Movilidad />} />
-          <Route path="/cuidado" element={<Cuidado />} />
-          <Route path="/sedentarismo" element={<Sedentarismo />} />
-          <Route path="/informechart" element={<InformeChart />} />
-
+          <Route path='/movilidad' element={<Movilidad />} />
+          <Route path='/cuidado' element={<Cuidado />} />
+          <Route path='/sedentarismo' element={<Sedentarismo />} />
+          <Route path='/informechart' element={<InformeChart />} />
         </Routes>
       </AuthContextProvider>
       {/*  <Footer /> */}
