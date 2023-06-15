@@ -6,9 +6,15 @@
 
 .fondo {
   background-image: url(../img/fondoperfil.jpg);
-  background-size: 100vw 100vh;
-  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
+
+
 .user-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -39,21 +45,37 @@
 }
 
 .user-avatar {
-  width: 80px;
-  height: 80px;
+  width: 30%;
+  height: 30%;
+  margin-right: 13%;
   border-radius: 50%;
-  overflow: hidden;
-  margin-right: 20px;
 }
+
 .user-avatar img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  border-radius: 50%;
+}
+
+.upload{
+  width: 100%;
+  height: 100%;
+
 }
 
 .user-details {
   flex: 1;
 }
+
+.userbutton{
+  background-color: #f44336;
+  border-radius: 5px;
+  padding: 8px;
+  margin-left: 25%;
+  color: #fff;
+}
+
+
 
 .user-details {
   margin-bottom: 10px;
@@ -78,7 +100,7 @@
 }
 
 .user-actions button:first-child {
-  background-color: #4caf50;
+  background-color: #057f8c;
   color: #fff;
 }
 
@@ -91,6 +113,12 @@
   .user-list {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
+
+  .usercontainer {
+    margin-left: 10%;
+    margin-right: 0;
+  }
+  
 }
 
 .usercontainer__header {
