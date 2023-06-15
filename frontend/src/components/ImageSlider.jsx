@@ -43,7 +43,7 @@ const ImageSlider = ({ onLoginClick }) => {
     },
     {
       url: soledad3,
-      title: "Batera: Conoce el estado de tus pacientes",
+      title: "Batera: Conoce el estado de tus usuarios",
       description:
         "Descubre una innovadora herramienta diseñada especialmente para profesionales. ",
       buttonText: "Acceder",

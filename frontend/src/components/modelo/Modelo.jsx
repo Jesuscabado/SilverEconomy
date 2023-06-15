@@ -519,9 +519,6 @@ function Modelo() {
   };
 
   /*  -------------------------------------------   */
-  const modeloSplit = modelo.split(":");
-  const modeloDestacado = modeloSplit.length > 1 ? modeloSplit[1].trim() : "";
-  const palabras = modeloSplit[1].trim().split(" ");
 
   return (
     <div>
@@ -585,27 +582,7 @@ function Modelo() {
                 )}
 
                 {currentSection === sections.length - 1 && (
-                  <h1 className='modelo-label'>
-                    {/* Modelo:  */}
-                    {modeloSplit[0]}
-                    {palabras.map((palabra, index) => {
-                      let color;
-
-                      if (palabra === "alto") {
-                        color = "red";
-                      } else if (palabra === "medio") {
-                        color = "orange";
-                      } else if (palabra === "bajo") {
-                        color = "green";
-                      }
-
-                      return (
-                        <span key={index} style={{ color }}>
-                          : {palabra}
-                        </span>
-                      );
-                    })}
-                  </h1>
+                  <h1 className='modelo-label'>Modelo: {modelo}</h1>
                 )}
               </div>
             </div>
