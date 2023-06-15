@@ -597,7 +597,7 @@ function Home() {
                       </Link>
                       <button
                         href='/home/informemapa.pdf'
-                        className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'
+                        className='ml-4 mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'
                         download='informemapa.pdf'
                       >
                         Descargar
