@@ -2,6 +2,8 @@ import React from "react";
 import { useAuth } from "../context/AuthContext";
 import { Link } from "react-router-dom";
 import Logodipu from "../img/logodipu.jpg";
+import Logoradar from "../img/Logo_Bakar.png";
+import "../css/Navbar.css";
 
 function Navbar({ onLoginClick }) {
   const { user /* , handleLogout  */ } = useAuth();
@@ -29,6 +31,9 @@ function Navbar({ onLoginClick }) {
           className='fixed flex justify-between items-center z-50 left-0 ml-19 scale-75 mt-[-13px]'
           alt='Logo Dipu'
         ></img>
+      </div>
+      <div>
+        <img className='bakarradar' src={Logoradar} alt='radar' />
       </div>
       <nav className='fixed flex justify-between items-center w-full bg-white z-10 h-9'>
         <div className='flex items-center justify-start w-full'>
@@ -67,6 +72,7 @@ function Navbar({ onLoginClick }) {
             {/*     ES */}
           </p>
         </div>
+
         <div className='flex items-center justify-end mr-5 text-sm'>
           <p
             onClick={onLoginClick}

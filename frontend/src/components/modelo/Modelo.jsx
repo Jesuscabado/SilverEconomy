@@ -525,8 +525,16 @@ function Modelo() {
       <NavbarSinTexto />
       <SideBar />
       <div className='containermodelo'>
-        <h1 className='modelotexto'>Modelo predictivo</h1>
-
+        <div className='modelotexto'>
+          <h1>Modelo predictivo</h1>
+          <a
+            className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'
+            href='/home/EDA.pdf'
+            download='EDA.pdf'
+          >
+            Descargar Informe
+          </a>
+        </div>
         <div className='flex flex-row items-center justify-center h-screen'>
           <div className='container mx-auto'>
             <div className='card-11 flex flex-row items-center justify-center ml-4'>
@@ -540,13 +548,11 @@ function Modelo() {
                       <div key={index} className='selector-item'>
                         <p className='selector-label'>{component.label}</p>
                         {component.component}
-
                       </div>
-                      
                     )
                   )}
                 </div>
-            
+
                 {/*  <div className='selectors-container'>
         <div className='group-container'>
           <h2 className='group-label'>{sections[currentSection].label}</h2>
@@ -557,20 +563,28 @@ function Modelo() {
       </div>*/}
                 {/* Botón "Anterior" */}
                 {currentSection > 0 && (
-                  <button onClick={handlePreviousSection}>Anterior</button>
+                  <button
+                    className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'
+                    onClick={handlePreviousSection}
+                  >
+                    Anterior
+                  </button>
                 )}
+
                 {/* Botón "Siguiente" */}
                 {currentSection < sections.length - 1 && (
-                  <button onClick={handleNextSection}>Siguiente</button>
+                  <button
+                    className='ml-4 mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'
+                    onClick={handleNextSection}
+                  >
+                    Siguiente
+                  </button>
                 )}
 
                 {currentSection === sections.length - 1 && (
                   <h1 className='modelo-label'>Modelo: {modelo}</h1>
                 )}
               </div>
-              <div className="eda">
-           <a href="/home/EDA.pdf" download="EDA.pdf">Descargar Informe</a>
-           </div>
             </div>
             <div style={{ width: "1300px", height: "100px" }}></div>
           </div>
@@ -734,7 +748,6 @@ function Modelo() {
       </div>
     </div> */}
           {/* -------------------------------------------------------------------------- */}
-          
         </div>
       </div>
     </div>

@@ -72,43 +72,6 @@ function Web({ onLoginClick }) {
     },
   ];
 
-  const containerStyles = {
-    width: "100vw",
-    height: "100vh",
-    margin: "0 auto",
-    backgroundColor: "white", // Agregar estilo de fondo blanco
-  };
-  const odsContainerStyles = {
-    width: "80vw",
-    height: "50vh",
-
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  };
-
-  const agendaContainerStyles = {
-    width: "80vw",
-    height: "50vh",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  };
-
-  const odsTextStyles = {
-    marginLeft: "20px",
-  };
-
-  const agendaTextStyles = {
-    marginRight: "20px",
-  };
-
-  const imageStyles = {
-    maxWidth: "80%",
-    maxHeight: "80%",
-    borderRadius: "10px",
-  };
-
   const handleLoginClick = () => {
     setShowLogin(true);
     if (typeof onLoginClick === "function") {
@@ -121,16 +84,18 @@ function Web({ onLoginClick }) {
       <div>
         <Navbar onLoginClick={() => setShowLogin(true)} />
       </div>
-      <div style={containerStyles}>
+      <div className='containerStyles'>
         <ImageSlider slides={slides} onLoginClick={handleLoginClick} />
       </div>
       {showLogin && <LoginOverlay onClose={() => setShowLogin(false)} />}
       {/* Corregido */}
 
-      <div className="OdsContainer">
-        <div style={odsContainerStyles}>
-          <img src={soledad4} alt="ODS" style={imageStyles} />
-          <div style={odsTextStyles}>
+
+      <div className='OdsContainer'>
+        <div className='odsContainerStyles'>
+          <img src={soledad4} alt='ODS' className='imageStyles' />
+          <div className='odsTextStyles'>
+
             <h2>
               Soledad no deseada en personas mayores afecta a más del 56% de los
               mayores de 65 años.
@@ -145,8 +110,8 @@ function Web({ onLoginClick }) {
             </p>
           </div>
         </div>
-        <div style={agendaContainerStyles}>
-          <div style={agendaTextStyles}>
+        <div className='agendaContainerStyles'>
+          <div className='agendaTextStyles'>
             <h2>
               Los jóvenes sufren la soledad no deseada el doble que las personas
               mayores.
@@ -164,12 +129,14 @@ function Web({ onLoginClick }) {
               afectar a personas de todas las edades.
             </p>
           </div>
-          <img src={soledad5} alt="" style={imageStyles} />
+
+          <img src={soledad5} alt='' className='imageStyles' />
         </div>
 
-        <div style={odsContainerStyles}>
-          <img src={soledad6} alt="ODS" style={imageStyles} />
-          <div style={odsTextStyles}>
+        <div className='odsContainerStyles'>
+          <img src={soledad6} alt='ODS' className='imageStyles' />
+          <div className='odsTextStyles'>
+
             <h2>Experiencias de fragilidad y soledad en el envejecimiento.</h2>
             <p className="">
               Las personas que experimentan soledad, como cualquier otra emoción
@@ -183,7 +150,9 @@ function Web({ onLoginClick }) {
           </div>
         </div>
       </div>
+
       <div className="NewsletterBox">
+
         <title>Caja de Suscripción</title>
 
         <h1>Suscríbete a nuestra newsletter</h1>
@@ -220,7 +189,7 @@ function Web({ onLoginClick }) {
         <h2>
           Si formas parte del ecosistema de inovacion de Bizkaia y quieres
           colaborar con GovTech Lab Bizkaia escribenos al mail
-          govtechlab@bizkaia.eus.
+          <strong> govtechlab@bizkaia.eus</strong>.
         </h2>
 
         <div className="Colaboradoras">
@@ -230,6 +199,7 @@ function Web({ onLoginClick }) {
           <img src={Upv} alt="Upv" />
           <img src={UniversidadDeusto} alt="Universidad Deusto" />
         </div>
+
         <div className="redesSociales">
           {" "}
           <p>Siguenos en nuestras redes sociales</p>
@@ -237,6 +207,7 @@ function Web({ onLoginClick }) {
           <img src={twitter} alt="twitter"></img>
           <img src={youtube} alt="youtube"></img>
           <img src={iconoMas} alt="icono+"></img>
+
         </div>
       </div>
 

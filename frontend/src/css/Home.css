@@ -9,21 +9,101 @@
   height: auto;
 }
 
+.containerStyles {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: "white";
+}
+
+.odsContainerStyles {
+  width: 64vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.odsTextStyles {
+  flex: 1;
+  padding: 0 20px;
+  text-align: left;
+}
+
+.imageStyles {
+  max-width: 100%;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .odsContainerStyles {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .odsTextStyles {
+    padding: 20px;
+  }
+}
+.agendaContainerStyles {
+  width: 64vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.agendaTextStyles {
+  flex: 1;
+  padding: 0 20px;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .agendaContainerStyles {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .agendaTextStyles {
+    padding: 20px;
+  }
+}
+
+.agendaTextStyles h2 {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+.agendaTextStyles p {
+  font-size: 12px;
+}
+
 .OdsContainer h2 {
-  font-weight: bold; /* Aplicar negrita */
-  font-size: 1.8em; /* Aumentar el tamaño de la fuente */
-  /*  line-height: 4; /* Establecer una separación de 3 líneas */
-  margin-bottom: 60px;
+  font-weight: bold;
+  font-size: 1x;
+  margin-bottom: 14px;
+}
+
+.OdsContainer p {
+  font-size: 12px;
 }
 
 .NewsletterBox {
   position: relative;
   width: 100%;
   margin: 65px 0;
-  /*  max-width: 600px; */
+
   height: auto;
   left: 50%;
-  /* top: 50%; */
+  top: 20%;
   transform: translate(-50%, -50%);
   background-color: #057f8c;
   display: flex;
@@ -31,9 +111,11 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
-  padding: 100px;
 
-  /*   box-sizing: border-box; */
+  padding: 50px;
+  text-align: center;
+  color: #fff;
+
 }
 
 .NewsletterBox h1 {
@@ -74,6 +156,7 @@
   background-color: #066470;
   color: #fff;
 }
+
 
 .ContactFormBox {
   margin-top: auto;
@@ -160,7 +243,17 @@
 }
 
 .Colaboradoras img {
-  margin: 0 10px; /* Margen horizontal para separar las imágenes */
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 480px) {
+  .Colaboradoras img {
+    margin: 30px 10px 30px 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
 }
 
 .redesSociales {
@@ -174,6 +267,11 @@
   margin: 0 10px; /* Margen superior para separar las imágenes */
 }
 .Iconos p {
-  margin: 0 10px; /* Margen superior para separar las imágenes */
+  margin: 100px 10px; /* Margen superior para separar las imágenes */
   text-align: center;
+}
+
+.Iconos h1 {
+  margin: 20px 20px;
+  font-weight: bold;
 }

@@ -1,10 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { getStorage, ref, listAll, getDownloadURL, getMetadata, deleteObject } from 'firebase/storage';
-import Dedicacion from '../img/Dedicacion.png';
+import React, { useEffect, useState } from "react";
+import {
+  getStorage,
+  ref,
+  listAll,
+  getDownloadURL,
+  getMetadata,
+  deleteObject,
+} from "firebase/storage";
+import Dedicacion from "../img/Dedicacion.png";
 import NavbarSinTexto from "./NavbarSinTexto";
 import SideBar from "./SideBar";
-import '../css/Cuidado.css';
-
+import "../css/Cuidado.css";
 
 const HTMLViewer = () => {
   const [fileList, setFileList] = useState([]);
@@ -37,11 +43,15 @@ const HTMLViewer = () => {
       const fileData = await Promise.all(filePromises);
 
       // Ordenar la lista de archivos por fecha de subida en orden descendente
-      const sortedFileData = fileData.sort((a, b) => b.uploadTime - a.uploadTime);
+      const sortedFileData = fileData.sort(
+        (a, b) => b.uploadTime - a.uploadTime
+      );
 
       // Obtener solo los últimos 5 archivos
+
       const selectedFilesIndices = [6]; // Índices de los archivos que deseas seleccionar
       const selectedFiles = sortedFileData.filter((file, index) => selectedFilesIndices.includes(index));
+
 
       setFileList(selectedFiles);
     } catch (error) {
@@ -68,7 +78,7 @@ const HTMLViewer = () => {
     <div>
       <NavbarSinTexto />
       <SideBar />
-      <img className='cuidado' src={Dedicacion} alt="Cuidado" border="0" />
+      <img className='cuidado' src={Dedicacion} alt='Cuidado' border='0' />
       <table className='movitable'>
         <thead>
           <tr>
@@ -81,8 +91,18 @@ const HTMLViewer = () => {
             <tr key={index}>
               <td>{file.name}</td>
               <td>
-                <button className='ver' onClick={() => handleViewFile(file.url)}>Ver</button>
-                <button className='borrar' onClick={() => handleDeleteFile(file.name)}>Borrar</button>
+                <button
+                  className='ver'
+                  onClick={() => handleViewFile(file.url)}
+                >
+                  Ver
+                </button>
+                <button
+                  className='borrar'
+                  onClick={() => handleDeleteFile(file.name)}
+                >
+                  Borrar
+                </button>
               </td>
             </tr>
           ))}

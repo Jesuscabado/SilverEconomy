@@ -96,13 +96,18 @@ function Calendar() {
               initialEvents={[
                 {
                   id: "12315",
-                  title: "All-day event",
-                  start: "2022-09-14",
+                  title: "Presentación proyecto soledad",
+                  start: "2023-06-16",
                 },
                 {
                   id: "5123",
-                  title: "Timed event",
-                  start: "2022-09-28",
+                  title: "Evento soledad",
+                  start: "2023-06-15",
+                },
+                {
+                  id: "5123",
+                  title: "Video soledad",
+                  start: "2023-06-19",
                 },
               ]}
             />
