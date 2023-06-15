@@ -14,13 +14,16 @@
   z-index: -1;
 }
 
-
 .user-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   background-color: #06808d9d;
   padding: 20px;
+}
+
+.input{
+
 }
 
 @media (max-width: 768px) {
