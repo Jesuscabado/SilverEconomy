@@ -1,3 +1,4 @@
+
 # SilverEconomy - Plataforma de Trabajo y Análisis Predictivo
 
 ## Descripción
@@ -24,3 +25,4 @@ SilverEconomy es una potente y versátil plataforma de trabajo diseñada especí
 - Conexión a Internet estable.
 
 ¡Descubre la potencia de SilverEconomy y lleva tu entorno de trabajo al siguiente nivel! Contáctanos para obtener más información y programar una demostración personalizada.
+

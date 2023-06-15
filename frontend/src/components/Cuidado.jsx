@@ -48,10 +48,10 @@ const HTMLViewer = () => {
       );
 
       // Obtener solo los últimos 5 archivos
-      const selectedFilesIndices = [7]; // Índices de los archivos que deseas seleccionar
-      const selectedFiles = sortedFileData.filter((file, index) =>
-        selectedFilesIndices.includes(index)
-      );
+
+      const selectedFilesIndices = [6]; // Índices de los archivos que deseas seleccionar
+      const selectedFiles = sortedFileData.filter((file, index) => selectedFilesIndices.includes(index));
+
 
       setFileList(selectedFiles);
     } catch (error) {

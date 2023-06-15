@@ -307,6 +307,7 @@ function SideBar() {
   return (
     <div className='menudashboard'>
       <div>
+
         <div className='sidebar'>
           <div className='sidebar-wrapper'>
             <div>{user.displayName || user.email.split("@")[0]}</div>
@@ -339,6 +340,7 @@ function SideBar() {
 
               {/*  <div
                 key='panel'
+
                 className={`item ${activeItem === "Panel" ? "active" : ""} ${
                   dragging ? "dragging" : ""
                 }`}
@@ -372,7 +374,7 @@ function SideBar() {
               </div>
 
               <div
-                key='informes'
+                key="informes"
                 className={`item ${activeItem === "Informes" ? "active" : ""} ${
                   dragging ? "dragging" : ""
                 }`}
@@ -391,8 +393,10 @@ function SideBar() {
                     xmlns='http://www.w3.org/2000/svg'
                   >
                     <path
+
                       d='M22.6942 7.7925L15.376 0.7925C15.2789 0.699666 15.1635 0.626052 15.0366 0.575864C14.9097 0.525676 14.7737 0.499897 14.6364 0.5H2.09091C1.53637 0.5 1.00453 0.710714 0.612413 1.08579C0.220291 1.46086 0 1.96957 0 2.5V24.5C0 25.0304 0.220291 25.5391 0.612413 25.9142C1.00453 26.2893 1.53637 26.5 2.09091 26.5H20.9091C21.4636 26.5 21.9955 26.2893 22.3876 25.9142C22.7797 25.5391 23 25.0304 23 24.5V8.5C23.0001 8.36864 22.9732 8.23855 22.9207 8.11715C22.8682 7.99576 22.7913 7.88544 22.6942 7.7925ZM15.6818 3.91375L19.4311 7.5H15.6818V3.91375ZM20.9091 24.5H2.09091V2.5H13.5909V8.5C13.5909 8.76522 13.7011 9.01957 13.8971 9.20711C14.0932 9.39464 14.3591 9.5 14.6364 9.5H20.9091V24.5ZM16.7273 14.5C16.7273 14.7652 16.6171 15.0196 16.4211 15.2071C16.225 15.3946 15.9591 15.5 15.6818 15.5H7.31818C7.04091 15.5 6.77499 15.3946 6.57893 15.2071C6.38287 15.0196 6.27273 14.7652 6.27273 14.5C6.27273 14.2348 6.38287 13.9804 6.57893 13.7929C6.77499 13.6054 7.04091 13.5 7.31818 13.5H15.6818C15.9591 13.5 16.225 13.6054 16.4211 13.7929C16.6171 13.9804 16.7273 14.2348 16.7273 14.5ZM15.6818 18.0863L19.4311 21.6725V18.0863H15.6818Z'
                       fill='#EBEBE6'
+
                     />
                   </svg>
                   <div>
@@ -406,7 +410,7 @@ function SideBar() {
               </div>
 
               <div
-                key='planaccion'
+                key="planaccion"
                 className={`item ${
                   activeItem === "planaccion" ? "active" : ""
                 } ${dragging ? "dragging" : ""}`}
@@ -440,7 +444,7 @@ function SideBar() {
               </div>
 
               <div
-                key='proyectos'
+                key="proyectos"
                 className={`item ${
                   activeItem === "proyectos" ? "active" : ""
                 } ${dragging ? "dragging" : ""}`}
@@ -475,7 +479,7 @@ function SideBar() {
               </div>
 
               <div
-                key='notificaciones'
+                key="notificaciones"
                 className={`item ${
                   activeItem === "notificaciones" ? "active" : ""
                 } ${dragging ? "dragging" : ""}`}
@@ -512,7 +516,7 @@ function SideBar() {
               </div>
 
               <div
-                key='calendar'
+                key="calendar"
                 className={`item ${activeItem === "calendar" ? "active" : ""} ${
                   dragging ? "dragging" : ""
                 }`}
@@ -547,7 +551,7 @@ function SideBar() {
               </div>
 
               <div
-                key='chat'
+                key="chat"
                 className={`item ${activeItem === "chat" ? "active" : ""} ${
                   dragging ? "dragging" : ""
                 }`}
@@ -583,7 +587,7 @@ function SideBar() {
               </div>
 
               <div
-                key='profile'
+                key="profile"
                 className={`item ${activeItem === "profile" ? "active" : ""} ${
                   dragging ? "dragging" : ""
                 }`}
@@ -618,7 +622,7 @@ function SideBar() {
               </div>
 
               <div
-                key='mensajeformulario'
+                key="mensajeformulario"
                 className={`item ${
                   activeItem === "mensajeformulario" ? "active" : ""
                 } ${dragging ? "dragging" : ""}`}
@@ -631,6 +635,7 @@ function SideBar() {
               >
                 <Link to='/mensajesformulario'>
                   <svg
+
                     className='icono'
                     width='26'
                     height='24'
@@ -641,6 +646,7 @@ function SideBar() {
                     <path
                       d='M25.555 8.16815L13.555 0.16815C13.3907 0.0585107 13.1975 0 13 0C12.8025 0 12.6093 0.0585107 12.445 0.16815L0.445 8.16815C0.308014 8.25954 0.195718 8.38336 0.118087 8.52859C0.0404564 8.67382 -0.000106749 8.83597 2.10981e-07 9.00065V22.0007C2.10981e-07 22.5311 0.210714 23.0398 0.585787 23.4149C0.960859 23.7899 1.46957 24.0007 2 24.0007H24C24.5304 24.0007 25.0391 23.7899 25.4142 23.4149C25.7893 23.0398 26 22.5311 26 22.0007V9.00065C26.0001 8.83597 25.9595 8.67382 25.8819 8.52859C25.8043 8.38336 25.692 8.25954 25.555 8.16815ZM9.09 16.0007L2 21.0007V10.9419L9.09 16.0007ZM11.1362 17.0007H14.8638L21.9425 22.0007H4.0575L11.1362 17.0007ZM16.91 16.0007L24 10.9419V21.0007L16.91 16.0007ZM13 2.2019L23.2388 9.02815L14.8638 15.0006H11.1388L2.76375 9.02815L13 2.2019Z'
                       fill='#EBEBE6'
+
                     />
                   </svg>
                   <div>

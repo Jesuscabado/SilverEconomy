@@ -21,24 +21,26 @@ const FormularioEnTresPasos = () => {
   };
 
   return (
-    <div className='formulario'>
-      {step === 1 && <Paso1 nextStep={handleNextStep} className='paso1' />}
-      {step === 2 && (
-        <Paso2
-          nextStep={handleNextStep}
-          datosPaso1={datosPaso1}
-          className='paso2'
-        />
-      )}
-      {step === 3 && (
-        <Paso3
-          file={file}
-          setFile={setFile}
-          datosPaso1={datosPaso1}
-          datosPaso2={datosPaso2}
-          className='paso3'
-        />
-      )}
+    <div className="formularioFondo">
+      <div className="formulario">
+        {step === 1 && <Paso1 nextStep={handleNextStep} className="paso1" />}
+        {step === 2 && (
+          <Paso2
+            nextStep={handleNextStep}
+            datosPaso1={datosPaso1}
+            className="paso2"
+          />
+        )}
+        {step === 3 && (
+          <Paso3
+            file={file}
+            setFile={setFile}
+            datosPaso1={datosPaso1}
+            datosPaso2={datosPaso2}
+            className="paso3"
+          />
+        )}
+      </div>
     </div>
   );
 };
