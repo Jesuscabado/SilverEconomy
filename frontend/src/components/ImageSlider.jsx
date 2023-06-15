@@ -23,7 +23,7 @@ const ImageSlider = ({ onLoginClick }) => {
         </>
       ),
       position: "center", // Posición a la derecha
-      paddingTop: "200px", // Alineación centrada
+      paddingTop: "300px", // Alineación centrada
     },
     {
       url: soledad2,
@@ -40,6 +40,7 @@ const ImageSlider = ({ onLoginClick }) => {
         </>
       ),
       position: "right", // Posición a la derecha
+      marginTop: "100px",
     },
     {
       url: soledad3,
@@ -56,7 +57,7 @@ const ImageSlider = ({ onLoginClick }) => {
         </>
       ),
       position: "right", // Posición a la derecha
-      marginTop: "-200px", // Alineación centrada
+      marginTop: "-100px", // Alineación centrada
     },
   ];
 
@@ -143,7 +144,7 @@ const ImageSlider = ({ onLoginClick }) => {
   const buttonTextStyles = {
     fontSize: "18px",
     fontWeight: "bold",
-    marginTop: "10px",
+    marginTop: "0px",
     backgroundColor: "#fff",
   };
 

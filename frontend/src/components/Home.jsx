@@ -90,17 +90,15 @@ function Web({ onLoginClick }) {
       {showLogin && <LoginOverlay onClose={() => setShowLogin(false)} />}
       {/* Corregido */}
 
-
       <div className='OdsContainer'>
         <div className='odsContainerStyles'>
           <img src={soledad4} alt='ODS' className='imageStyles' />
           <div className='odsTextStyles'>
-
             <h2>
               Soledad no deseada en personas mayores afecta a más del 56% de los
               mayores de 65 años.
             </h2>
-            <p className="">
+            <p className=''>
               El envejecimiento de la población puede acentuar situaciones de
               soledad, pero existen otros factores sociales y estructurales que
               han contribuido a su aumento también en otros tramos de edad:
@@ -136,9 +134,8 @@ function Web({ onLoginClick }) {
         <div className='odsContainerStyles'>
           <img src={soledad6} alt='ODS' className='imageStyles' />
           <div className='odsTextStyles'>
-
             <h2>Experiencias de fragilidad y soledad en el envejecimiento.</h2>
-            <p className="">
+            <p className=''>
               Las personas que experimentan soledad, como cualquier otra emoción
               negativa, en general tratan de aplicar estrategias para afrontar
               esta situación o minimizar los efectos negativos. Es decir, la
@@ -151,8 +148,7 @@ function Web({ onLoginClick }) {
         </div>
       </div>
 
-      <div className="NewsletterBox">
-
+      <div className='NewsletterBox'>
         <title>Caja de Suscripción</title>
 
         <h1>Suscríbete a nuestra newsletter</h1>
@@ -161,29 +157,31 @@ function Web({ onLoginClick }) {
           bandeja de entrada.
         </p>
         <label>
-          <input type="checkbox" name="privacy" required />
+          <input type='checkbox' name='privacy' required />
           He leído y acepto la información en Protección de Datos
         </label>
-        <button>Suscribirse</button>
+        <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
+          Suscribirse
+        </button>
       </div>
-      <div className="ContactFormBox">
+      <div className='ContactFormBox'>
         <title>Formulario de contacto</title>
-        <img className="imgContacto" src={Contacto} alt="Contacto" />
+        <img className='imgContacto' src={Contacto} alt='Contacto' />
         <h1>Consultas, comunicaciones, quejas y suguerencias</h1>
         <p>
           Si deseas realizar una consulta, remitir una comunicacion o realizar
           cualquier sugerencia, lo podras hacer mediante este formulario.
         </p>
 
-        <button>
-          <Link className="text-decoration-none custom-link" to="/formulario">
-            Rellenar formulario
+        <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
+          <Link className='' to='/formulario'>
+            Formulario
           </Link>
         </button>
       </div>
       {/*  <div className="ColaboradorasTitle"></div> */}
 
-      <div className="Iconos">
+      <div className='Iconos'>
         <h1>Colaboradoras</h1>
         <br />
         <h2>
@@ -192,22 +190,21 @@ function Web({ onLoginClick }) {
           <strong> govtechlab@bizkaia.eus</strong>.
         </h2>
 
-        <div className="Colaboradoras">
+        <div className='Colaboradoras'>
           <img src={MondragonAcademy} /*  alt="Mondragon Academy" */ />
-          <img src={MondragonUniversidad} alt="Mondragon Universidad" />
-          <img src={Zitek} alt="Zitek" />
-          <img src={Upv} alt="Upv" />
-          <img src={UniversidadDeusto} alt="Universidad Deusto" />
+          <img src={MondragonUniversidad} alt='Mondragon Universidad' />
+          <img src={Zitek} alt='Zitek' />
+          <img src={Upv} alt='Upv' />
+          <img src={UniversidadDeusto} alt='Universidad Deusto' />
         </div>
 
-        <div className="redesSociales">
+        <div className='redesSociales'>
           {" "}
           <p>Siguenos en nuestras redes sociales</p>
-          <img src={facebook} alt="facebook"></img>
-          <img src={twitter} alt="twitter"></img>
-          <img src={youtube} alt="youtube"></img>
-          <img src={iconoMas} alt="icono+"></img>
-
+          <img src={facebook} alt='facebook'></img>
+          <img src={twitter} alt='twitter'></img>
+          <img src={youtube} alt='youtube'></img>
+          <img src={iconoMas} alt='icono+'></img>
         </div>
       </div>
 

@@ -96,12 +96,16 @@ function Home() {
                           de mujeres + 80 viven solas.
                         </p>
                       </div>
-                      
+
                       <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
-                      <a href="/home/AUMENTO DE LA POBLACION ENVEJECIDA.pdf" download="AUMENTO DE LA POBLACION ENVEJECIDA.pdf.pdf">Descargar</a>
-                    
+                        <a
+                          href='/home/AUMENTO DE LA POBLACION ENVEJECIDA.pdf'
+                          download='AUMENTO DE LA POBLACION ENVEJECIDA.pdf.pdf'
+                        >
+                          Descargar
+                        </a>
                       </button>
-                    
+
                       {/*  <canvas className='porcentaje-chart' id='porcentaje'></canvas> */}
                     </div>
                   </div>
@@ -147,9 +151,9 @@ function Home() {
                       <img src={gifUrl2} />
                       {/* <img src={grafica2} alt='grafica2' /> */}
                       <Link to='/sedentarismo'>
-                      <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
-                        Acceder
-                      </button>
+                        <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
+                          Acceder
+                        </button>
                       </Link>
                     </div>
                   </div>
@@ -591,7 +595,13 @@ function Home() {
                           Acceder
                         </button>
                       </Link>
-                      <a href="/home/informemapa.pdf" className="mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105" download="informemapa.pdf">Descargar</a>
+                      <button
+                        href='/home/informemapa.pdf'
+                        className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'
+                        download='informemapa.pdf'
+                      >
+                        Descargar
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -603,9 +613,9 @@ function Home() {
                     {/* <img src={grafica1} alt='grafica1' /> */}
                     <img src={gifUrl1} />
                     <Link to='/movilidad'>
-                    <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
-                      Acceder
-                    </button>
+                      <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
+                        Acceder
+                      </button>
                     </Link>
                     {/*  </canvas> */}
                   </div>
@@ -629,9 +639,9 @@ function Home() {
                     </video> */}
                     <img src={gifUrl4} />
                     <Link to='/cuidado'>
-                    <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
-                      Acceder
-                    </button>
+                      <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
+                        Acceder
+                      </button>
                     </Link>
                   </div>
                 </div>

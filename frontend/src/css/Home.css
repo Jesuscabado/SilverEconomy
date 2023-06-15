@@ -100,10 +100,10 @@
   position: relative;
   width: 100%;
   margin: 65px 0;
-
   height: auto;
   left: 50%;
   top: 20%;
+
   transform: translate(-50%, -50%);
   background-color: #057f8c;
   display: flex;
@@ -111,11 +111,9 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
-
   padding: 50px;
   text-align: center;
   color: #fff;
-
 }
 
 .NewsletterBox h1 {
@@ -128,7 +126,9 @@
   color: white;
   font-size: 16px;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  margin-top: 12px;
+  padding: 40px;
 }
 
 .NewsletterBox label {
@@ -157,13 +157,13 @@
   color: #fff;
 }
 
-
 .ContactFormBox {
   margin-top: auto;
   position: relative;
   width: 100%;
   margin: 65px 0;
   height: auto;
+
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #e6ebeb;
@@ -172,7 +172,7 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
-  padding: 100px;
+
   transition: background-color 0.3s ease;
 }
 
@@ -203,7 +203,7 @@
 .ContactFormBox img {
   width: 50px;
   height: 50px;
-  margin-top: 20px;
+  margin-top: 79px;
 }
 
 @media (max-width: 768px) {
