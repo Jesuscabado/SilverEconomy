@@ -330,7 +330,7 @@ const Users = () => {
                         </button>
                       )}
                       {uploadedImages[usuario.id] && (
-                        <div>
+                        <div className="upload">
                           <img
                             src={uploadedImages[usuario.id]}
                             alt='Imagen subida'

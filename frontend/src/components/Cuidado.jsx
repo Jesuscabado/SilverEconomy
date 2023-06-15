@@ -40,7 +40,7 @@ const HTMLViewer = () => {
       const sortedFileData = fileData.sort((a, b) => b.uploadTime - a.uploadTime);
 
       // Obtener solo los últimos 5 archivos
-      const selectedFilesIndices = [7]; // Índices de los archivos que deseas seleccionar
+      const selectedFilesIndices = [6]; // Índices de los archivos que deseas seleccionar
       const selectedFiles = sortedFileData.filter((file, index) => selectedFilesIndices.includes(index));
 
       setFileList(selectedFiles);

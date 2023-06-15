@@ -1,5 +1,6 @@
 # SilverEconomy
 
+
 Vamos a mostrar las funcionalidades clave de nuestra aplicación, diseñada para brindar información valiosa y útil a través de gráficas, informes y un modelo predictivo.
 
 Es un entorno de trabajo adaptable a las necesidades de cada trabajador. Puedes customizar tu area de trabajo para que sea mas eficiente y productiva.
@@ -19,3 +20,4 @@ Es un entorno de trabajo adaptable a las necesidades de cada trabajador. Puedes 
 2. Modelo predictivo de probabilidades de quedarte solo: Hemos desarrollado un modelo predictivo que utiliza diferentes variables para determinar las probabilidades de quedarte solo. Este modelo se basa en datos históricos y algoritmos avanzados de aprendizaje automático. Los usuarios podrán ingresar las variables correspondientes y obtener una predicción de las probabilidades de quedarse solo en diferentes situaciones.
 
 En resumen, nuestra Web App proporciona conclusiones basadas en datos, un modelo predictivo de probabilidades de quedarte solo, y un entorno de trabajo completo con apartados de informes, perfil, agenda y chat.
+
