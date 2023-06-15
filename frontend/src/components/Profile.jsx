@@ -12,7 +12,12 @@ import {
 } from "firebase/firestore";
 import { db, uploadFile } from "../Firebase";
 import "../css/Profile.css";
-import { getMetadata,uploadBytes, getDownloadURL, ref } from "firebase/storage";
+import {
+  getMetadata,
+  uploadBytes,
+  getDownloadURL,
+  ref,
+} from "firebase/storage";
 import { storage } from "../Firebase";
 
 const Users = () => {
@@ -121,23 +126,23 @@ const Users = () => {
       const file = selectedFile[id];
       const fileId = uuidv4();
       const avatarPath = `avatar/${id}/${fileId}_${file.name}`; // Ruta dentro de la carpeta "avatar" con el ID del usuario y el nombre del archivo
-  
+
       try {
         const storageRef = ref(storage, avatarPath);
         await uploadBytes(storageRef, file);
-  
+
         const imageUrl = await getDownloadURL(storageRef);
-  
+
         // Guarda la URL de la imagen en Firestore
         const userDocRef = doc(db, "usuarios", id);
         await updateDoc(userDocRef, { avatarUrl: imageUrl });
-  
+
         // Actualiza el estado de uploadedImages con la URL de la imagen
         setUploadedImages((prevImages) => ({
           ...prevImages,
           [id]: imageUrl,
         }));
-  
+
         // Actualiza también la URL de la imagen en el objeto de usuario actualizado
         setUserData((prevUserData) => ({
           ...prevUserData,
@@ -148,8 +153,6 @@ const Users = () => {
       }
     }
   };
-  
-  
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -209,7 +212,7 @@ const Users = () => {
           ...doc.data(),
           id: doc.id,
         }));
-  
+
         // Obtén las URL de las imágenes de perfil desde Firestore
         const uploadedImages = {};
         for (const usuario of data) {
@@ -217,7 +220,7 @@ const Users = () => {
             uploadedImages[usuario.id] = usuario.avatarUrl;
           }
         }
-  
+
         setUploadedImages(uploadedImages);
         setUsuarios(data);
         setIsLoading(false);
@@ -226,88 +229,99 @@ const Users = () => {
         setIsLoading(false);
       }
     };
-  
+
     getUsuarios();
   }, []);
-  
 
   return (
-    <div className='fondo'>
-        <NavbarSinTexto />
-        <SideBar />
+    <div className="fondo">
+      <NavbarSinTexto />
+      <SideBar />
       <div className="perfidato">
-      <h1 className='perfil'>Inicio de tu perfil</h1>
-      <h2 className='datos'>Datos</h2>
+        <h1 className="perfil">Inicio de tu perfil</h1>
+        <h2 className="datos">Datos</h2>
       </div>
       <div className="datosarriba">
-      <input
-        name='nombre'
-        placeholder='Nombre'
-        value={userData.nombre}
-        onChange={handleInputChange}
-        type='text'
-        className="input"
-      />
-      <input
-        name='apellido'
-        placeholder='Apellido'
-        value={userData.apellido}
-        onChange={handleInputChange}
-        type='text'
-        className="input"
-
-      />
-      <input
-        name='email'
-        placeholder='Email'
-        value={userData.email}
-        onChange={handleInputChange}
-        type='text'
-        disabled={editingUserId !== null}
-        className="input"
-
-      />
-      <input
-        name='fechaNacimiento'
-        placeholder='Fecha de Nacimiento'
-        value={userData.fechaNacimiento}
-        onChange={handleInputChange}
-        type='date'
-        className="input"
-
-      />
-      <div>
-        <select name='sexo' className="input" value={userData.sexo} onChange={handleSexoChange}>
-          <option value=''>Sexo</option>
-          <option value='hombre'>Hombre</option>
-          <option value='mujer'>Mujer</option>
-        </select>
+        <input
+          name="nombre"
+          placeholder="Nombre"
+          value={userData.nombre}
+          onChange={handleInputChange}
+          type="text"
+          className="input"
+        />
+        <input
+          name="apellido"
+          placeholder="Apellido"
+          value={userData.apellido}
+          onChange={handleInputChange}
+          type="text"
+          className="input"
+        />
+        <input
+          name="email"
+          placeholder="Email"
+          value={userData.email}
+          onChange={handleInputChange}
+          type="text"
+          disabled={editingUserId !== null}
+          className="input"
+        />
+        <input
+          name="fechaNacimiento"
+          placeholder="Fecha de Nacimiento"
+          value={userData.fechaNacimiento}
+          onChange={handleInputChange}
+          type="date"
+          className="input"
+        />
+        <div>
+          <select
+            name="sexo"
+            className="input"
+            value={userData.sexo}
+            onChange={handleSexoChange}
+          >
+            <option value="">Sexo</option>
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+          </select>
+        </div>
+        <div>
+          <select
+            name="rol"
+            className="input"
+            value={userData.rol}
+            onChange={handleRolChange}
+          >
+            <option value="">Rol</option>
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
+        <button className="input" onClick={crearUsuario}>
+          Crear Usuario
+        </button>
       </div>
-      <div>
-        <select name='rol' className="input" value={userData.rol} onChange={handleRolChange}>
-          <option value=''>Rol</option>
-          <option value='user'>User</option>
-          <option value='admin'>Admin</option>
-        </select>
-      </div>
-      <button className="input"  onClick={crearUsuario}>Crear Usuario</button>
-      </div>
-      <div className='user-list'>
+      <div className="user-list">
         {usuarios.map((usuario) => (
-          <div className='user-item' key={usuario.id}>
-            <div className='user-info'>
-              <div className='user-avatar'>
+          <div className="user-item" key={usuario.id}>
+            <div className="user-info">
+              <div className="user-avatar">
                 {editingUserId === usuario.id ? (
                   <>
                     <label htmlFor={`file-input-${usuario.id}`}>
                       <input
                         id={`file-input-${usuario.id}`}
-                        type='file'
+                        type="file"
                         onChange={(e) => handleFileChange(e, usuario.id)}
                       />
                     </label>
                     {selectedFile && selectedFile[usuario.id] && (
-                      <button className="botonsubir" onClick={() => handleUpload(usuario.id)}>
+                      <button
+                        className="botonsubir"
+                        onClick={() => handleUpload(usuario.id)}
+                      >
                         Subir
                       </button>
                     )}
@@ -315,9 +329,12 @@ const Users = () => {
                       <div>
                         <img
                           src={uploadedImages[usuario.id]}
-                          alt='Imagen subida'
+                          alt="Imagen subida"
                         />
-                        <button className="botonborrar" onClick={() => handleDelete(usuario.id)}>
+                        <button
+                          className="botonborrar"
+                          onClick={() => handleDelete(usuario.id)}
+                        >
                           Borrar
                         </button>
                       </div>
@@ -325,11 +342,11 @@ const Users = () => {
                   </>
                 ) : (
                   uploadedImages[usuario.id] && (
-                    <img src={uploadedImages[usuario.id]} alt='Imagen subida' />
+                    <img src={uploadedImages[usuario.id]} alt="Imagen subida" />
                   )
                 )}
               </div>
-              <div className='user-details'>
+              <div className="user-details">
                 <p>Nombre: {usuario.nombre}</p>
                 <p>Apellido: {usuario.apellido}</p>
                 <p>Email: {usuario.email}</p>
@@ -339,12 +356,12 @@ const Users = () => {
                   Rol:{" "}
                   {editingUserId === usuario.id ? (
                     <select
-                      name='rol'
+                      name="rol"
                       value={userData.rol}
                       onChange={handleRolChange}
                     >
-                      <option value='user'>User</option>
-                      <option value='admin'>Admin</option>
+                      <option value="user">User</option>
+                      <option value="admin">Admin</option>
                     </select>
                   ) : (
                     usuario.rol
@@ -352,7 +369,7 @@ const Users = () => {
                 </p>
               </div>
             </div>
-            <div className='user-actions'>
+            <div className="user-actions">
               {editingUserId === usuario.id ? (
                 <div>
                   <button

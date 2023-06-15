@@ -45,9 +45,9 @@ function Home() {
 
   return (
     <div>
-      <div className='containerprincipal'>
-        <NavbarSinTexto className='z-60' />
-        <div className='sidebar2'>
+      <div className="containerprincipal">
+        <NavbarSinTexto className="z-60" />
+        <div className="sidebar2">
           <SideBar />
         </div>
 
@@ -77,30 +77,30 @@ function Home() {
         </div>
       </div> */}
 
-        <div className='container'>
-          <div className='main2'>
+        <div className="container">
+          <div className="main2">
             <main>
-              <div className='dashboard-container'>
-                <div className='card-1'>
-                  <h4 className='chart-lbl'>Informe 2022</h4>
-                  <div className='divider'></div>
-                  <div className='content-center'>
-                    <div className='porcentaje-chart-container'>
-                      <div className='container mx-auto'>
-                        <p className='text-center'>
-                          <strong className='text-4xl block'>4,04%</strong>
+              <div className="dashboard-container">
+                <div className="card-1">
+                  <h4 className="chart-lbl">Informe 2022</h4>
+                  <div className="divider"></div>
+                  <div className="content-center">
+                    <div className="porcentaje-chart-container">
+                      <div className="container mx-auto">
+                        <p className="text-center">
+                          <strong className="text-4xl block">4,04%</strong>
                           de hombres + 80 viven solos.
                         </p>
-                        <p className='text-center'>
-                          <strong className='text-4xl block'>14,1%</strong>
+                        <p className="text-center">
+                          <strong className="text-4xl block">14,1%</strong>
                           de mujeres + 80 viven solas.
                         </p>
                       </div>
 
-                      <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
+                      <button className="mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105">
                         <a
-                          href='/home/AUMENTO DE LA POBLACION ENVEJECIDA.pdf'
-                          download='AUMENTO DE LA POBLACION ENVEJECIDA.pdf.pdf'
+                          href="/home/AUMENTO DE LA POBLACION ENVEJECIDA.pdf"
+                          download="AUMENTO DE LA POBLACION ENVEJECIDA.pdf.pdf"
                         >
                           Descargar
                         </a>
@@ -110,29 +110,29 @@ function Home() {
                     </div>
                   </div>
                 </div>
-                <div className='card-2'>
-                  <Link to='/modelo' className='full-container-link'>
-                    <h4 className='chart-lbl'>Modelo</h4>
-                    <div className='divider'></div>
-                    <div className='content-center'>
-                      <div className='modelo-chart-container'>
-                        <div className='container mx-auto'>
-                          <div className='flex justify-center items-center'>
+                <div className="card-2">
+                  <Link to="/modelo" className="full-container-link">
+                    <h4 className="chart-lbl">Modelo</h4>
+                    <div className="divider"></div>
+                    <div className="content-center">
+                      <div className="modelo-chart-container">
+                        <div className="container mx-auto">
+                          <div className="flex justify-center items-center">
                             {/* <canvas className='modelo-chart' id='modelo'></canvas> */}
-                            <div className='image-container flex justify-center items-center relative ml-4'>
+                            <div className="image-container flex justify-center items-center relative ml-4">
                               <img
                                 src={modelo2}
-                                alt='modelo1'
-                                className='image'
+                                alt="modelo1"
+                                className="image"
                               />
                               <img
                                 src={modelo1}
-                                alt='modelo2'
-                                className='image'
+                                alt="modelo2"
+                                className="image"
                               />
                             </div>
-                            <div className='text-center'>
-                              <h4 className='text-2xm font-bold ml-4 mr-5'>
+                            <div className="text-center">
+                              <h4 className="text-2xm font-bold ml-4 mr-5">
                                 Acceso al modelo predictivo
                               </h4>
                             </div>
@@ -142,28 +142,28 @@ function Home() {
                     </div>
                   </Link>
                 </div>
-                <div className='card-3'>
-                  <h4 className='chart-lbl'>Sedentarismo en Bizkaia</h4>
-                  <div className='divider'></div>
-                  <div className='content-center'>
-                    <div className='curvas-chart-container'>
+                <div className="card-3">
+                  <h4 className="chart-lbl">Sedentarismo en Bizkaia</h4>
+                  <div className="divider"></div>
+                  <div className="content-center">
+                    <div className="curvas-chart-container">
                       {/*  <canvas className='curvas-chart' id='curvas'></canvas> */}
                       <img src={gifUrl2} />
                       {/* <img src={grafica2} alt='grafica2' /> */}
-                      <Link to='/sedentarismo'>
-                        <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
+                      <Link to="/sedentarismo">
+                        <button className="mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105">
                           Acceder
                         </button>
                       </Link>
                     </div>
                   </div>
                 </div>
-                <div className='card-4'>
-                  <h4 className='chart-lbl'>
+                <div className="card-4">
+                  <h4 className="chart-lbl">
                     Indice de soledad por municipios
                   </h4>
-                  <div className='divider'></div>
-                  <div className='mapa-chart-container'>
+                  <div className="divider"></div>
+                  <div className="mapa-chart-container">
                     {/* <canvas className='mapa-chart' id='mapa'></canvas> */}
                     <img src={gifUrl3} />
                     {/* <svg
@@ -578,42 +578,47 @@ function Home() {
                         fill='#506062'
                       />
                     </svg> */}
-                    <div className='text-center mt-16'>
-                      <h1 className='text-2xm font-bold mb-4'>
+                    <div className="text-center mt-16">
+                      <h1 className="text-2xm font-bold mb-4">
                         Índice de Sedentarismo por Municipios:
                       </h1>
-                      <ol className='mb-4'>
+                      <ol className="mb-4">
                         <li>Mujeres &gt; 65 años:</li>
-                        <h3 className='text-2xl font-bold mb-4'>30.9%</h3>
+                        <h3 className="text-2xl font-bold mb-4">30.9%</h3>
                         <li>Resto de personas: </li>
-                        <h3 className='text-2xl font-bold mb-4'>56.41%</h3>
+                        <h3 className="text-2xl font-bold mb-4">56.41%</h3>
                         <li>Hombres &lt; 65 años: </li>
-                        <h3 className='text-2xl font-bold mb-4'>12.69%</h3>
+                        <h3 className="text-2xl font-bold mb-4">12.69%</h3>
                       </ol>
-                      <Link to='/mapacalor'>
-                        <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
+                      <Link to="/mapacalor">
+                        <button className="mt-5 mr-1 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105">
                           Acceder
                         </button>
                       </Link>
-                      <button
-                        href='/home/informemapa.pdf'
-                        className='ml-4 mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'
-                        download='informemapa.pdf'
-                      >
-                        Descargar
+                      <button className="mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105">
+                        <a
+                          href="/home/informemapa.pdf"
+                          /*  className="ml-4 mt-5
+                          boton1 hover-button py-2 px-4 rounded-md shadow-lg
+                          focus:outline-none transform transition-all
+                          duration-200 ease-in-out hover:scale-105" */
+                          download="informemapa.pdf"
+                        >
+                          Descargar
+                        </a>
                       </button>
                     </div>
                   </div>
                 </div>
-                <div className='card-5'>
-                  <h4 className='chart-lbl'>Dificultad en la movilidad</h4>
-                  <div className='divider'></div>
-                  <div className='bar-chart-container'>
+                <div className="card-5">
+                  <h4 className="chart-lbl">Dificultad en la movilidad</h4>
+                  <div className="divider"></div>
+                  <div className="bar-chart-container">
                     {/* <canvas className='bar-chart' id='bar'> */}
                     {/* <img src={grafica1} alt='grafica1' /> */}
                     <img src={gifUrl1} />
-                    <Link to='/movilidad'>
-                      <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
+                    <Link to="/movilidad">
+                      <button className="mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105">
                         Acceder
                       </button>
                     </Link>
@@ -627,10 +632,10 @@ function Home() {
                 <canvas className='line-chart' id='line'></canvas>
               </div>
             </div> */}
-                <div className='card-7'>
-                  <h4 className='chart-lbl'>Tiempo de cuidado</h4>
-                  <div className='divider'></div>
-                  <div className='circulo-chart-container'>
+                <div className="card-7">
+                  <h4 className="chart-lbl">Tiempo de cuidado</h4>
+                  <div className="divider"></div>
+                  <div className="circulo-chart-container">
                     {/* <canvas className='circulo-chart' id='circulo'></canvas> */}
                     {/*  <img src={grafica3} alt='grafica3' /> */}
                     {/*  <video autoPlay loop>
@@ -638,8 +643,8 @@ function Home() {
                       Tu navegador no admite el elemento de video.
                     </video> */}
                     <img src={gifUrl4} />
-                    <Link to='/cuidado'>
-                      <button className='mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105'>
+                    <Link to="/cuidado">
+                      <button className="mt-5 boton1 hover-button py-2 px-4 rounded-md shadow-lg focus:outline-none transform transition-all duration-200 ease-in-out hover:scale-105">
                         Acceder
                       </button>
                     </Link>
