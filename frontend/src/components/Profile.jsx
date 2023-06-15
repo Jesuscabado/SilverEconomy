@@ -232,15 +232,21 @@ const Users = () => {
   
 
   return (
-    <div className='container'>
+    <div className='fondo'>
+        <NavbarSinTexto />
+        <SideBar />
+      <div className="perfidato">
       <h1 className='perfil'>Inicio de tu perfil</h1>
       <h2 className='datos'>Datos</h2>
+      </div>
+      <div className="datosarriba">
       <input
         name='nombre'
         placeholder='Nombre'
         value={userData.nombre}
         onChange={handleInputChange}
         type='text'
+        className="input"
       />
       <input
         name='apellido'
@@ -248,6 +254,8 @@ const Users = () => {
         value={userData.apellido}
         onChange={handleInputChange}
         type='text'
+        className="input"
+
       />
       <input
         name='email'
@@ -256,6 +264,8 @@ const Users = () => {
         onChange={handleInputChange}
         type='text'
         disabled={editingUserId !== null}
+        className="input"
+
       />
       <input
         name='fechaNacimiento'
@@ -263,22 +273,25 @@ const Users = () => {
         value={userData.fechaNacimiento}
         onChange={handleInputChange}
         type='date'
+        className="input"
+
       />
       <div>
-        <select name='sexo' value={userData.sexo} onChange={handleSexoChange}>
+        <select name='sexo' className="input" value={userData.sexo} onChange={handleSexoChange}>
           <option value=''>Sexo</option>
           <option value='hombre'>Hombre</option>
           <option value='mujer'>Mujer</option>
         </select>
       </div>
       <div>
-        <select name='rol' value={userData.rol} onChange={handleRolChange}>
+        <select name='rol' className="input" value={userData.rol} onChange={handleRolChange}>
           <option value=''>Rol</option>
           <option value='user'>User</option>
           <option value='admin'>Admin</option>
         </select>
       </div>
-      <button onClick={crearUsuario}>Crear Usuario</button>
+      <button className="input"  onClick={crearUsuario}>Crear Usuario</button>
+      </div>
       <div className='user-list'>
         {usuarios.map((usuario) => (
           <div className='user-item' key={usuario.id}>
@@ -294,7 +307,7 @@ const Users = () => {
                       />
                     </label>
                     {selectedFile && selectedFile[usuario.id] && (
-                      <button onClick={() => handleUpload(usuario.id)}>
+                      <button className="botonsubir" onClick={() => handleUpload(usuario.id)}>
                         Subir
                       </button>
                     )}
@@ -304,7 +317,7 @@ const Users = () => {
                           src={uploadedImages[usuario.id]}
                           alt='Imagen subida'
                         />
-                        <button onClick={() => handleDelete(usuario.id)}>
+                        <button className="botonborrar" onClick={() => handleDelete(usuario.id)}>
                           Borrar
                         </button>
                       </div>

@@ -1,29 +1,64 @@
-.usercontainer {
-  padding: 20px;
-  margin-left: 300px;
-  margin-top: 80px;
+.fondo{
+  background-color: #067f8d;
 }
 
-.fondo {
-  background-image: url(../img/fondoperfil.jpg);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+
+.botonborrar{
+  background-color: #f44336;
+  border-radius: 5px;
+  padding: 8px;
+  margin-left: 25%;
+  color: #fff;
+
+}
+
+.botonsubir{
+  background-color: #06808d9d;
+  border-radius: 5px;
+  padding: 8px;
+  margin-left: 25%;
+  color: #fff;
+
 }
 
 .user-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  background-color: #06808d9d;
+  gap: 25px;
+  background-color: #067f8d;
   padding: 20px;
 }
 
-.input{
+.contenedor-perfil{
 
+  background-color: #ffffff;
+}
+
+.perfil{
+ font-size: 25px;
+ margin-left: 51%;
+ font-weight: bold;
+ margin-bottom: 3%;
+ margin-top: 8%;
+
+}
+
+.datos{
+  font-size: 20px;
+  margin-left: 51%;
+  font-weight: bold;
+}
+
+.input{
+  display: flex;
+  margin-left: 50%;
+  padding: 10%;
+  margin: 15px;
+  margin-bottom: 20px;
+}
+
+.datosarriba{
+  margin-left: 50%;
 }
 
 @media (max-width: 768px) {
@@ -40,6 +75,12 @@
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+}
+
+.user-list{
+  margin-left: 17%;
+
 }
 
 .user-info {
@@ -49,10 +90,11 @@
 
 .user-avatar {
   width: 30%;
-  height: 30%;
+  height: 50%;
   margin-right: 13%;
-  border-radius: 50%;
 }
+
+
 
 .user-avatar img {
   width: 100%;
@@ -60,29 +102,10 @@
   border-radius: 50%;
 }
 
-.upload{
-  width: 100%;
-  height: 100%;
-
-}
-
-.user-details {
-  flex: 1;
-}
-
-.userbutton{
-  background-color: #f44336;
-  border-radius: 5px;
-  padding: 8px;
-  margin-left: 25%;
-  color: #fff;
-}
-
-
-
 .user-details {
   margin-bottom: 10px;
-  font-weight: lighter;
+  font-size: 18px;
+  padding: 5%;
 }
 .userdatos {
   font-weight: bold;
@@ -103,9 +126,10 @@
 }
 
 .user-actions button:first-child {
-  background-color: #057f8c;
+  background-color: #06808d9d;
   color: #fff;
 }
+
 
 .user-actions button:last-child {
   background-color: #f44336;
@@ -124,30 +148,7 @@
   
 }
 
-.usercontainer__header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 50px;
-}
 
-.userperfil {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
 
-.userdatos {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
 
-.userinput {
-  width: 300px;
-  height: 30px;
-  margin-bottom: 10px;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
+
