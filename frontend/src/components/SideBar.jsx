@@ -219,7 +219,7 @@ function SideBar() {
       id: "mensajesformulario",
       name: "Mensajes",
     },
-    {
+    /*  {
       icon: <Icon2Konecta />,
       id: "2Konecta",
       name: "2Konecta",
@@ -228,7 +228,7 @@ function SideBar() {
       icon: <IconBatera />,
       id: "Batera",
       name: "Batera",
-    },
+    }, */
   ]);
 
   const handleDragStart = (event, itemId) => {
