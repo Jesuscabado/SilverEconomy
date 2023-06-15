@@ -10,8 +10,6 @@ function PlanAccion() {
       <NavbarSinTexto />
       <SideBar />
       <img className="accion" src={Group12} alt="Notificaciones" border="0" />
-
-
     </div>
   );
 }
