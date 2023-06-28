@@ -1,0 +1,37 @@
+.my-custom-event-style .fc-content {
+  background-color: #ff0000; /* Cambia el color de fondo del contenido del evento */
+  color: #ffffff; /* Cambia el color del texto del contenido del evento */
+}
+
+.m-20 {
+  margin-left: 30%;
+  width: 100%;
+  margin-bottom: 15%;
+}
+
+.fc .fc-button-primary {
+  background-color: #067f8d;
+  border-color: #067f8d;
+  color: var(--fc-button-text-color);
+}
+
+.fc .fc-button-primary:disabled {
+  background-color: #067f8d;
+  border-color: #067f8d;
+  color: var(--fc-button-text-color);
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active,
+.fc .fc-button-primary:not(:disabled):active {
+  background-color: #067f8d;
+  border-color: #067f8d;
+  color: var(--fc-button-text-color);
+}
+
+:root {
+  --fc-event-bg-color: #067f8d;
+}
+
+.bg-custom-color {
+  color: #067f8d;
+}

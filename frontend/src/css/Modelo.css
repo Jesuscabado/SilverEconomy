@@ -1,0 +1,84 @@
+.main-container {
+  margin-top: 120px;
+  background-color: #06808d9d;
+  padding: 30px;
+}
+
+.modelotexto {
+  font-size: x-large;
+  font-weight: 600;
+  margin-left: 350px;
+  margin-top: 100px;
+  position: absolute;
+}
+
+.mapaimg {
+  width: 75%;
+  height: 75%;
+}
+
+.containermodelo {
+  background-image: url("../img/fondomodelo.jpg");
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  height: 100%; /* Ajusta la altura según tus necesidades */
+}
+
+.selectors-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+.group-container {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.group-label {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+.selector-item {
+  margin-bottom: 15px;
+}
+.selector-label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+.selector {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  color: #333;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  width: 100%;
+  box-sizing: border-box;
+}
+.selector:focus {
+  outline: none;
+  border-color: #aaa;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+.selector option {
+  background-color: #fff;
+  color: #333;
+}
+.modelo-label {
+  margin-top: 5px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+}
+
+.destacado {
+  color: red;
+  /* Agrega aquí los estilos adicionales que desees */
+}

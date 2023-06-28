@@ -1,0 +1,277 @@
+.OdsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 50px;
+  width: 100%;
+  height: auto;
+}
+
+.containerStyles {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: "white";
+}
+
+.odsContainerStyles {
+  width: 64vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.odsTextStyles {
+  flex: 1;
+  padding: 0 20px;
+  text-align: left;
+}
+
+.imageStyles {
+  max-width: 100%;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .odsContainerStyles {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .odsTextStyles {
+    padding: 20px;
+  }
+}
+.agendaContainerStyles {
+  width: 64vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.agendaTextStyles {
+  flex: 1;
+  padding: 0 20px;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .agendaContainerStyles {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .agendaTextStyles {
+    padding: 20px;
+  }
+}
+
+.agendaTextStyles h2 {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+.agendaTextStyles p {
+  font-size: 12px;
+}
+
+.OdsContainer h2 {
+  font-weight: bold;
+  font-size: 1x;
+  margin-bottom: 14px;
+}
+
+.OdsContainer p {
+  font-size: 12px;
+}
+
+.NewsletterBox {
+  position: relative;
+  width: 100%;
+  margin: 65px 0;
+  height: auto;
+  left: 50%;
+  top: 20%;
+
+  transform: translate(-50%, -50%);
+  background-color: #057f8c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  padding: 50px;
+  text-align: center;
+  color: #fff;
+}
+
+.NewsletterBox h1 {
+  color: white;
+  font-size: 24px;
+  text-align: center;
+}
+
+.NewsletterBox p {
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 12px;
+  padding: 40px;
+}
+
+.NewsletterBox label {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.NewsletterBox label input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.NewsletterBox button {
+  padding: 10px 20px;
+  background-color: white;
+  color: #057f8c;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.NewsletterBox button:hover {
+  background-color: #066470;
+  color: #fff;
+}
+
+.ContactFormBox {
+  margin-top: auto;
+  position: relative;
+  width: 100%;
+  margin: 65px 0;
+  height: auto;
+
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #e6ebeb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+
+  transition: background-color 0.3s ease;
+}
+
+.ContactFormBox h1 {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.ContactFormBox p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.ContactFormBox button {
+  padding: 10px 20px;
+  background-color: #18b5ca;
+  color: #050606;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.ContactFormBox button:hover {
+  background-color: #066470;
+  color: #fff;
+}
+
+.ContactFormBox img {
+  width: 50px;
+  height: 50px;
+  margin-top: 79px;
+}
+
+@media (max-width: 768px) {
+  .ContactFormBox {
+    padding: 20px;
+  }
+}
+
+.Iconos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #fff;
+  padding: 40px;
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.ColaboradorasTitle {
+  color: black;
+  margin-left: 60px;
+}
+
+.ColaboradorasTitle h1 {
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+
+.Colaboradoras {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.Colaboradoras img {
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 480px) {
+  .Colaboradoras img {
+    margin: 30px 10px 30px 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+}
+
+.redesSociales {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.redesSociales img {
+  margin: 0 10px; /* Margen superior para separar las imágenes */
+}
+.Iconos p {
+  margin: 100px 10px; /* Margen superior para separar las imágenes */
+  text-align: center;
+}
+
+.Iconos h1 {
+  margin: 20px 20px;
+  font-weight: bold;
+}

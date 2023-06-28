@@ -1,0 +1,39 @@
+.FooterWeb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgray;
+  padding: 20px;
+  width: 100%;
+}
+
+.claselogo {
+  max-height: 40px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-link {
+  margin-right: 10px;
+  font-size: 12px; /* Tamaño de fuente más pequeño */
+}
+
+@media (max-width: 768px) {
+  .claselogo {
+    max-height: 30px;
+    margin-right: 5px;
+  }
+}
+.text-center {
+  font-size: 12px; /* Tamaño de fuente más pequeño */
+}
+
+.texto1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 37px;
+  font-size: 12px; /* Tamaño de fuente más pequeño */
+}
